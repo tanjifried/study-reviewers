@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "python/style.css"
+        ],
+        "createdAt": "2026-11-15T19:02:20.822Z",
+        "reason": "User confirmed preserving the existing Python reviewer appearance; the feedback accent border predates this revision and distinguishes feedback states."
+      },
+      {
+        "rule": "overused-font",
+        "value": "arial",
+        "files": [
+          "python/style.css"
+        ],
+        "createdAt": "2026-11-15T19:02:20.890Z",
+        "reason": "User confirmed preserving the existing sample-inspired Python exam appearance; Arial is its intentional incumbent exam font and predates this revision."
+      }
+    ]
+  }
+}
