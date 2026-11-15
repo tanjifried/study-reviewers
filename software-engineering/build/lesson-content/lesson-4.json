@@ -1,0 +1,122 @@
+{
+  "slides": {
+    "1": {
+      "explanation": "This lesson explains how teamwork helps software projects succeed.",
+      "example": ""
+    },
+    "2": {
+      "explanation": "The agenda previews teamwork foundations, goals, Agile roles, communication, conflict handling, and collaboration tools.",
+      "example": ""
+    },
+    "3": {
+      "explanation": "Software is complex, so people with different skills need to combine their ideas and work. That shared effort can improve both innovation and delivery.",
+      "example": "A developer, designer, and tester can spot different problems in the same feature."
+    },
+    "4": {
+      "explanation": "Software work includes more than coding. Disciplines such as user experience and cybersecurity contribute different knowledge to a complete solution.",
+      "example": "A payment feature needs an understandable checkout, secure handling, and working code."
+    },
+    "5": {
+      "explanation": "A shared vision gives everyone the same understanding of the project’s purpose and desired outcome. It helps teams prioritize consistently and avoid unnecessary work.",
+      "example": "If the goal is to make checkout faster, the team can prioritize steps that reduce delays."
+    },
+    "6": {
+      "explanation": "Scrum organizes work in timeboxed Sprints; Kanban manages and improves a continuous flow of work. Both help teams collaborate and respond to change.",
+      "example": "A team can review a small delivery, learn from feedback, then revise its next set of work."
+    },
+    "7": {
+      "explanation": "Clear responsibilities make it easier to see who owns each kind of work and reduce duplicated effort or forgotten tasks.",
+      "example": "The Product Owner prioritizes needs, the Scrum Master helps the process, and developers build and test."
+    },
+    "8": {
+      "explanation": "Risk assessment means identifying possible problems early and agreeing on ways to limit their impact. Teams revisit risks as the project changes.",
+      "example": "If a key service might be unavailable, the team can plan a fallback or test an alternative."
+    },
+    "9": {
+      "explanation": "Transparent communication keeps information visible so people can stay aligned, raise problems quickly, and make informed decisions.",
+      "example": "A shared issue tracker can show a blocker and its owner to the whole team."
+    },
+    "10": {
+      "explanation": "A daily stand-up is a short live check-in for sharing progress, surfacing obstacles, and coordinating near-term work.",
+      "example": "A developer says the login work is done but waiting on a test account, so the team can help."
+    },
+    "11": {
+      "explanation": "Asynchronous communication lets people contribute at different times. Written records also preserve decisions and context for later.",
+      "example": "A pull request discussion records why a code change was made."
+    },
+    "12": {
+      "explanation": "Active listening means focusing on what another person is saying and checking understanding. Constructive feedback gives specific, useful guidance that helps work improve.",
+      "example": "Instead of “this is bad,” point to a confusing function and suggest a clearer name."
+    },
+    "13": {
+      "explanation": "Teams can resolve conflict by discussing it early, hearing each perspective, focusing on the issue, and looking for a solution everyone can support.",
+      "example": "If two people disagree about an approach, compare it against the shared project goal."
+    },
+    "14": {
+      "explanation": "Version control records changes and lets people work on code concurrently, then combine their work while retaining project history.",
+      "example": "Two developers can work on separate branches and later merge their changes."
+    },
+    "15": {
+      "explanation": "Task management tools help teams assign work, see progress, and make ownership visible.",
+      "example": "A board can show a task moving from “To do” to “In progress” to “Done.”"
+    },
+    "16": {
+      "explanation": "CI/CD pipelines automate steps such as building, testing, and deploying software. Automation can make delivery more consistent and reduce integration work.",
+      "example": "A pipeline can run tests whenever a change is submitted."
+    },
+    "17": {
+      "explanation": "This reflection asks teams to consider how they can keep improving communication, coordination, and teamwork as project needs change.",
+      "example": "A team might review recurring blockers and agree on one process improvement."
+    },
+    "18": {
+      "explanation": "The conclusion brings together the lesson’s main message: shared goals, clear responsibilities, communication, and collaboration practices support strong software teams.",
+      "example": ""
+    }
+  },
+  "cheatsheet": [
+    {
+      "term": "Shared vision",
+      "summary": "A common project purpose and outcome that aligns decisions and priorities."
+    },
+    {
+      "term": "Agile planning",
+      "summary": "Scrum and Kanban support iterative collaboration, adaptation, and feedback."
+    },
+    {
+      "term": "Clear roles",
+      "summary": "Defined ownership helps prevent duplicated effort and uncovered work."
+    },
+    {
+      "term": "Risk assessment",
+      "summary": "Identify likely challenges early and plan ways to reduce their impact."
+    },
+    {
+      "term": "Synchronous communication",
+      "summary": "Live conversations such as stand-ups help surface blockers and coordinate quickly."
+    },
+    {
+      "term": "Asynchronous communication",
+      "summary": "Written discussion and records let people collaborate across schedules."
+    },
+    {
+      "term": "Active listening",
+      "summary": "Concentrate, understand, respond, and remember to reduce misunderstanding."
+    },
+    {
+      "term": "Constructive feedback",
+      "summary": "Specific, actionable guidance focused on work or behavior."
+    },
+    {
+      "term": "Version control",
+      "summary": "Tracks code history and supports parallel changes and merging."
+    },
+    {
+      "term": "Task management",
+      "summary": "Tools make assignments, progress, and accountability visible."
+    },
+    {
+      "term": "CI/CD",
+      "summary": "Automated build, test, and deployment steps support reliable delivery."
+    }
+  ]
+}

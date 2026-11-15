@@ -1,0 +1,66 @@
+{
+  "slides": {
+    "1": {
+      "explanation": "This lesson introduces the avalanche effect and compares ciphertext bits.",
+      "example": "The goal is to measure how much an output changes after a small input change."
+    },
+    "2": {
+      "explanation": "Security evaluation considers evidence about resistance to attacks. Runtime is also useful, but speed and security are separate qualities.",
+      "example": "A faster implementation is not automatically a safer one."
+    },
+    "3": {
+      "explanation": "The avalanche effect describes a large output change in response to a small input change. A common experiment flips a single input bit while keeping other settings fixed.",
+      "example": "Change one bit of a message and compare the two output bit strings."
+    },
+    "4": {
+      "explanation": "The slide compares ciphertext for ISUECCSICT and iSUECCSICT. It does not specify the key, mode, IV or padding, so its claimed Blowfish outputs cannot be independently reproduced from the information given.",
+      "example": "ASCII I is 0x49 and i is 0x69: their XOR is 0x20, a one-bit change."
+    },
+    "5": {
+      "explanation": "XOR matching ciphertext positions, then count every 1 in the result. A hexadecimal digit represents four bits; simply counting different hex characters is not the same as counting different bits.",
+      "example": "For hex digits 7 and 0, XOR = 7 = 0111 binary, so three bits differ."
+    },
+    "6": {
+      "explanation": "Correction: the printed ciphertexts differ in 30 of 128 bits, not 31. The whole-output rate is 30/128 × 100 = 23.4375% (about 23.44%). The unchanged second block affects that denominator.",
+      "example": "The first 64-bit block has 30 changed bits: 30/64 × 100 = 46.875%. Neither result proves security."
+    },
+    "7": {
+      "explanation": "The assignment asks you to compare first-round behavior of original and enhanced Blowfish and to learn about statistical randomness tests. Make the variant and all settings explicit, use repeated trials, and do not treat a test pass as proof of security.",
+      "example": "Flip one input bit per trial, compare equal-length first-round states, and report the changed-bit distribution."
+    }
+  },
+  "cheatsheet": [
+    {
+      "term": "Avalanche effect",
+      "summary": "A small input change causes a substantial change in output."
+    },
+    {
+      "term": "Controlled test",
+      "summary": "Change one bit; keep algorithm, key, encoding, mode, IV and padding fixed as applicable."
+    },
+    {
+      "term": "Bit count",
+      "summary": "XOR equal-length outputs and count the 1 bits."
+    },
+    {
+      "term": "Hexadecimal",
+      "summary": "One hex digit = 4 bits; 32 hex digits = 128 bits."
+    },
+    {
+      "term": "Percentage",
+      "summary": "Changed bits ÷ compared output bits × 100."
+    },
+    {
+      "term": "Slide correction",
+      "summary": "The printed values differ by 30/128 = 23.4375%; first block alone is 30/64 = 46.875%."
+    },
+    {
+      "term": "50% expectation",
+      "summary": "About half the bits change on average in an idealized response; single trials can vary."
+    },
+    {
+      "term": "Security assessment",
+      "summary": "Use many trials and cryptanalysis. Avalanche and randomness tests alone do not prove security."
+    }
+  ]
+}

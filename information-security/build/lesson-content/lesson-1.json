@@ -1,0 +1,126 @@
+{
+  "slides": {
+    "1": {
+      "explanation": "This lesson introduces authentication, hashing, and a worked SHA-1 example.",
+      "example": "We will go from what it means to verify a claim to tracing a single hash round."
+    },
+    "2": {
+      "explanation": "Authentication checks whether a claimed identity or origin is genuine. It is different from authorization, which determines what an identified party may do.",
+      "example": "A login checks who you are; access rules determine which files you can open."
+    },
+    "3": {
+      "explanation": "A wax seal was a historical way to make opening a letter visible. A distinctive impression could also be associated with a sender, although seals can be forged.",
+      "example": "A broken seal may suggest a letter was opened, but an intact-looking seal is not mathematical proof of authenticity."
+    },
+    "4": {
+      "explanation": "Sealing wax could close letters, show an impression, and provide visible tamper evidence. It is an analogy for checking a message, not a modern cryptographic guarantee.",
+      "example": "A signet ring can leave a recognizable mark in wax."
+    },
+    "5": {
+      "explanation": "A hash function maps an input to a fixed-length output called a digest. A hash is not encryption: it is not designed to recover the original input.",
+      "example": "A long file and a short file both produce a 256-bit SHA-256 digest."
+    },
+    "6": {
+      "explanation": "The slide describes early hash-based organization of records and credits Hans Peter Luhn. Hashing also has later applications in cryptography.",
+      "example": "A lookup system can use a calculated value to choose a bucket of records."
+    },
+    "7": {
+      "explanation": "The slides list historical MD4, MD5 and SHA-1 alongside SHA-3. MD4, MD5 and SHA-1 are not suitable for new collision-resistant designs; prefer currently approved algorithms such as SHA-2 or SHA-3.",
+      "example": "Knowing an algorithm name is not enough: also check whether it is suitable for the security purpose."
+    },
+    "8": {
+      "explanation": "This diagram shows how hashing different inputs can produce very different fixed-length outputs. A small change in input can lead to a large change in the digest.",
+      "example": "Changing one letter of a sentence can change many bits of its cryptographic digest."
+    },
+    "9": {
+      "explanation": "The slide hashes uppercase CCSICT with MD5 and shows a 32-character hexadecimal digest. Uppercase and lowercase have different byte values and therefore are different inputs.",
+      "example": "CCSICT and ccsict are different byte sequences. Never paste passwords or confidential documents into public hash-generator websites."
+    },
+    "10": {
+      "explanation": "The screenshot illustrates entering text into an MD5 tool and reading its output. Use it to understand input and output, not as a recommendation to use MD5 for security.",
+      "example": "A 32-digit hexadecimal MD5 output represents 128 bits."
+    },
+    "11": {
+      "explanation": "The exercise compares digests for texts of different lengths. For a fixed hash algorithm, the digest length stays constant regardless of the size of the input.",
+      "example": "MD5 represents both a short word and a longer paragraph using 128 output bits."
+    },
+    "12": {
+      "explanation": "A changed message usually has a different cryptographic hash. However, sending an unkeyed hash alongside a message does not authenticate it: an attacker who can replace both can calculate a new hash. Use a trusted expected digest, HMAC, or a digital signature as appropriate.",
+      "example": "If a trusted source publishes a digest separately, you can recompute it to check that a downloaded file matches."
+    },
+    "13": {
+      "explanation": "MD4 means Message Digest 4. It is an older hash algorithm included for historical context and is not suitable for modern collision-resistant security.",
+      "example": "Treat the algorithm name as a historical term for this lesson."
+    },
+    "14": {
+      "explanation": "The image is a reference to research on diffusion and hashing. Diffusion means changes to the input spread through the output; it is one desirable property, not a complete security proof.",
+      "example": "A single input-bit change may affect many output bits."
+    },
+    "15": {
+      "explanation": "The slide lists research on hash algorithms and document authentication. When studying a proposal, ask about the security claim, threat model, and independent analysis.",
+      "example": "A paper title alone does not prove that an algorithm is safe for production."
+    },
+    "16": {
+      "explanation": "SHA-1 produces a 160-bit digest and uses 80 rounds for each 512-bit block. It is useful to learn historically, but collision attacks mean it should not be chosen for new collision-resistant uses.",
+      "example": "A 160-bit digest has 20 bytes, usually shown as 40 hexadecimal characters."
+    },
+    "17": {
+      "explanation": "SHA-1 pads the message, divides each 512-bit block into sixteen 32-bit words, and expands them into an 80-word schedule. The slide contains errors: the schedule uses W[t−3], not W[t−13], and the first function uses NOT B. The printed constant ranges also contain typos.",
+      "example": "For t=16, W16 = ROTL1(W13 XOR W8 XOR W2 XOR W0). See the SHA standard linked below."
+    },
+    "18": {
+      "explanation": "The worked example is the five-byte hexadecimal message 1a7fd53b4c. SHA-1 adds a 1 bit, zeros, and the original length as a 64-bit number; 0x28 represents 40 bits.",
+      "example": "The first two message words are 1a7fd53b and 4c800000; the last word holds 00000028."
+    },
+    "19": {
+      "explanation": "SHA-1 keeps five 32-bit working words A through E. In each round the words are updated; the old A becomes the new B and the old B is rotated left 30 bits to form the new C.",
+      "example": "With old B = efcdab89, the new C is 7bf36ae2."
+    },
+    "20": {
+      "explanation": "ROTL30 moves each bit 30 places to the left within a 32-bit word and wraps the bits around. It is the same bit arrangement as rotating right by two.",
+      "example": "ROTL30(efcdab89) = 7bf36ae2."
+    },
+    "21": {
+      "explanation": "For the given initial state and first message word, use the first-round Boolean function, ROTL5(A), E, W0, and K0. Add them modulo 2^32 to obtain the new A.",
+      "example": "The first new A is ba346dee; new B = 67452301 and new C = 7bf36ae2."
+    }
+  },
+  "cheatsheet": [
+    {
+      "term": "Authentication",
+      "summary": "Verify a claimed identity or origin; authorization decides access."
+    },
+    {
+      "term": "Hash / digest",
+      "summary": "A hash maps arbitrary input to a fixed-size output. It is not reversible encryption."
+    },
+    {
+      "term": "Integrity vs authentication",
+      "summary": "A trusted digest can detect changes; use a suitable MAC or signature for authenticated integrity."
+    },
+    {
+      "term": "MD4 / MD5 / SHA-1",
+      "summary": "Historical algorithms with collision weaknesses; do not choose them for new collision-resistant security."
+    },
+    {
+      "term": "SHA-1 dimensions",
+      "summary": "512-bit input blocks; five 32-bit state words; 80 rounds; 160-bit digest."
+    },
+    {
+      "term": "SHA-1 padding",
+      "summary": "Append 1 bit, enough zero bits, then the original length as a 64-bit value."
+    },
+    {
+      "term": "Schedule correction",
+      "summary": "W[t] = ROTL1(W[t−3] XOR W[t−8] XOR W[t−14] XOR W[t−16])."
+    },
+    {
+      "term": "First-round function",
+      "summary": "(B AND C) OR ((NOT B) AND D)."
+    },
+    {
+      "term": "Worked example",
+      "summary": "Message 1a7fd53b4c is 40 bits. Its first new A is ba346dee; new C is 7bf36ae2."
+    }
+  ]
+}

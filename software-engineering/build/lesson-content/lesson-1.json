@@ -1,0 +1,114 @@
+{
+  "slides": {
+    "1": {
+      "explanation": "This lesson follows how a software idea becomes a usable program, from writing code through testing and documentation.",
+      "example": "For example, a team turns a design for a study planner into an app people can use."
+    },
+    "2": {
+      "explanation": "The agenda previews the main stops: what implementation means, how coding/testing/documentation fit together, and how each supports quality.",
+      "example": "Use it as a map: first build the software, then check it, then explain how it works."
+    },
+    "3": {
+      "explanation": "Program implementation is the SDLC stage that turns designs and algorithms into working, executable software. Careful coding and testing help make the result ready for use.",
+      "example": "A recipe-like algorithm for sorting names becomes a real function that runs in an application."
+    },
+    "4": {
+      "explanation": "Implementation has three connected activities: coding builds the solution, testing checks it, and documentation explains it. The work is iterative, so what you learn in one activity can change another.",
+      "example": "A failed test may send a developer back to adjust the code and update its explanation."
+    },
+    "5": {
+      "explanation": "Coding translates designs, flowcharts, or pseudocode into a programming language so a computer can run the intended solution.",
+      "example": "A flowchart for adding two numbers can become a short Python or Java function."
+    },
+    "6": {
+      "explanation": "Syntax is the language’s writing rules; semantics is what valid code means when it runs. Code can follow the grammar and still do the wrong thing.",
+      "example": "Missing a required semicolon is a syntax problem; adding 1 when the program should subtract 1 is a logic/meaning problem."
+    },
+    "7": {
+      "explanation": "Modular programming divides a program into focused units such as functions, classes, or modules. Smaller responsibilities are easier to change and reuse.",
+      "example": "Keep user-profile logic in one module and database access in another."
+    },
+    "8": {
+      "explanation": "Version control records changes over time and helps people work together. It supports reviewing history, restoring earlier code, and resolving competing edits.",
+      "example": "If a new change breaks a feature, Git history can help identify and restore the earlier working version."
+    },
+    "9": {
+      "explanation": "Debugging means tracing unexpected behavior to its cause and correcting it. Developers can step through execution and inspect values to see where things go wrong.",
+      "example": "If a total is unexpectedly zero, inspect the variable after each calculation to find where it changed."
+    },
+    "10": {
+      "explanation": "Testing runs software in a planned way to find defects and check whether requirements are met. It reduces the chance that problems reach users.",
+      "example": "Try valid and invalid inputs for a registration form and check that each produces the expected result."
+    },
+    "11": {
+      "explanation": "Unit tests check one small part on its own; integration tests check whether connected parts work together. The first catches local errors, while the second catches interface problems.",
+      "example": "Test a tax-calculation function by itself, then test a login flow across its screen, authentication service, and database."
+    },
+    "12": {
+      "explanation": "System testing checks the complete application against requirements. Acceptance testing asks users or clients whether it meets their real business needs and is ready to accept.",
+      "example": "Run a full online purchase from browsing to confirmation; then have a client confirm the flow fits their needs."
+    },
+    "13": {
+      "explanation": "In test-driven development, write a test before the production code. Red means the test fails, green means the code passes it, and refactor means improve the code while keeping tests passing.",
+      "example": "Write a test that expects an empty cart total to be zero, see it fail, implement the calculation, then clean up the code."
+    },
+    "14": {
+      "explanation": "Documentation is written or visual information about how software works or how to use it. It helps developers, users, and future maintainers understand the product.",
+      "example": "A diagram can show how application parts connect; a quick-start guide can show a user how to begin."
+    },
+    "15": {
+      "explanation": "Internal documentation helps developers understand design and implementation; external documentation helps users and stakeholders use the product. Each serves a different audience.",
+      "example": "An API reference is for developers; an installation guide is for someone setting up the software."
+    },
+    "16": {
+      "explanation": "Good documentation makes software easier to maintain, helps new team members get started, can reduce support costs, and improves user experience and compliance.",
+      "example": "A clear setup guide can let a new developer run the project without repeatedly asking teammates for steps."
+    },
+    "17": {
+      "explanation": "Implementation works best when coding, testing, and documentation support one another. Together they help produce software that works reliably and can be understood and maintained.",
+      "example": "A feature is coded, tested against expected behavior, and documented so the next developer can extend it."
+    },
+    "18": {
+      "explanation": "The conclusion reinforces the lesson’s main point: implementation turns designs into software, and coding, testing, and documentation all contribute to quality and long-term usability.",
+      "example": "When reviewing a feature, ask: does it work, has it been checked, and can someone understand or use it?"
+    }
+  },
+  "cheatsheet": [
+    {
+      "term": "Program implementation",
+      "summary": "Turns designs and algorithms into executable software."
+    },
+    {
+      "term": "Coding",
+      "summary": "Translates a design into instructions in a programming language."
+    },
+    {
+      "term": "Syntax vs. semantics",
+      "summary": "Syntax is code structure; semantics is what the code means when run."
+    },
+    {
+      "term": "Modular programming",
+      "summary": "Organizes code into focused, reusable units."
+    },
+    {
+      "term": "Version control",
+      "summary": "Tracks code history and supports collaboration and rollback."
+    },
+    {
+      "term": "Debugging",
+      "summary": "Finds and fixes the cause of unexpected behavior."
+    },
+    {
+      "term": "Testing levels",
+      "summary": "Unit checks one part; integration checks connections; system checks the whole product; acceptance checks user/business needs."
+    },
+    {
+      "term": "TDD",
+      "summary": "Write a test first; Red (fail), Green (pass), Refactor (improve)."
+    },
+    {
+      "term": "Documentation",
+      "summary": "Internal material supports developers; external material helps users."
+    }
+  ]
+}

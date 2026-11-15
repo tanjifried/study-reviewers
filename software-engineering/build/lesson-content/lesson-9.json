@@ -1,0 +1,126 @@
+{
+  "slides": {
+    "1": {
+      "explanation": "This lesson is about team synergy: combining people’s work and knowledge to improve software outcomes.",
+      "example": "A developer’s review catches an issue, while a teammate’s domain knowledge suggests a better design."
+    },
+    "2": {
+      "explanation": "The agenda moves from efficiency and quality to knowledge sharing, tools, and communication.",
+      "example": "Use it to connect day-to-day collaboration with the quality of the final software."
+    },
+    "3": {
+      "explanation": "Synergy describes how individual contributions combine into stronger collective results. Collaboration is a practical way to improve team and project performance.",
+      "example": "Two engineers with different experience can identify a solution neither had considered alone."
+    },
+    "4": {
+      "explanation": "Working together can speed delivery, reveal problems earlier, and bring different perspectives that lead to creative solutions.",
+      "example": "A short design discussion exposes a missing edge case before implementation is complete."
+    },
+    "5": {
+      "explanation": "Code reviews find defects early and give developers useful feedback. Sharing knowledge and ownership supports learning and more robust code.",
+      "example": "A reviewer notices an unchecked empty input and explains a safe validation pattern."
+    },
+    "6": {
+      "explanation": "Teams should make room for different viewpoints and challenge assumptions respectfully. Co-creation means developing a solution together, building shared understanding and ownership along the way.",
+      "example": "Before choosing a database design, teammates compare trade-offs and combine the strongest ideas."
+    },
+    "7": {
+      "explanation": "Mutual alignment means everyone understands the goals, scope, and progress. Documentation preserves important knowledge so people can transfer and maintain it over time.",
+      "example": "A short API reference helps a new teammate use a service without relying on its original author."
+    },
+    "8": {
+      "explanation": "Formal knowledge sharing is scheduled and structured, such as a workshop. Informal sharing happens in everyday interactions, such as pair programming or a quick question. Both spread skills and solve problems.",
+      "example": "A monthly tech talk is formal; asking a teammate to pair on a failing test is informal."
+    },
+    "9": {
+      "explanation": "Trello uses visual Kanban boards; Asana supports task and project planning; Jira is oriented toward software issue tracking and configurable workflows.",
+      "example": "A small team might track cards on a Trello board, while a larger software project uses Jira issue workflows."
+    },
+    "10": {
+      "explanation": "Open communication builds trust and clarifies expectations. Sharing information transparently helps people stay aligned and avoid preventable misunderstandings.",
+      "example": "Post a brief decision summary after a meeting so absent teammates know what changed."
+    },
+    "11": {
+      "explanation": "Distributed teams may face time-zone delays, cultural differences, weaker cohesion, and knowledge silos. Agendas, asynchronous channels, team-building, and clear documentation can help.",
+      "example": "Record a decision in a shared channel so teammates across time zones can respond when available."
+    },
+    "12": {
+      "explanation": "This prompt asks teams to keep adapting their collaboration and knowledge-sharing as software work changes. It invites proactive experimentation and reflection.",
+      "example": "Try a written handoff for a sprint, then ask whether it reduced delays and missing context."
+    },
+    "13": {
+      "explanation": "The links provide additional reading on knowledge management, collaboration, and team synergy.",
+      "example": "Use them to explore research and suggested practices in more depth."
+    },
+    "14": {
+      "explanation": "The conclusion ties collaboration to efficiency, innovation, code quality, and learning. Tools help, but open communication and adapting practices keep the team effective.",
+      "example": "Pair a task board with reviews and knowledge-sharing so progress and learning are both visible."
+    }
+  },
+  "cheatsheet": [
+    {
+      "term": "Team synergy",
+      "summary": "Diverse individual contributions combining into stronger collective outcomes through collaboration."
+    },
+    {
+      "term": "Collaborative efficiency and innovation",
+      "summary": "Working together to resolve problems faster and use diverse perspectives to produce creative solutions."
+    },
+    {
+      "term": "Code reviews",
+      "summary": "Peer evaluation that finds defects early and provides constructive learning opportunities."
+    },
+    {
+      "term": "Collective ownership",
+      "summary": "Shared responsibility and knowledge that support robust software and continuous improvement."
+    },
+    {
+      "term": "Expressing differences",
+      "summary": "Openly sharing varied viewpoints and challenging assumptions to reveal flaws and improve solutions."
+    },
+    {
+      "term": "Co-creation",
+      "summary": "Jointly constructing solutions and knowledge instead of developing entirely in individual silos."
+    },
+    {
+      "term": "Mutual alignment",
+      "summary": "A shared understanding of goals, scope, and progress that reduces misunderstandings and improves coordination."
+    },
+    {
+      "term": "Comprehensive documentation",
+      "summary": "Accessible comments, design specifications, API references, and guides that preserve institutional knowledge and aid onboarding."
+    },
+    {
+      "term": "Formal knowledge sharing",
+      "summary": "Planned sessions such as workshops, presentations, internal tech talks, and lunch-and-learn events."
+    },
+    {
+      "term": "Informal knowledge sharing",
+      "summary": "Ad-hoc support through quick chats, pair programming, and questions in communication channels."
+    },
+    {
+      "term": "Trello",
+      "summary": "A collaboration tool using Kanban boards for visual task and progress management."
+    },
+    {
+      "term": "Asana",
+      "summary": "A project and task management tool with varied views, resource planning, and workflow automation."
+    },
+    {
+      "term": "Jira",
+      "summary": "An agile development tool specializing in issue tracking, workflow customization, and reporting."
+    },
+    {
+      "term": "Open communication",
+      "summary": "Transparent dialogue that builds trust, clarifies expectations, and prevents misunderstandings."
+    },
+    {
+      "term": "Distributed team challenges",
+      "summary": "Time-zone communication delays, cultural differences, cohesion difficulties, and knowledge silos."
+    },
+    {
+      "term": "Distributed team strategies",
+      "summary": "Structured agendas, virtual channels, asynchronous updates, team-building, and transparent documentation."
+    }
+  ]
+}

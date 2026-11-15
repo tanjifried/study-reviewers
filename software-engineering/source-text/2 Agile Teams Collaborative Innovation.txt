@@ -1,0 +1,130 @@
+
+SLIDE 1
+Agile Teams: Collaborative Innovation
+Understanding Key Roles and Responsibilities
+
+SLIDE 2
+Agenda
+• 
+Agile: Collaborative Innovation
+• 
+Key Players in Agile
+• 
+Product Owner: Vision & Value
+• 
+Scrum Master: Guide & Protector
+• 
+Development Team: Crafting Solutions
+
+SLIDE 3
+Agile Teams: Collaborative Innovation
+Agile is a dynamic, 
+iterative
+ project management approach emphasizing rapid development cycles, continuous improvement, and strong team collaboration, a stark contrast to the linear, sequential phases of traditional 
+Waterfall
+ methodologies.
+Woman planning scrum method with sticky notes in a modern office.
+
+SLIDE 4
+Key Players in Agile
+Product Owner
+The Product Owner maximizes product value by managing the 
+Product Backlog
+. They represent stakeholder needs, guiding development direction.
+Scrum Master
+The Scrum Master facilitates Scrum processes and removes impediments. They serve the team and organization, ensuring Agile principles are upheld.
+Development Team
+The Development Team comprises professionals who build the increment. They are self-organizing and cross-functional, responsible for delivering quality work.
+
+SLIDE 5
+Product Owner: Vision & Value
+The 
+Product Owner
+ (PO) acts as the singular voice of the customer and business. They are solely responsible for maximizing product value. This includes defining and prioritizing the 
+product backlog
+ and often managing the product roadmap. The PO bridges stakeholder needs with development efforts.
+Creative planning diagram illustrates product development strategies and team roles.
+
+SLIDE 6
+PO: Backlog & Stakeholders
+• Manages, prioritizes the 
+Product Backlog
+.
+• Defines clear user stories, 
+acceptance criteria
+.
+• Engages stakeholders for alignment.
+• Ensures market needs met.
+
+SLIDE 7
+Scrum Master: Guide & Protector
+The 
+Scrum Master
+ acts as a servant-leader, facilitating the Scrum process and ensuring adherence to Agile principles. They remove impediments, coach the team and organization, and foster a self-organizing, high-performing environment. This role is crucial for continuous improvement and value delivery.
+
+SLIDE 8
+SM: Process & Impediments
+• Facilitates 
+all
+ Scrum events effectively.
+• Ensures adherence to Scrum rules and values.
+• Removes impediments for the Development Team.
+• Coaches the team in self-organization.
+
+SLIDE 9
+Development Team: Crafting Solutions
+The Development Team is a 
+self-organizing
+, 
+cross-functional
+ group. They are responsible for delivering 
+potentially releasable product increments
+ each Sprint. Typically 3-9 professionals, they collaborate to build the solution.
+Diverse team in a triangular formation, emphasizing teamwork and collaboration.
+
+SLIDE 10
+Dev Team: Execution & Quality
+• 
+Plans
+ and executes Sprint work collaboratively.
+• Designs, builds, and integrates product increments.
+• Ensures 
+quality
+ through rigorous testing.
+• Collectively owns technical excellence and delivery.
+
+SLIDE 11
+Synergy: Collaboration in Action
+1
+2
+3
+Product Owner: What?
+Development Team: How?
+Scrum Master: Process?
+Defines vision, prioritizes backlog. Maximizes value.
+Builds product, self-organizes tasks. Delivers increments.
+Facilitates ceremonies, removes impediments. Coaches team.
+
+SLIDE 12
+Agile Roles: Beyond the Framework
+Given evolving projects and organizational structures, how might Product Owner, Scrum Master, and Development Team responsibilities adapt or merge in highly specialized or extremely lean Agile environments?
+
+SLIDE 13
+Resources
+https://www.slideshare.net/slideshow/agile-roles-responsibilities/43721980
+
+
+https://learn.agileclassrooms.com/resources
+
+
+https://calteach.ucmerced.edu/sites/g/files/ufvvjh501/f/documents/agile_project_management_for_effective_collaboration_in_any_learning_environment.pdf
+
+
+https://www.linkedin.com/pulse/agile-teams-k-12s-role-early-skill-development-part-1-spence-taintor
+
+SLIDE 14
+Conclusion
+• Agile roles foster collaboration and iterative delivery.
+• Product Owner maximizes value and manages backlog.
+• Scrum Master facilitates process and removes impediments.
+• Development Team crafts solutions with quality focus.

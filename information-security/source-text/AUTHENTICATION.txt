@@ -1,0 +1,340 @@
+
+SLIDE 1
+AUTHENTICATION
+Prepared by: CHRISTINE CHARMAINE G. SAN JOSE, DIT
+Subject Instructor 
+
+SLIDE 2
+Concept of AUTNETICATION
+Authentication comes from the Greek word: 
+authentikos
+, means "real or genuine.
+Authentication is the process of verifying that identity. It might involve validating personal identity documents, or ensuring that a product or document are not forged.
+
+SLIDE 3
+In the olden days, authentication is already being practiced with the use of a sealing wax. It uses a wax material of a seal which, after melting, hardens quickly (to paper, parchment, ribbons and wire, and other material) forming a bond that is difficult to separate without noticeable tampering. 
+Letters sealed with wax in a painting of 1675 by 
+Cornelis Norbertus Gysbrechts
+Source: Wikipedia. 
+https://en.wikipedia.org/wiki/Sealing_wax#/media/File:Cornelis_Norbertus_Gysbrechts_-_Quodlibet.jpg
+ 
+Wax seal 
+Source: Wikipedia. 
+https://en.wikipedia.org/wiki/Sealing_wax#/media/File:Cornelis_Norbertus_Gysbrechts_-_Quodlibet.jpg
+ 
+
+SLIDE 4
+Wax is used to verify something such as a document is unopened, to verify the sender's identity, for example with a signet ring, and as decoration. Sealing wax can be used to take impressions of other seals. Wax was used to seal letters close and later, from about the 16th century, envelopes. 
+Wax seal 
+Source: Wikipedia. 
+https://en.wikipedia.org/wiki/Sealing_wax#/media/File:Cornelis_Norbertus_Gysbrechts_-_Quodlibet.jpg
+ 
+
+SLIDE 5
+Technology used for Authentication
+Hash Function 
+A 
+hash function
+ 
+is any 
+function
+ that can be used to 
+data
+ of any size to fixed-size values. 
+The values returned by a hash function are called 
+hash values
+, 
+hash codes
+, 
+digests
+, or simply 
+hashes
+. 
+
+SLIDE 6
+The hash algorithm had actually commence in as early as 1953, when a German inventor, 
+Hans Peter 
+Luhn
+ 
+who after working on a textile industry, had joined the IBM with his line of specialization on storage, communication, retrieval of information more particularly on text [4]. During his time, he had invented many mechanical devices and had 70 patented work. One of his many remarkable contribution is the creation of an algorithm known as “
+Luhn’s
+ Method” with a main purpose to speed up the processing of searching of a telephone directory over a million of records by putting up all related information in a single “bucket”. This method is being performed by simply manipulating numbers using mathematical operations. 
+A decade past, many computer scientists had made enormous improvement over 
+Luhn’s
+ method and had creatively thought of applying it into new uses such as in cryptography, this had paved the way to the development of hashing technology. 
+HISTORY OF HASH FUNCTION/ ALGORITHM
+Hans Peter Luhn and the birth of Hash Algorithm 
+ 
+
+SLIDE 7
+HASH ALGORITHMS
+Several hash algorithms were developed and among them are as follows: MD4 (Message Digest 4) developed in 1990, two years after, MD5 (Message Digest 5) was developed. It is followed by DMDC (Des-like Message Digest Computation) in 1994 and followed by SHA-1 (Secure Hash Algorithm 1) in 1995 and had several versions. Among the latest and noted as the strongest hash algorithm on the time being is SHA-3 (512).
+
+SLIDE 8
+
+
+SLIDE 9
+Task #1. 
+Let us practice basic authentication process. Using your cellphone or PC, get the hash value of the following words by searching in the word
+ MD5 hash generator
+ in any search engine as shown below and Click the link. The MD5 Hash Generator is shown in step no.2. Types CCSICT (all caps) as shown on step 3 on the space provided and click Generate.  On step 4, you will notice the Hash value generated: 
+afa10b1e77998a5806a8b0fdff622b03. 
+The MD5 hash algorithm is case sensitive. This means that hash value differs when using lowercase and uppercase even on same word/phrases was used.
+	
+ 
+	
+
+SLIDE 10
+
+
+SLIDE 11
+
+
+SLIDE 12
+
+
+SLIDE 13
+MD4 – MESSAGE DIGEST 4
+
+SLIDE 14
+
+
+SLIDE 15
+
+
+SLIDE 16
+SECURE HASH ALGORITHM-1
+Number of Rounds – 80 rounds
+Hash Value = 160 bits
+
+SLIDE 17
+SHA1 General Properties
+Pre-processing
+Message Padding – padding of series of 0’s to form 512 bits
+Parsing Method – dividing the 512 bits into sixteen 32 bits (M0...M15)
+Initialization of 160 bit buffer – Value of five 32 bits (H0…H4) to be substituted to value of A,B,C,D & E)
+     Where 
+H0 = 67452301 H1 = efcdab89 H2 = 98badcfe H3 = 10325476 H4 = c3d2e1f0
+Function ft(B,C,D)
+ft (B, C, D) = (B • C) + (B • D)                    0 ≤  t  ≤ 19	
+ft (B, C, D) = B ⊕ C ⊕ D
+       
+                     20 ≤  t ≤ 39	
+ft (B, C, D) = (B • C) + (B • D) + (C · D)    40 ≤ t ≤  59					
+ft (B, C, D) = B ⊕ C ⊕ D
+   
+                         60 ≤  t ≤  79	
+Constant Used 
+K
+t
+=5a827999, 0 ≤ t ≤ 19 
+K
+t
+=6ed9eba1, 10 ≤ t ≤ 39
+K
+t
+=8f1bbcdc, 20 ≤ t ≤ 59
+K
+t
+=ca62c1d6, 30 ≤ t ≤ 79
+t
+Wt
+0
+M0 = W0
+1
+M1 = W1
+2
+M2 = W2
+3
+M3 = W3
+4
+M4 = W4
+5
+M5 = W5
+6
+M6 = W6
+7
+M7 = W7
+8
+M8 = W8
+9
+M9 = W9
+10
+M10 = W10
+11
+M11 = W11
+12
+M12 = W12
+13
+M13 = W13
+14
+M14 = W14
+15
+M15 = W15
+W
+16
+ to W
+79
+ 
+W
+t
+ = S
+1
+(W
+t-16
+ 
+xor
+ W
+t-14
+ 
+xor
+ W
+t-8
+ 
+xor
+ W
+t-13
+)
+ 
+
+SLIDE 18
+SHA-1 Simulation
+Simulate SHA-1 Algorithm with the original message : 1a7fd53b4c. 
+Pre
+-
+processing : Padding one “1” and many “0’s”, appending and generating 16 word block, the value of M
+0
+ to M
+15
+ are as follows:
+W
+0
+=M
+0  
+= 1a7fd53b
+W
+1
+=M
+1  
+= 4c800000
+W
+2
+=M
+2  
+= 00000000
+W
+3
+=M
+3  
+= 00000000
+W
+4
+=M
+4  
+= 00000000
+W
+5
+=M
+5  
+= 00000000
+W
+6
+=M
+6  
+= 00000000
+W
+7
+=M
+7  
+= 00000000
+W
+8
+=M
+8  
+= 00000000
+W
+9
+=M
+9  
+= 00000000
+W
+10
+=M
+10
+=00000000
+W
+11
+=M
+11
+=00000000
+W
+12
+=M
+12
+=00000000
+W
+13
+=M
+13
+=00000000
+W
+14
+=M
+14
+=00000000
+W
+15
+=M
+15
+=00000028
+
+SLIDE 19
+A
+___________
+B
+67452301
+C
+7bf36ae2
+D
+98dabcfe
+E
+10325476
+160 bit (five 32 bits)
+H0=A
+67452301 
+H1=B
+efcdab89
+H2=C
+98dabcfe
+H3=D
+10325476
+H4=E
+c3d2e1f0
+FIND THE NEW VALUE OF A,B,C,D &E following SHA-1 Operation for Round 1
+
+SLIDE 20
+S30 (B) 
+e f c d a b 8 9
+1110  1111   1100   1101  1010  1011  1000  10            01
+0111  1011  1111  0011  0110  1010  1110  0010 
+7            b       f           3      6         a       e       2
+
+SLIDE 21
+Assignment – Get the final value of A and show solution.
+Ft (B,C,D) =  (
+(B • C) + (B • D)  = 
+S5(A)
+Wt = 
+1a7fd53b
+Kt = 
+5a827999
+A
+ba346dee
+B
+67452301
+C
+7bf36ae2
+D
+98badcfe
+E
+10325476

@@ -1,0 +1,72 @@
+
+SLIDE 1
+SECURITY EVALUATION
+By: Christine Charmaine G. San Jose, DIT
+
+SLIDE 2
+Security evaluation of an algorithm
+ is a critical process to assess how well an algorithm resists attacks and protects data.
+Security evaluation can be assessed with
+         a. Strength of Security (Avalanche Effect)
+         b. Processing Time (fast processing is always ideal)
+
+SLIDE 3
+AVALANCHE EFFECT
+The 
+avalanche effect
+ refers to a phenomenon where a small change in input leads to a significant change in output.
+The 
+avalanche effect
+ is a property of cryptographic algorithms where a small change in input (like flipping a single bit) causes a significant change in output.
+
+SLIDE 4
+Steps to Calculate Avalanche Effect
+STEPS
+SIMULATION
+1. Choose an Algorithm
+Blowfish Algorithm 
+USING COPILOT OR CHATGPT
+Return the actual encrypted result using blowfish algorithm hexadecimal for the word ISUECCSICT and 
+iSUECCSICT
+2. Generate Ciphertext for Input A
+Input A: ISUECCSICT
+Generate 
+Ciphertect
+:
+D723f7fec76aa67175ace34eedaccf5f
+3. Modify Input A slightly 
+Modify Input A: 
+iSUECCSICT
+4. Generate Ciphertext for modified Input A
+Generate Ciphertext of modified input A
+720c738b133800d975ace34eedaccf5f
+5. Compare outputs – count the number of bits that differs
+Present the output in Table
+Please see sample computation
+6. Calculate Avalanche Effect : Use the FORMULA
+
+SLIDE 5
+USING COPILOT OR CHATGPT
+Return the actual encrypted result using blowfish algorithm hexadecimal for the word ISUECCSICT and 
+iSUECCSICT
+
+SLIDE 6
+Sample Computation of Avalanche Effect
+FORMULA:
+Total Bits: 128 bits 
+                   (32 
+hexa
+ number X 4 bits)
+Changed bits: 31
+Avalanche Effect: (31/128) X 100
+                               :24 %
+NOTE: Ideal Avalanche Effect should be at least 50% or above
+
+SLIDE 7
+ASSESSMENT TASK
+1. PERFORM AVALANCHE EFFECT TO THE 1
+ST
+ ROUND OF THE ENHANCED BLOWFISH ALGORITHM AND COMPARE IT TO THE ORIGINAL ALGORITHM FOR THE 1
+ST
+ ROUND.
+2. STUDY STATISTICAL RANDOMNESS TESTING. LEARN HOW THIS TECHNIQUE  WAS USED TO DETERMINE SECURITY IN CRYPTOGRAPHY.

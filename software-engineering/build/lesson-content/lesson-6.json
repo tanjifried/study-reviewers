@@ -1,0 +1,130 @@
+{
+  "slides": {
+    "1": {
+      "explanation": "This lesson introduces why software testing matters and the main ways teams plan and perform it.",
+      "example": ""
+    },
+    "2": {
+      "explanation": "The agenda previews testing terms, planning and quality practices, white/black/gray-box approaches, functional and non-functional testing, and test cases.",
+      "example": ""
+    },
+    "3": {
+      "explanation": "Testing helps check software quality and reliability and protect users from defects. The consequences of failures can be serious, so testing is an important part of development.",
+      "example": "Testing a medical appointment system can help catch an error before it disrupts a patient’s booking."
+    },
+    "4": {
+      "explanation": "An error is a human mistake; it can introduce a defect, or bug, in software. A failure is the incorrect behavior users or systems observe when that defect runs.",
+      "example": "A developer mistypes a formula (error), the wrong formula is in the code (defect), and a total is incorrect (failure)."
+    },
+    "5": {
+      "explanation": "A test case describes how to check something: its setup, actions, expected outcome, observed outcome, and pass/fail result.",
+      "example": "For login, specify a valid account, enter credentials, and expect the account page to appear."
+    },
+    "6": {
+      "explanation": "A test plan describes the overall testing strategy, including scope, goals, resources, schedule, and criteria. A test suite groups related test cases.",
+      "example": "A login suite can collect tests for valid, invalid, and locked-account sign-ins."
+    },
+    "7": {
+      "explanation": "Quality Assurance (QA) focuses on preventing defects through processes across development. Quality Control (QC) checks the product to find defects and verify requirements.",
+      "example": "A code review is QA; running system tests to find a problem is QC."
+    },
+    "8": {
+      "explanation": "White-box testing uses knowledge of the code’s internal structure. Testers can target logic paths and measure which code tests execute.",
+      "example": "A unit test can exercise both the true and false branches of a condition."
+    },
+    "9": {
+      "explanation": "Black-box testing checks behavior from the outside without relying on knowledge of internal code. It compares inputs and outputs with requirements.",
+      "example": "Enter an incorrect password and verify that sign-in is rejected."
+    },
+    "10": {
+      "explanation": "Gray-box testing combines external behavior checks with partial knowledge of internals, such as a database schema, to design more focused tests.",
+      "example": "Knowing how account data is stored can help test whether a profile update reaches the right record."
+    },
+    "11": {
+      "explanation": "Unit testing checks one small component in isolation, often early in functional testing. It helps confirm that each piece works as designed.",
+      "example": "Test a discount-calculation function with a known price and discount."
+    },
+    "12": {
+      "explanation": "Integration testing checks whether connected units exchange information and work together correctly.",
+      "example": "Verify that the authentication module reads the correct user record from the database."
+    },
+    "13": {
+      "explanation": "System testing checks the complete integrated application against requirements, often in an environment similar to production.",
+      "example": "Run an end-to-end banking transaction through sign-in, transfer, and confirmation."
+    },
+    "14": {
+      "explanation": "Acceptance testing, often called UAT, lets end users check whether the system meets business needs and is ready to use.",
+      "example": "A client validates that a CRM supports the tasks their staff need before sign-off."
+    },
+    "15": {
+      "explanation": "Non-functional testing evaluates qualities of operation rather than a particular feature, including speed, security, usability, reliability, and maintainability.",
+      "example": "Performance testing checks whether a site remains responsive under heavy use."
+    },
+    "16": {
+      "explanation": "A well-formed test case states what must be true first, the steps to take, and the expected result to compare with what happens.",
+      "example": "For password reset, start with an existing account, request an email link, set a new password, and verify login."
+    },
+    "17": {
+      "explanation": "This reflection asks how Agile and DevOps expand testers’ work toward prevention, automation, and ongoing quality improvement, and what skills that requires.",
+      "example": "A tester might automate repeat checks and help the team catch quality issues earlier."
+    },
+    "18": {
+      "explanation": "The conclusion emphasizes that testing protects quality and reliability, requires different approaches and planning, and increasingly includes quality advocacy and automation.",
+      "example": ""
+    }
+  },
+  "cheatsheet": [
+    {
+      "term": "Error, defect, failure",
+      "summary": "A human mistake can create a code flaw; a failure is the flaw’s observable effect."
+    },
+    {
+      "term": "Test case",
+      "summary": "Setup, steps, expected and actual results, and a pass/fail outcome."
+    },
+    {
+      "term": "Test plan",
+      "summary": "Project-level strategy covering scope, objectives, resources, schedule, and criteria."
+    },
+    {
+      "term": "Test suite",
+      "summary": "A collection of related test cases."
+    },
+    {
+      "term": "QA vs QC",
+      "summary": "QA aims to prevent defects through process; QC detects defects in product outputs."
+    },
+    {
+      "term": "White-box",
+      "summary": "Test with knowledge of internal code and logic."
+    },
+    {
+      "term": "Black-box",
+      "summary": "Test externally visible behavior without internal code knowledge."
+    },
+    {
+      "term": "Gray-box",
+      "summary": "Test with partial knowledge of internal structures."
+    },
+    {
+      "term": "Unit / integration / system",
+      "summary": "Check one component / interactions between components / the complete system."
+    },
+    {
+      "term": "Acceptance testing (UAT)",
+      "summary": "End users verify fitness for business requirements."
+    },
+    {
+      "term": "Non-functional testing",
+      "summary": "Checks operating qualities such as performance, security, usability, reliability, and maintainability."
+    },
+    {
+      "term": "Preconditions and expected result",
+      "summary": "Preconditions define setup; expected result states the correct outcome."
+    },
+    {
+      "term": "Modern tester",
+      "summary": "Contributes to quality advocacy, automation, and continuous improvement."
+    }
+  ]
+}

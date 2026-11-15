@@ -1,0 +1,122 @@
+{
+  "slides": {
+    "1": {
+      "explanation": "This lesson explains how software systems are organized and how to judge whether an architecture fits its goals.",
+      "example": "A blueprint for an application can show its parts and how they communicate."
+    },
+    "2": {
+      "explanation": "The agenda previews architecture basics, building blocks, common styles, quality goals, and ways to evaluate designs.",
+      "example": "Think of the sequence as: describe the structure, choose an approach, then check its consequences."
+    },
+    "3": {
+      "explanation": "System architecture is the high-level organization of a system: its parts, connections, and design rules. It shapes how the system behaves and how well it meets needs.",
+      "example": "A home security system combines cameras, sensors, and remote access into one coordinated solution."
+    },
+    "4": {
+      "explanation": "Components do jobs, connectors let components communicate, and configurations describe how they are arranged. These choices define system structure and behavior.",
+      "example": "A web app may have a user interface component that calls a service through an API and stores data in a database."
+    },
+    "5": {
+      "explanation": "A monolith packages the application as one closely connected codebase and deployment unit. It can be straightforward for a small system, but growing complexity can make changes and scaling harder.",
+      "example": "A small shop site might deploy its catalog, checkout, and account features together as one application."
+    },
+    "6": {
+      "explanation": "Microservices split an application into smaller independent services. Teams can develop, deploy, or scale services separately, but must handle the extra coordination between them.",
+      "example": "A shop could run catalog and payments as separate services, each updated on its own schedule."
+    },
+    "7": {
+      "explanation": "A layered design separates responsibilities into levels, such as presentation, business logic, and data access. Clear boundaries make the system easier to understand and change.",
+      "example": "A screen asks the business layer to place an order; that layer uses the data layer to save it."
+    },
+    "8": {
+      "explanation": "An architectural style is a broad way to organize a system; a pattern is a reusable solution to a more specific design problem. Patterns can be used within a style.",
+      "example": "Layered is a style; MVC is a pattern that separates model, view, and controller responsibilities."
+    },
+    "9": {
+      "explanation": "Performance can be viewed through response time (how long a response takes), throughput (how much work is handled over time), and latency (the delay before data arrives). Architecture affects all three.",
+      "example": "A service may respond in 200 ms, handle 500 requests per second, and still have network delay between services."
+    },
+    "10": {
+      "explanation": "Security includes checking who a user is (authentication), what they may do (authorization), preventing improper data changes (integrity), and keeping sensitive data private (confidentiality).",
+      "example": "A bank app verifies a customer’s identity, permits access only to their account, and protects transaction data from changes or exposure."
+    },
+    "11": {
+      "explanation": "Scalability is handling more demand, by adding machines (horizontal) or upgrading a machine (vertical). Maintainability is how easily the system can be changed, repaired, or updated.",
+      "example": "Add another server to handle more visitors; use modular code and documentation to make a later feature easier to add."
+    },
+    "12": {
+      "explanation": "Reliability describes how consistently a system works without failing over time. Availability describes how often it is up and accessible; quick recovery can keep availability high even when failures occur.",
+      "example": "A service that fails occasionally but restarts in seconds may be highly available, though less reliable than one that rarely fails."
+    },
+    "13": {
+      "explanation": "Architecture involves trade-offs: improving one quality can make another harder to achieve. Designers should understand which goals matter most and what each choice costs.",
+      "example": "Encryption can improve confidentiality while adding processing time that affects performance."
+    },
+    "14": {
+      "explanation": "A monolith is one unit, often simpler to deploy and keep transaction data together. Microservices allow independent changes and scaling, but add coordination, monitoring, and data-consistency challenges.",
+      "example": "A small product may favor a monolith; separate services may help when parts need to scale or release independently."
+    },
+    "15": {
+      "explanation": "ATAM is a structured way to evaluate an architecture using scenarios and quality goals. Stakeholders use it to surface risks and trade-offs early.",
+      "example": "Ask how the design would handle a sudden tenfold increase in requests, then examine performance risks."
+    },
+    "16": {
+      "explanation": "An Architectural Decision Record (ADR) captures an important choice, its context, options, and reasons. It gives future teams a record of why the system was designed that way.",
+      "example": "An ADR can explain why the team selected a relational database over a NoSQL option."
+    },
+    "17": {
+      "explanation": "Architecture changes as needs, technology, and business priorities change. Re-evaluation helps keep the system useful and can reveal technical debt before it grows.",
+      "example": "A service that once fit a small user base may need a new design as usage expands."
+    },
+    "18": {
+      "explanation": "The conclusion highlights that architecture shapes system behavior, that styles bring different trade-offs, and that quality goals and evaluation help guide sound decisions.",
+      "example": "Before choosing a style, identify the system’s most important goals and consider how to evaluate them."
+    }
+  },
+  "cheatsheet": [
+    {
+      "term": "System architecture",
+      "summary": "System’s high-level parts, connections, and design rules."
+    },
+    {
+      "term": "Components / connectors / configurations",
+      "summary": "Functional units / communication paths / their arrangement."
+    },
+    {
+      "term": "Monolith",
+      "summary": "One closely connected codebase and deployment; straightforward initially, harder to scale/change as it grows."
+    },
+    {
+      "term": "Microservices",
+      "summary": "Independent services that can be developed and scaled separately; more operational coordination."
+    },
+    {
+      "term": "Layered style",
+      "summary": "Separates concerns into levels such as presentation, business logic, and data access."
+    },
+    {
+      "term": "Style vs. pattern",
+      "summary": "Style is a broad structural approach; a pattern solves a recurring, specific design problem."
+    },
+    {
+      "term": "Performance",
+      "summary": "Response time = time to respond; throughput = work per time; latency = transfer delay."
+    },
+    {
+      "term": "Security attributes",
+      "summary": "Authentication = who; authorization = permissions; integrity = prevent improper changes; confidentiality = protect secrets."
+    },
+    {
+      "term": "Scalability / maintainability",
+      "summary": "Handling more workload / ease of modifying or repairing."
+    },
+    {
+      "term": "Reliability / availability",
+      "summary": "Consistent operation without failure / proportion of time accessible."
+    },
+    {
+      "term": "ATAM / ADR",
+      "summary": "ATAM evaluates architecture with scenarios; ADR records decision context, options, and rationale."
+    }
+  ]
+}

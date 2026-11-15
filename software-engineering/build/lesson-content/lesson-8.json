@@ -1,0 +1,114 @@
+{
+  "slides": {
+    "1": {
+      "explanation": "This lesson explains how Agile team roles collaborate to create value through iterative work.",
+      "example": "A team plans a small product improvement, builds it, reviews it, and learns before the next cycle."
+    },
+    "2": {
+      "explanation": "The agenda previews Agile collaboration and the three role areas: Product Owner, Scrum Master, and Development Team.",
+      "example": "As you follow the lesson, notice how each role contributes a different kind of support."
+    },
+    "3": {
+      "explanation": "Agile works in short, iterative cycles with frequent collaboration and improvement. Waterfall is presented as a more linear sequence of phases.",
+      "example": "An Agile team can deliver a small usable feature, gather feedback, and refine the next one."
+    },
+    "4": {
+      "explanation": "The Product Owner guides value and the backlog; the Scrum Master supports the process and removes obstacles; the Development Team builds the increment.",
+      "example": "For a shopping app, the PO prioritizes checkout improvements, the SM clears a test-environment blocker, and developers implement them."
+    },
+    "5": {
+      "explanation": "The Product Owner represents customer and business needs and is accountable for maximizing product value. They maintain priorities so development effort serves the product direction.",
+      "example": "If users struggle to sign in, the PO may prioritize a simpler sign-in flow over a lower-value visual change."
+    },
+    "6": {
+      "explanation": "The PO organizes and prioritizes backlog work, clarifies user stories and acceptance criteria, and engages stakeholders to keep the product aligned with needs.",
+      "example": "A story might say “As a student, I can reset my password”; criteria specify a reset link and confirmation."
+    },
+    "7": {
+      "explanation": "The Scrum Master is a servant-leader who helps the team use Scrum well, removes impediments, and coaches ongoing improvement.",
+      "example": "If approvals block progress, the Scrum Master helps the team find a workable route through the process."
+    },
+    "8": {
+      "explanation": "The Scrum Master facilitates Scrum events, supports the rules and values, removes obstacles, and helps the team become self-organizing.",
+      "example": "They help a retrospective stay focused on one concrete improvement the team can try."
+    },
+    "9": {
+      "explanation": "The Development Team is self-organizing and cross-functional: members coordinate their work and bring the skills needed to produce an increment. The slide describes a typically small group.",
+      "example": "Design, coding, and testing skills work together to finish a feature within a Sprint."
+    },
+    "10": {
+      "explanation": "The team plans and carries out Sprint work together, integrates what it builds, tests for quality, and shares responsibility for technical excellence and delivery.",
+      "example": "Developers coordinate implementation and testing rather than handing an unfinished feature over at the end."
+    },
+    "11": {
+      "explanation": "The roles complement one another: the Product Owner answers what is valuable, the Development Team decides how to build it, and the Scrum Master supports the process.",
+      "example": "For a prioritized feature, the PO explains the outcome, developers plan the solution, and the SM helps remove process obstacles."
+    },
+    "12": {
+      "explanation": "This discussion prompt asks how role responsibilities might adapt in very lean or specialized organizations. It encourages applying the role principles thoughtfully as teams change.",
+      "example": "A small team may share some tasks, while still making value, delivery, and process responsibilities clear."
+    },
+    "13": {
+      "explanation": "These links are further reading on Agile roles and collaborative learning environments.",
+      "example": "Consult them to explore role descriptions or examples beyond the slides."
+    },
+    "14": {
+      "explanation": "The conclusion summarizes how Agile roles support iterative collaboration: the PO steers value, the SM supports the process, and the Development Team delivers quality solutions.",
+      "example": "A clear division of responsibility helps the team keep learning while delivering useful increments."
+    }
+  },
+  "cheatsheet": [
+    {
+      "term": "Agile approach",
+      "summary": "Iterative development with rapid cycles, collaboration, and continuous improvement."
+    },
+    {
+      "term": "Waterfall contrast",
+      "summary": "Traditional linear, sequential development phases contrasted with Agile's repeated cycles."
+    },
+    {
+      "term": "Product Owner",
+      "summary": "The role maximizing product value and representing stakeholder needs through Product Backlog management."
+    },
+    {
+      "term": "Product Backlog prioritization",
+      "summary": "Ordering product work to reflect business and customer value and guide development direction."
+    },
+    {
+      "term": "User stories and acceptance criteria",
+      "summary": "Clear descriptions of needed work and conditions of acceptance defined by the Product Owner in this lesson."
+    },
+    {
+      "term": "Stakeholder alignment",
+      "summary": "Product Owner engagement that connects development efforts to market and stakeholder needs."
+    },
+    {
+      "term": "Scrum Master",
+      "summary": "A servant-leader who facilitates Scrum, removes impediments, and coaches Agile principles."
+    },
+    {
+      "term": "Scrum rules and values",
+      "summary": "Process principles supported by the Scrum Master through facilitation and coaching."
+    },
+    {
+      "term": "Self-organization",
+      "summary": "Team ownership of how to plan and execute work rather than relying on imposed task-by-task control."
+    },
+    {
+      "term": "Cross-functionality",
+      "summary": "A combination of professional skills within the Development Team needed to build a complete product increment."
+    },
+    {
+      "term": "Potentially releasable increment",
+      "summary": "A quality product addition that the Development Team is responsible for delivering each Sprint."
+    },
+    {
+      "term": "Collective technical ownership",
+      "summary": "Developers jointly designing, building, integrating, and testing work while owning technical excellence and delivery."
+    },
+    {
+      "term": "What / How / Process role mapping",
+      "summary": "The Product Owner guides what and value, developers determine how to build, and the Scrum Master facilitates the process."
+    }
+  ]
+}

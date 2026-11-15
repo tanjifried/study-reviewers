@@ -1,0 +1,122 @@
+{
+  "slides": {
+    "1": {
+      "explanation": "This lesson introduces teamwork principles for software projects. It focuses on how people plan and work together, not just on technical tasks.",
+      "example": "A team building a campus app combines coding, design, and user feedback."
+    },
+    "2": {
+      "explanation": "The agenda previews the topics: why teamwork matters, how to build a respectful team, how to plan, and how to keep improving.",
+      "example": "Use it as a map: first team culture, then planning and challenges."
+    },
+    "3": {
+      "explanation": "Software projects are complex, change quickly, and serve different stakeholders. Teamwork brings varied skills together so people can solve problems and deliver useful software more effectively.",
+      "example": "A developer, designer, and accessibility specialist can catch different issues in the same app."
+    },
+    "4": {
+      "explanation": "Kindness and respect help people feel safe to share ideas or concerns. When every voice is valued, teams can collaborate and innovate more freely.",
+      "example": "A meeting leader invites quieter members to contribute before the group decides."
+    },
+    "5": {
+      "explanation": "When something goes wrong, focus on who will investigate and improve the process rather than who to blame. This keeps discussion constructive and helps prevent repeat problems.",
+      "example": "If a release breaks, review the checks and handoff that missed the bug, then assign fixes."
+    },
+    "6": {
+      "explanation": "Cohesion means trust and shared understanding; communication keeps information clear and timely. Together they reduce conflict, misunderstanding, and rework.",
+      "example": "A distributed team records decisions and leaves clear updates so teammates in other time zones can follow."
+    },
+    "7": {
+      "explanation": "Technical competence lets each person make useful contributions. Initiative and a focus on delivering value help turn those skills into progress for the whole team.",
+      "example": "An engineer spots a risky dependency early, raises it, and proposes a practical solution."
+    },
+    "8": {
+      "explanation": "W5HH is a project-planning checklist: What will be delivered, Why it matters, When it is due, Who is involved, Where the work happens, How it will be done, and How Much resource it needs.",
+      "example": "For a booking feature, define the needed screens, user benefit, deadline, owners, tools, approach, and effort."
+    },
+    "9": {
+      "explanation": "Teams can struggle when responsibilities are vague, conflict is mishandled, skills do not fit the work, or communication channels are weak. Naming the challenge makes it easier to address.",
+      "example": "If two people assume the other owns deployment, clarify the owner and handoff."
+    },
+    "10": {
+      "explanation": "Empathy means trying to understand a teammate’s perspective; patience means allowing time to explain and learn. Listening without assuming bad intent builds trust and safer collaboration.",
+      "example": "Ask what blocked a missed task before concluding that someone did not care."
+    },
+    "11": {
+      "explanation": "Software work changes quickly, so teams need to keep learning and adjust their practices. Open communication and support for learning help the team respond to new tools and needs.",
+      "example": "After adopting a new framework, share lessons and update the team’s working approach."
+    },
+    "12": {
+      "explanation": "This slide asks teams to regularly reflect on how they work and improve as project conditions change. It is a prompt for ongoing evaluation, not a single fixed recipe.",
+      "example": "At a retrospective, choose one communication practice to try next sprint and review its effect."
+    },
+    "13": {
+      "explanation": "The listed links are further reading about teamwork, engineering collaboration, and healthy team culture. They let learners explore the subject beyond this lesson.",
+      "example": "Use a resource when you want a deeper discussion or examples of team practices."
+    },
+    "14": {
+      "explanation": "The lesson closes by connecting effective teamwork with project success: respect, responsibility, communication, competence, planning, empathy, and continuous learning all contribute.",
+      "example": "A team sustains performance by combining clear plans with a respectful habit of learning from results."
+    }
+  },
+  "cheatsheet": [
+    {
+      "term": "Teamwork necessity",
+      "summary": "Collaboration addressing software complexity, technological change, and diverse stakeholder requirements."
+    },
+    {
+      "term": "Respectful environment",
+      "summary": "Kindness and mutual respect that support psychological safety, valued voices, and cohesion."
+    },
+    {
+      "term": "Responsibility over blame",
+      "summary": "Constructive ownership of issues and system improvement instead of personal fault or assumed malicious intent."
+    },
+    {
+      "term": "Team cohesion",
+      "summary": "Mutual trust and psychological safety that reduce conflict and support collective problem-solving."
+    },
+    {
+      "term": "Effective communication",
+      "summary": "Clear information exchange and feedback that reduce misunderstandings, rework, and decision delays."
+    },
+    {
+      "term": "Individual competence",
+      "summary": "Technical proficiency in coding, algorithms, and system design that supports quality team contributions."
+    },
+    {
+      "term": "Achievement-driven orientation",
+      "summary": "Initiative, ownership, and a proactive focus on delivering results and value."
+    },
+    {
+      "term": "W5HH: What",
+      "summary": "The planning question that establishes scope, features, and deliverables."
+    },
+    {
+      "term": "W5HH: Why",
+      "summary": "The planning question that explains project goals and value."
+    },
+    {
+      "term": "W5HH: When",
+      "summary": "The planning question that establishes timelines, milestones, and deadlines."
+    },
+    {
+      "term": "W5HH: Who and Where",
+      "summary": "Planning questions identifying people or responsibilities and where work is organized."
+    },
+    {
+      "term": "W5HH: How and How Much",
+      "summary": "Planning questions covering execution approach and resource or cost requirements."
+    },
+    {
+      "term": "Common team challenges",
+      "summary": "Unclear roles, weak conflict resolution, misaligned skills, and poor communication channels."
+    },
+    {
+      "term": "Empathy and patience",
+      "summary": "Active listening and avoiding assumptions of negative intent to build trust and mutual understanding."
+    },
+    {
+      "term": "Continuous learning and adaptation",
+      "summary": "Ongoing improvement in response to rapid, frequent, complex, and diverse changes in software work."
+    }
+  ]
+}

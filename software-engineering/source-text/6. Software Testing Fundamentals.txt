@@ -1,0 +1,153 @@
+
+SLIDE 1
+Software Testing Fundamentals
+A University-Level Overview
+
+SLIDE 2
+Agenda
+• 
+Testing Imperative & Core Terminology
+• 
+Test Planning & Quality Approaches
+• 
+White, Black, and Gray-Box Testing
+• 
+Functional and Non-Functional Testing
+• 
+Developing Test Cases & Evolving Roles
+
+SLIDE 3
+The Testing Imperative
+Software testing is a critical discipline ensuring the 
+quality
+, 
+reliability
+, and 
+user satisfaction
+ of applications, preventing potentially catastrophic failures in complex systems. Without rigorous testing, software defects can lead to significant financial losses, reputational damage, and even endanger lives.
+A/B testing: Conversion rates, experimental groups, and statistical analysis.
+
+SLIDE 4
+Core Terminology
+Error
+An 
+Error
+ is a human mistake, like a developer misunderstanding requirements or making a typo. This human oversight introduces problems into the software.
+Defect
+A 
+Defect
+ (or bug) is a flaw in the code resulting from an error. For instance, a typo in a calculation formula becomes a defect.
+Failure
+A 
+Failure
+ is the observable manifestation of a defect during execution. The incorrect calculation due to the defect causes the software to fail.
+
+SLIDE 5
+Design process: Research, vision, brainstorm, and solution.
+Test Case Anatomy
+• Unique ID, clear description, setup conditions.
+• Step-by-step actions, predicted outcomes.
+• Observe actual results, assign pass/fail.
+• Critical for systematic software validation.
+
+SLIDE 6
+Test Plan
+Test Suite
+A 
+Test Plan
+ is a comprehensive document detailing the entire testing strategy for a project. It defines scope, objectives, resources, schedule, and entry/exit criteria. For example, planning the quality assurance for a new e-commerce platform involves a detailed Test Plan.
+A 
+Test Suite
+ is a logical collection of related 
+test cases
+ designed for specific testing objectives. Suites organize tests for efficient execution and reporting. For instance, all test cases verifying login functionality would form a "Login Test Suite."
+
+SLIDE 7
+Quality Assurance (QA)
+Quality Control (QC)
+QA is a 
+proactive
+ process focused on preventing defects throughout the entire Software Development Life Cycle (SDLC). It establishes processes and standards to ensure quality. Examples include peer code reviews and architectural design inspections. The goal is defect prevention.
+QC is a 
+reactive
+ process focused on identifying defects in the completed product. It verifies that outputs meet specified requirements. Examples include system testing and user acceptance testing (UAT). The goal is defect detection and correction.
+
+SLIDE 8
+White-Box Testing
+White-box testing
+ evaluates software with full knowledge of its internal structure and code. It focuses on 
+code coverage
+, paths, and loops to ensure all logic is tested. Key examples include 
+Unit Testing
+ (individual functions) and 
+Code Coverage analysis
+ (measuring executed lines).
+
+SLIDE 9
+Black-Box Testing
+Black-Box Testing assesses software 
+functionality
+ from an external perspective, without access to internal code. Testers focus on inputs, outputs, and system behavior against specified requirements. Examples include Functional Testing and User Interface (UI) Testing.
+
+SLIDE 10
+Gray-Box Testing
+Gray-Box Testing is a hybrid approach combining aspects of both white-box and black-box testing. Testers possess 
+partial knowledge
+ of internal structures, like database schemas or architecture, but not full code access. This allows for more targeted and efficient test case design, such as evaluating data flow between modules.
+
+SLIDE 11
+Functional Testing: Unit
+Unit testing is the 
+first level
+ of functional testing, where individual code components (units) are tested in isolation. Developers perform these tests, often using frameworks like JUnit or NUnit, to verify that each unit functions precisely as designed before integration. This ensures foundational correctness.
+
+SLIDE 12
+Functional Testing: Integration
+Integration testing verifies the interfaces and interactions between integrated software units, ensuring they function cohesively. It addresses how modules, once individually tested, work together. For instance, testing data transfer between a user authentication module and a database module confirms correct login processing.
+
+SLIDE 13
+Functional Testing: System
+System testing comprehensively evaluates the entire integrated software system against specified requirements. Conducted in a production-like environment, it verifies end-to-end functionality. For instance, testing a banking application involves simulating complete transaction processes.
+
+SLIDE 14
+Functional Testing: Acceptance
+Acceptance Testing
+ (UAT) is the final stage where end-users validate the system against business requirements. It ensures the software is fit for purpose and ready for deployment. For instance, a client signs off on a new CRM after validating its core functionalities, confirming it meets their operational needs.
+
+SLIDE 15
+Non-Functional Testing
+• Evaluates software's operational characteristics, not specific functions.
+• Examples: 
+Performance
+ (speed, scalability), 
+Security
+ (vulnerabilities).
+• 
+Usability
+ (ease of use), 
+Reliability
+, 
+Maintainability
+.
+• Crucial for user satisfaction and system integrity.
+
+SLIDE 16
+Developing Test Cases
+For the requirement "Users must reset passwords via email," a test case involves: 1. 
+Preconditions
+: User exists, email is valid. 2. 
+Steps
+: Initiate reset, receive email, click link, enter new password. 3. 
+Expected Result
+: Password successfully updated, user can log in with new password.
+
+SLIDE 17
+The Tester's Evolving Role: Beyond Bug Hunting?
+How have Agile and DevOps fundamentally reshaped the software tester's responsibilities, shifting them from mere defect detection to proactive quality advocacy, automation, and continuous improvement? Discuss the necessary skills for a modern tester and predict future trends in this evolving field.
+
+SLIDE 18
+Conclusion
+• Software testing is crucial for quality, reliability, and user satisfaction.
+• Understand diverse testing types and their strategic applications.
+• Effective test planning and execution prevent costly software failures.
+• Testers are evolving into quality advocates and automation experts.

@@ -1,0 +1,118 @@
+{
+  "slides": {
+    "1": {
+      "explanation": "This lesson focuses on habits and shared rules that make code easier to read, change, and maintain.",
+      "example": "A teammate should be able to understand a function without needing its author beside them."
+    },
+    "2": {
+      "explanation": "The agenda moves from recognizing readable code to standards, clean-code principles, comments, and the costs of poor code.",
+      "example": "It provides a route from daily coding choices to their longer-term effects."
+    },
+    "3": {
+      "explanation": "Readable code uses clear formatting, meaningful names, and a logical structure. Hard-to-read code takes longer to debug and modify, while clear code helps a team work together.",
+      "example": "A variable named `total_price` and a clearly indented calculation are easier to follow than `x` and a dense line of code."
+    },
+    "4": {
+      "explanation": "Standards give teammates a shared way to write code. Consistency supports collaboration, reduces avoidable mistakes, and makes maintenance easier.",
+      "example": "When everyone formats functions the same way, code reviews can focus on behavior instead of spacing."
+    },
+    "5": {
+      "explanation": "Coding standards are agreed rules for style and structure, such as indentation, line length, and comment formatting. They make a project feel consistent.",
+      "example": "A team might agree to use four spaces for indentation and keep lines within a chosen length."
+    },
+    "6": {
+      "explanation": "Naming conventions use predictable capitalization patterns so readers can recognize kinds of names. PascalCase, camelCase, and snake_case are common styles.",
+      "example": "`MyClass` uses PascalCase, `myVariable` uses camelCase, and `my_variable` uses snake_case."
+    },
+    "7": {
+      "explanation": "DRY reduces repeated logic, KISS favors a simple solution, and YAGNI avoids features that are not needed yet. These are practical guides for keeping software maintainable.",
+      "example": "For a small required calculation, write one clear reusable function instead of duplicating it or building speculative options."
+    },
+    "8": {
+      "explanation": "Repeated code creates multiple places to update and can lead to inconsistent fixes. Put shared behavior in one reusable function or abstraction.",
+      "example": "If several screens format dates the same way, use one shared formatter so a change is made once."
+    },
+    "9": {
+      "explanation": "KISS means choosing the simplest solution that meets the requirements. Extra classes and layers can obscure a task that needs only a direct calculation.",
+      "example": "For adding two valid numbers, a simple addition function is easier to understand than a framework of helper objects."
+    },
+    "10": {
+      "explanation": "YAGNI says to defer features until they are actually needed. Premature optimization is tuning performance before evidence shows where the bottleneck is. Both can add complexity without current benefit.",
+      "example": "Build the needed report first; measure its speed before rewriting parts for performance."
+    },
+    "11": {
+      "explanation": "Useful comments explain why a choice exists, including assumptions or trade-offs. Clear names and structure should explain what the code does, avoiding comments that merely repeat it.",
+      "example": "Comment that a date range is inclusive because a business rule requires it; a comment saying “add one” above `x += 1` adds little."
+    },
+    "12": {
+      "explanation": "Style guides define conventions for particular languages. PEP 8 serves Python, StandardJS serves JavaScript, and Google Style Guide covers Java; following one keeps a codebase consistent.",
+      "example": "A Python project can use PEP 8 so developers agree on indentation and naming."
+    },
+    "13": {
+      "explanation": "Names should reveal purpose. Vague names force readers to guess and make errors harder to spot; descriptive names lower that mental effort.",
+      "example": "`customer_id` says more than `x`, and `calculate_average_score()` describes its action more clearly than `doStuff()`."
+    },
+    "14": {
+      "explanation": "A long method, repeated code, or oversized class can signal that responsibilities are poorly grouped. Refactoring into focused methods or classes can make change safer.",
+      "example": "Split a long checkout method into focused steps such as validate cart, calculate total, and submit payment."
+    },
+    "15": {
+      "explanation": "Bad code creates technical debt: future changes become slower and more expensive. Unclear logic adds maintenance and debugging work and can affect cost and schedule.",
+      "example": "A quick duplicated workaround may save minutes now but require several fixes later when the rule changes."
+    },
+    "16": {
+      "explanation": "Readable, maintainable code is easier for teammates to understand, debug, and extend. This supports a longer-lived product and can limit accumulated technical debt.",
+      "example": "A new feature is easier to add when existing responsibilities are clear and repeated logic is shared."
+    },
+    "17": {
+      "explanation": "This discussion prompt asks you to apply the lesson: choose concrete practices for keeping future projects robust, readable, and maintainable.",
+      "example": "A response could describe adopting a style guide, reviewing code, writing focused tests, and refactoring duplication as it appears."
+    },
+    "18": {
+      "explanation": "The conclusion asks developers to follow shared standards, use DRY/KISS/YAGNI, and protect readability to reduce technical debt. Code quality depends on everyday choices.",
+      "example": "Before finishing a change, check whether its names are clear, logic is repeated, and the solution is more complex than required."
+    }
+  },
+  "cheatsheet": [
+    {
+      "term": "Coding standards",
+      "summary": "Shared formatting and structure rules that support consistency."
+    },
+    {
+      "term": "Naming styles",
+      "summary": "PascalCase: `MyClass`; camelCase: `myVariable`; snake_case: `my_variable`."
+    },
+    {
+      "term": "DRY",
+      "summary": "Avoid duplicating logic; reuse a shared implementation."
+    },
+    {
+      "term": "KISS",
+      "summary": "Prefer the simplest solution that meets the need."
+    },
+    {
+      "term": "YAGNI",
+      "summary": "Do not build speculative features before they are needed."
+    },
+    {
+      "term": "Premature optimization",
+      "summary": "Performance tuning before measuring a real bottleneck."
+    },
+    {
+      "term": "Useful comments",
+      "summary": "Explain why, assumptions, or trade-offs; avoid restating obvious code."
+    },
+    {
+      "term": "Style guides",
+      "summary": "PEP 8 for Python; StandardJS for JavaScript; Google Style Guide for Java."
+    },
+    {
+      "term": "Code smells",
+      "summary": "Long method, duplicate code, or large class may indicate responsibilities to refactor."
+    },
+    {
+      "term": "Technical debt",
+      "summary": "Future cost and friction caused by shortcuts or hard-to-maintain code."
+    }
+  ]
+}

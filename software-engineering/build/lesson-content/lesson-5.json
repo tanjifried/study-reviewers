@@ -1,0 +1,114 @@
+{
+  "slides": {
+    "1": {
+      "explanation": "This lesson introduces Agile team roles and how they work together to deliver a product.",
+      "example": ""
+    },
+    "2": {
+      "explanation": "The agenda previews Agile team ideas and the responsibilities of the Product Owner, Scrum Master, and Development Team.",
+      "example": ""
+    },
+    "3": {
+      "explanation": "Agile teams work in repeated cycles and collaborate to respond to new information. Self-organization and varied skills help them deliver useful work incrementally.",
+      "example": "A team can release a small improvement, gather feedback, and adapt the next cycle."
+    },
+    "4": {
+      "explanation": "The Product Owner guides product value and backlog priorities; the Scrum Master supports the process and removes obstacles; the Development Team builds product increments.",
+      "example": "For a new feature, the Owner sets priority, the Scrum Master helps clear a blocker, and the team implements it."
+    },
+    "5": {
+      "explanation": "The Product Owner is accountable for maximizing the value delivered. Clear goals and a well-managed backlog help guide that work.",
+      "example": "They may prioritize a frequently requested improvement ahead of a minor enhancement."
+    },
+    "6": {
+      "explanation": "The Product Owner creates and refines Product Backlog Items, orders them by value, and keeps the backlog clear and visible to stakeholders.",
+      "example": "A PBI might describe the ability to reset a forgotten password."
+    },
+    "7": {
+      "explanation": "The Product Owner connects stakeholder needs to product goals so the Development Team understands what outcome it should build toward.",
+      "example": "Customer requests can be translated into a clear goal for the next product change."
+    },
+    "8": {
+      "explanation": "Backlog refinement is ongoing: the Product Owner incorporates feedback and changing needs so upcoming work stays relevant.",
+      "example": "New user feedback may cause a backlog item to be clarified or reprioritized."
+    },
+    "9": {
+      "explanation": "The Scrum Master serves the team by facilitating Scrum, coaching Agile practices, removing impediments, and limiting distractions.",
+      "example": "If another group’s approval is blocking work, the Scrum Master helps resolve the dependency."
+    },
+    "10": {
+      "explanation": "The Scrum Master helps Scrum events happen on schedule and keeps discussions focused, timeboxed, and useful.",
+      "example": "During a review, the facilitator makes room for each participant and keeps the discussion on the topic."
+    },
+    "11": {
+      "explanation": "An impediment is something that slows or blocks progress. The Scrum Master helps the team address technical or organizational roadblocks.",
+      "example": "A missing test environment could be raised and coordinated as a team impediment."
+    },
+    "12": {
+      "explanation": "Agile coaching helps the team and organization understand practices such as self-organization and continuous improvement, then apply them in their work.",
+      "example": "After a sprint, the team can discuss one change that would improve its workflow."
+    },
+    "13": {
+      "explanation": "The Development Team collectively builds a potentially releasable, Done increment by the end of each Sprint.",
+      "example": "A sprint might produce a working, tested password-reset feature."
+    },
+    "14": {
+      "explanation": "A self-organizing team chooses how to reach its Sprint Goals and manages its own tasks. This encourages shared ownership and adaptable delivery.",
+      "example": "Team members decide how to divide testing and implementation work."
+    },
+    "15": {
+      "explanation": "Cross-functional means the team collectively has the skills needed to complete backlog work, such as coding, testing, and design. This can reduce reliance on outside groups.",
+      "example": "A feature team with developers, testing knowledge, and UI/UX skills can take a feature through delivery."
+    },
+    "16": {
+      "explanation": "The roles complement one another: the Product Owner guides value, the Development Team creates the product, and the Scrum Master supports collaboration and flow.",
+      "example": "Feedback changes priorities, the team adjusts its work, and the Scrum Master helps remove resulting blockers."
+    },
+    "17": {
+      "explanation": "This reflection asks how the three roles’ cooperation helps a project adapt and work efficiently when conditions are uncertain.",
+      "example": "A stakeholder change can be clarified by the Product Owner, planned by the team, and supported by the Scrum Master."
+    },
+    "18": {
+      "explanation": "The conclusion summarizes how distinct but connected roles help Agile teams adapt and deliver value continuously.",
+      "example": ""
+    }
+  },
+  "cheatsheet": [
+    {
+      "term": "Iterative development",
+      "summary": "Deliver and refine work in repeated cycles, adapting to feedback."
+    },
+    {
+      "term": "Product Owner",
+      "summary": "Guides product value, goals, stakeholder alignment, and backlog priorities."
+    },
+    {
+      "term": "Product Backlog Item (PBI)",
+      "summary": "A clear piece of work that is refined and prioritized in the Product Backlog."
+    },
+    {
+      "term": "Scrum Master",
+      "summary": "Facilitates Scrum, coaches the team, removes impediments, and supports focus."
+    },
+    {
+      "term": "Development Team",
+      "summary": "Collectively builds and delivers a Done product increment."
+    },
+    {
+      "term": "Self-organizing",
+      "summary": "The team manages its work and decides how to meet Sprint Goals."
+    },
+    {
+      "term": "Cross-functional",
+      "summary": "The team collectively has the skills needed to complete work with fewer outside dependencies."
+    },
+    {
+      "term": "Impediment",
+      "summary": "A technical or organizational obstacle that hinders progress."
+    },
+    {
+      "term": "Role synergy",
+      "summary": "The Owner guides value, the team executes, and the Scrum Master enables flow."
+    }
+  ]
+}

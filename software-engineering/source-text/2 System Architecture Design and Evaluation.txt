@@ -1,0 +1,132 @@
+
+SLIDE 1
+System Architecture: Design and Evaluation
+A University-Level Overview
+
+SLIDE 2
+Agenda
+• 
+Defining System Architecture
+• 
+Core Architectural Elements
+• 
+Exploring Architectural Styles
+• 
+Key Quality Attributes
+• 
+Architectural Evaluation Methods
+
+SLIDE 3
+What is System Architecture?
+System architecture is the foundational organization of a system, defining its components, their interrelationships, and the guiding principles for its design and evolution. It critically shapes a system's structure, behavior, and overall performance, like the blueprint for a complex engineering project.
+Home security system: video surveillance, sensors, and remote access.
+
+SLIDE 4
+Isometric view of semiconductor components: transistors, cooling, and diodes.
+Core Architectural Elements
+• Components: Functional units (e.g., database, microservice, UI).
+• Connectors: Communication pathways (e.g., API calls, message queues).
+• Configurations: Arrangement of components and connectors.
+• Architecture defines system structure and behavior.
+
+SLIDE 5
+Monolithic Architectural Style
+The Monolithic style integrates all system components into a single, unified codebase and deployment unit. This tight coupling simplifies development and deployment for small applications. Early e-commerce platforms often utilized this straightforward architecture. However, scalability and maintenance can become challenging as complexity grows.
+
+SLIDE 6
+Microservices Architectural Style
+Microservices architecture decomposes applications into small, independent, and loosely coupled services, each running its own process. This style enhances scalability and agility, exemplified by companies like Netflix. It facilitates independent development, deployment, and scaling of individual components.
+
+SLIDE 7
+Layered Architectural Style
+The 
+Layered (N-tier)
+ architectural style organizes systems into distinct horizontal layers like Presentation, Business Logic, and Data Access. Each layer provides services exclusively to the layer directly above it, ensuring modularity and separation of concerns. This hierarchical structure is fundamental to traditional web applications, enhancing maintainability and scalability.
+Earth's layers: crust, upper mantle, mantle, outer and inner core.
+
+SLIDE 8
+Architectural Styles
+Architectural Patterns
+Architectural styles represent fundamental, high-level structural organizations for software systems. They define a system's vocabulary and constraints, guiding overall design. Examples include Client-Server, Layered, and Peer-to-Peer architectures. Styles are abstract, providing a foundational approach.
+Architectural patterns are reusable solutions to recurring design problems within a specific architectural style. They offer concrete blueprints for solving common issues. Examples include Model-View-Controller (MVC) for UI separation, and Broker for distributed communication. Patterns provide tactical design guidance.
+
+SLIDE 9
+Analyzing performance metrics: response time, throughput, and latency.
+Quality Attribute: Performance
+• 
+Response Time
+: Time for system reaction (e.g., website load).
+• 
+Throughput
+: Data processed per unit time (e.g., TPS).
+• 
+Latency
+: Delay in data transfer (e.g., network lag).
+• Architecture directly impacts all these performance metrics.
+
+SLIDE 10
+Isometric flowchart of a home security system with interconnected components.
+Quality Attribute: Security
+• Authentication: Verifying user identity reliably.
+• Authorization: Granting appropriate access rights.
+• Data Integrity: Preventing unauthorized modification.
+• Confidentiality: Protecting sensitive information (e.g., encryption).
+
+SLIDE 11
+Scalability
+Maintainability
+Scalability
+ denotes a system's capacity to effectively manage an expanding workload or increased demand. This often involves horizontal scaling, such as adding more servers, or vertical scaling, like upgrading existing hardware. Ensuring scalability prevents performance degradation and supports growth. Consider a cloud service dynamically allocating resources.
+Maintainability
+ measures the ease with which a system can be modified, updated, or repaired. High maintainability is achieved through clear code, modular design, and comprehensive documentation. This reduces technical debt and facilitates future enhancements or bug fixes. A well-structured API exemplifies good maintainability.
+
+SLIDE 12
+Reliability
+Availability
+Reliability
+ is the probability a system performs its intended function without failure over a specified period. It quantifies consistency in operation under defined conditions. High reliability ensures predictable performance, crucial for critical systems like aircraft control. For instance, a 99.999% reliable system means only 5 minutes of unexpected downtime per year.
+Availability
+ measures the proportion of time a system is operational and accessible to users. It reflects the system's readiness for use. While related to reliability, availability can be high even with frequent failures if recovery is swift. A 99.9% available e-commerce site ensures minimal service disruption to customers.
+
+SLIDE 13
+Architectural Trade-offs
+Architectural 
+trade-offs
+ are inherent in design, where optimizing one quality attribute often necessitates compromising another. For instance, enhancing security through encryption can significantly reduce system performance due to processing overhead. Understanding these compromises is crucial for effective system architecture.
+
+SLIDE 14
+Monolithic Architecture
+Microservices Architecture
+A single, tightly coupled unit, easier to develop initially and deploy. Updates require redeploying the entire application. Debugging can be straightforward within a single codebase. Offers simpler data management and transaction consistency.
+Composed of small, independent services, enabling enhanced scalability and independent deployment. Each service can be developed and deployed autonomously. Introduces complexity in distributed transactions and monitoring across multiple services. Challenges include service discovery and data consistency.
+
+SLIDE 15
+Evaluating Architecture: ATAM
+The 
+Architecture Trade-off Analysis Method
+ (ATAM) is a structured, scenario-based evaluation method for assessing software architectures against defined quality attribute goals, such as performance or modifiability. It employs an iterative process, engaging stakeholders to uncover architectural risks and trade-offs early in the development lifecycle.
+
+SLIDE 16
+Design process: Research, vision, brainstorming, and solution.
+Evaluating Architecture: ADRs
+• ADRs document significant architectural decisions.
+• Capture 
+context
+, 
+options
+, and 
+rationale
+ for choices.
+• Provide historical record, aiding future understanding.
+• Example: Documenting relational vs. NoSQL database selection.
+
+SLIDE 17
+Architectural Evolution
+System architecture is inherently dynamic, evolving continually due to changing requirements, technological advancements, and business strategic shifts. This iterative refinement ensures adaptability and sustained relevance. Consider the implications of continuous architectural re-evaluation for long-term system viability and technical debt management.
+
+SLIDE 18
+Conclusion
+• System architecture is foundational to system structure and behavior.
+• Diverse architectural styles offer distinct advantages and trade-offs.
+• Quality attributes drive design decisions and architectural choices.
+• Architectural evaluation methods ensure robust and adaptable systems.
