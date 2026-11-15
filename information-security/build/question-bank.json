@@ -7,31 +7,31 @@
     "concepts": [
       {
         "term": "Authentication",
-        "definition": "The process of checking that a claimed identity or origin is genuine.",
+        "definition": "The process of verifying identity; it can validate identity documents or ensure that a product or document is not forged.",
         "slide": 2,
         "falsehood": "Authentication means granting permissions without checking any identity."
       },
       {
         "term": "Historical wax seal",
-        "definition": "A seal could show signs of opening and carry an impression associated with a sender.",
+        "definition": "A wax seal bonds to paper, parchment, ribbons, wire, or other material and is difficult to separate without noticeable tampering.",
         "slide": 3,
         "falsehood": "A wax seal mathematically proves that no forgery is possible."
       },
       {
         "term": "Tamper evidence",
-        "definition": "Visible signs that a seal or message may have been altered or opened.",
+        "definition": "A wax bond is difficult to separate without noticeable tampering; wax can verify that a document is unopened.",
         "slide": 4,
-        "falsehood": "Tamper evidence guarantees that no attacker can imitate or replace a seal."
+        "falsehood": "A wax seal guarantees that no attacker can imitate or replace it."
       },
       {
         "term": "Hash function",
-        "definition": "A function that maps input data to a fixed-length digest for a chosen hash algorithm.",
+        "definition": "A function that maps data of any size to fixed-size values.",
         "slide": 5,
         "falsehood": "A fixed hash algorithm must produce longer digests for longer messages."
       },
       {
         "term": "Message digest",
-        "definition": "The fixed-length output of a hash function, also called a hash value or hash.",
+        "definition": "The values returned by a hash function are called hash values, hash codes, digests, or hashes.",
         "slide": 5,
         "falsehood": "A message digest is necessarily the original plaintext in readable form."
       },
@@ -43,69 +43,69 @@
       },
       {
         "term": "Early hashing history",
-        "definition": "The slide credits Hans Peter Luhn with early hashing work used to organize and search records.",
+        "definition": "Hans Peter Luhn's method aimed to speed up searching a telephone directory of over a million records.",
         "slide": 6,
         "falsehood": "The slides describe early hashing as having no use in searching records."
       },
       {
         "term": "Hash bucket",
-        "definition": "A group into which records can be placed to help organize lookup.",
+        "definition": "Luhn's method put related information in a single “bucket” to speed up searching.",
         "slide": 6,
         "falsehood": "A hash bucket is a certificate that proves a sender's identity."
       },
       {
         "term": "MD4 and MD5",
-        "definition": "Historical Message Digest algorithms named in the lesson; MD5 is unsuitable where collision resistance is needed.",
+        "definition": "MD4 (Message Digest 4) and MD5 (Message Digest 5) are hash algorithms named on the slide.",
         "slide": 7,
-        "falsehood": "MD4 and MD5 are current recommendations for new collision-resistant authentication designs."
+        "falsehood": "MD4 and MD5 are encryption algorithms rather than hash algorithms."
       },
       {
         "term": "SHA-1",
-        "definition": "A historical cryptographic hash algorithm producing a 160-bit digest and using 80 rounds per block.",
+        "definition": "SHA-1 (Secure Hash Algorithm 1) uses 80 rounds and has a hash value of 160 bits.",
         "slide": 16,
-        "falsehood": "SHA-1 produces a 512-bit digest and performs only one round per block."
+        "falsehood": "SHA-1 produces a 512-bit digest and performs only one round."
       },
       {
         "term": "SHA-2 and SHA-3",
-        "definition": "Families of modern hash algorithms that NIST recommends as alternatives to SHA-1.",
+        "definition": "The slide names SHA-3 (512) among the latest and strongest hash algorithms at the time.",
         "slide": 7,
-        "falsehood": "NIST recommends adopting SHA-1 instead of SHA-2 and SHA-3 for new collision-resistant uses."
+        "falsehood": "The slide names SHA-1 as the latest and strongest hash algorithm at the time."
       },
       {
         "term": "Hash sensitivity",
-        "definition": "A small change in input, including a change in letter case, generally produces a different cryptographic digest.",
+        "definition": "The MD5 hash algorithm is case sensitive: the hash value differs when the same word or phrase uses lowercase and uppercase.",
         "slide": 8,
-        "falsehood": "Changing letter case always leaves the input bytes and digest unchanged."
+        "falsehood": "Changing letter case always leaves the hash value unchanged."
       },
       {
         "term": "MD5 case example",
-        "definition": "The slide's MD5 digest for uppercase CCSICT is afa10b1e77998a5806a8b0fdff622b03.",
+        "definition": "The slide's MD5 hash value for CCSICT (all caps) is afa10b1e77998a5806a8b0fdff622b03.",
         "slide": 9,
-        "falsehood": "The slide's MD5 example says that uppercase and lowercase inputs are necessarily identical bytes."
+        "falsehood": "The slide gives a different MD5 hash value for CCSICT (all caps): 00000000000000000000000000000000."
       },
       {
         "term": "MD5 output length",
-        "definition": "MD5 produces a 128-bit digest, commonly displayed as 32 hexadecimal characters.",
+        "definition": "Supplemental reference: MD5 produces a 128-bit digest, commonly displayed as 32 hexadecimal characters.",
         "slide": 10,
         "falsehood": "MD5's digest length grows in direct proportion to the input length."
       },
       {
         "term": "Fixed-length digest",
-        "definition": "A particular hash algorithm returns the same output length even when input messages have different lengths.",
+        "definition": "A hash function maps data of any size to fixed-size values.",
         "slide": 11,
-        "falsehood": "A longer message always makes MD5 return more than 128 bits."
+        "falsehood": "A longer message always makes the hash function return a longer value."
       },
       {
         "term": "Input comparison exercise",
-        "definition": "Comparing hashes of nearly identical messages illustrates that a small change can produce a very different digest.",
+        "definition": "The MD5 hash value differs when the same word or phrase uses lowercase and uppercase.",
         "slide": 12,
-        "falsehood": "The same hash algorithm must output almost identical digests for nearly identical messages."
+        "falsehood": "The same hash algorithm must output identical hash values for uppercase and lowercase inputs."
       },
       {
         "term": "Integrity check",
-        "definition": "Comparing a computed digest against a trusted expected digest can reveal accidental or intentional changes.",
+        "definition": "Supplemental: comparing a computed digest with a trusted expected digest can reveal changes to the message.",
         "slide": 12,
-        "falsehood": "A checksum comparison can identify changes even if an attacker can replace both the message and its expected digest."
+        "falsehood": "Comparing a digest against an untrusted replacement always proves the message was unchanged."
       },
       {
         "term": "Authenticated integrity",
@@ -220,11 +220,11 @@
       {
         "lesson": "lesson-1",
         "concept": "Authentication",
-        "explanation": "Authentication: The process of checking that a claimed identity or origin is genuine.",
+        "explanation": "Authentication: The process of verifying identity; it can validate identity documents or ensure that a product or document is not forged.",
         "slide": 2,
         "id": "lesson-1-c0-mc",
         "kind": "mc",
-        "prompt": "Which term best matches this description? The process of checking that a claimed identity or origin is genuine.",
+        "prompt": "Which term best matches this description? The process of verifying identity; it can validate identity documents or ensure that a product or document is not forged.",
         "options": [
           "Historical wax seal",
           "SHA-2 and SHA-3",
@@ -236,11 +236,11 @@
       {
         "lesson": "lesson-1",
         "concept": "Authentication",
-        "explanation": "Authentication: The process of checking that a claimed identity or origin is genuine.",
+        "explanation": "Authentication: The process of verifying identity; it can validate identity documents or ensure that a product or document is not forged.",
         "slide": 2,
         "id": "lesson-1-c0-tf",
         "kind": "tf",
-        "prompt": "Authentication: The process of checking that a claimed identity or origin is genuine.",
+        "prompt": "Authentication: The process of verifying identity; it can validate identity documents or ensure that a product or document is not forged.",
         "options": [
           "True",
           "False"
@@ -250,23 +250,23 @@
       {
         "lesson": "lesson-1",
         "concept": "Historical wax seal",
-        "explanation": "Historical wax seal: A seal could show signs of opening and carry an impression associated with a sender.",
+        "explanation": "Historical wax seal: A wax seal bonds to paper, parchment, ribbons, wire, or other material and is difficult to separate without noticeable tampering.",
         "slide": 3,
         "id": "lesson-1-c1-mc",
         "kind": "mc",
         "prompt": "Which statement best describes Historical wax seal?",
         "options": [
-          "Comparing a computed digest against a trusted expected digest can reveal accidental or intentional changes.",
-          "A function that maps input data to a fixed-length digest for a chosen hash algorithm.",
-          "A historical cryptographic hash algorithm producing a 160-bit digest and using 80 rounds per block.",
-          "A seal could show signs of opening and carry an impression associated with a sender."
+          "Supplemental: comparing a computed digest with a trusted expected digest can reveal changes to the message.",
+          "A function that maps data of any size to fixed-size values.",
+          "SHA-1 (Secure Hash Algorithm 1) uses 80 rounds and has a hash value of 160 bits.",
+          "A wax seal bonds to paper, parchment, ribbons, wire, or other material and is difficult to separate without noticeable tampering."
         ],
         "answer": 3
       },
       {
         "lesson": "lesson-1",
         "concept": "Historical wax seal",
-        "explanation": "Historical wax seal: A seal could show signs of opening and carry an impression associated with a sender.",
+        "explanation": "Historical wax seal: A wax seal bonds to paper, parchment, ribbons, wire, or other material and is difficult to separate without noticeable tampering.",
         "slide": 3,
         "id": "lesson-1-c1-tf",
         "kind": "tf",
@@ -280,11 +280,11 @@
       {
         "lesson": "lesson-1",
         "concept": "Tamper evidence",
-        "explanation": "Tamper evidence: Visible signs that a seal or message may have been altered or opened.",
+        "explanation": "Tamper evidence: A wax bond is difficult to separate without noticeable tampering; wax can verify that a document is unopened.",
         "slide": 4,
         "id": "lesson-1-c2-mc",
         "kind": "mc",
-        "prompt": "Which term best matches this description? Visible signs that a seal or message may have been altered or opened.",
+        "prompt": "Which term best matches this description? A wax bond is difficult to separate without noticeable tampering; wax can verify that a document is unopened.",
         "options": [
           "Tamper evidence",
           "MD5 output length",
@@ -296,11 +296,11 @@
       {
         "lesson": "lesson-1",
         "concept": "Tamper evidence",
-        "explanation": "Tamper evidence: Visible signs that a seal or message may have been altered or opened.",
+        "explanation": "Tamper evidence: A wax bond is difficult to separate without noticeable tampering; wax can verify that a document is unopened.",
         "slide": 4,
         "id": "lesson-1-c2-tf",
         "kind": "tf",
-        "prompt": "Tamper evidence: Visible signs that a seal or message may have been altered or opened.",
+        "prompt": "Tamper evidence: A wax bond is difficult to separate without noticeable tampering; wax can verify that a document is unopened.",
         "options": [
           "True",
           "False"
@@ -310,23 +310,23 @@
       {
         "lesson": "lesson-1",
         "concept": "Hash function",
-        "explanation": "Hash function: A function that maps input data to a fixed-length digest for a chosen hash algorithm.",
+        "explanation": "Hash function: A function that maps data of any size to fixed-size values.",
         "slide": 5,
         "id": "lesson-1-c3-mc",
         "kind": "mc",
         "prompt": "Which statement best describes Hash function?",
         "options": [
-          "Historical Message Digest algorithms named in the lesson; MD5 is unsuitable where collision resistance is needed.",
+          "MD4 (Message Digest 4) and MD5 (Message Digest 5) are hash algorithms named on the slide.",
           "MD4 stands for Message Digest 4 and is an older hash algorithm.",
           "A 512-bit message block is parsed into sixteen 32-bit words before the schedule is expanded.",
-          "A function that maps input data to a fixed-length digest for a chosen hash algorithm."
+          "A function that maps data of any size to fixed-size values."
         ],
         "answer": 3
       },
       {
         "lesson": "lesson-1",
         "concept": "Hash function",
-        "explanation": "Hash function: A function that maps input data to a fixed-length digest for a chosen hash algorithm.",
+        "explanation": "Hash function: A function that maps data of any size to fixed-size values.",
         "slide": 5,
         "id": "lesson-1-c3-tf",
         "kind": "tf",
@@ -340,11 +340,11 @@
       {
         "lesson": "lesson-1",
         "concept": "Message digest",
-        "explanation": "Message digest: The fixed-length output of a hash function, also called a hash value or hash.",
+        "explanation": "Message digest: The values returned by a hash function are called hash values, hash codes, digests, or hashes.",
         "slide": 5,
         "id": "lesson-1-c4-mc",
         "kind": "mc",
-        "prompt": "Which term best matches this description? The fixed-length output of a hash function, also called a hash value or hash.",
+        "prompt": "Which term best matches this description? The values returned by a hash function are called hash values, hash codes, digests, or hashes.",
         "options": [
           "Message digest",
           "SHA-1 constants",
@@ -356,11 +356,11 @@
       {
         "lesson": "lesson-1",
         "concept": "Message digest",
-        "explanation": "Message digest: The fixed-length output of a hash function, also called a hash value or hash.",
+        "explanation": "Message digest: The values returned by a hash function are called hash values, hash codes, digests, or hashes.",
         "slide": 5,
         "id": "lesson-1-c4-tf",
         "kind": "tf",
-        "prompt": "Message digest: The fixed-length output of a hash function, also called a hash value or hash.",
+        "prompt": "Message digest: The values returned by a hash function are called hash values, hash codes, digests, or hashes.",
         "options": [
           "True",
           "False"
@@ -376,10 +376,10 @@
         "kind": "mc",
         "prompt": "Which statement best describes Hashing and encryption?",
         "options": [
-          "A seal could show signs of opening and carry an impression associated with a sender.",
+          "A wax seal bonds to paper, parchment, ribbons, wire, or other material and is difficult to separate without noticeable tampering.",
           "For t from 16 to 79, W[t] is a one-bit left rotation of W[t-3] XOR W[t-8] XOR W[t-14] XOR W[t-16].",
           "Hashing produces a digest; encryption uses a key and is designed to be reversed by authorized parties.",
-          "The slide credits Hans Peter Luhn with early hashing work used to organize and search records."
+          "Hans Peter Luhn's method aimed to speed up searching a telephone directory of over a million records."
         ],
         "answer": 2
       },
@@ -400,11 +400,11 @@
       {
         "lesson": "lesson-1",
         "concept": "Early hashing history",
-        "explanation": "Early hashing history: The slide credits Hans Peter Luhn with early hashing work used to organize and search records.",
+        "explanation": "Early hashing history: Hans Peter Luhn's method aimed to speed up searching a telephone directory of over a million records.",
         "slide": 6,
         "id": "lesson-1-c6-mc",
         "kind": "mc",
-        "prompt": "Which term best matches this description? The slide credits Hans Peter Luhn with early hashing work used to organize and search records.",
+        "prompt": "Which term best matches this description? Hans Peter Luhn's method aimed to speed up searching a telephone directory of over a million records.",
         "options": [
           "Integrity check",
           "SHA-1 worked message",
@@ -416,11 +416,11 @@
       {
         "lesson": "lesson-1",
         "concept": "Early hashing history",
-        "explanation": "Early hashing history: The slide credits Hans Peter Luhn with early hashing work used to organize and search records.",
+        "explanation": "Early hashing history: Hans Peter Luhn's method aimed to speed up searching a telephone directory of over a million records.",
         "slide": 6,
         "id": "lesson-1-c6-tf",
         "kind": "tf",
-        "prompt": "Early hashing history: The slide credits Hans Peter Luhn with early hashing work used to organize and search records.",
+        "prompt": "Early hashing history: Hans Peter Luhn's method aimed to speed up searching a telephone directory of over a million records.",
         "options": [
           "True",
           "False"
@@ -430,13 +430,13 @@
       {
         "lesson": "lesson-1",
         "concept": "Hash bucket",
-        "explanation": "Hash bucket: A group into which records can be placed to help organize lookup.",
+        "explanation": "Hash bucket: Luhn's method put related information in a single “bucket” to speed up searching.",
         "slide": 6,
         "id": "lesson-1-c7-mc",
         "kind": "mc",
         "prompt": "Which statement best describes Hash bucket?",
         "options": [
-          "A group into which records can be placed to help organize lookup.",
+          "Luhn's method put related information in a single “bucket” to speed up searching.",
           "The lecture's printed schedule and first-round function contain typos; use the standard formulas in the explanation.",
           "Each of four SHA-1 round ranges uses a specified constant, beginning with 5a827999 for rounds 0–19.",
           "The sample hexadecimal message 1a7fd53b4c is five bytes, or 40 bits long."
@@ -446,7 +446,7 @@
       {
         "lesson": "lesson-1",
         "concept": "Hash bucket",
-        "explanation": "Hash bucket: A group into which records can be placed to help organize lookup.",
+        "explanation": "Hash bucket: Luhn's method put related information in a single “bucket” to speed up searching.",
         "slide": 6,
         "id": "lesson-1-c7-tf",
         "kind": "tf",
@@ -460,11 +460,11 @@
       {
         "lesson": "lesson-1",
         "concept": "MD4 and MD5",
-        "explanation": "MD4 and MD5: Historical Message Digest algorithms named in the lesson; MD5 is unsuitable where collision resistance is needed.",
+        "explanation": "MD4 and MD5: MD4 (Message Digest 4) and MD5 (Message Digest 5) are hash algorithms named on the slide.",
         "slide": 7,
         "id": "lesson-1-c8-mc",
         "kind": "mc",
-        "prompt": "Which term best matches this description? Historical Message Digest algorithms named in the lesson; MD5 is unsuitable where collision resistance is needed.",
+        "prompt": "Which term best matches this description? MD4 (Message Digest 4) and MD5 (Message Digest 5) are hash algorithms named on the slide.",
         "options": [
           "SHA-1 constants",
           "MD4 and MD5",
@@ -476,11 +476,11 @@
       {
         "lesson": "lesson-1",
         "concept": "MD4 and MD5",
-        "explanation": "MD4 and MD5: Historical Message Digest algorithms named in the lesson; MD5 is unsuitable where collision resistance is needed.",
+        "explanation": "MD4 and MD5: MD4 (Message Digest 4) and MD5 (Message Digest 5) are hash algorithms named on the slide.",
         "slide": 7,
         "id": "lesson-1-c8-tf",
         "kind": "tf",
-        "prompt": "MD4 and MD5: Historical Message Digest algorithms named in the lesson; MD5 is unsuitable where collision resistance is needed.",
+        "prompt": "MD4 and MD5: MD4 (Message Digest 4) and MD5 (Message Digest 5) are hash algorithms named on the slide.",
         "options": [
           "True",
           "False"
@@ -490,7 +490,7 @@
       {
         "lesson": "lesson-1",
         "concept": "SHA-1",
-        "explanation": "SHA-1: A historical cryptographic hash algorithm producing a 160-bit digest and using 80 rounds per block.",
+        "explanation": "SHA-1: SHA-1 (Secure Hash Algorithm 1) uses 80 rounds and has a hash value of 160 bits.",
         "slide": 16,
         "id": "lesson-1-c9-mc",
         "kind": "mc",
@@ -498,7 +498,7 @@
         "options": [
           "In the first round, the old A becomes new B and rotating the old B left by 30 bits gives new C.",
           "SHA-1 processes padded messages in 512-bit blocks.",
-          "A historical cryptographic hash algorithm producing a 160-bit digest and using 80 rounds per block.",
+          "SHA-1 (Secure Hash Algorithm 1) uses 80 rounds and has a hash value of 160 bits.",
           "SHA-1 outputs 160 bits, equivalent to 20 bytes or 40 hexadecimal digits."
         ],
         "answer": 2
@@ -506,11 +506,11 @@
       {
         "lesson": "lesson-1",
         "concept": "SHA-1",
-        "explanation": "SHA-1: A historical cryptographic hash algorithm producing a 160-bit digest and using 80 rounds per block.",
+        "explanation": "SHA-1: SHA-1 (Secure Hash Algorithm 1) uses 80 rounds and has a hash value of 160 bits.",
         "slide": 16,
         "id": "lesson-1-c9-tf",
         "kind": "tf",
-        "prompt": "SHA-1 produces a 512-bit digest and performs only one round per block.",
+        "prompt": "SHA-1 produces a 512-bit digest and performs only one round.",
         "options": [
           "True",
           "False"
@@ -520,11 +520,11 @@
       {
         "lesson": "lesson-1",
         "concept": "SHA-2 and SHA-3",
-        "explanation": "SHA-2 and SHA-3: Families of modern hash algorithms that NIST recommends as alternatives to SHA-1.",
+        "explanation": "SHA-2 and SHA-3: The slide names SHA-3 (512) among the latest and strongest hash algorithms at the time.",
         "slide": 7,
         "id": "lesson-1-c10-mc",
         "kind": "mc",
-        "prompt": "Which term best matches this description? Families of modern hash algorithms that NIST recommends as alternatives to SHA-1.",
+        "prompt": "Which term best matches this description? The slide names SHA-3 (512) among the latest and strongest hash algorithms at the time.",
         "options": [
           "SHA-2 and SHA-3",
           "MD5 case example",
@@ -536,11 +536,11 @@
       {
         "lesson": "lesson-1",
         "concept": "SHA-2 and SHA-3",
-        "explanation": "SHA-2 and SHA-3: Families of modern hash algorithms that NIST recommends as alternatives to SHA-1.",
+        "explanation": "SHA-2 and SHA-3: The slide names SHA-3 (512) among the latest and strongest hash algorithms at the time.",
         "slide": 7,
         "id": "lesson-1-c10-tf",
         "kind": "tf",
-        "prompt": "SHA-2 and SHA-3: Families of modern hash algorithms that NIST recommends as alternatives to SHA-1.",
+        "prompt": "SHA-2 and SHA-3: The slide names SHA-3 (512) among the latest and strongest hash algorithms at the time.",
         "options": [
           "True",
           "False"
@@ -550,27 +550,27 @@
       {
         "lesson": "lesson-1",
         "concept": "Hash sensitivity",
-        "explanation": "Hash sensitivity: A small change in input, including a change in letter case, generally produces a different cryptographic digest.",
+        "explanation": "Hash sensitivity: The MD5 hash algorithm is case sensitive: the hash value differs when the same word or phrase uses lowercase and uppercase.",
         "slide": 8,
         "id": "lesson-1-c11-mc",
         "kind": "mc",
         "prompt": "Which statement best describes Hash sensitivity?",
         "options": [
-          "The fixed-length output of a hash function, also called a hash value or hash.",
-          "MD5 produces a 128-bit digest, commonly displayed as 32 hexadecimal characters.",
+          "The values returned by a hash function are called hash values, hash codes, digests, or hashes.",
+          "Supplemental reference: MD5 produces a 128-bit digest, commonly displayed as 32 hexadecimal characters.",
           "Rotating efcdab89 left by 30 bits produces 7bf36ae2.",
-          "A small change in input, including a change in letter case, generally produces a different cryptographic digest."
+          "The MD5 hash algorithm is case sensitive: the hash value differs when the same word or phrase uses lowercase and uppercase."
         ],
         "answer": 3
       },
       {
         "lesson": "lesson-1",
         "concept": "Hash sensitivity",
-        "explanation": "Hash sensitivity: A small change in input, including a change in letter case, generally produces a different cryptographic digest.",
+        "explanation": "Hash sensitivity: The MD5 hash algorithm is case sensitive: the hash value differs when the same word or phrase uses lowercase and uppercase.",
         "slide": 8,
         "id": "lesson-1-c11-tf",
         "kind": "tf",
-        "prompt": "Changing letter case always leaves the input bytes and digest unchanged.",
+        "prompt": "Changing letter case always leaves the hash value unchanged.",
         "options": [
           "True",
           "False"
@@ -580,11 +580,11 @@
       {
         "lesson": "lesson-1",
         "concept": "MD5 case example",
-        "explanation": "MD5 case example: The slide's MD5 digest for uppercase CCSICT is afa10b1e77998a5806a8b0fdff622b03.",
+        "explanation": "MD5 case example: The slide's MD5 hash value for CCSICT (all caps) is afa10b1e77998a5806a8b0fdff622b03.",
         "slide": 9,
         "id": "lesson-1-c12-mc",
         "kind": "mc",
-        "prompt": "Which term best matches this description? The slide's MD5 digest for uppercase CCSICT is afa10b1e77998a5806a8b0fdff622b03.",
+        "prompt": "Which term best matches this description? The slide's MD5 hash value for CCSICT (all caps) is afa10b1e77998a5806a8b0fdff622b03.",
         "options": [
           "SHA-1 block size",
           "SHA-1 schedule note",
@@ -596,11 +596,11 @@
       {
         "lesson": "lesson-1",
         "concept": "MD5 case example",
-        "explanation": "MD5 case example: The slide's MD5 digest for uppercase CCSICT is afa10b1e77998a5806a8b0fdff622b03.",
+        "explanation": "MD5 case example: The slide's MD5 hash value for CCSICT (all caps) is afa10b1e77998a5806a8b0fdff622b03.",
         "slide": 9,
         "id": "lesson-1-c12-tf",
         "kind": "tf",
-        "prompt": "MD5 case example: The slide's MD5 digest for uppercase CCSICT is afa10b1e77998a5806a8b0fdff622b03.",
+        "prompt": "MD5 case example: The slide's MD5 hash value for CCSICT (all caps) is afa10b1e77998a5806a8b0fdff622b03.",
         "options": [
           "True",
           "False"
@@ -610,14 +610,14 @@
       {
         "lesson": "lesson-1",
         "concept": "MD5 output length",
-        "explanation": "MD5 output length: MD5 produces a 128-bit digest, commonly displayed as 32 hexadecimal characters.",
+        "explanation": "MD5 output length: Supplemental reference: MD5 produces a 128-bit digest, commonly displayed as 32 hexadecimal characters.",
         "slide": 10,
         "id": "lesson-1-c13-mc",
         "kind": "mc",
         "prompt": "Which statement best describes MD5 output length?",
         "options": [
-          "MD5 produces a 128-bit digest, commonly displayed as 32 hexadecimal characters.",
-          "The fixed-length output of a hash function, also called a hash value or hash.",
+          "Supplemental reference: MD5 produces a 128-bit digest, commonly displayed as 32 hexadecimal characters.",
+          "The values returned by a hash function are called hash values, hash codes, digests, or hashes.",
           "The lecture's printed schedule and first-round function contain typos; use the standard formulas in the explanation.",
           "A rotate-left moves bits around a fixed 32-bit word, wrapping the bits that leave the left end back to the right."
         ],
@@ -626,7 +626,7 @@
       {
         "lesson": "lesson-1",
         "concept": "MD5 output length",
-        "explanation": "MD5 output length: MD5 produces a 128-bit digest, commonly displayed as 32 hexadecimal characters.",
+        "explanation": "MD5 output length: Supplemental reference: MD5 produces a 128-bit digest, commonly displayed as 32 hexadecimal characters.",
         "slide": 10,
         "id": "lesson-1-c13-tf",
         "kind": "tf",
@@ -640,11 +640,11 @@
       {
         "lesson": "lesson-1",
         "concept": "Fixed-length digest",
-        "explanation": "Fixed-length digest: A particular hash algorithm returns the same output length even when input messages have different lengths.",
+        "explanation": "Fixed-length digest: A hash function maps data of any size to fixed-size values.",
         "slide": 11,
         "id": "lesson-1-c14-mc",
         "kind": "mc",
-        "prompt": "Which term best matches this description? A particular hash algorithm returns the same output length even when input messages have different lengths.",
+        "prompt": "Which term best matches this description? A hash function maps data of any size to fixed-size values.",
         "options": [
           "Message digest",
           "Tamper evidence",
@@ -656,11 +656,11 @@
       {
         "lesson": "lesson-1",
         "concept": "Fixed-length digest",
-        "explanation": "Fixed-length digest: A particular hash algorithm returns the same output length even when input messages have different lengths.",
+        "explanation": "Fixed-length digest: A hash function maps data of any size to fixed-size values.",
         "slide": 11,
         "id": "lesson-1-c14-tf",
         "kind": "tf",
-        "prompt": "Fixed-length digest: A particular hash algorithm returns the same output length even when input messages have different lengths.",
+        "prompt": "Fixed-length digest: A hash function maps data of any size to fixed-size values.",
         "options": [
           "True",
           "False"
@@ -670,7 +670,7 @@
       {
         "lesson": "lesson-1",
         "concept": "Input comparison exercise",
-        "explanation": "Input comparison exercise: Comparing hashes of nearly identical messages illustrates that a small change can produce a very different digest.",
+        "explanation": "Input comparison exercise: The MD5 hash value differs when the same word or phrase uses lowercase and uppercase.",
         "slide": 12,
         "id": "lesson-1-c15-mc",
         "kind": "mc",
@@ -678,19 +678,19 @@
         "options": [
           "Each of four SHA-1 round ranges uses a specified constant, beginning with 5a827999 for rounds 0–19.",
           "A 512-bit message block is parsed into sixteen 32-bit words before the schedule is expanded.",
-          "The slide credits Hans Peter Luhn with early hashing work used to organize and search records.",
-          "Comparing hashes of nearly identical messages illustrates that a small change can produce a very different digest."
+          "Hans Peter Luhn's method aimed to speed up searching a telephone directory of over a million records.",
+          "The MD5 hash value differs when the same word or phrase uses lowercase and uppercase."
         ],
         "answer": 3
       },
       {
         "lesson": "lesson-1",
         "concept": "Input comparison exercise",
-        "explanation": "Input comparison exercise: Comparing hashes of nearly identical messages illustrates that a small change can produce a very different digest.",
+        "explanation": "Input comparison exercise: The MD5 hash value differs when the same word or phrase uses lowercase and uppercase.",
         "slide": 12,
         "id": "lesson-1-c15-tf",
         "kind": "tf",
-        "prompt": "The same hash algorithm must output almost identical digests for nearly identical messages.",
+        "prompt": "The same hash algorithm must output identical hash values for uppercase and lowercase inputs.",
         "options": [
           "True",
           "False"
@@ -700,11 +700,11 @@
       {
         "lesson": "lesson-1",
         "concept": "Integrity check",
-        "explanation": "Integrity check: Comparing a computed digest against a trusted expected digest can reveal accidental or intentional changes.",
+        "explanation": "Integrity check: Supplemental: comparing a computed digest with a trusted expected digest can reveal changes to the message.",
         "slide": 12,
         "id": "lesson-1-c16-mc",
         "kind": "mc",
-        "prompt": "Which term best matches this description? Comparing a computed digest against a trusted expected digest can reveal accidental or intentional changes.",
+        "prompt": "Which term best matches this description? Supplemental: comparing a computed digest with a trusted expected digest can reveal changes to the message.",
         "options": [
           "SHA-1 schedule note",
           "Fixed-length digest",
@@ -716,11 +716,11 @@
       {
         "lesson": "lesson-1",
         "concept": "Integrity check",
-        "explanation": "Integrity check: Comparing a computed digest against a trusted expected digest can reveal accidental or intentional changes.",
+        "explanation": "Integrity check: Supplemental: comparing a computed digest with a trusted expected digest can reveal changes to the message.",
         "slide": 12,
         "id": "lesson-1-c16-tf",
         "kind": "tf",
-        "prompt": "Integrity check: Comparing a computed digest against a trusted expected digest can reveal accidental or intentional changes.",
+        "prompt": "Integrity check: Supplemental: comparing a computed digest with a trusted expected digest can reveal changes to the message.",
         "options": [
           "True",
           "False"
@@ -736,7 +736,7 @@
         "kind": "mc",
         "prompt": "Which statement best describes Authenticated integrity?",
         "options": [
-          "Comparing hashes of nearly identical messages illustrates that a small change can produce a very different digest.",
+          "The MD5 hash value differs when the same word or phrase uses lowercase and uppercase.",
           "MD4 stands for Message Digest 4 and is an older hash algorithm.",
           "An HMAC or digital signature can protect message integrity and help authenticate the source when keys are managed correctly.",
           "SHA-1 outputs 160 bits, equivalent to 20 bytes or 40 hexadecimal digits."
@@ -797,7 +797,7 @@
         "prompt": "Which statement best describes SHA-1 digest size?",
         "options": [
           "SHA-1 outputs 160 bits, equivalent to 20 bytes or 40 hexadecimal digits.",
-          "MD5 produces a 128-bit digest, commonly displayed as 32 hexadecimal characters.",
+          "Supplemental reference: MD5 produces a 128-bit digest, commonly displayed as 32 hexadecimal characters.",
           "Rotating efcdab89 left by 30 bits produces 7bf36ae2.",
           "SHA-1 has collision weaknesses; NIST recommends transitioning to SHA-2 or SHA-3."
         ],
@@ -856,7 +856,7 @@
         "kind": "mc",
         "prompt": "Which statement best describes SHA-1 initial words?",
         "options": [
-          "The process of checking that a claimed identity or origin is genuine.",
+          "The process of verifying identity; it can validate identity documents or ensure that a product or document is not forged.",
           "SHA-1 has collision weaknesses; NIST recommends transitioning to SHA-2 or SHA-3.",
           "Append a 1 bit, then zero bits, then the original message length encoded in 64 bits to reach a multiple of 512 bits.",
           "SHA-1 starts with five 32-bit state words, often named H0 through H4 or A through E."
@@ -916,10 +916,10 @@
         "kind": "mc",
         "prompt": "Which statement best describes SHA-1 padding?",
         "options": [
-          "Visible signs that a seal or message may have been altered or opened.",
+          "A wax bond is difficult to separate without noticeable tampering; wax can verify that a document is unopened.",
           "The round function changes across four 20-round ranges; the first uses (B AND C) OR ((NOT B) AND D).",
           "Append a 1 bit, then zero bits, then the original message length encoded in 64 bits to reach a multiple of 512 bits.",
-          "A function that maps input data to a fixed-length digest for a chosen hash algorithm."
+          "A function that maps data of any size to fixed-size values."
         ],
         "answer": 2
       },
@@ -979,7 +979,7 @@
           "The round function changes across four 20-round ranges; the first uses (B AND C) OR ((NOT B) AND D).",
           "The sample hexadecimal message 1a7fd53b4c is five bytes, or 40 bits long.",
           "With the slide's sample and standard initial state, the first new A is ba346dee.",
-          "A group into which records can be placed to help organize lookup."
+          "Luhn's method put related information in a single “bucket” to speed up searching."
         ],
         "answer": 0
       },
@@ -1036,7 +1036,7 @@
         "kind": "mc",
         "prompt": "Which statement best describes SHA-1 schedule note?",
         "options": [
-          "The fixed-length output of a hash function, also called a hash value or hash.",
+          "The values returned by a hash function are called hash values, hash codes, digests, or hashes.",
           "An HMAC or digital signature can protect message integrity and help authenticate the source when keys are managed correctly.",
           "SHA-1 starts with five 32-bit state words, often named H0 through H4 or A through E.",
           "The lecture's printed schedule and first-round function contain typos; use the standard formulas in the explanation."
@@ -1096,9 +1096,9 @@
         "kind": "mc",
         "prompt": "Which statement best describes SHA-1 padded sample?",
         "options": [
-          "Comparing a computed digest against a trusted expected digest can reveal accidental or intentional changes.",
+          "Supplemental: comparing a computed digest with a trusted expected digest can reveal changes to the message.",
           "An HMAC or digital signature can protect message integrity and help authenticate the source when keys are managed correctly.",
-          "Comparing hashes of nearly identical messages illustrates that a small change can produce a very different digest.",
+          "The MD5 hash value differs when the same word or phrase uses lowercase and uppercase.",
           "For the sample message, W0 is 1a7fd53b, W1 begins 4c800000, and the final length word is 00000028."
         ],
         "answer": 3
@@ -1157,7 +1157,7 @@
         "prompt": "Which statement best describes 32-bit left rotation?",
         "options": [
           "SHA-1 outputs 160 bits, equivalent to 20 bytes or 40 hexadecimal digits.",
-          "A function that maps input data to a fixed-length digest for a chosen hash algorithm.",
+          "A function that maps data of any size to fixed-size values.",
           "Each of four SHA-1 round ranges uses a specified constant, beginning with 5a827999 for rounds 0–19.",
           "A rotate-left moves bits around a fixed 32-bit word, wrapping the bits that leave the left end back to the right."
         ],
@@ -1277,21 +1277,21 @@
     "concepts": [
       {
         "term": "Security evaluation",
-        "definition": "Assessing how well an algorithm resists attacks and protects data, considering evidence such as cryptanalysis and performance.",
+        "definition": "A critical process to assess how well an algorithm resists attacks and protects data.",
         "slide": 2,
         "falsehood": "A single runtime measurement completely proves an algorithm is secure."
       },
       {
         "term": "Processing time",
-        "definition": "The time required to perform an operation; it is a performance consideration distinct from security strength.",
+        "definition": "The slide lists processing time and says fast processing is always ideal.",
         "slide": 2,
-        "falsehood": "A faster algorithm is automatically more secure than every slower algorithm."
+        "falsehood": "The slide says slow processing is always ideal."
       },
       {
         "term": "Avalanche effect",
-        "definition": "A property where a small input change can cause a substantial, unpredictable change in a cryptographic output.",
+        "definition": "A phenomenon where a small change in input leads to a significant change in output; flipping a single bit can cause this change.",
         "slide": 3,
-        "falsehood": "The avalanche effect means every output bit remains unchanged after any input bit changes."
+        "falsehood": "The avalanche effect means a small change in input always leaves the output unchanged."
       },
       {
         "term": "Single-bit input change",
@@ -1301,7 +1301,7 @@
       },
       {
         "term": "Ciphertext",
-        "definition": "The encrypted output produced by an encryption algorithm under a particular key and configuration.",
+        "definition": "The encrypted result generated by the Blowfish algorithm for an input.",
         "slide": 4,
         "falsehood": "Ciphertext is the original unencrypted message by definition."
       },
@@ -1325,15 +1325,15 @@
       },
       {
         "term": "Input case change",
-        "definition": "In ASCII-compatible encoding, uppercase I and lowercase i differ by one bit: 0x49 XOR 0x69 equals 0x20.",
+        "definition": "The slide modifies the input from ISUECCSICT to iSUECCSICT.",
         "slide": 4,
-        "falsehood": "ASCII uppercase I and lowercase i differ in every bit of their byte values."
+        "falsehood": "The slide modifies the input from ISUECCSICT to ISUECCSICT."
       },
       {
         "term": "Hexadecimal digit",
-        "definition": "One hexadecimal digit represents four bits, so 32 hexadecimal digits represent 128 bits.",
+        "definition": "The slide counts 32 hexadecimal numbers as 128 bits (32 hexadecimal numbers × 4 bits).",
         "slide": 6,
-        "falsehood": "A hexadecimal digit represents exactly one bit."
+        "falsehood": "The slide counts 32 hexadecimal numbers as 32 bits."
       },
       {
         "term": "XOR comparison",
@@ -1349,13 +1349,13 @@
       },
       {
         "term": "Avalanche percentage formula",
-        "definition": "Changed output bits divided by total compared output bits, multiplied by 100.",
+        "definition": "The formula uses changed bits divided by total bits, multiplied by 100.",
         "slide": 6,
-        "falsehood": "Avalanche percentage is the number of changed bits multiplied by the total number of bits."
+        "falsehood": "The formula uses total bits divided by changed bits, multiplied by 100."
       },
       {
         "term": "Slide ciphertext comparison",
-        "definition": "The two hexadecimal ciphertexts printed in the slide differ in 30 of 128 bit positions.",
+        "definition": "Corrected comparison of the slide's two ciphertexts: 30 of 128 bits differ.",
         "slide": 6,
         "falsehood": "The two printed ciphertexts differ in 31 bit positions."
       },
@@ -1379,9 +1379,9 @@
       },
       {
         "term": "Ideal 50% interpretation",
-        "definition": "For an ideal avalanche response, each output bit changes with probability about one-half over many suitable trials.",
+        "definition": "The slide says the ideal avalanche effect should be at least 50% or above.",
         "slide": 6,
-        "falsehood": "Every single valid avalanche test must change at least exactly 50% of output bits to be secure."
+        "falsehood": "The slide says the ideal avalanche effect should be below 50%."
       },
       {
         "term": "Many-trial evaluation",
@@ -1403,9 +1403,9 @@
       },
       {
         "term": "One-round comparison",
-        "definition": "The assignment asks to compare avalanche behavior after the first round of original and enhanced Blowfish.",
+        "definition": "The assessment task asks to perform avalanche effect to the 1st round of the enhanced Blowfish algorithm and compare it to the original algorithm for the 1st round.",
         "slide": 7,
-        "falsehood": "The assignment asks only for a final ciphertext and rules out first-round analysis."
+        "falsehood": "The assessment task asks to compare only the final rounds of the enhanced and original Blowfish algorithms."
       },
       {
         "term": "Statistical randomness testing",
@@ -1418,11 +1418,11 @@
       {
         "lesson": "lesson-2",
         "concept": "Security evaluation",
-        "explanation": "Security evaluation: Assessing how well an algorithm resists attacks and protects data, considering evidence such as cryptanalysis and performance.",
+        "explanation": "Security evaluation: A critical process to assess how well an algorithm resists attacks and protects data.",
         "slide": 2,
         "id": "lesson-2-c0-mc",
         "kind": "mc",
-        "prompt": "Which term best matches this description? Assessing how well an algorithm resists attacks and protects data, considering evidence such as cryptanalysis and performance.",
+        "prompt": "Which term best matches this description? A critical process to assess how well an algorithm resists attacks and protects data.",
         "options": [
           "Blowfish",
           "Security evaluation",
@@ -1434,11 +1434,11 @@
       {
         "lesson": "lesson-2",
         "concept": "Security evaluation",
-        "explanation": "Security evaluation: Assessing how well an algorithm resists attacks and protects data, considering evidence such as cryptanalysis and performance.",
+        "explanation": "Security evaluation: A critical process to assess how well an algorithm resists attacks and protects data.",
         "slide": 2,
         "id": "lesson-2-c0-tf",
         "kind": "tf",
-        "prompt": "Security evaluation: Assessing how well an algorithm resists attacks and protects data, considering evidence such as cryptanalysis and performance.",
+        "prompt": "Security evaluation: A critical process to assess how well an algorithm resists attacks and protects data.",
         "options": [
           "True",
           "False"
@@ -1448,14 +1448,14 @@
       {
         "lesson": "lesson-2",
         "concept": "Processing time",
-        "explanation": "Processing time: The time required to perform an operation; it is a performance consideration distinct from security strength.",
+        "explanation": "Processing time: The slide lists processing time and says fast processing is always ideal.",
         "slide": 2,
         "id": "lesson-2-c1-mc",
         "kind": "mc",
         "prompt": "Which statement best describes Processing time?",
         "options": [
           "For the slide's printed first 64-bit blocks, 30 of 64 bits differ, or 46.875%; this is distinct from comparing all 128 bits.",
-          "The time required to perform an operation; it is a performance consideration distinct from security strength.",
+          "The slide lists processing time and says fast processing is always ideal.",
           "Use multiple independent controlled input changes and inspect the distribution of changed output bits.",
           "XOR corresponding output bits; the 1 bits in the result mark positions where the outputs differ."
         ],
@@ -1464,11 +1464,11 @@
       {
         "lesson": "lesson-2",
         "concept": "Processing time",
-        "explanation": "Processing time: The time required to perform an operation; it is a performance consideration distinct from security strength.",
+        "explanation": "Processing time: The slide lists processing time and says fast processing is always ideal.",
         "slide": 2,
         "id": "lesson-2-c1-tf",
         "kind": "tf",
-        "prompt": "A faster algorithm is automatically more secure than every slower algorithm.",
+        "prompt": "The slide says slow processing is always ideal.",
         "options": [
           "True",
           "False"
@@ -1478,11 +1478,11 @@
       {
         "lesson": "lesson-2",
         "concept": "Avalanche effect",
-        "explanation": "Avalanche effect: A property where a small input change can cause a substantial, unpredictable change in a cryptographic output.",
+        "explanation": "Avalanche effect: A phenomenon where a small change in input leads to a significant change in output; flipping a single bit can cause this change.",
         "slide": 3,
         "id": "lesson-2-c2-mc",
         "kind": "mc",
-        "prompt": "Which term best matches this description? A property where a small input change can cause a substantial, unpredictable change in a cryptographic output.",
+        "prompt": "Which term best matches this description? A phenomenon where a small change in input leads to a significant change in output; flipping a single bit can cause this change.",
         "options": [
           "Security evaluation",
           "Avalanche effect",
@@ -1494,11 +1494,11 @@
       {
         "lesson": "lesson-2",
         "concept": "Avalanche effect",
-        "explanation": "Avalanche effect: A property where a small input change can cause a substantial, unpredictable change in a cryptographic output.",
+        "explanation": "Avalanche effect: A phenomenon where a small change in input leads to a significant change in output; flipping a single bit can cause this change.",
         "slide": 3,
         "id": "lesson-2-c2-tf",
         "kind": "tf",
-        "prompt": "Avalanche effect: A property where a small input change can cause a substantial, unpredictable change in a cryptographic output.",
+        "prompt": "Avalanche effect: A phenomenon where a small change in input leads to a significant change in output; flipping a single bit can cause this change.",
         "options": [
           "True",
           "False"
@@ -1514,10 +1514,10 @@
         "kind": "mc",
         "prompt": "Which statement best describes Single-bit input change?",
         "options": [
-          "The two hexadecimal ciphertexts printed in the slide differ in 30 of 128 bit positions.",
+          "Corrected comparison of the slide's two ciphertexts: 30 of 128 bits differ.",
           "Flipping one input bit is a common controlled way to study the avalanche effect.",
-          "For an ideal avalanche response, each output bit changes with probability about one-half over many suitable trials.",
-          "The time required to perform an operation; it is a performance consideration distinct from security strength."
+          "The slide says the ideal avalanche effect should be at least 50% or above.",
+          "The slide lists processing time and says fast processing is always ideal."
         ],
         "answer": 1
       },
@@ -1538,11 +1538,11 @@
       {
         "lesson": "lesson-2",
         "concept": "Ciphertext",
-        "explanation": "Ciphertext: The encrypted output produced by an encryption algorithm under a particular key and configuration.",
+        "explanation": "Ciphertext: The encrypted result generated by the Blowfish algorithm for an input.",
         "slide": 4,
         "id": "lesson-2-c4-mc",
         "kind": "mc",
-        "prompt": "Which term best matches this description? The encrypted output produced by an encryption algorithm under a particular key and configuration.",
+        "prompt": "Which term best matches this description? The encrypted result generated by the Blowfish algorithm for an input.",
         "options": [
           "Controlled comparison",
           "Processing time",
@@ -1554,11 +1554,11 @@
       {
         "lesson": "lesson-2",
         "concept": "Ciphertext",
-        "explanation": "Ciphertext: The encrypted output produced by an encryption algorithm under a particular key and configuration.",
+        "explanation": "Ciphertext: The encrypted result generated by the Blowfish algorithm for an input.",
         "slide": 4,
         "id": "lesson-2-c4-tf",
         "kind": "tf",
-        "prompt": "Ciphertext: The encrypted output produced by an encryption algorithm under a particular key and configuration.",
+        "prompt": "Ciphertext: The encrypted result generated by the Blowfish algorithm for an input.",
         "options": [
           "True",
           "False"
@@ -1575,7 +1575,7 @@
         "prompt": "Which statement best describes Blowfish?",
         "options": [
           "Compare outputs from the same algorithm and key with settings held constant while changing the intended input bit.",
-          "One hexadecimal digit represents four bits, so 32 hexadecimal digits represent 128 bits.",
+          "The slide counts 32 hexadecimal numbers as 128 bits (32 hexadecimal numbers × 4 bits).",
           "The number of bit positions at which two equal-length bit strings differ.",
           "A symmetric-key block cipher with a 64-bit block size; the lesson uses it as an example for comparison."
         ],
@@ -1635,7 +1635,7 @@
         "prompt": "Which statement best describes Reproducibility settings?",
         "options": [
           "To reproduce encrypted output, specify the key, mode, IV or nonce when applicable, encoding, and padding.",
-          "One hexadecimal digit represents four bits, so 32 hexadecimal digits represent 128 bits.",
+          "The slide counts 32 hexadecimal numbers as 128 bits (32 hexadecimal numbers × 4 bits).",
           "In the slide's printed two-block strings, the second 64-bit ciphertext block is identical in both outputs.",
           "Avalanche behavior is one useful property but does not by itself prove cryptographic security."
         ],
@@ -1658,11 +1658,11 @@
       {
         "lesson": "lesson-2",
         "concept": "Input case change",
-        "explanation": "Input case change: In ASCII-compatible encoding, uppercase I and lowercase i differ by one bit: 0x49 XOR 0x69 equals 0x20.",
+        "explanation": "Input case change: The slide modifies the input from ISUECCSICT to iSUECCSICT.",
         "slide": 4,
         "id": "lesson-2-c8-mc",
         "kind": "mc",
-        "prompt": "Which term best matches this description? In ASCII-compatible encoding, uppercase I and lowercase i differ by one bit: 0x49 XOR 0x69 equals 0x20.",
+        "prompt": "Which term best matches this description? The slide modifies the input from ISUECCSICT to iSUECCSICT.",
         "options": [
           "Controlled comparison",
           "Single-bit input change",
@@ -1674,11 +1674,11 @@
       {
         "lesson": "lesson-2",
         "concept": "Input case change",
-        "explanation": "Input case change: In ASCII-compatible encoding, uppercase I and lowercase i differ by one bit: 0x49 XOR 0x69 equals 0x20.",
+        "explanation": "Input case change: The slide modifies the input from ISUECCSICT to iSUECCSICT.",
         "slide": 4,
         "id": "lesson-2-c8-tf",
         "kind": "tf",
-        "prompt": "Input case change: In ASCII-compatible encoding, uppercase I and lowercase i differ by one bit: 0x49 XOR 0x69 equals 0x20.",
+        "prompt": "Input case change: The slide modifies the input from ISUECCSICT to iSUECCSICT.",
         "options": [
           "True",
           "False"
@@ -1688,15 +1688,15 @@
       {
         "lesson": "lesson-2",
         "concept": "Hexadecimal digit",
-        "explanation": "Hexadecimal digit: One hexadecimal digit represents four bits, so 32 hexadecimal digits represent 128 bits.",
+        "explanation": "Hexadecimal digit: The slide counts 32 hexadecimal numbers as 128 bits (32 hexadecimal numbers × 4 bits).",
         "slide": 6,
         "id": "lesson-2-c9-mc",
         "kind": "mc",
         "prompt": "Which statement best describes Hexadecimal digit?",
         "options": [
-          "The assignment asks to compare avalanche behavior after the first round of original and enhanced Blowfish.",
+          "The assessment task asks to perform avalanche effect to the 1st round of the enhanced Blowfish algorithm and compare it to the original algorithm for the 1st round.",
           "Flipping one input bit is a common controlled way to study the avalanche effect.",
-          "One hexadecimal digit represents four bits, so 32 hexadecimal digits represent 128 bits.",
+          "The slide counts 32 hexadecimal numbers as 128 bits (32 hexadecimal numbers × 4 bits).",
           "The number of bit positions at which two equal-length bit strings differ."
         ],
         "answer": 2
@@ -1704,11 +1704,11 @@
       {
         "lesson": "lesson-2",
         "concept": "Hexadecimal digit",
-        "explanation": "Hexadecimal digit: One hexadecimal digit represents four bits, so 32 hexadecimal digits represent 128 bits.",
+        "explanation": "Hexadecimal digit: The slide counts 32 hexadecimal numbers as 128 bits (32 hexadecimal numbers × 4 bits).",
         "slide": 6,
         "id": "lesson-2-c9-tf",
         "kind": "tf",
-        "prompt": "A hexadecimal digit represents exactly one bit.",
+        "prompt": "The slide counts 32 hexadecimal numbers as 32 bits.",
         "options": [
           "True",
           "False"
@@ -1755,8 +1755,8 @@
         "prompt": "Which statement best describes Hamming distance?",
         "options": [
           "To reproduce encrypted output, specify the key, mode, IV or nonce when applicable, encoding, and padding.",
-          "One hexadecimal digit represents four bits, so 32 hexadecimal digits represent 128 bits.",
-          "Changed output bits divided by total compared output bits, multiplied by 100.",
+          "The slide counts 32 hexadecimal numbers as 128 bits (32 hexadecimal numbers × 4 bits).",
+          "The formula uses changed bits divided by total bits, multiplied by 100.",
           "The number of bit positions at which two equal-length bit strings differ."
         ],
         "answer": 3
@@ -1778,11 +1778,11 @@
       {
         "lesson": "lesson-2",
         "concept": "Avalanche percentage formula",
-        "explanation": "Avalanche percentage formula: Changed output bits divided by total compared output bits, multiplied by 100.",
+        "explanation": "Avalanche percentage formula: The formula uses changed bits divided by total bits, multiplied by 100.",
         "slide": 6,
         "id": "lesson-2-c12-mc",
         "kind": "mc",
-        "prompt": "Which term best matches this description? Changed output bits divided by total compared output bits, multiplied by 100.",
+        "prompt": "Which term best matches this description? The formula uses changed bits divided by total bits, multiplied by 100.",
         "options": [
           "Avalanche percentage formula",
           "Input case change",
@@ -1794,11 +1794,11 @@
       {
         "lesson": "lesson-2",
         "concept": "Avalanche percentage formula",
-        "explanation": "Avalanche percentage formula: Changed output bits divided by total compared output bits, multiplied by 100.",
+        "explanation": "Avalanche percentage formula: The formula uses changed bits divided by total bits, multiplied by 100.",
         "slide": 6,
         "id": "lesson-2-c12-tf",
         "kind": "tf",
-        "prompt": "Avalanche percentage formula: Changed output bits divided by total compared output bits, multiplied by 100.",
+        "prompt": "Avalanche percentage formula: The formula uses changed bits divided by total bits, multiplied by 100.",
         "options": [
           "True",
           "False"
@@ -1808,13 +1808,13 @@
       {
         "lesson": "lesson-2",
         "concept": "Slide ciphertext comparison",
-        "explanation": "Slide ciphertext comparison: The two hexadecimal ciphertexts printed in the slide differ in 30 of 128 bit positions.",
+        "explanation": "Slide ciphertext comparison: Corrected comparison of the slide's two ciphertexts: 30 of 128 bits differ.",
         "slide": 6,
         "id": "lesson-2-c13-mc",
         "kind": "mc",
         "prompt": "Which statement best describes Slide ciphertext comparison?",
         "options": [
-          "The two hexadecimal ciphertexts printed in the slide differ in 30 of 128 bit positions.",
+          "Corrected comparison of the slide's two ciphertexts: 30 of 128 bits differ.",
           "Compare outputs from the same algorithm and key with settings held constant while changing the intended input bit.",
           "In the slide's printed two-block strings, the second 64-bit ciphertext block is identical in both outputs.",
           "XOR corresponding output bits; the 1 bits in the result mark positions where the outputs differ."
@@ -1824,7 +1824,7 @@
       {
         "lesson": "lesson-2",
         "concept": "Slide ciphertext comparison",
-        "explanation": "Slide ciphertext comparison: The two hexadecimal ciphertexts printed in the slide differ in 30 of 128 bit positions.",
+        "explanation": "Slide ciphertext comparison: Corrected comparison of the slide's two ciphertexts: 30 of 128 bits differ.",
         "slide": 6,
         "id": "lesson-2-c13-tf",
         "kind": "tf",
@@ -1876,7 +1876,7 @@
         "options": [
           "Avalanche behavior is one useful property but does not by itself prove cryptographic security.",
           "In the slide's printed two-block strings, the second 64-bit ciphertext block is identical in both outputs.",
-          "In ASCII-compatible encoding, uppercase I and lowercase i differ by one bit: 0x49 XOR 0x69 equals 0x20.",
+          "The slide modifies the input from ISUECCSICT to iSUECCSICT.",
           "XOR corresponding output bits; the 1 bits in the result mark positions where the outputs differ."
         ],
         "answer": 1
@@ -1928,27 +1928,27 @@
       {
         "lesson": "lesson-2",
         "concept": "Ideal 50% interpretation",
-        "explanation": "Ideal 50% interpretation: For an ideal avalanche response, each output bit changes with probability about one-half over many suitable trials.",
+        "explanation": "Ideal 50% interpretation: The slide says the ideal avalanche effect should be at least 50% or above.",
         "slide": 6,
         "id": "lesson-2-c17-mc",
         "kind": "mc",
         "prompt": "Which statement best describes Ideal 50% interpretation?",
         "options": [
           "XOR corresponding output bits; the 1 bits in the result mark positions where the outputs differ.",
-          "Assessing how well an algorithm resists attacks and protects data, considering evidence such as cryptanalysis and performance.",
-          "The assignment asks to compare avalanche behavior after the first round of original and enhanced Blowfish.",
-          "For an ideal avalanche response, each output bit changes with probability about one-half over many suitable trials."
+          "A critical process to assess how well an algorithm resists attacks and protects data.",
+          "The assessment task asks to perform avalanche effect to the 1st round of the enhanced Blowfish algorithm and compare it to the original algorithm for the 1st round.",
+          "The slide says the ideal avalanche effect should be at least 50% or above."
         ],
         "answer": 3
       },
       {
         "lesson": "lesson-2",
         "concept": "Ideal 50% interpretation",
-        "explanation": "Ideal 50% interpretation: For an ideal avalanche response, each output bit changes with probability about one-half over many suitable trials.",
+        "explanation": "Ideal 50% interpretation: The slide says the ideal avalanche effect should be at least 50% or above.",
         "slide": 6,
         "id": "lesson-2-c17-tf",
         "kind": "tf",
-        "prompt": "Every single valid avalanche test must change at least exactly 50% of output bits to be secure.",
+        "prompt": "The slide says the ideal avalanche effect should be below 50%.",
         "options": [
           "True",
           "False"
@@ -1994,9 +1994,9 @@
         "kind": "mc",
         "prompt": "Which statement best describes Avalanche is not proof?",
         "options": [
-          "The time required to perform an operation; it is a performance consideration distinct from security strength.",
+          "The slide lists processing time and says fast processing is always ideal.",
           "Avalanche behavior is one useful property but does not by itself prove cryptographic security.",
-          "In ASCII-compatible encoding, uppercase I and lowercase i differ by one bit: 0x49 XOR 0x69 equals 0x20.",
+          "The slide modifies the input from ISUECCSICT to iSUECCSICT.",
           "Testing output statistics can provide evidence about patterns, but passing tests alone does not establish security."
         ],
         "answer": 1
@@ -2048,13 +2048,13 @@
       {
         "lesson": "lesson-2",
         "concept": "One-round comparison",
-        "explanation": "One-round comparison: The assignment asks to compare avalanche behavior after the first round of original and enhanced Blowfish.",
+        "explanation": "One-round comparison: The assessment task asks to perform avalanche effect to the 1st round of the enhanced Blowfish algorithm and compare it to the original algorithm for the 1st round.",
         "slide": 7,
         "id": "lesson-2-c21-mc",
         "kind": "mc",
         "prompt": "Which statement best describes One-round comparison?",
         "options": [
-          "The assignment asks to compare avalanche behavior after the first round of original and enhanced Blowfish.",
+          "The assessment task asks to perform avalanche effect to the 1st round of the enhanced Blowfish algorithm and compare it to the original algorithm for the 1st round.",
           "To reproduce encrypted output, specify the key, mode, IV or nonce when applicable, encoding, and padding.",
           "Testing output statistics can provide evidence about patterns, but passing tests alone does not establish security.",
           "For the slide's printed first 64-bit blocks, 30 of 64 bits differ, or 46.875%; this is distinct from comparing all 128 bits."
@@ -2064,11 +2064,11 @@
       {
         "lesson": "lesson-2",
         "concept": "One-round comparison",
-        "explanation": "One-round comparison: The assignment asks to compare avalanche behavior after the first round of original and enhanced Blowfish.",
+        "explanation": "One-round comparison: The assessment task asks to perform avalanche effect to the 1st round of the enhanced Blowfish algorithm and compare it to the original algorithm for the 1st round.",
         "slide": 7,
         "id": "lesson-2-c21-tf",
         "kind": "tf",
-        "prompt": "The assignment asks only for a final ciphertext and rules out first-round analysis.",
+        "prompt": "The assessment task asks to compare only the final rounds of the enhanced and original Blowfish algorithms.",
         "options": [
           "True",
           "False"

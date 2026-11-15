@@ -8,23 +8,23 @@ def lesson(file,title,subtitle,raw):
   t,d,p,f=row.split('|');cs.append(dict(term=t,definition=d,slide=int(p),falsehood=f))
  lessons.append(dict(id=f'lesson-{len(lessons)+1}',file=file,title=title,subtitle=subtitle,concepts=cs))
 lesson('AUTHENTICATION.pptx','Authentication and Hash Functions','Identity, message digests, and SHA-1','''
-Authentication|The process of checking that a claimed identity or origin is genuine.|2|Authentication means granting permissions without checking any identity.
-Historical wax seal|A seal could show signs of opening and carry an impression associated with a sender.|3|A wax seal mathematically proves that no forgery is possible.
-Tamper evidence|Visible signs that a seal or message may have been altered or opened.|4|Tamper evidence guarantees that no attacker can imitate or replace a seal.
-Hash function|A function that maps input data to a fixed-length digest for a chosen hash algorithm.|5|A fixed hash algorithm must produce longer digests for longer messages.
-Message digest|The fixed-length output of a hash function, also called a hash value or hash.|5|A message digest is necessarily the original plaintext in readable form.
+Authentication|The process of verifying identity; it can validate identity documents or ensure that a product or document is not forged.|2|Authentication means granting permissions without checking any identity.
+Historical wax seal|A wax seal bonds to paper, parchment, ribbons, wire, or other material and is difficult to separate without noticeable tampering.|3|A wax seal mathematically proves that no forgery is possible.
+Tamper evidence|A wax bond is difficult to separate without noticeable tampering; wax can verify that a document is unopened.|4|A wax seal guarantees that no attacker can imitate or replace it.
+Hash function|A function that maps data of any size to fixed-size values.|5|A fixed hash algorithm must produce longer digests for longer messages.
+Message digest|The values returned by a hash function are called hash values, hash codes, digests, or hashes.|5|A message digest is necessarily the original plaintext in readable form.
 Hashing and encryption|Hashing produces a digest; encryption uses a key and is designed to be reversed by authorized parties.|5|Hashing and encryption are identical reversible operations.
-Early hashing history|The slide credits Hans Peter Luhn with early hashing work used to organize and search records.|6|The slides describe early hashing as having no use in searching records.
-Hash bucket|A group into which records can be placed to help organize lookup.|6|A hash bucket is a certificate that proves a sender's identity.
-MD4 and MD5|Historical Message Digest algorithms named in the lesson; MD5 is unsuitable where collision resistance is needed.|7|MD4 and MD5 are current recommendations for new collision-resistant authentication designs.
-SHA-1|A historical cryptographic hash algorithm producing a 160-bit digest and using 80 rounds per block.|16|SHA-1 produces a 512-bit digest and performs only one round per block.
-SHA-2 and SHA-3|Families of modern hash algorithms that NIST recommends as alternatives to SHA-1.|7|NIST recommends adopting SHA-1 instead of SHA-2 and SHA-3 for new collision-resistant uses.
-Hash sensitivity|A small change in input, including a change in letter case, generally produces a different cryptographic digest.|8|Changing letter case always leaves the input bytes and digest unchanged.
-MD5 case example|The slide's MD5 digest for uppercase CCSICT is afa10b1e77998a5806a8b0fdff622b03.|9|The slide's MD5 example says that uppercase and lowercase inputs are necessarily identical bytes.
-MD5 output length|MD5 produces a 128-bit digest, commonly displayed as 32 hexadecimal characters.|10|MD5's digest length grows in direct proportion to the input length.
-Fixed-length digest|A particular hash algorithm returns the same output length even when input messages have different lengths.|11|A longer message always makes MD5 return more than 128 bits.
-Input comparison exercise|Comparing hashes of nearly identical messages illustrates that a small change can produce a very different digest.|12|The same hash algorithm must output almost identical digests for nearly identical messages.
-Integrity check|Comparing a computed digest against a trusted expected digest can reveal accidental or intentional changes.|12|A checksum comparison can identify changes even if an attacker can replace both the message and its expected digest.
+Early hashing history|Hans Peter Luhn's method aimed to speed up searching a telephone directory of over a million records.|6|The slides describe early hashing as having no use in searching records.
+Hash bucket|Luhn's method put related information in a single “bucket” to speed up searching.|6|A hash bucket is a certificate that proves a sender's identity.
+MD4 and MD5|MD4 (Message Digest 4) and MD5 (Message Digest 5) are hash algorithms named on the slide.|7|MD4 and MD5 are encryption algorithms rather than hash algorithms.
+SHA-1|SHA-1 (Secure Hash Algorithm 1) uses 80 rounds and has a hash value of 160 bits.|16|SHA-1 produces a 512-bit digest and performs only one round.
+SHA-2 and SHA-3|The slide names SHA-3 (512) among the latest and strongest hash algorithms at the time.|7|The slide names SHA-1 as the latest and strongest hash algorithm at the time.
+Hash sensitivity|The MD5 hash algorithm is case sensitive: the hash value differs when the same word or phrase uses lowercase and uppercase.|8|Changing letter case always leaves the hash value unchanged.
+MD5 case example|The slide's MD5 hash value for CCSICT (all caps) is afa10b1e77998a5806a8b0fdff622b03.|9|The slide gives a different MD5 hash value for CCSICT (all caps): 00000000000000000000000000000000.
+MD5 output length|Supplemental reference: MD5 produces a 128-bit digest, commonly displayed as 32 hexadecimal characters.|10|MD5's digest length grows in direct proportion to the input length.
+Fixed-length digest|A hash function maps data of any size to fixed-size values.|11|A longer message always makes the hash function return a longer value.
+Input comparison exercise|The MD5 hash value differs when the same word or phrase uses lowercase and uppercase.|12|The same hash algorithm must output identical hash values for uppercase and lowercase inputs.
+Integrity check|Supplemental: comparing a computed digest with a trusted expected digest can reveal changes to the message.|12|Comparing a digest against an untrusted replacement always proves the message was unchanged.
 Authenticated integrity|An HMAC or digital signature can protect message integrity and help authenticate the source when keys are managed correctly.|12|A plain unkeyed hash sent alongside a message by itself authenticates the sender against an active attacker.
 MD4 meaning|MD4 stands for Message Digest 4 and is an older hash algorithm.|13|MD4 is the name of a modern authentication factor rather than a hash algorithm.
 SHA-1 digest size|SHA-1 outputs 160 bits, equivalent to 20 bytes or 40 hexadecimal digits.|16|SHA-1 outputs 160 hexadecimal digits for every message.
@@ -45,28 +45,28 @@ SHA-1 first-round example|With the slide's sample and standard initial state, th
 SHA-1 security status|SHA-1 has collision weaknesses; NIST recommends transitioning to SHA-2 or SHA-3.|16|SHA-1 is recommended for new digital signatures because it is collision resistant.
 ''')
 lesson('AVALANCHE-EFFECT-COMPUTATION.pptx','Avalanche Effect Computation','Compare ciphertext bits and interpret the result','''
-Security evaluation|Assessing how well an algorithm resists attacks and protects data, considering evidence such as cryptanalysis and performance.|2|A single runtime measurement completely proves an algorithm is secure.
-Processing time|The time required to perform an operation; it is a performance consideration distinct from security strength.|2|A faster algorithm is automatically more secure than every slower algorithm.
-Avalanche effect|A property where a small input change can cause a substantial, unpredictable change in a cryptographic output.|3|The avalanche effect means every output bit remains unchanged after any input bit changes.
+Security evaluation|A critical process to assess how well an algorithm resists attacks and protects data.|2|A single runtime measurement completely proves an algorithm is secure.
+Processing time|The slide lists processing time and says fast processing is always ideal.|2|The slide says slow processing is always ideal.
+Avalanche effect|A phenomenon where a small change in input leads to a significant change in output; flipping a single bit can cause this change.|3|The avalanche effect means a small change in input always leaves the output unchanged.
 Single-bit input change|Flipping one input bit is a common controlled way to study the avalanche effect.|3|A controlled avalanche test must change every input bit at once.
-Ciphertext|The encrypted output produced by an encryption algorithm under a particular key and configuration.|4|Ciphertext is the original unencrypted message by definition.
+Ciphertext|The encrypted result generated by the Blowfish algorithm for an input.|4|Ciphertext is the original unencrypted message by definition.
 Blowfish|A symmetric-key block cipher with a 64-bit block size; the lesson uses it as an example for comparison.|4|Blowfish has a 128-bit block size.
 Controlled comparison|Compare outputs from the same algorithm and key with settings held constant while changing the intended input bit.|4|A fair avalanche experiment should change the input, key, mode, and IV all at once.
 Reproducibility settings|To reproduce encrypted output, specify the key, mode, IV or nonce when applicable, encoding, and padding.|4|Knowing only a plaintext and the algorithm name always determines a unique ciphertext.
-Input case change|In ASCII-compatible encoding, uppercase I and lowercase i differ by one bit: 0x49 XOR 0x69 equals 0x20.|4|ASCII uppercase I and lowercase i differ in every bit of their byte values.
-Hexadecimal digit|One hexadecimal digit represents four bits, so 32 hexadecimal digits represent 128 bits.|6|A hexadecimal digit represents exactly one bit.
+Input case change|The slide modifies the input from ISUECCSICT to iSUECCSICT.|4|The slide modifies the input from ISUECCSICT to ISUECCSICT.
+Hexadecimal digit|The slide counts 32 hexadecimal numbers as 128 bits (32 hexadecimal numbers × 4 bits).|6|The slide counts 32 hexadecimal numbers as 32 bits.
 XOR comparison|XOR corresponding output bits; the 1 bits in the result mark positions where the outputs differ.|5|XOR produces a 1 when the two corresponding input bits are equal.
 Hamming distance|The number of bit positions at which two equal-length bit strings differ.|5|Hamming distance counts only how many hexadecimal digits look different, without checking individual bits.
-Avalanche percentage formula|Changed output bits divided by total compared output bits, multiplied by 100.|6|Avalanche percentage is the number of changed bits multiplied by the total number of bits.
-Slide ciphertext comparison|The two hexadecimal ciphertexts printed in the slide differ in 30 of 128 bit positions.|6|The two printed ciphertexts differ in 31 bit positions.
+Avalanche percentage formula|The formula uses changed bits divided by total bits, multiplied by 100.|6|The formula uses total bits divided by changed bits, multiplied by 100.
+Slide ciphertext comparison|Corrected comparison of the slide's two ciphertexts: 30 of 128 bits differ.|6|The two printed ciphertexts differ in 31 bit positions.
 Corrected slide percentage|30 divided by 128, multiplied by 100, equals 23.4375%, approximately 23.44%.|6|The two printed ciphertexts show exactly 50% changed bits.
 Unchanged second block|In the slide's printed two-block strings, the second 64-bit ciphertext block is identical in both outputs.|4|Both 64-bit ciphertext blocks printed in the slide change completely.
 Block-level comparison|For the slide's printed first 64-bit blocks, 30 of 64 bits differ, or 46.875%; this is distinct from comparing all 128 bits.|6|The printed first-block comparison is 30 changed bits out of 128 bits.
-Ideal 50% interpretation|For an ideal avalanche response, each output bit changes with probability about one-half over many suitable trials.|6|Every single valid avalanche test must change at least exactly 50% of output bits to be secure.
+Ideal 50% interpretation|The slide says the ideal avalanche effect should be at least 50% or above.|6|The slide says the ideal avalanche effect should be below 50%.
 Many-trial evaluation|Use multiple independent controlled input changes and inspect the distribution of changed output bits.|6|One measured percentage is sufficient to establish an algorithm's security.
 Avalanche is not proof|Avalanche behavior is one useful property but does not by itself prove cryptographic security.|6|Passing an avalanche test proves an algorithm is secure against all attacks.
 Mode and block boundaries|Encryption mode, padding, and block boundaries affect what is compared across multi-block ciphertexts.|4|The mode of operation cannot affect how a change propagates across ciphertext blocks.
-One-round comparison|The assignment asks to compare avalanche behavior after the first round of original and enhanced Blowfish.|7|The assignment asks only for a final ciphertext and rules out first-round analysis.
+One-round comparison|The assessment task asks to perform avalanche effect to the 1st round of the enhanced Blowfish algorithm and compare it to the original algorithm for the 1st round.|7|The assessment task asks to compare only the final rounds of the enhanced and original Blowfish algorithms.
 Statistical randomness testing|Testing output statistics can provide evidence about patterns, but passing tests alone does not establish security.|7|Passing a randomness test proves a cipher cannot have exploitable weaknesses.
 ''')
 rng=random.Random(180)

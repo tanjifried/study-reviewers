@@ -20,6 +20,8 @@ Combine the three existing study packs into one website with a subject chooser, 
 - Preserve the Python reviewer's exam appearance and optional instant final-exam feedback.
 - Security includes Authentication and Avalanche Effect only.
 - Progress stays in the browser on each device; no account or cross-device syncing.
+- Final exams let the learner choose their length and immediate or after-submission feedback. Existing attempts keep their own settings.
+- Software Engineering and Security questions preserve source-slide vocabulary and phrasing, with documented factual corrections retained.
 - Store source in the private `tanjifried/study-reviewers` repository and publish a publicly accessible GitHub Pages website.
 - Existing static HTML, CSS, and JavaScript remain the stack; downloaded website files also work offline.
 
