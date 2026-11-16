@@ -1,0 +1,43 @@
+{
+  "name": "Original practice: minimal",
+  "states": [
+    "e",
+    "o"
+  ],
+  "alphabet": [
+    "0",
+    "1"
+  ],
+  "start_state": "e",
+  "accept_states": [
+    "e"
+  ],
+  "transitions": {
+    "e": {
+      "0": [
+        "o"
+      ],
+      "1": [
+        "e"
+      ]
+    },
+    "o": {
+      "0": [
+        "e"
+      ],
+      "1": [
+        "o"
+      ]
+    }
+  },
+  "positions": {
+    "e": [
+      280,
+      220
+    ],
+    "o": [
+      640,
+      220
+    ]
+  }
+}

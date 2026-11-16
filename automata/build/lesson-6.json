@@ -1,0 +1,507 @@
+{
+  "id": "lesson-6",
+  "number": 6,
+  "title": "DFA Minimization",
+  "videoId": "3PP21tlIKsE",
+  "duration": 2319,
+  "overview": "Learn how to find the smallest DFA for the same language. The lesson introduces state equivalence, refines candidate groups using transitions, and works through two examples. A DFA is already minimal only when its reachable states are pairwise distinguishable.",
+  "objectives": [
+    "Explain why equivalent states can be merged without changing the language.",
+    "Start partition refinement by separating accepting from non-accepting states.",
+    "Use transition destinations and distinguishing suffixes to refine a partition.",
+    "Reconstruct the two source examples and verify their minimized forms.",
+    "Distinguish removing unreachable states from merging equivalent reachable states."
+  ],
+  "keyTerms": [
+    {
+      "term": "DFA minimization",
+      "definition": "Constructing a smallest-state DFA that recognizes the same language as the original."
+    },
+    {
+      "term": "Equivalent states",
+      "definition": "States are equivalent when every possible continuation is accepted from both or rejected from both."
+    },
+    {
+      "term": "Distinguishing suffix",
+      "definition": "A continuation that makes one of two states accept and the other reject; it proves the states are not equivalent."
+    },
+    {
+      "term": "Partition refinement",
+      "definition": "Repeatedly split state groups when a symbol sends members into different groups, until no group can be split."
+    },
+    {
+      "term": "Reachable state",
+      "definition": "A state that can be reached from the start state by reading some string, including the empty string."
+    },
+    {
+      "term": "Empty word (ε)",
+      "definition": "The string with no symbols. Starting there leaves the machine at its start state, so it is accepted exactly when the start state is accepting."
+    }
+  ],
+  "segments": [
+    {
+      "id": "l6-s01",
+      "start": 20,
+      "end": 116,
+      "title": "Goal: reduce states while preserving the language",
+      "notes": [
+        "The lecturer introduces DFA minimization and describes the aim as reducing state count while retaining the same recognized behavior.",
+        "The lesson uses a procedure and presents transition tables and diagrams."
+      ],
+      "speakerNotes": "Ang minimization ay pagbawas ng states habang pareho pa rin ang accepted language. Hahanapin kung aling states ang puwedeng pagsamahin.",
+      "visualDescription": "Opening title and motivation, followed by the topic title.",
+      "diagram": "",
+      "workedSteps": []
+    },
+    {
+      "id": "l6-s02",
+      "start": 185,
+      "end": 500,
+      "title": "Equivalent states have identical future answers",
+      "notes": [
+        "Compare two states by asking what happens after each possible continuation.",
+        "If every continuation leads to the same accept/reject result from both states, they are equivalent.",
+        "One matching transition is not enough: the test must hold for every string, including the empty word."
+      ],
+      "speakerNotes": "Sa Taglish: Magkapareho ang dalawang state kung pareho ang magiging accept o reject nila para sa bawat posibleng kasunod na input. Hindi sapat ang magkaparehong label o isang test lang.",
+      "visualDescription": "The lecture introduces equivalence with a cartoon and state sketches; the early sketch labels are not used as a source example.",
+      "diagram": "",
+      "workedSteps": [
+        "For ε, check whether the states themselves are accepting.",
+        "For each symbol and then longer suffixes, compare the states reached.",
+        "A suffix that produces different acceptance is a witness that they are distinguishable."
+      ]
+    },
+    {
+      "id": "l6-s03",
+      "start": 500,
+      "end": 594,
+      "title": "Example 1: read the five-state DFA",
+      "notes": [
+        "At about 08:30 the video shows states A, B, C, D, E; A is the start and E is accepting.",
+        "The visible diagram and table agree: A goes to B on 0 and C on 1; B goes to B/D; C goes to B/C; D goes to B/E; E goes to B/C for inputs 0/1.",
+        "All five states are reachable from A."
+      ],
+      "speakerNotes": "Sa unang example, A ang start at E ang final. Basahin muna ang table para makita ang destination sa bawat0 at 1 bago maghanap ng equivalent states.",
+      "visualDescription": "A five-state diagram labeled Example 1: DFA Minimization, with E double-circled.",
+      "diagram": "l6-source-example-1",
+      "workedSteps": [
+        "A: 0→B, 1→C",
+        "B: 0→B, 1→D",
+        "C: 0→B, 1→C",
+        "D: 0→B, 1→E",
+        "E: 0→B, 1→C"
+      ]
+    },
+    {
+      "id": "l6-s04",
+      "start": 594,
+      "end": 1422,
+      "title": "Example 1: prove A and C equivalent",
+      "notes": [
+        "A and C are both non-accepting. Their 0 transitions both go to B.",
+        "Their 1 transitions go to C and C; since A and C are being considered as one class, these destinations are in that same class.",
+        "Thus A and C have the same acceptance behavior for all continuations and can be merged."
+      ],
+      "speakerNotes": "Sa source example, ang only merge ay A at C. Hindi kailangan manghula mula sa hugis: tingnan ang transition table at kung saang equivalence class napupunta ang bawat symbol.",
+      "visualDescription": "The source separates final/nonfinal states, refines {A,B,C,D} into {A,B,C} and {D}, then separates B from A/C. By the checked 20:00 frame, the stable partition and converted table are visible.",
+      "diagram": "l6-source-example-1",
+      "workedSteps": [
+        "Initial split: {A,B,C,D} | {E}.",
+        "After one-symbol refinement: {A,B,C} | {D} | {E}; D alone reaches accepting E on 1.",
+        "Next refinement: {A,C} | {B} | {D} | {E}; B differs because its 1-transition reaches the D class.",
+        "The next refinement is unchanged. Construct AC,B,D,E, with start AC and accepting E."
+      ]
+    },
+    {
+      "id": "l6-s05",
+      "start": 1422,
+      "end": 1550,
+      "title": "Second example: initial partition",
+      "notes": [
+        "At about 23:40 a complete transition table for q0 through q7 appears. q0 is the start and q2 is the only accepting state. q3 and q7 are unreachable from q0.",
+        "The first partition is {q2} versus {q0,q1,q3,q4,q5,q6,q7}. The empty word already distinguishes q2 from every nonfinal state.",
+        "The first refinement groups nonfinal states by the classes reached on 0 and 1."
+      ],
+      "speakerNotes": "Sa unang hati, isama ang empty string: kapag nasa accepting state na, tanggap ang ε; kapag nonfinal, reject ang ε. Kaya hindi puwedeng mapunta ang q2 sa group ng iba.",
+      "visualDescription": "Readable table with columns 0 and 1; q0 start, q2 double-marked accepting.",
+      "diagram": "l6-source-example-2",
+      "workedSteps": [
+        "q0: 0→q1, 1→q5",
+        "q1: 0→q6, 1→q2",
+        "q2: 0→q0, 1→q2",
+        "q3: 0→q2, 1→q6",
+        "q4: 0→q1, 1→q5",
+        "q5: 0→q2, 1→q6",
+        "q6: 0→q6, 1→q4",
+        "q7: 0→q6, 1→q2"
+      ]
+    },
+    {
+      "id": "l6-s06",
+      "start": 1550,
+      "end": 1900,
+      "title": "Second example: refine by destination classes",
+      "notes": [
+        "The displayed first refinement is {q0,q4,q6}, {q1,q7}, {q3,q5}, {q2}.",
+        "q0 and q4 share both destination patterns. q1 and q7 share both destinations. q3 and q5 share both destinations. q3 and q7 themselves are unreachable from the start, although the source includes them while refining the full table.",
+        "q6 splits from q0/q4 because on 0 it stays in the q6 class while q0/q4 go to q1/q7; on 1 it goes to q4."
+      ],
+      "speakerNotes": "Ihambing ang group na pinupuntahan ng bawat state sa0 at 1. Kapag magkaiba ang destination groups, kailangan pang hatiin ang block.",
+      "visualDescription": "The slide shows the initial split, then the displayed 1-equivalence row and the beginning of the next refinement.",
+      "diagram": "l6-source-example-2",
+      "workedSteps": [
+        "Round 0: {q2} | {q0,q1,q3,q4,q5,q6,q7}.",
+        "Round 1: {q0,q4,q6} | {q1,q7} | {q3,q5} | {q2}.",
+        "Compare destination-group pairs for each symbol to decide whether a block must split."
+      ]
+    },
+    {
+      "id": "l6-s07",
+      "start": 1900,
+      "end": 2304,
+      "title": "Second example: final partition and minimized table",
+      "notes": [
+        "The video displays the final classes {q0,q4}, {q6}, {q1,q7}, {q3,q5}, {q2}.",
+        "The accepting class is {q2}; the start class is {q0,q4}.",
+        "The video groups the full table into five classes. q3 and q7 are unreachable from q0; removing them first leaves six reachable states, then q0 and q4 merge, also yielding a five-state minimal reachable DFA."
+      ],
+      "speakerNotes": "Sa final partition, gumawa ng isang state para sa bawat group at i-map ang0 at1 sa destination groups. Ang groups ay q0/q4, q6, q1/q7, q3/q5 at q2.",
+      "visualDescription": "The source table shows five final classes and begins a quotient transition table; q3 and q7 are not reachable from q0.",
+      "diagram": "l6-source-example-2",
+      "workedSteps": [
+        "The displayed full-table grouping is {q0,q4}, {q6}, {q1,q7}, {q3,q5}, {q2}.",
+        "From q0, only q0, q1, q2, q4, q5, q6 are reachable; q3 and q7 are unreachable.",
+        "After deleting q3 and q7, q0 and q4 remain equivalent; merging them leaves five reachable quotient states.",
+        "The source quotient transitions are consistent because unreachable q3/q7 share the same destination behavior as q5/q1 respectively."
+      ],
+      "caution": "Additional reachability check: q3 and q7 are unreachable from q0. Removing them first and merging the reachable equivalent pair q0/q4 gives the same five-state minimal result. This check is an editorial clarification of the source’s full-table refinement."
+    },
+    {
+      "id": "l6-s08",
+      "start": 500,
+      "end": 500,
+      "title": "Can a DFA be minimized further?",
+      "notes": [
+        "A DFA can always be minimized; the important question is whether minimization can reduce its state count.",
+        "A reachable DFA is minimal exactly when every pair of distinct states is distinguishable.",
+        "If an equivalent reachable pair exists, merge it. If a state is unreachable, remove it first; that is not an equivalence merge."
+      ],
+      "speakerNotes": "Dagdag na paliwanag: alisin muna ang unreachable states, saka tingnan kung may equivalent na reachable pair. Kapag wala nang ganoong pair, minimal na ang DFA.",
+      "visualDescription": "The second worked example ends with a minimized DFA and the lesson summarizes the result.",
+      "diagram": "",
+      "workedSteps": [
+        "Reachability asks whether the start can get to a state.",
+        "Equivalence asks whether two reachable states have identical future language behavior.",
+        "Do not conflate deleting unreachable states with merging equivalent states."
+      ],
+      "caution": "Additional explanation or practice, separate from the source examples. The time link points to the related source procedure, not to this newly authored exercise."
+    },
+    {
+      "id": "l6-s09",
+      "start": 500,
+      "end": 500,
+      "title": "A reliable refinement routine",
+      "notes": [
+        "Begin by removing unreachable states if the task asks for a minimal DFA.",
+        "Split the remaining states into accepting and non-accepting groups.",
+        "Repeatedly split groups when some symbol leads members to different current groups. Stop at a fixed point."
+      ],
+      "speakerNotes": "Buod ng routine: unang hati ay final at nonfinal. I-refine gamit ang destination groups hanggang wala nang bagong split.",
+      "visualDescription": "Summary transition from the worked table toward the minimized result.",
+      "diagram": "",
+      "workedSteps": [
+        "Compute states reachable from the start.",
+        "Partition by acceptance, which includes testing ε.",
+        "For each block, compare the destination block for every alphabet symbol.",
+        "Repeat until the partition no longer changes, then build one state per block."
+      ],
+      "caution": "Additional explanation or practice, separate from the source examples. The time link points to the related source procedure, not to this newly authored exercise."
+    },
+    {
+      "id": "l6-s10",
+      "start": 500,
+      "end": 500,
+      "title": "Practice: a DFA that does shrink",
+      "notes": [
+        "New practice variation (not a source-video example): states p and r have matching transition patterns and are both nonfinal.",
+        "The diagram is a complete DFA over {0,1}; p and r are equivalent.",
+        "Merging p and r gives a two-state DFA with the same language."
+      ],
+      "speakerNotes": "Bagong practice variation ito, hindi video example. Tingnan sa diagram kung may magkaparehong future behavior na puwedeng pagsamahin.",
+      "visualDescription": "Practice diagram l6-practice-reducible.",
+      "diagram": "l6-practice-reducible",
+      "workedSteps": [
+        "Start partition: {f} | {p,r}.",
+        "From p and r, 0 stays in the nonfinal block and 1 goes to f.",
+        "They remain together; quotient has two states."
+      ],
+      "caution": "Additional explanation or practice, separate from the source examples. The time link points to the related source procedure, not to this newly authored exercise."
+    },
+    {
+      "id": "l6-s11",
+      "start": 500,
+      "end": 500,
+      "title": "Practice: a minimal DFA",
+      "notes": [
+        "New practice variation: a two-state parity DFA over {0,1}.",
+        "On 0 it switches between states; on 1 it stays put. Only even-parity state e accepts.",
+        "The states are distinguishable by ε because one accepts and one rejects, so no merge is possible."
+      ],
+      "speakerNotes": "Bagong practice variation ito. Ang accepting at rejecting states ay distinguished na ng empty string kaya hindi basta puwedeng pagsamahin.",
+      "visualDescription": "Practice diagram l6-practice-minimal.",
+      "diagram": "l6-practice-minimal",
+      "workedSteps": [
+        "ε distinguishes e from o.",
+        "Both states are reachable from e.",
+        "Two states are necessary and sufficient."
+      ],
+      "caution": "Additional explanation or practice, separate from the source examples. The time link points to the related source procedure, not to this newly authored exercise."
+    },
+    {
+      "id": "l6-s12",
+      "start": 500,
+      "end": 500,
+      "title": "Practice: unreachable is not equivalent",
+      "notes": [
+        "New practice variation: a one-symbol DFA has a reachable nonfinal start state p and an unreachable accepting state u.",
+        "Remove u because no input from p can reach it. This removes an unreachable state; it does not merge equivalent reachable states.",
+        "The resulting one-state DFA is minimal for the empty language."
+      ],
+      "speakerNotes": "Bagong practice variation ito. Walang path mula sa start papunta sa u, kaya reachability cleanup ang pagtanggal dito, hindi equivalent-state merge.",
+      "visualDescription": "Practice diagram l6-practice-unreachable.",
+      "diagram": "l6-practice-unreachable",
+      "workedSteps": [
+        "Reachable set from p is {p}.",
+        "Delete u.",
+        "There is only one reachable state, so no two reachable states remain to merge."
+      ],
+      "caution": "Additional explanation or practice, separate from the source examples. The time link points to the related source procedure, not to this newly authored exercise."
+    }
+  ],
+  "recap": [
+    "Equivalent means the same accept/reject answer for every continuation.",
+    "The empty word ε creates the first split: accepting versus non-accepting.",
+    "Refine groups when any symbol leads members to different groups.",
+    "Merge only states that stay equivalent through all future behavior.",
+    "Remove unreachable states separately from equivalence-based merging.",
+    "A minimized DFA may still have multiple states; “minimal” means no further reduction preserves the language."
+  ],
+  "commonMistakes": [
+    "Treating matching transitions on one symbol as proof of equivalence.",
+    "Forgetting that ε distinguishes an accepting state from a non-accepting state.",
+    "Starting with a guessed partition instead of acceptance classes.",
+    "Merging two states whose transitions lead to different equivalence classes.",
+    "Calling an unreachable-state deletion an equivalence merge.",
+    "Assuming that every DFA can be reduced to fewer states; some are already minimal."
+  ],
+  "questions": [
+    {
+      "id": "l6-q01",
+      "prompt": "Can the source Example 1 DFA be reduced further?",
+      "choices": [
+        "Yes. Merge A and C to get four states.",
+        "Yes. Merge B and D to get four states.",
+        "No. All five states are distinguishable.",
+        "Yes. Delete E because it is accepting."
+      ],
+      "answer": 0,
+      "explanation": "A and C are both nonaccepting; on 0 they both go to B and on 1 they go to the A/C class. The other states are distinguishable.",
+      "segmentId": "l6-s04",
+      "diagram": "l6-source-example-1"
+    },
+    {
+      "id": "l6-q02",
+      "prompt": "In Example 1, what distinguishes D from B?",
+      "choices": [
+        "The empty word ε.",
+        "Suffix 1: D goes to accepting E, while B goes to nonaccepting D.",
+        "Suffix 0: both go to B.",
+        "They are equivalent."
+      ],
+      "answer": 1,
+      "explanation": "The suffix 1 yields different acceptance: from D it reaches E, from B it reaches D.",
+      "segmentId": "l6-s04",
+      "diagram": "l6-source-example-1"
+    },
+    {
+      "id": "l6-q03",
+      "prompt": "What is the first partition for source Example 2?",
+      "choices": [
+        "{q0} | all others",
+        "All states in one block",
+        "{q0,q4} | {q1,q7} | {q3,q5} | {q6} | {q2}",
+        "{q2} | {q0,q1,q3,q4,q5,q6,q7}"
+      ],
+      "answer": 3,
+      "explanation": "q2 is the sole accepting state. The empty word accepts from q2 and rejects from every other state.",
+      "segmentId": "l6-s05",
+      "diagram": "l6-source-example-2"
+    },
+    {
+      "id": "l6-q04",
+      "prompt": "After the first transition-based refinement in Example 2, which partition is shown?",
+      "choices": [
+        "{q0,q4,q6} | {q1,q7} | {q3,q5} | {q2}",
+        "{q0,q4} | {q6} | {q1,q7} | {q3,q5} | {q2}",
+        "{q0,q1,q3,q4,q5,q6,q7} | {q2}",
+        "{q0,q4,q6,q1,q7} | {q3,q5} | {q2}"
+      ],
+      "answer": 0,
+      "explanation": "The video shows q0,q4,q6 grouped first, before q6 is split in the next refinement.",
+      "segmentId": "l6-s06",
+      "diagram": "l6-source-example-2"
+    },
+    {
+      "id": "l6-q05",
+      "prompt": "What is the final number of states for source Example 2?",
+      "choices": [
+        "8",
+        "4",
+        "2",
+        "5"
+      ],
+      "answer": 3,
+      "explanation": "The final partition has five classes: {q0,q4}, {q6}, {q1,q7}, {q3,q5}, and {q2}.",
+      "segmentId": "l6-s07",
+      "diagram": "l6-source-example-2"
+    },
+    {
+      "id": "l6-q06",
+      "prompt": "In source Example 2, which suffix distinguishes q6 from q0?",
+      "choices": [
+        "01",
+        "0",
+        "ε",
+        "1"
+      ],
+      "answer": 0,
+      "explanation": "From q0,01 reaches q1 then accepting q2. From q6,01 reaches q6 then nonaccepting q4. A single0 only reaches two nonfinal states and is not enough.",
+      "segmentId": "l6-s06",
+      "diagram": "l6-source-example-2"
+    },
+    {
+      "id": "l6-q07",
+      "prompt": "Why is q2 separated at the beginning of Example 2?",
+      "choices": [
+        "It is the start state.",
+        "Its outgoing transitions are incomplete.",
+        "The empty word is accepted from q2 but rejected from nonfinal states.",
+        "It cannot reach any state."
+      ],
+      "answer": 2,
+      "explanation": "q2 alone is accepting, so ε distinguishes it immediately.",
+      "segmentId": "l6-s05",
+      "diagram": "l6-source-example-2"
+    },
+    {
+      "id": "l6-q08",
+      "prompt": "For the reducible practice figure, can the DFA be minimized to fewer states?",
+      "choices": [
+        "No, because it has a start state.",
+        "Yes, merge p and r; the quotient has two states.",
+        "Yes, delete f.",
+        "No, because p and r are both nonfinal."
+      ],
+      "answer": 1,
+      "explanation": "p and r share the same transitions by class: 0 to their own nonfinal class, 1 to f. They are equivalent.",
+      "segmentId": "l6-s10",
+      "diagram": "l6-practice-reducible"
+    },
+    {
+      "id": "l6-q09",
+      "prompt": "In the reducible practice figure, what distinguishes p from f?",
+      "choices": [
+        "ε; f accepts while p does not.",
+        "Suffix 0; both stay in their own states.",
+        "Suffix 1; both go to f.",
+        "Nothing; they are equivalent."
+      ],
+      "answer": 0,
+      "explanation": "The empty word is accepted at f and rejected at p.",
+      "segmentId": "l6-s10",
+      "diagram": "l6-practice-reducible"
+    },
+    {
+      "id": "l6-q10",
+      "prompt": "Is the two-state practice figure reducible to one state?",
+      "choices": [
+        "Yes, merge e and o.",
+        "Yes, because both states have complete transitions.",
+        "No; ε distinguishes the accepting e from rejecting o.",
+        "No; unreachable states remain."
+      ],
+      "answer": 2,
+      "explanation": "Both states are reachable, and ε immediately distinguishes acceptance. The two-state DFA is minimal.",
+      "segmentId": "l6-s11",
+      "diagram": "l6-practice-minimal"
+    },
+    {
+      "id": "l6-q11",
+      "prompt": "What should be done to u in the unreachable-state practice figure?",
+      "choices": [
+        "Merge u with p as equivalent.",
+        "Remove u as unreachable; do not call it a merge.",
+        "Keep it because it is accepting.",
+        "Change p to accepting."
+      ],
+      "answer": 1,
+      "explanation": "No path from the start p reaches u. It is removed by reachability analysis, independently of merging equivalent states.",
+      "segmentId": "l6-s12",
+      "diagram": "l6-practice-unreachable"
+    },
+    {
+      "id": "l6-q12",
+      "prompt": "Which statement about DFA minimization is correct?",
+      "choices": [
+        "Every DFA can be minimized to fewer states.",
+        "A DFA is minimal when every pair of reachable states is distinguishable.",
+        "Only accepting states can be merged.",
+        "Minimization changes the recognized language."
+      ],
+      "answer": 1,
+      "explanation": "A minimal DFA has no equivalent pair among its reachable states; its language is unchanged.",
+      "segmentId": "l6-s08"
+    },
+    {
+      "id": "l6-q13",
+      "prompt": "What does a distinguishing suffix prove?",
+      "choices": [
+        "That both states are unreachable.",
+        "That two states are equivalent.",
+        "That the DFA is nondeterministic.",
+        "That the states are not equivalent."
+      ],
+      "answer": 3,
+      "explanation": "If a continuation produces different accept/reject outcomes, the states cannot represent the same future behavior.",
+      "segmentId": "l6-s02"
+    },
+    {
+      "id": "l6-q14",
+      "prompt": "When should partition refinement stop?",
+      "choices": [
+        "After exactly one split.",
+        "When each state has a different name.",
+        "When another refinement makes no block split.",
+        "When all nonfinal states are deleted."
+      ],
+      "answer": 2,
+      "explanation": "A stable partition is a fixed point: each block’s members transition to the same destination blocks for every symbol.",
+      "segmentId": "l6-s09"
+    },
+    {
+      "id": "l6-q15",
+      "prompt": "Which action correctly builds the minimized DFA from final classes?",
+      "choices": [
+        "Make one state per class; mark the start and accepting classes and map transitions by class.",
+        "Keep all original states and erase labels.",
+        "Make every class accepting.",
+        "Choose transitions from only one arbitrary member even if class members disagree."
+      ],
+      "answer": 0,
+      "explanation": "Each equivalence class becomes one quotient state. Stable refinement ensures each member induces the same transition between classes.",
+      "segmentId": "l6-s07"
+    }
+  ],
+  "provenance": "The two source machines and transition tables were checked in readable full-video frames (8:30,10:10,11:50,15:00,20:00,24:00,28:00 and 31:40), with English automatic captions as secondary evidence. Original English explanations, Taglish paraphrases and practice questions are separate from verbatim speech. Additional exercises are labeled; their time links return to the related source procedure. Exact word-level alignment is not claimed."
+}

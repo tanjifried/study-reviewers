@@ -10,8 +10,8 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / '_site'
-PACKS = ('python', 'software-engineering', 'information-security')
-ASSETS = {'.html', '.css', '.js', '.jpg', '.jpeg', '.png', '.svg', '.webp', '.pdf'}
+PACKS = ('python', 'software-engineering', 'information-security', 'automata')
+ASSETS = {'.html', '.css', '.js', '.jpg', '.jpeg', '.png', '.svg', '.webp', '.pdf', '.afjson'}
 EXCLUDED = {'build', 'tests', 'source-text', 'sample-images', 'lessons'}
 
 

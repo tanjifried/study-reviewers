@@ -1,0 +1,40 @@
+{
+  "name": "Source Example 1: starts with 0 — NFA",
+  "states": [
+    "A",
+    "B"
+  ],
+  "alphabet": [
+    "0",
+    "1"
+  ],
+  "start_state": "A",
+  "accept_states": [
+    "B"
+  ],
+  "transitions": {
+    "A": {
+      "0": [
+        "B"
+      ]
+    },
+    "B": {
+      "0": [
+        "B"
+      ],
+      "1": [
+        "B"
+      ]
+    }
+  },
+  "positions": {
+    "A": [
+      100,
+      150
+    ],
+    "B": [
+      350,
+      150
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "name": "New practice ε-NFA (not the video example)",
+  "states": [
+    "p0",
+    "p1",
+    "p2"
+  ],
+  "alphabet": [
+    "a",
+    "b"
+  ],
+  "start_state": "p0",
+  "accept_states": [
+    "p2"
+  ],
+  "transitions": {
+    "p0": {
+      "ε": [
+        "p1"
+      ]
+    },
+    "p1": {
+      "a": [
+        "p1"
+      ],
+      "b": [
+        "p2"
+      ]
+    },
+    "p2": {}
+  },
+  "positions": {
+    "p0": [
+      110,
+      180
+    ],
+    "p1": [
+      330,
+      180
+    ],
+    "p2": [
+      550,
+      180
+    ]
+  }
+}

@@ -1,0 +1,328 @@
+{
+  "l2-parity-square": {
+    "name": "Four-state tuple example — source recreation",
+    "states": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "A",
+    "accept_states": [
+      "D"
+    ],
+    "transitions": {
+      "A": {
+        "0": [
+          "C"
+        ],
+        "1": [
+          "B"
+        ]
+      },
+      "B": {
+        "0": [
+          "D"
+        ],
+        "1": [
+          "A"
+        ]
+      },
+      "C": {
+        "0": [
+          "A"
+        ],
+        "1": [
+          "D"
+        ]
+      },
+      "D": {
+        "0": [
+          "B"
+        ],
+        "1": [
+          "C"
+        ]
+      }
+    },
+    "positions": {
+      "A": [
+        110,
+        110
+      ],
+      "B": [
+        340,
+        110
+      ],
+      "C": [
+        110,
+        320
+      ],
+      "D": [
+        340,
+        320
+      ]
+    },
+    "provenance": "Recreated from Topic 2 full-video frame at 06:20; no source image is republished."
+  },
+  "l2-five-state-dfa": {
+    "name": "Five-state DFA — source gallery recreation",
+    "states": [
+      "q0",
+      "q1",
+      "q2",
+      "q3",
+      "q4"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "q0",
+    "accept_states": [
+      "q2",
+      "q4"
+    ],
+    "transitions": {
+      "q0": {
+        "0": [
+          "q3"
+        ],
+        "1": [
+          "q1"
+        ]
+      },
+      "q1": {
+        "0": [
+          "q1"
+        ],
+        "1": [
+          "q2"
+        ]
+      },
+      "q2": {
+        "0": [
+          "q2"
+        ],
+        "1": [
+          "q2"
+        ]
+      },
+      "q3": {
+        "0": [
+          "q4"
+        ],
+        "1": [
+          "q3"
+        ]
+      },
+      "q4": {
+        "0": [
+          "q4"
+        ],
+        "1": [
+          "q4"
+        ]
+      }
+    },
+    "positions": {
+      "q0": [
+        100,
+        230
+      ],
+      "q3": [
+        310,
+        110
+      ],
+      "q4": [
+        540,
+        110
+      ],
+      "q1": [
+        310,
+        350
+      ],
+      "q2": [
+        540,
+        350
+      ]
+    },
+    "provenance": "Recreated from Topic 2 full-video frame at 33:43. All state/symbol pairs are explicit."
+  },
+  "l2-loop-nfa": {
+    "name": "Loop and branching NFA — source gallery recreation",
+    "states": [
+      "q0",
+      "q1",
+      "q2",
+      "q3"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "q0",
+    "accept_states": [
+      "q3"
+    ],
+    "transitions": {
+      "q0": {
+        "0": [
+          "q0",
+          "q1"
+        ],
+        "1": [
+          "q0",
+          "q2"
+        ]
+      },
+      "q1": {
+        "0": [
+          "q3"
+        ]
+      },
+      "q2": {
+        "1": [
+          "q3"
+        ]
+      }
+    },
+    "positions": {
+      "q0": [
+        100,
+        230
+      ],
+      "q1": [
+        330,
+        100
+      ],
+      "q2": [
+        330,
+        360
+      ],
+      "q3": [
+        570,
+        230
+      ]
+    },
+    "provenance": "Recreated from Topic 2 full-video frame at 34:14. Missing NFA transition entries mean the empty set."
+  },
+  "l3-starts-one": {
+    "name": "Starts with 1 — source example with explicit sink completion",
+    "states": [
+      "q0",
+      "q1",
+      "q2"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "q0",
+    "accept_states": [
+      "q1"
+    ],
+    "transitions": {
+      "q0": {
+        "0": [
+          "q2"
+        ],
+        "1": [
+          "q1"
+        ]
+      },
+      "q1": {
+        "0": [
+          "q1"
+        ],
+        "1": [
+          "q1"
+        ]
+      },
+      "q2": {
+        "0": [
+          "q2"
+        ],
+        "1": [
+          "q2"
+        ]
+      }
+    },
+    "positions": {
+      "q0": [
+        110,
+        150
+      ],
+      "q1": [
+        370,
+        100
+      ],
+      "q2": [
+        370,
+        330
+      ]
+    },
+    "provenance": "Based on Topic 3 at 05:00. Editorial addition:0/1 self-loops at rejecting q2 complete the partial source drawing."
+  },
+  "l3-source-table": {
+    "name": "Contains a 1 — source graph/table recreation",
+    "states": [
+      "q0",
+      "q1",
+      "q2"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "q0",
+    "accept_states": [
+      "q2"
+    ],
+    "transitions": {
+      "q0": {
+        "0": [
+          "q1"
+        ],
+        "1": [
+          "q2"
+        ]
+      },
+      "q1": {
+        "0": [
+          "q0"
+        ],
+        "1": [
+          "q2"
+        ]
+      },
+      "q2": {
+        "0": [
+          "q2"
+        ],
+        "1": [
+          "q2"
+        ]
+      }
+    },
+    "positions": {
+      "q0": [
+        100,
+        170
+      ],
+      "q1": [
+        330,
+        170
+      ],
+      "q2": [
+        570,
+        170
+      ]
+    },
+    "provenance": "Recreated from Topic 3 full-video frame at 10:20, cross-checked against all six table cells."
+  }
+}

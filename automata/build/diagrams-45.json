@@ -1,0 +1,538 @@
+{
+  "l4-practice-enfa": {
+    "name": "New practice ε-NFA (not the video example)",
+    "states": [
+      "p0",
+      "p1",
+      "p2"
+    ],
+    "alphabet": [
+      "a",
+      "b"
+    ],
+    "start_state": "p0",
+    "accept_states": [
+      "p2"
+    ],
+    "transitions": {
+      "p0": {
+        "ε": [
+          "p1"
+        ]
+      },
+      "p1": {
+        "a": [
+          "p1"
+        ],
+        "b": [
+          "p2"
+        ]
+      },
+      "p2": {}
+    },
+    "positions": {
+      "p0": [
+        110,
+        180
+      ],
+      "p1": [
+        330,
+        180
+      ],
+      "p2": [
+        550,
+        180
+      ]
+    },
+    "provenance": "Original practice variation for instruction; not reconstructed from video. Every edge was specified in lesson text."
+  },
+  "l4-practice-nfa": {
+    "name": "Converted practice NFA with ε eliminated",
+    "states": [
+      "p0",
+      "p1",
+      "p2"
+    ],
+    "alphabet": [
+      "a",
+      "b"
+    ],
+    "start_state": "p0",
+    "accept_states": [
+      "p2"
+    ],
+    "transitions": {
+      "p0": {
+        "a": [
+          "p1"
+        ],
+        "b": [
+          "p2"
+        ]
+      },
+      "p1": {
+        "a": [
+          "p1"
+        ],
+        "b": [
+          "p2"
+        ]
+      },
+      "p2": {}
+    },
+    "positions": {
+      "p0": [
+        110,
+        180
+      ],
+      "p1": [
+        330,
+        180
+      ],
+      "p2": [
+        550,
+        180
+      ]
+    },
+    "provenance": "Derived from l4-practice-enfa by δ′(q,x)=E(⋃_{r∈E(q)}δ(r,x)); accept iff E(q) intersects {p2}. No ε edge is present."
+  },
+  "l5-starts-zero-nfa": {
+    "name": "Source Example 1: starts with 0 — NFA",
+    "states": [
+      "A",
+      "B"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "A",
+    "accept_states": [
+      "B"
+    ],
+    "transitions": {
+      "A": {
+        "0": [
+          "B"
+        ]
+      },
+      "B": {
+        "0": [
+          "B"
+        ],
+        "1": [
+          "B"
+        ]
+      }
+    },
+    "positions": {
+      "A": [
+        100,
+        150
+      ],
+      "B": [
+        350,
+        150
+      ]
+    },
+    "provenance": "Recreated from readable full-video samples of TeacherCat 4U’s NFA→DFA worked examples. Composite labels represent subsets; D or C is the named empty-set state where indicated."
+  },
+  "l5-starts-zero-dfa": {
+    "name": "Source Example 1: completed DFA (C is ∅)",
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "A",
+    "accept_states": [
+      "B"
+    ],
+    "transitions": {
+      "A": {
+        "0": [
+          "B"
+        ],
+        "1": [
+          "C"
+        ]
+      },
+      "B": {
+        "0": [
+          "B"
+        ],
+        "1": [
+          "B"
+        ]
+      },
+      "C": {
+        "0": [
+          "C"
+        ],
+        "1": [
+          "C"
+        ]
+      }
+    },
+    "positions": {
+      "A": [
+        100,
+        200
+      ],
+      "B": [
+        370,
+        100
+      ],
+      "C": [
+        370,
+        340
+      ]
+    },
+    "provenance": "Recreated from readable full-video samples of TeacherCat 4U’s NFA→DFA worked examples. Composite labels represent subsets; D or C is the named empty-set state where indicated."
+  },
+  "l5-ends-one-nfa": {
+    "name": "Source Example 2: ends with 1 — NFA",
+    "states": [
+      "A",
+      "B"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "A",
+    "accept_states": [
+      "B"
+    ],
+    "transitions": {
+      "A": {
+        "0": [
+          "A"
+        ],
+        "1": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    "positions": {
+      "A": [
+        100,
+        150
+      ],
+      "B": [
+        370,
+        150
+      ]
+    },
+    "provenance": "Recreated from readable full-video samples of TeacherCat 4U’s NFA→DFA worked examples. Composite labels represent subsets; D or C is the named empty-set state where indicated."
+  },
+  "l5-ends-one-dfa": {
+    "name": "Source Example 2: subset DFA (AB means {A,B})",
+    "states": [
+      "A",
+      "AB"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "A",
+    "accept_states": [
+      "AB"
+    ],
+    "transitions": {
+      "A": {
+        "0": [
+          "A"
+        ],
+        "1": [
+          "AB"
+        ]
+      },
+      "AB": {
+        "0": [
+          "A"
+        ],
+        "1": [
+          "AB"
+        ]
+      }
+    },
+    "positions": {
+      "A": [
+        100,
+        150
+      ],
+      "AB": [
+        370,
+        150
+      ]
+    },
+    "provenance": "Recreated from readable full-video samples of TeacherCat 4U’s NFA→DFA worked examples. Composite labels represent subsets; D or C is the named empty-set state where indicated."
+  },
+  "l5-example-three-nfa": {
+    "name": "Source Example 3: three-state NFA",
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "alphabet": [
+      "a",
+      "b"
+    ],
+    "start_state": "A",
+    "accept_states": [
+      "C"
+    ],
+    "transitions": {
+      "A": {
+        "a": [
+          "A",
+          "B"
+        ],
+        "b": [
+          "C"
+        ]
+      },
+      "B": {
+        "a": [
+          "A"
+        ],
+        "b": [
+          "B"
+        ]
+      },
+      "C": {
+        "b": [
+          "A",
+          "B"
+        ]
+      }
+    },
+    "positions": {
+      "A": [
+        110,
+        100
+      ],
+      "B": [
+        400,
+        100
+      ],
+      "C": [
+        110,
+        350
+      ]
+    },
+    "provenance": "Recreated from readable full-video samples of TeacherCat 4U’s NFA→DFA worked examples. Composite labels represent subsets; D or C is the named empty-set state where indicated."
+  },
+  "l5-example-three-dfa": {
+    "name": "Source Example 3: subset DFA (D is ∅)",
+    "states": [
+      "A",
+      "AB",
+      "BC",
+      "C",
+      "D"
+    ],
+    "alphabet": [
+      "a",
+      "b"
+    ],
+    "start_state": "A",
+    "accept_states": [
+      "BC",
+      "C"
+    ],
+    "transitions": {
+      "A": {
+        "a": [
+          "AB"
+        ],
+        "b": [
+          "C"
+        ]
+      },
+      "AB": {
+        "a": [
+          "AB"
+        ],
+        "b": [
+          "BC"
+        ]
+      },
+      "BC": {
+        "a": [
+          "A"
+        ],
+        "b": [
+          "AB"
+        ]
+      },
+      "C": {
+        "a": [
+          "D"
+        ],
+        "b": [
+          "AB"
+        ]
+      },
+      "D": {
+        "a": [
+          "D"
+        ],
+        "b": [
+          "D"
+        ]
+      }
+    },
+    "positions": {
+      "A": [
+        100,
+        210
+      ],
+      "AB": [
+        340,
+        210
+      ],
+      "BC": [
+        340,
+        60
+      ],
+      "C": [
+        100,
+        430
+      ],
+      "D": [
+        560,
+        430
+      ]
+    },
+    "provenance": "Recreated from readable full-video samples of TeacherCat 4U’s NFA→DFA worked examples. Composite labels represent subsets; D or C is the named empty-set state where indicated."
+  },
+  "l4-source-enfa": {
+    "name": "Source ε-NFA: A →ε B →ε C",
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "A",
+    "accept_states": [
+      "C"
+    ],
+    "transitions": {
+      "A": {
+        "0": [
+          "A"
+        ],
+        "ε": [
+          "B"
+        ]
+      },
+      "B": {
+        "1": [
+          "B"
+        ],
+        "ε": [
+          "C"
+        ]
+      },
+      "C": {
+        "0": [
+          "C"
+        ],
+        "1": [
+          "C"
+        ]
+      }
+    },
+    "positions": {
+      "A": [
+        100,
+        180
+      ],
+      "B": [
+        340,
+        180
+      ],
+      "C": [
+        580,
+        180
+      ]
+    },
+    "provenance": "Recreated from the full-video source example at 21:10: A has 0-loop, B has 1-loop, C has 0/1-loop, and ε connects A→B→C."
+  },
+  "l4-source-nfa": {
+    "name": "Source converted NFA: all three states accepting",
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "A",
+    "accept_states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "transitions": {
+      "A": {
+        "0": [
+          "A",
+          "B",
+          "C"
+        ],
+        "1": [
+          "B",
+          "C"
+        ]
+      },
+      "B": {
+        "0": [
+          "C"
+        ],
+        "1": [
+          "B",
+          "C"
+        ]
+      },
+      "C": {
+        "0": [
+          "C"
+        ],
+        "1": [
+          "C"
+        ]
+      }
+    },
+    "positions": {
+      "A": [
+        100,
+        110
+      ],
+      "B": [
+        420,
+        110
+      ],
+      "C": [
+        260,
+        380
+      ]
+    },
+    "provenance": "Recreated from the completed source table at 37:30. The source graph’s duplicated1,1 loop text at C is corrected to0,1, as the narrator clarifies around 37:00 and the table confirms."
+  }
+}

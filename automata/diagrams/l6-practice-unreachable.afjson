@@ -1,0 +1,36 @@
+{
+  "name": "Original practice: unreachable",
+  "states": [
+    "p",
+    "u"
+  ],
+  "alphabet": [
+    "0"
+  ],
+  "start_state": "p",
+  "accept_states": [
+    "u"
+  ],
+  "transitions": {
+    "p": {
+      "0": [
+        "p"
+      ]
+    },
+    "u": {
+      "0": [
+        "u"
+      ]
+    }
+  },
+  "positions": {
+    "p": [
+      280,
+      220
+    ],
+    "u": [
+      640,
+      220
+    ]
+  }
+}

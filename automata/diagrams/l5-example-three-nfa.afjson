@@ -1,0 +1,55 @@
+{
+  "name": "Source Example 3: three-state NFA",
+  "states": [
+    "A",
+    "B",
+    "C"
+  ],
+  "alphabet": [
+    "a",
+    "b"
+  ],
+  "start_state": "A",
+  "accept_states": [
+    "C"
+  ],
+  "transitions": {
+    "A": {
+      "a": [
+        "A",
+        "B"
+      ],
+      "b": [
+        "C"
+      ]
+    },
+    "B": {
+      "a": [
+        "A"
+      ],
+      "b": [
+        "B"
+      ]
+    },
+    "C": {
+      "b": [
+        "A",
+        "B"
+      ]
+    }
+  },
+  "positions": {
+    "A": [
+      110,
+      100
+    ],
+    "B": [
+      400,
+      100
+    ],
+    "C": [
+      110,
+      350
+    ]
+  }
+}

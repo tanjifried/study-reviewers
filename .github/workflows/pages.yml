@@ -20,6 +20,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - name: Validate Automata content and machines
+        run: node tests/automata-data.cjs
       - name: Validate and prepare website
         run: python3 scripts/prepare_site.py
       - uses: actions/configure-pages@v5

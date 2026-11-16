@@ -1,0 +1,431 @@
+{
+  "id": "lesson-5",
+  "number": 5,
+  "title": "NFA to DFA: subset construction",
+  "videoId": "sVm9AE-DD3Q",
+  "duration": 1806,
+  "overview": "Follow all three source examples: make missing behavior explicit, combine branching possibilities into subsets, and build the final five-state DFA from its transition table.",
+  "objectives": [
+    "Represent each DFA state as a set of NFA states.",
+    "Compute each subset transition by unioning destinations for every alphabet symbol.",
+    "Continue until all reachable subsets are processed.",
+    "Mark subsets containing an NFA final state as accepting.",
+    "Include and correctly loop the empty-set trap state when reachable/required."
+  ],
+  "keyTerms": [
+    {
+      "term": "NFA",
+      "definition": "An automaton that can have several or no destinations for a state-symbol pair."
+    },
+    {
+      "term": "Subset construction",
+      "definition": "A conversion where each DFA state represents a set of NFA states."
+    },
+    {
+      "term": "Reachable subset",
+      "definition": "A subset reached from the start subset by some input string."
+    },
+    {
+      "term": "Accepting subset",
+      "definition": "A subset containing at least one accepting NFA state."
+    },
+    {
+      "term": "Empty subset / trap state",
+      "definition": "The set with no NFA states; each symbol maps it back to itself."
+    }
+  ],
+  "segments": [
+    {
+      "id": "l5-s01",
+      "start": 20,
+      "end": 210,
+      "title": "Conversion keeps the same language",
+      "notes": [
+        "An NFA and its equivalent DFA accept the same set of words. Their transition rules have different codomains: a DFA chooses one state, while an NFA may return a subset of states.",
+        "Subset construction records all NFA possibilities after one input prefix inside a single DFA state. It does not choose an arbitrary branch and discard the others."
+      ],
+      "speakerNotes": "Ang target ay equivalent DFA: pareho pa rin ang accepted strings. Sa DFA, isang destination; sa NFA, set ng mga posibleng states.",
+      "visualDescription": "The opening comparison displays the DFA/NFA transition mappings before the worked examples."
+    },
+    {
+      "id": "l5-s02",
+      "start": 210,
+      "end": 390,
+      "title": "Example 1: read the NFA for words starting with 0",
+      "notes": [
+        "The first source example has start A, accepting B, a 0-edge A→B, and 0/1 loops at B. There is no 1-transition from A.",
+        "Its NFA table is A:[{B},∅], B:[{B},{B}] under columns 0 and 1. It accepts 0 and any suffix after that first 0; ε and words beginning with 1 are rejected."
+      ],
+      "speakerNotes": "Sa unang example, 0 ang unang symbol para makapunta sa B. Final ang B at may loop sa 0 at 1. Walang destination mula A sa input 1.",
+      "visualDescription": "At the checked 4:30–6:30 frames, the NFA and its table are introduced and filled.",
+      "diagram": "l5-starts-zero-nfa"
+    },
+    {
+      "id": "l5-s03",
+      "start": 390,
+      "end": 510,
+      "title": "Name the missing destination as a dead state",
+      "notes": [
+        "The DFA needs one destination for A on input 1. The source introduces C to represent the empty subset ∅. A therefore goes to B on 0 and C on 1.",
+        "C is rejecting and returns to itself on both symbols: once no NFA path remains, reading more input cannot restore one."
+      ],
+      "speakerNotes": "Ang walang destination ay papalitan ng dead state C sa complete DFA. Mula A sa 1, C ang pupuntahan; ang C ay hindi final.",
+      "visualDescription": "The NFA table and new DFA table appear side by side. At the checked 8:30 frame, the first DFA row includes the new C destination.",
+      "diagram": "l5-starts-zero-dfa"
+    },
+    {
+      "id": "l5-s04",
+      "start": 510,
+      "end": 630,
+      "title": "Complete the new row and draw the DFA",
+      "notes": [
+        "B still loops on 0 and 1. Add a C row with C in both columns, then draw the start arrow at A and accepting marker at B.",
+        "The output has three states, but it recognizes exactly the first NFA’s language. Added state count is a consequence of making every transition explicit, not a change in the accepted words."
+      ],
+      "speakerNotes": "Kumpletuhin ang row ng B at ang dalawang self-loops ng C. Pareho pa rin ang language, pero may explicit na rejecting branch na ang DFA.",
+      "visualDescription": "At checked 9:30 the C row is added; by 10:30–11:30 the DFA graph is drawn alongside the completed table.",
+      "diagram": "l5-starts-zero-dfa",
+      "workedSteps": [
+        "A on 0→B, on 1→C.",
+        "B on either symbol→B.",
+        "C on either symbol→C.",
+        "Only B is accepting."
+      ]
+    },
+    {
+      "id": "l5-s05",
+      "start": 750,
+      "end": 870,
+      "title": "Example 2: one input can leave two possibilities",
+      "notes": [
+        "The second source NFA starts at A, which loops on 0 and 1. There is also a 1-edge A→B, and B is accepting with no outgoing edges.",
+        "For input 1 from A, the destination set is {A,B}. Keeping the A possibility permits more input; the B possibility accepts when the word ends at that point. The NFA recognizes binary words ending in 1."
+      ],
+      "speakerNotes": "Sa pangalawang NFA, may loop sa A at may 1-arrow papunta sa final B. Kaya sa input 1, parehong A at B ang posibleng states.",
+      "visualDescription": "The second example’s enlarged graph is visible in the checked 12:30 frame. The source briefly revisits the previous table before returning to this example.",
+      "diagram": "l5-ends-one-nfa"
+    },
+    {
+      "id": "l5-s06",
+      "start": 870,
+      "end": 990,
+      "title": "Build the singleton and composite rows",
+      "notes": [
+        "Begin at subset {A}, displayed simply as A. Its 0-destination is {A}; its 1-destination is {A,B}, written AB as one DFA state.",
+        "AB is a label for the subset {A,B}, not an input word and not a simultaneous choice between two DFA nodes."
+      ],
+      "speakerNotes": "Ang AB ay isang DFA state na kumakatawan sa set na A at B. Hindi ito dalawang sunod na input symbols.",
+      "visualDescription": "The checked 14:30–16:30 frames show A’s NFA destination set and the new AB row in the DFA table.",
+      "diagram": "l5-ends-one-dfa"
+    },
+    {
+      "id": "l5-s07",
+      "start": 990,
+      "end": 1170,
+      "title": "Union the transitions of every subset member",
+      "notes": [
+        "From AB on 0, take δ(A,0)∪δ(B,0)={A}∪∅={A}. From AB on 1, take {A,B}∪∅={A,B}.",
+        "AB is accepting because it contains original final state B. The two DFA states A and AB are enough; ∅ is not reachable in this example, so no new trap is required."
+      ],
+      "speakerNotes": "Para sa AB, pagsamahin ang destinations mula A at B. Sa 0, A ang sagot; sa 1, AB. Final ang AB dahil kasama ang final state B.",
+      "visualDescription": "At checked 17:30 the source writes the union calculation; by 18:30 the two DFA rows are complete.",
+      "diagram": "l5-ends-one-dfa"
+    },
+    {
+      "id": "l5-s08",
+      "start": 1170,
+      "end": 1350,
+      "title": "Example 3: reconstruct the input NFA from its tuple and table",
+      "notes": [
+        "The third source NFA uses Q={A,B,C}, Σ={a,b}, start A, and F={C}. Its rows are A:[{A,B},{C}], B:[{A},{B}], C:[∅,{A,B}].",
+        "The NFA graph is built from those cells: A has an a-loop and an a-edge to B, A has b→C, B has a→A and a b-loop, and C has b-edges to A and B."
+      ],
+      "speakerNotes": "Sa third example, A ang start at C ang final. Basahin ang given table: A sa a ay A at B, A sa b ay C; B sa a ay A at sa b ay B; C sa a ay empty at sa b ay A at B.",
+      "visualDescription": "The checked 19:30 frame introduces Example 3, 20:30 shows its tuple/table, and 21:30–22:30 progressively adds the graph’s edges.",
+      "diagram": "l5-example-three-nfa"
+    },
+    {
+      "id": "l5-s09",
+      "start": 1350,
+      "end": 1470,
+      "title": "Process A, then the newly discovered AB",
+      "notes": [
+        "The DFA row for singleton A is a→AB and b→C. AB is new, so add its row rather than leaving it as two separate states.",
+        "AB on a gives {A,B}∪{A}={A,B}; AB on b gives {C}∪{B}={B,C}. This discovers another subset, BC."
+      ],
+      "speakerNotes": "Mula A, a ay AB at b ay C. Para sa bagong AB row, union ang gamitin: sa a ay AB; sa b ay BC.",
+      "visualDescription": "At checked 23:30–24:30, the DFA table gains the A and AB rows while the unions are written below it.",
+      "diagram": "l5-example-three-nfa",
+      "workedSteps": [
+        "Δ(A,a)=AB and Δ(A,b)=C.",
+        "Δ(AB,a)=AB.",
+        "Δ(AB,b)=BC; add BC as a new row."
+      ]
+    },
+    {
+      "id": "l5-s10",
+      "start": 1470,
+      "end": 1590,
+      "title": "Process BC and C without skipping empty sets",
+      "notes": [
+        "BC on a gives δ(B,a)∪δ(C,a)={A}∪∅={A}. BC on b gives {B}∪{A,B}={A,B}.",
+        "C on a has no NFA destination, so the source assigns D to represent ∅. C on b gives AB. D therefore becomes a required reachable trap state."
+      ],
+      "speakerNotes": "Sa BC, a ay A at b ay AB. Sa C, walang a-destination kaya kailangan ng dead state D; sa b ay AB.",
+      "visualDescription": "The checked 25:30 frame fills BC’s row; by 26:30 C’s a-transition introduces D.",
+      "diagram": "l5-example-three-dfa"
+    },
+    {
+      "id": "l5-s11",
+      "start": 1590,
+      "end": 1710,
+      "title": "Complete D and mark the accepting subsets",
+      "notes": [
+        "D loops on a and b. The five reachable DFA states are A, AB, BC, C, and D.",
+        "Only C and BC contain original final state C, so only those two are accepting. AB contains B but not C and is not accepting in this third example. Final labels must be recomputed for each example."
+      ],
+      "speakerNotes": "Kumpletuhin ang D row gamit ang D sa parehong inputs. C at BC ang final dito, dahil C ang original final state sa third example.",
+      "visualDescription": "The checked 27:30 frame has the full table; around 28:30 the source draws the nodes and accepting markers.",
+      "diagram": "l5-example-three-dfa"
+    },
+    {
+      "id": "l5-s12",
+      "start": 1710,
+      "end": 1806,
+      "title": "Draw the final DFA and cross-check its table",
+      "notes": [
+        "Translate each completed cell into one directed edge. The recreated figure includes all ten state–symbol transitions, including D’s two sink loops.",
+        "Check ab: A→AB→BC, so accept. Check bb: A→C→AB, so reject. These traces use the same language as the original NFA, but the DFA has a unique run."
+      ],
+      "speakerNotes": "Pagkatapos makumpleto ang table, iguhit ang bawat transition at i-check ang accepting states. Gamitin ang parehong inputs para maikumpara ang NFA at DFA.",
+      "visualDescription": "The checked 29:30 frame draws the final DFA from its table. The recreation completes every listed cell explicitly.",
+      "diagram": "l5-example-three-dfa"
+    }
+  ],
+  "recap": [
+    "A DFA state represents a reachable subset of NFA states.",
+    "Union the transitions from every member, then add newly reached subsets.",
+    "A subset is accepting if it contains any original accepting state.",
+    "An empty subset is a rejecting sink when reachable.",
+    "Recompute accepting subsets for each example; the original final state may change."
+  ],
+  "commonMistakes": [
+    "Following only one branch from a subset.",
+    "Confusing a DFA subset node with one NFA state.",
+    "Forgetting to process newly discovered subsets.",
+    "Marking a subset final only when all members are final.",
+    "Dropping a reachable empty subset from a complete DFA.",
+    "Leaving an edge absent where a complete DFA requires a trap transition."
+  ],
+  "questions": [
+    {
+      "id": "l5-q01",
+      "prompt": "What must an NFA-to-DFA conversion preserve?",
+      "choices": [
+        "The set of accepted words",
+        "The number of states",
+        "The exact drawing layout",
+        "Every original state name"
+      ],
+      "answer": 0,
+      "explanation": "Equivalence concerns the recognized language, not state count or layout.",
+      "segmentId": "l5-s01"
+    },
+    {
+      "id": "l5-q02",
+      "prompt": "In Source Example 1, what is the NFA destination from A on 1?",
+      "choices": [
+        "{A}",
+        "{B}",
+        "{A,B}",
+        "∅"
+      ],
+      "answer": 3,
+      "explanation": "A has a 0-edge to B, but no 1-edge.",
+      "segmentId": "l5-s02",
+      "diagram": "l5-starts-zero-nfa"
+    },
+    {
+      "id": "l5-q03",
+      "prompt": "Why is state C added in Source Example 1’s DFA?",
+      "choices": [
+        "To accept words beginning with 1",
+        "To replace the start state",
+        "To represent the empty destination set and complete missing transitions",
+        "To make B nonaccepting"
+      ],
+      "answer": 2,
+      "explanation": "C names the empty subset and loops on both symbols.",
+      "segmentId": "l5-s03",
+      "diagram": "l5-starts-zero-dfa"
+    },
+    {
+      "id": "l5-q04",
+      "prompt": "Which word is accepted by Source Example 1’s completed DFA?",
+      "choices": [
+        "11",
+        "010",
+        "100",
+        "ε"
+      ],
+      "answer": 1,
+      "explanation": "The first 0 reaches B and all later symbols loop there.",
+      "segmentId": "l5-s04",
+      "diagram": "l5-starts-zero-dfa"
+    },
+    {
+      "id": "l5-q05",
+      "prompt": "Why is the second source NFA not a DFA?",
+      "choices": [
+        "A has two destinations on symbol 1",
+        "It has only one final state",
+        "Its alphabet is binary",
+        "B has no self-loop on 0"
+      ],
+      "answer": 0,
+      "explanation": "The 1-loop keeps A while the 1-edge reaches B, giving {A,B}.",
+      "segmentId": "l5-s05",
+      "diagram": "l5-ends-one-nfa"
+    },
+    {
+      "id": "l5-q06",
+      "prompt": "In Source Example 2, what is Δ({A},1)?",
+      "choices": [
+        "{A}",
+        "{B}",
+        "∅",
+        "{A,B}"
+      ],
+      "answer": 3,
+      "explanation": "Union every 1-destination from A: the loop gives A and the other edge gives B.",
+      "segmentId": "l5-s06",
+      "diagram": "l5-ends-one-nfa"
+    },
+    {
+      "id": "l5-q07",
+      "prompt": "In Source Example 2, what is Δ({A,B},0)?",
+      "choices": [
+        "{B}",
+        "∅",
+        "{A}",
+        "{A,B}"
+      ],
+      "answer": 2,
+      "explanation": "δ(A,0)={A}; δ(B,0)=∅; their union is {A}.",
+      "segmentId": "l5-s07",
+      "diagram": "l5-ends-one-nfa"
+    },
+    {
+      "id": "l5-q08",
+      "prompt": "Why is AB accepting in Source Example 2?",
+      "choices": [
+        "It contains the start state A",
+        "It contains the original final state B",
+        "Its label has two letters",
+        "Every composite subset is final"
+      ],
+      "answer": 1,
+      "explanation": "At least one accepting member is sufficient.",
+      "segmentId": "l5-s07",
+      "diagram": "l5-ends-one-dfa"
+    },
+    {
+      "id": "l5-q09",
+      "prompt": "In Source Example 3, what is Δ(AB,b)?",
+      "choices": [
+        "BC",
+        "AB",
+        "A",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Union δ(A,b)={C} with δ(B,b)={B} to obtain {B,C}.",
+      "segmentId": "l5-s09",
+      "diagram": "l5-example-three-nfa"
+    },
+    {
+      "id": "l5-q10",
+      "prompt": "In Source Example 3, what is Δ(BC,a)?",
+      "choices": [
+        "BC",
+        "AB",
+        "D",
+        "A"
+      ],
+      "answer": 3,
+      "explanation": "δ(B,a)={A} and δ(C,a)=∅, so the union is {A}.",
+      "segmentId": "l5-s10",
+      "diagram": "l5-example-three-nfa"
+    },
+    {
+      "id": "l5-q11",
+      "prompt": "Which DFA states are accepting in Source Example 3?",
+      "choices": [
+        "A and AB",
+        "Every state except D",
+        "C and BC",
+        "B and AB"
+      ],
+      "answer": 2,
+      "explanation": "The original final set is {C}; exactly the reachable subsets containing C are accepting.",
+      "segmentId": "l5-s11",
+      "diagram": "l5-example-three-dfa"
+    },
+    {
+      "id": "l5-q12",
+      "prompt": "In Source Example 3, where does D go on input b?",
+      "choices": [
+        "C",
+        "D",
+        "A",
+        "AB"
+      ],
+      "answer": 1,
+      "explanation": "D represents ∅, so no symbol can produce a nonempty destination set.",
+      "segmentId": "l5-s11",
+      "diagram": "l5-example-three-dfa"
+    },
+    {
+      "id": "l5-q13",
+      "prompt": "How many reachable DFA states does Source Example 3 produce before minimization?",
+      "choices": [
+        "5",
+        "3",
+        "4",
+        "8"
+      ],
+      "answer": 0,
+      "explanation": "The worklist discovers A, AB, BC, C and the empty subset D; it does not need all 2³ possible subsets.",
+      "segmentId": "l5-s11",
+      "diagram": "l5-example-three-dfa"
+    },
+    {
+      "id": "l5-q14",
+      "prompt": "What does the label AB represent in a subset DFA?",
+      "choices": [
+        "An input string that must be read next",
+        "Two separate DFA start states",
+        "Proof that A and B are equivalent NFA states",
+        "One DFA state representing the subset {A,B}"
+      ],
+      "answer": 3,
+      "explanation": "Subset construction tracks possibilities; it does not assert that its members are equivalent or merged by minimization.",
+      "segmentId": "l5-s06"
+    },
+    {
+      "id": "l5-q15",
+      "prompt": "Starting at A in Source Example 3’s DFA, what happens on ab?",
+      "choices": [
+        "A→C→D; reject",
+        "A→BC→A; accept",
+        "A→AB→BC; accept",
+        "A→AB→AB; reject"
+      ],
+      "answer": 2,
+      "explanation": "The a-column sends A to AB and the b-column sends AB to accepting BC.",
+      "segmentId": "l5-s12",
+      "diagram": "l5-example-three-dfa"
+    }
+  ],
+  "provenance": "Reconstructed from readable full-video samples at 60-second intervals (sample centers 0:30, 1:30, …, 29:30), with additional table/graph checks. Segment links are approximate navigation points, not exact word boundaries. English explanations, Taglish paraphrases and questions are newly written. Source diagrams are recreated; no original video or full transcript is hosted."
+}

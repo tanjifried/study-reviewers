@@ -1,0 +1,362 @@
+{
+  "id": "lesson-3",
+  "number": 3,
+  "title": "Transition diagrams and tables",
+  "videoId": "adoZsRYd1Mw",
+  "duration": 993,
+  "overview": "Read the graph notation, translate edges into table cells, and trace the two different source examples without mixing up their languages.",
+  "objectives": [
+    "Identify start, accepting and transition notation.",
+    "Translate between a diagram and its transition table.",
+    "Trace and compare the two source DFA examples."
+  ],
+  "keyTerms": [
+    {
+      "term": "Transition diagram",
+      "definition": "A directed graph of states and labeled transitions."
+    },
+    {
+      "term": "Start marker",
+      "definition": "An incoming arrow with no source node."
+    },
+    {
+      "term": "Accepting marker",
+      "definition": "A double circle in the diagram; a star beside a table row in this lesson."
+    },
+    {
+      "term": "Self-loop",
+      "definition": "A transition whose source and target are the same state."
+    },
+    {
+      "term": "Transition table",
+      "definition": "Rows of current states and columns of input symbols, with next-state entries."
+    },
+    {
+      "term": "Sink state",
+      "definition": "A state that retains the machine without a route to acceptance in the examples here."
+    }
+  ],
+  "segments": [
+    {
+      "id": "diagram-notation",
+      "start": 38,
+      "end": 140,
+      "title": "Read the notation before following the arrows",
+      "notes": [
+        "A transition diagram is a directed graph. Circles represent states; a labeled arrow records a transition; an incoming arrow with no source identifies the start; a double circle identifies an accepting state.",
+        "An arrow labeled a from q to p means that reading a in state q can move the machine to p. A loop has the same source and destination."
+      ],
+      "speakerNotes": "Sa transition diagram, circles ang states at arrows ang transitions. Ang arrow na walang source ang simula; double circle ang final state.",
+      "visualDescription": "The notation slide displays separate icons for a state, a labeled edge, a start arrow, a loop, and an accepting state."
+    },
+    {
+      "id": "read-an-edge",
+      "start": 140,
+      "end": 241,
+      "title": "Translate an edge into δ notation",
+      "notes": [
+        "The diagram and the transition function express the same rule in different forms. A deterministic edge q —a→ p can be written δ(q,a)=p.",
+        "Preserve arrow direction. The existence of q —a→ p does not imply p —a→ q. Several symbols on one edge abbreviate separate transitions with the same destination."
+      ],
+      "speakerNotes": "Kapag may arrow mula q papuntang p na may label a, iyon ang destination sa input a mula sa q. Huwag baligtarin ang direksiyon ng arrow.",
+      "visualDescription": "The lecture stays on the notation slide while explaining states, edge labels, and the start/accepting markers."
+    },
+    {
+      "id": "starts-with-one",
+      "start": 241,
+      "end": 510,
+      "title": "Example: strings that start with 1",
+      "notes": [
+        "The source example uses Σ={0,1}, starts in q0, moves to accepting q1 if the first input is 1, and moves to rejecting q2 if the first input is 0. At q1, both 0 and 1 loop back to q1.",
+        "This machine remembers whether the first symbol was 1. Once that fact is established, the remaining suffix does not change acceptance. The empty word is rejected because q0 is not accepting.",
+        "The source drawing leaves outgoing transitions at rejecting q2 unstated. Our recreated complete version adds 0/1 sink loops at q2; those editorial additions make its behavior explicit rather than claiming the source drew them."
+      ],
+      "speakerNotes": "Sa example, 1 dapat ang unang symbol para makarating sa final state. Kapag 0 ang una, mapupunta sa rejecting branch. Sa final state, puwedeng sundan ng 0 o 1.",
+      "visualDescription": "The slide switches to the “starts with 1” example. The recreated figure makes the implicit rejecting behavior explicit.",
+      "diagram": "l3-starts-one",
+      "workedSteps": [
+        "For 101: q0 —1→ q1 —0→ q1 —1→ q1, so accept.",
+        "For 011: q0 —0→ q2; the completed sink loops retain q2, so reject.",
+        "For ε: remain at q0, so reject."
+      ],
+      "caution": "Source clarification: the q2 loops in this recreation are an explicit completion of the source’s partially drawn DFA, not a recovered visual detail."
+    },
+    {
+      "id": "transition-table",
+      "start": 510,
+      "end": 532,
+      "title": "A table is another view of the same transition rule",
+      "notes": [
+        "A transition table lists the destination for a given state and input symbol. To read δ(q,a), locate row q and column a; their intersection supplies the next state.",
+        "Changing from diagram to table does not create a different automaton. Both representations must agree on states, alphabet, start state, accepting states, and every transition."
+      ],
+      "speakerNotes": "Ang transition table ay tabular form ng transition function. State at input symbol ang tinitingnan para malaman ang next state.",
+      "visualDescription": "A new slide defines the table as a representation of the transition function."
+    },
+    {
+      "id": "rows-columns-markers",
+      "start": 532,
+      "end": 594,
+      "title": "Rows, columns, and the start/final markers",
+      "notes": [
+        "Rows correspond to states; columns correspond to input symbols; each cell contains a destination. In a DFA, each cell contains one state. NFA tables use destination sets.",
+        "The source uses → beside a row for the start state and * beside a row for an accepting state. A star in a table is a marker; it is not an additional input symbol."
+      ],
+      "speakerNotes": "Rows para sa states, columns para sa input symbols at entries para sa next state. Arrow ang start marker; star ang accept-state marker sa table.",
+      "visualDescription": "The table-components slide lists row and column meanings plus the arrow/star notation."
+    },
+    {
+      "id": "worked-table",
+      "start": 594,
+      "end": 800,
+      "title": "Work between the displayed DFA and its table",
+      "notes": [
+        "The later source example is a different DFA: q0 goes to q1 on 0 and q2 on 1; q1 returns to q0 on 0 and goes to q2 on 1; accepting q2 loops on either symbol.",
+        "Its table therefore has rows q0:[q1,q2], q1:[q0,q2], q2:[q2,q2] under columns 0 and 1. This example accepts words containing at least one 1, including words that begin with 0.",
+        "Do not carry the first example’s “starts with 1” language into this later graph. The change of transitions changes the recognized language."
+      ],
+      "speakerNotes": "Sa bagong example, basahin ang bawat row ayon sa 0 at 1. Mula q0, 0 ay q1 at 1 ay q2. Mula q1, 0 ay q0 at 1 ay q2; final ang q2 at may loop sa parehong input.",
+      "visualDescription": "A new three-state graph appears above its completed transition table. The start row is marked →q0 and the accepting row *q2.",
+      "diagram": "l3-source-table",
+      "workedSteps": [
+        "Read the q0 row: 0→q1 and 1→q2.",
+        "Read the q1 row: 0→q0 and 1→q2.",
+        "Read the q2 row: 0→q2 and 1→q2.",
+        "Check 001: q0→q1→q0→q2. It ends accepting even though it starts with 0."
+      ]
+    },
+    {
+      "id": "cross-check",
+      "start": 800,
+      "end": 971,
+      "title": "Verify a table against its graph",
+      "notes": [
+        "Compare every state–symbol pair, not just a few sample strings. For n states and an alphabet of k symbols, a complete DFA has n×k destination entries.",
+        "Then trace a few short words to catch transcription errors. In the later example, all-zero words alternate q0 and q1 and reject; once a 1 reaches q2, every continuation stays accepting."
+      ],
+      "speakerNotes": "I-check ang bawat cell sa katumbas nitong arrow. Pagkatapos, subukan ang maikling strings para makita kung pareho ang trace sa table at diagram.",
+      "visualDescription": "The lecture remains on the paired graph and table while explaining the correspondence before the closing animation.",
+      "diagram": "l3-source-table"
+    }
+  ],
+  "recap": [
+    "Arrow direction gives source and destination.",
+    "Read one table cell using one current state and one symbol.",
+    "The two worked examples recognize different languages.",
+    "Keep implicit sink completion clearly separate from what the source actually draws."
+  ],
+  "commonMistakes": [
+    "Reading a transition backward.",
+    "Treating the star beside a table row as an input symbol.",
+    "Confusing “starts with 1” with “contains a 1”.",
+    "Inventing omitted edges instead of stating a completion convention."
+  ],
+  "questions": [
+    {
+      "id": "l3-q01",
+      "prompt": "What does an incoming arrow with no source node mark?",
+      "choices": [
+        "The start state",
+        "Every accepting state",
+        "An ε-transition",
+        "An unreachable state"
+      ],
+      "answer": 0,
+      "explanation": "The source-less arrow identifies where a run begins.",
+      "segmentId": "diagram-notation"
+    },
+    {
+      "id": "l3-q02",
+      "prompt": "What does a double circle mean in a transition diagram?",
+      "choices": [
+        "A state with two outgoing edges",
+        "The only start state",
+        "A dead state",
+        "An accepting state"
+      ],
+      "answer": 3,
+      "explanation": "Acceptance is encoded by the double circle, independently of edge count.",
+      "segmentId": "diagram-notation"
+    },
+    {
+      "id": "l3-q03",
+      "prompt": "An arrow from q to p is labeled a. Which rule does it express for a DFA?",
+      "choices": [
+        "δ(a,q)=p",
+        "q and p must both accept",
+        "δ(q,a)=p",
+        "δ(p,a)=q"
+      ],
+      "answer": 2,
+      "explanation": "The arrow’s source is the current state, its label is the input, and its target is the next state.",
+      "segmentId": "read-an-edge"
+    },
+    {
+      "id": "l3-q04",
+      "prompt": "In the completed “starts with 1” example, which word is accepted?",
+      "choices": [
+        "ε",
+        "101",
+        "011",
+        "00"
+      ],
+      "answer": 1,
+      "explanation": "Its first 1 reaches q1; the suffix remains on q1’s 0/1 loops.",
+      "segmentId": "starts-with-one",
+      "diagram": "l3-starts-one"
+    },
+    {
+      "id": "l3-q05",
+      "prompt": "Why does the completed “starts with 1” DFA reject 011?",
+      "choices": [
+        "The first 0 reaches rejecting sink q2",
+        "Every 1 returns to q0",
+        "A word with two 1s is always rejected",
+        "q1 is not accepting"
+      ],
+      "answer": 0,
+      "explanation": "Once q2 is reached, the editorial sink completion keeps the run there on either symbol.",
+      "segmentId": "starts-with-one",
+      "diagram": "l3-starts-one"
+    },
+    {
+      "id": "l3-q06",
+      "prompt": "Why does the “starts with 1” DFA reject ε?",
+      "choices": [
+        "ε is the same word as 0",
+        "Every DFA rejects ε",
+        "There is no accepting state",
+        "Its start q0 is not accepting"
+      ],
+      "answer": 3,
+      "explanation": "With no symbols read, the run stays at q0. Some other DFAs can accept ε when their start is final.",
+      "segmentId": "starts-with-one",
+      "diagram": "l3-starts-one"
+    },
+    {
+      "id": "l3-q07",
+      "prompt": "Which statement describes the added q2 loops in this recreation?",
+      "choices": [
+        "They change all words beginning with 0 into accepted words",
+        "They were two additional input alphabet symbols",
+        "They explicitly complete rejecting behavior omitted from the source drawing",
+        "They prove the source showed an ε-NFA"
+      ],
+      "answer": 2,
+      "explanation": "The source’s q2 arrows were unstated; the completed diagram labels this editorial choice rather than inventing a source observation.",
+      "segmentId": "starts-with-one",
+      "diagram": "l3-starts-one"
+    },
+    {
+      "id": "l3-q08",
+      "prompt": "In a transition table, what do rows and input columns represent?",
+      "choices": [
+        "Word lengths and output strings",
+        "Current states and input symbols",
+        "Input symbols and accepting states only",
+        "Final states and start states only"
+      ],
+      "answer": 1,
+      "explanation": "Their intersection gives the next state for that state–symbol pair.",
+      "segmentId": "rows-columns-markers"
+    },
+    {
+      "id": "l3-q09",
+      "prompt": "In the source table example, what is δ(q1,0)?",
+      "choices": [
+        "q0",
+        "q1",
+        "q2",
+        "∅"
+      ],
+      "answer": 0,
+      "explanation": "Read the q1 row under column 0: it returns to q0.",
+      "segmentId": "worked-table",
+      "diagram": "l3-source-table"
+    },
+    {
+      "id": "l3-q10",
+      "prompt": "In the source table example, what is δ(q0,1)?",
+      "choices": [
+        "q0",
+        "q1",
+        "{q0,q1}",
+        "q2"
+      ],
+      "answer": 3,
+      "explanation": "The q0 row’s 1-column contains q2, the accepting state.",
+      "segmentId": "worked-table",
+      "diagram": "l3-source-table"
+    },
+    {
+      "id": "l3-q11",
+      "prompt": "Starting at q0, where does input 00 end in the later table example?",
+      "choices": [
+        "q2, so accept",
+        "q2, so reject",
+        "q0, so reject",
+        "q1, so accept"
+      ],
+      "answer": 2,
+      "explanation": "The first 0 reaches q1; the next 0 returns to nonaccepting q0.",
+      "segmentId": "worked-table",
+      "diagram": "l3-source-table"
+    },
+    {
+      "id": "l3-q12",
+      "prompt": "Which trace correctly reads 001 in the later table example?",
+      "choices": [
+        "q0 → q1 → q2 → q0",
+        "q0 → q1 → q0 → q2",
+        "q0 → q0 → q0 → q1",
+        "q0 → q2 → q2 → q2"
+      ],
+      "answer": 1,
+      "explanation": "Follow the 0, 0 and 1 columns in turn. The final state q2 accepts.",
+      "segmentId": "worked-table",
+      "diagram": "l3-source-table"
+    },
+    {
+      "id": "l3-q13",
+      "prompt": "Which language matches the later three-state table example?",
+      "choices": [
+        "Binary words containing at least one 1",
+        "Binary words starting with 1 only",
+        "Binary words with exactly one 0",
+        "All binary words including ε"
+      ],
+      "answer": 0,
+      "explanation": "Any 1 reaches q2; only-zero words remain between nonaccepting q0 and q1.",
+      "segmentId": "cross-check",
+      "diagram": "l3-source-table"
+    },
+    {
+      "id": "l3-q14",
+      "prompt": "A complete DFA has 3 states and 2 input symbols. How many destination cells does its table require?",
+      "choices": [
+        "2",
+        "3",
+        "9",
+        "6"
+      ],
+      "answer": 3,
+      "explanation": "There is one cell per state–symbol pair: 3×2=6. Start/final markers are not extra transition cells.",
+      "segmentId": "cross-check"
+    },
+    {
+      "id": "l3-q15",
+      "prompt": "A proposed table changes δ(q1,0) to q2 while retaining the displayed graph. What is the issue?",
+      "choices": [
+        "Both representations still define the same transition function",
+        "The graph has too many accepting states",
+        "The table and diagram disagree on a transition",
+        "The table is automatically correct because it has rows"
+      ],
+      "answer": 2,
+      "explanation": "The displayed edge and original table give δ(q1,0)=q0. A changed entry defines different behavior.",
+      "segmentId": "worked-table",
+      "diagram": "l3-source-table"
+    }
+  ],
+  "provenance": "Based on TeacherCat 4U’s Topic 3 full-video frames, including the graph/table at 10:20. Explanations and MCQs are original; speaker notes are timestamped Taglish paraphrases. The first diagram includes an explicitly labeled rejecting-sink completion. Source timing is approximate, and the two source examples are kept distinct."
+}

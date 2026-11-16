@@ -1,0 +1,404 @@
+{
+  "id": "lesson-4",
+  "number": 4,
+  "title": "Epsilon-NFA to NFA: eliminating ε-transitions",
+  "videoId": "cSnfySSBL7A",
+  "duration": 2608,
+  "overview": "Remove ε-transitions by following closure → symbol → closure. Recreate the lecture’s A/B/C worked example, update its final states correctly, and check a separate practice variation.",
+  "objectives": [
+    "Define ε-moves and epsilon closure.",
+    "Apply closure around a consumed symbol using one stated convention.",
+    "Preserve acceptance by marking states whose closure intersects the original finals.",
+    "Check converted transitions and compare short-string behavior."
+  ],
+  "keyTerms": [
+    {
+      "term": "ε-transition",
+      "definition": "A state change that consumes no input symbol."
+    },
+    {
+      "term": "ε-closure E(q)",
+      "definition": "q plus every state reachable from q through zero or more ε-edges."
+    },
+    {
+      "term": "NFA",
+      "definition": "An automaton whose state and input may permit zero, one, or several next states."
+    },
+    {
+      "term": "ε-NFA",
+      "definition": "An NFA that also permits ε-transitions."
+    },
+    {
+      "term": "Acceptance preservation",
+      "definition": "The converted state q is final exactly when E(q) intersects the original final set, under the chosen closure construction."
+    }
+  ],
+  "segments": [
+    {
+      "id": "l4-s01",
+      "start": 41,
+      "end": 162,
+      "title": "Locate ε-NFA among finite-state machines",
+      "notes": [
+        "The opening hierarchy distinguishes finite automata used for recognition from machines with explicit output, then separates DFA, NFA and ε-NFA.",
+        "The conversion in this lesson removes ε-transitions while preserving the accepted language. It does not require the result to be deterministic."
+      ],
+      "speakerNotes": "Sa hierarchy, magkakaiba ang DFA, NFA at ε-NFA. Ang gagawin dito ay alisin ang ε-transitions para maging ordinary NFA.",
+      "visualDescription": "The source shows a finite-state-machine family chart before introducing ε."
+    },
+    {
+      "id": "l4-s02",
+      "start": 162,
+      "end": 438,
+      "title": "ε consumes no input symbol",
+      "notes": [
+        "ε denotes the empty word. An ε-edge changes the current state without advancing through an input character.",
+        "Do not treat ε as a third alphabet symbol beside0 and 1. It is a transition that consumes zero symbols."
+      ],
+      "speakerNotes": "Ang epsilon ay empty string. Puwedeng lumipat sa state gamit ang epsilon nang walang binabasang input symbol.",
+      "visualDescription": "The ε slide shows simple graphs and the meaning of the empty string."
+    },
+    {
+      "id": "l4-s03",
+      "start": 438,
+      "end": 925,
+      "title": "Compute ε-closure, including the state itself",
+      "notes": [
+        "E(q) contains q and every state reachable from q by zero or more ε-edges. Follow only ε-edges during this step.",
+        "The zero-step case matters: q always belongs to E(q), even when no ε-edge leaves it. Use a set so repeated reachable states appear only once."
+      ],
+      "speakerNotes": "Sa closure, isama lagi ang sarili mong state. Sundan lang ang epsilon transitions at huwag ulitin ang kaparehong member ng set.",
+      "visualDescription": "The source introduces ε-moves and later emphasizes that every closure contains the state itself."
+    },
+    {
+      "id": "l4-s04",
+      "start": 925,
+      "end": 1147,
+      "title": "Separate conversion from determinization",
+      "notes": [
+        "An ordinary NFA can still have multiple destinations for one symbol. Removing ε-edges is a different task from turning an NFA into a DFA.",
+        "We keep the same state names and input alphabet, replace the transition relation, and update accepting states when ε-reachability requires it."
+      ],
+      "speakerNotes": "Ang epsilon-NFA ay gagawing NFA, hindi agad DFA. Puwede pa ring set ang destination sa isang input.",
+      "visualDescription": "The comparison slide puts an NFA and ε-NFA beside their transition mappings."
+    },
+    {
+      "id": "l4-s05",
+      "start": 1147,
+      "end": 1254,
+      "title": "Use closure → symbol → closure",
+      "notes": [
+        "For each state q and input x, compute δ′(q,x)=E(⋃{δ(r,x):r∈E(q)}). First find the starting closure, then read exactly one symbol, then close the destinations.",
+        "This convention includes ε-moves both before and after the symbol. Repeat it independently for every state and every alphabet symbol."
+      ],
+      "speakerNotes": "Ang proseso ay state, epsilon closure, input, tapos epsilon closure ulit. Gawin ito para sa bawat state at bawat input symbol.",
+      "visualDescription": "The procedure slide gives way to the worked example and its closure–input–closure flow."
+    },
+    {
+      "id": "l4-s06",
+      "start": 1254,
+      "end": 1411,
+      "title": "Read the source example and prepare its table",
+      "notes": [
+        "The actual example starts at A, has final C, and contains ε-edges A→B→C. A loops on 0, B loops on 1, and C loops on both 0 and 1.",
+        "Therefore E(A)={A,B,C}, E(B)={B,C}, and E(C)={C}. Begin a new table with rows A,B,C and columns 0,1."
+      ],
+      "speakerNotes": "Sa source example, A ang initial state at C ang final. May epsilon mula A sa B at mula B sa C. Ihanda ang rows na A,B,C at columns na0 at 1.",
+      "visualDescription": "The blue source graph is shown beside the closure rule; the blank NFA table is introduced around 22:50.",
+      "diagram": "l4-source-enfa"
+    },
+    {
+      "id": "l4-s07",
+      "start": 1411,
+      "end": 1700,
+      "title": "Fill A’s two converted transitions",
+      "notes": [
+        "For A on 0: start from {A,B,C}; the 0-moves yield {A}∪∅∪{C}={A,C}; closing those destinations gives {A,B,C}.",
+        "For A on 1: the 1-moves from the starting closure yield ∅∪{B}∪{C}={B,C}; their closure is still {B,C}."
+      ],
+      "speakerNotes": "Unahin ang closure ng A: A,B,C. Sa0, A at C ang may moves; pagkatapos ng closure, A,B,C ang sagot. Sa1, B at C ang destinations.",
+      "visualDescription": "The instructor expands closure sets and symbol destinations while completing A’s row.",
+      "diagram": "l4-source-enfa",
+      "workedSteps": [
+        "E(A)={A,B,C}.",
+        "On0: {A}∪∅∪{C}={A,C}; E({A,C})={A,B,C}.",
+        "On1: ∅∪{B}∪{C}={B,C}; E({B,C})={B,C}."
+      ]
+    },
+    {
+      "id": "l4-s08",
+      "start": 1700,
+      "end": 1914,
+      "title": "Finish the B and C rows",
+      "notes": [
+        "B starts from E(B)={B,C}. On0 only C contributes, giving {C}; on 1 the destinations are {B,C}.",
+        "C has no outgoing ε-edge, so its closure is just itself and both symbols return to {C}.",
+        "The completed table is A:[{A,B,C},{B,C}], B:[{C},{B,C}], C:[{C},{C}]."
+      ],
+      "speakerNotes": "Ulitin ang proseso kay B at C. Para kay B,0 ay C at 1 ay B,C. Para kay C, pareho lang na C ang destination sa0 at 1.",
+      "visualDescription": "The remaining table cells are calculated before the lesson decides which rows are accepting.",
+      "diagram": "l4-source-nfa"
+    },
+    {
+      "id": "l4-s09",
+      "start": 1914,
+      "end": 2038,
+      "title": "Update accepting states: A, B, and C all accept",
+      "notes": [
+        "Mark q accepting when E(q) intersects the original final set {C}. A and B can both reach C using only ε; C is already final. The converted accepting set is therefore {A,B,C}.",
+        "This preserves empty-word acceptance: the original start A can reach final C without consuming input, so converted start A must be accepting."
+      ],
+      "speakerNotes": "A at B ay makakarating sa original final C gamit lang ang epsilon. Kaya sa converted NFA, final na silang tatlo: A,B,C.",
+      "visualDescription": "The table gains accepting markers beside all three state rows.",
+      "diagram": "l4-source-nfa"
+    },
+    {
+      "id": "l4-s10",
+      "start": 2038,
+      "end": 2299,
+      "title": "Draw the new NFA and combine repeated edges",
+      "notes": [
+        "Every destination in a table cell needs a corresponding edge. For A on 0, the destinations are A,B,C; for A on 1 they are B,C.",
+        "When0 and 1 share the same source and target, combine their labels on one arrow. This cleans the drawing without changing the transition relation.",
+        "The source’s C-loop label briefly reads1,1; the narration corrects it to0,1 and the table confirms both inputs return to C."
+      ],
+      "speakerNotes": "Iguhit ang lahat ng destinations sa table. Kapag pareho ang source at target ng arrows, puwedeng pagsamahin ang labels na0 at 1 para mas malinaw ang diagram.",
+      "visualDescription": "The source draws the three final-state nodes, adds edges, then simplifies repeated arrows.",
+      "diagram": "l4-source-nfa",
+      "caution": "Editorial clarification: the recreated C loop is labeled0,1, following the table and the spoken correction rather than the duplicated label visible in one source frame."
+    },
+    {
+      "id": "l4-practice",
+      "start": 1254,
+      "end": 1254,
+      "title": "Practice variation: a shorter ε-NFA",
+      "notes": [
+        "This is a newly authored exercise, not the video’s machine. Start p0 has ε→p1; p1 has an a-loop and b→final p2.",
+        "Its closure sets are E(p0)={p0,p1}, E(p1)={p1}, E(p2)={p2}. The converted p0 acquires p1’s a and b transitions, but p0 is not accepting because its closure does not contain p2."
+      ],
+      "speakerNotes": "Dagdag na practice variation ito, hindi sinabi o iginuhit na example sa video. I-apply ang parehong closure–input–closure procedure.",
+      "visualDescription": "Original practice figure derived from the method, with a source link back to its explanation.",
+      "diagram": "l4-practice-enfa"
+    }
+  ],
+  "recap": [
+    "An ε-edge consumes nothing.",
+    "Compute each epsilon closure, then follow each alphabet symbol from every state in that closure and close destinations.",
+    "Make q accepting when E(q) intersects the original final set; this preserves empty-word acceptance."
+  ],
+  "commonMistakes": [
+    "Treating ε as an input symbol.",
+    "Forgetting the state itself in its epsilon closure.",
+    "Following a symbol from q alone and ignoring other closure members.",
+    "Using a different closure convention without changing the formula.",
+    "Keeping only the old final states instead of closure-intersection finals.",
+    "Assuming every NFA transition must have one destination."
+  ],
+  "questions": [
+    {
+      "id": "l4-q01",
+      "prompt": "In the source ε-NFA, what is E(A)?",
+      "choices": [
+        "{A,B,C}",
+        "{A}",
+        "{B,C}",
+        "{C}"
+      ],
+      "answer": 0,
+      "explanation": "A reaches itself with zero ε-moves, then B and C using the two ε-edges.",
+      "segmentId": "l4-s06",
+      "diagram": "l4-source-enfa"
+    },
+    {
+      "id": "l4-q02",
+      "prompt": "In the source example, what is δ′(A,0) after closure →0→closure?",
+      "choices": [
+        "{A,C}",
+        "{C}",
+        "{A,B,C}",
+        "∅"
+      ],
+      "answer": 2,
+      "explanation": "The0-moves from E(A) yield {A,C}; closing A adds B and C, giving {A,B,C}.",
+      "segmentId": "l4-s07",
+      "diagram": "l4-source-enfa"
+    },
+    {
+      "id": "l4-q03",
+      "prompt": "In the source example, what is δ′(A,1)?",
+      "choices": [
+        "{A,B,C}",
+        "{B,C}",
+        "{C}",
+        "∅"
+      ],
+      "answer": 1,
+      "explanation": "Only B and C in E(A) have1-moves; their closures remain {B,C}.",
+      "segmentId": "l4-s07",
+      "diagram": "l4-source-enfa"
+    },
+    {
+      "id": "l4-q04",
+      "prompt": "Which states are accepting in the source’s converted NFA?",
+      "choices": [
+        "C only",
+        "B and C only",
+        "A only",
+        "A, B and C"
+      ],
+      "answer": 3,
+      "explanation": "Each state’s ε-closure contains original final C, so all three must accept.",
+      "segmentId": "l4-s09",
+      "diagram": "l4-source-nfa"
+    },
+    {
+      "id": "l4-q05",
+      "prompt": "Suppose a different ε-NFA has start r and ε-edge r→f, where f is final. Is empty input accepted?",
+      "choices": [
+        "No; one symbol must be consumed",
+        "Only if r is final",
+        "Only if f loops on ε",
+        "Yes, because ε reaches f without consuming input"
+      ],
+      "answer": 3,
+      "explanation": "The run can reach final f while consuming zero input symbols.",
+      "segmentId": "l4-s08"
+    },
+    {
+      "id": "l4-q06",
+      "prompt": "Which statement about E(q) is correct?",
+      "choices": [
+        "It excludes q unless q has an ε-loop",
+        "It includes states reached by any alphabet symbol",
+        "It contains only final states",
+        "It includes q via zero ε-moves"
+      ],
+      "answer": 3,
+      "explanation": "Zero ε-moves are allowed, so q belongs to its own epsilon closure.",
+      "segmentId": "l4-s03"
+    },
+    {
+      "id": "l4-q07",
+      "prompt": "Why close destinations after following a symbol under the chosen convention?",
+      "choices": [
+        "To include states reachable by further ε-moves after that consumed symbol",
+        "To remove the symbol from the alphabet",
+        "To make the NFA deterministic",
+        "To force the destination to be final"
+      ],
+      "answer": 0,
+      "explanation": "The target set must include all ε-reachable states after consuming a.",
+      "segmentId": "l4-s04"
+    },
+    {
+      "id": "l4-q08",
+      "prompt": "Which converted diagram is valid for the practice graph?",
+      "choices": [
+        "p0 -ε→ p1; p1 -a→ p1; p1 -b→ p2",
+        "p0 -a→ p1; p0 -b→ p2; p1 -a→ p1; p1 -b→ p2",
+        "p0 -b→ p1; p1 -a→ p2",
+        "p0 -a→ p2 only"
+      ],
+      "answer": 1,
+      "explanation": "Closure of p0 supplies p1’s symbol edges, but the converted diagram labels them a and b; no ε edge remains.",
+      "segmentId": "l4-practice",
+      "diagram": "l4-practice-nfa"
+    },
+    {
+      "id": "l4-q09",
+      "prompt": "What is δ′(B,0) in the source conversion?",
+      "choices": [
+        "{A}",
+        "{B,C}",
+        "{C}",
+        "∅"
+      ],
+      "answer": 2,
+      "explanation": "E(B)={B,C}; only C has a 0-edge, and E(C)={C}.",
+      "segmentId": "l4-s08",
+      "diagram": "l4-source-enfa"
+    },
+    {
+      "id": "l4-q10",
+      "prompt": "What should happen to a missing symbol destination from a state in an NFA?",
+      "choices": [
+        "Invent a destination at the start",
+        "Keep the result empty; do not add an unsupported edge",
+        "Mark the source final",
+        "Add an ε-edge"
+      ],
+      "answer": 1,
+      "explanation": "An empty transition set is valid for an NFA; conversion does not invent edges.",
+      "segmentId": "l4-s07"
+    },
+    {
+      "id": "l4-q11",
+      "prompt": "A state q has ε-closure {q,f}, with f original-final. How is q treated after conversion?",
+      "choices": [
+        "Nonfinal because q is not f",
+        "Final because its closure intersects the final set",
+        "Final only when every closure member is final",
+        "Delete q"
+      ],
+      "answer": 1,
+      "explanation": "E(q)∩F is nonempty, so q must be accepting in the ε-free NFA.",
+      "segmentId": "l4-s08"
+    },
+    {
+      "id": "l4-q12",
+      "prompt": "Why must converted start A accept ε in the source example?",
+      "choices": [
+        "The original A can reach final C using only ε-moves",
+        "Every NFA accepts ε",
+        "Every start state must be final",
+        "The alphabet contains ε"
+      ],
+      "answer": 0,
+      "explanation": "A→εB→εC consumes no input, so the original accepts ε. Equivalence requires the converted start to accept too.",
+      "segmentId": "l4-s09",
+      "diagram": "l4-source-nfa"
+    },
+    {
+      "id": "l4-q13",
+      "prompt": "For the converted practice NFA, what is the transition from p2 on a?",
+      "choices": [
+        "{p1}",
+        "{p2}",
+        "{p0}",
+        "∅"
+      ],
+      "answer": 3,
+      "explanation": "The original p2 has no symbol transitions and E(p2)={p2}, so the resulting set is empty.",
+      "segmentId": "l4-practice",
+      "diagram": "l4-practice-nfa"
+    },
+    {
+      "id": "l4-q14",
+      "prompt": "Which diagram property confirms ε-elimination succeeded?",
+      "choices": [
+        "Every state is accepting",
+        "There are no ε-labeled edges",
+        "Every state has one outgoing edge",
+        "The start state is removed"
+      ],
+      "answer": 1,
+      "explanation": "The target machine uses only input-alphabet labels; NFA branching can remain.",
+      "segmentId": "l4-s09"
+    },
+    {
+      "id": "l4-q15",
+      "prompt": "Which trace describes input “ab” from p0 in the practice source?",
+      "choices": [
+        "ε to p1, a-loop at p1, then b to final p2",
+        "a to p0, then b to p1",
+        "b to p2, then a to p2",
+        "ε to p2, then b to p0"
+      ],
+      "answer": 0,
+      "explanation": "Take the free move to p1, consume a on its loop, and consume b to final p2.",
+      "segmentId": "l4-practice",
+      "diagram": "l4-practice-enfa"
+    }
+  ],
+  "provenance": "Full-video frames at 21:10 and 37:30 corroborated the source graph and completed table; local multilingual ASR corroborated closure calculations and the spoken0/1-loop correction around 37:00. Segment timing is approximate. All explanatory prose, questions and Taglish notes are newly written paraphrases. The shorter p0/p1/p2 machine is a labeled additional exercise."
+}

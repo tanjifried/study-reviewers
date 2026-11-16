@@ -1,0 +1,345 @@
+{
+  "l6-practice-reducible": {
+    "name": "Original practice: reducible",
+    "states": [
+      "p",
+      "r",
+      "f"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "p",
+    "accept_states": [
+      "f"
+    ],
+    "transitions": {
+      "p": {
+        "0": [
+          "r"
+        ],
+        "1": [
+          "f"
+        ]
+      },
+      "r": {
+        "0": [
+          "p"
+        ],
+        "1": [
+          "f"
+        ]
+      },
+      "f": {
+        "0": [
+          "f"
+        ],
+        "1": [
+          "f"
+        ]
+      }
+    },
+    "positions": {
+      "p": [
+        100,
+        220
+      ],
+      "r": [
+        100,
+        460
+      ],
+      "f": [
+        640,
+        340
+      ]
+    },
+    "provenance": "Original practice variation, not a video example. Both p and r are reachable, nonfinal and equivalent; either 0 toggles between them, and 1 reaches accepting sink f."
+  },
+  "l6-practice-minimal": {
+    "name": "Original practice: minimal",
+    "states": [
+      "e",
+      "o"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "e",
+    "accept_states": [
+      "e"
+    ],
+    "transitions": {
+      "e": {
+        "0": [
+          "o"
+        ],
+        "1": [
+          "e"
+        ]
+      },
+      "o": {
+        "0": [
+          "e"
+        ],
+        "1": [
+          "o"
+        ]
+      }
+    },
+    "positions": {
+      "e": [
+        280,
+        220
+      ],
+      "o": [
+        640,
+        220
+      ]
+    },
+    "provenance": "Constructed practice variation; not copied from the source video. Complete reachable two-state parity DFA; ε distinguishes the states."
+  },
+  "l6-practice-unreachable": {
+    "name": "Original practice: unreachable",
+    "states": [
+      "p",
+      "u"
+    ],
+    "alphabet": [
+      "0"
+    ],
+    "start_state": "p",
+    "accept_states": [
+      "u"
+    ],
+    "transitions": {
+      "p": {
+        "0": [
+          "p"
+        ]
+      },
+      "u": {
+        "0": [
+          "u"
+        ]
+      }
+    },
+    "positions": {
+      "p": [
+        280,
+        220
+      ],
+      "u": [
+        640,
+        220
+      ]
+    },
+    "provenance": "Constructed practice variation; not copied from the source video. u is unreachable; removing it is not merging equivalent reachable states."
+  },
+  "l6-source-example-1": {
+    "name": "Source minimization example 1",
+    "states": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "A",
+    "accept_states": [
+      "E"
+    ],
+    "transitions": {
+      "A": {
+        "0": [
+          "B"
+        ],
+        "1": [
+          "C"
+        ]
+      },
+      "B": {
+        "0": [
+          "B"
+        ],
+        "1": [
+          "D"
+        ]
+      },
+      "C": {
+        "0": [
+          "B"
+        ],
+        "1": [
+          "C"
+        ]
+      },
+      "D": {
+        "0": [
+          "B"
+        ],
+        "1": [
+          "E"
+        ]
+      },
+      "E": {
+        "0": [
+          "B"
+        ],
+        "1": [
+          "C"
+        ]
+      }
+    },
+    "positions": {
+      "A": [
+        100,
+        340
+      ],
+      "B": [
+        460,
+        220
+      ],
+      "C": [
+        460,
+        460
+      ],
+      "D": [
+        820,
+        220
+      ],
+      "E": [
+        820,
+        460
+      ]
+    },
+    "provenance": "Transcribed from readable source-video diagram/table near 08:30 and corroborated by the before/after slide near 23:40."
+  },
+  "l6-source-example-2": {
+    "name": "Source minimization example 2",
+    "states": [
+      "q0",
+      "q1",
+      "q2",
+      "q3",
+      "q4",
+      "q5",
+      "q6",
+      "q7"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "q0",
+    "accept_states": [
+      "q2"
+    ],
+    "transitions": {
+      "q0": {
+        "0": [
+          "q1"
+        ],
+        "1": [
+          "q5"
+        ]
+      },
+      "q1": {
+        "0": [
+          "q6"
+        ],
+        "1": [
+          "q2"
+        ]
+      },
+      "q2": {
+        "0": [
+          "q0"
+        ],
+        "1": [
+          "q2"
+        ]
+      },
+      "q3": {
+        "0": [
+          "q2"
+        ],
+        "1": [
+          "q6"
+        ]
+      },
+      "q4": {
+        "0": [
+          "q1"
+        ],
+        "1": [
+          "q5"
+        ]
+      },
+      "q5": {
+        "0": [
+          "q2"
+        ],
+        "1": [
+          "q6"
+        ]
+      },
+      "q6": {
+        "0": [
+          "q6"
+        ],
+        "1": [
+          "q4"
+        ]
+      },
+      "q7": {
+        "0": [
+          "q6"
+        ],
+        "1": [
+          "q2"
+        ]
+      }
+    },
+    "positions": {
+      "q0": [
+        100,
+        220
+      ],
+      "q1": [
+        460,
+        100
+      ],
+      "q2": [
+        820,
+        100
+      ],
+      "q3": [
+        1180,
+        100
+      ],
+      "q4": [
+        460,
+        340
+      ],
+      "q5": [
+        820,
+        340
+      ],
+      "q6": [
+        1180,
+        340
+      ],
+      "q7": [
+        1540,
+        220
+      ]
+    },
+    "provenance": "Transcribed from readable source-video transition table around 23:40 and corroborated by refinement frames through about 35:00."
+  }
+}

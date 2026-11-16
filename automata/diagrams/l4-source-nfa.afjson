@@ -1,0 +1,62 @@
+{
+  "name": "Source converted NFA: all three states accepting",
+  "states": [
+    "A",
+    "B",
+    "C"
+  ],
+  "alphabet": [
+    "0",
+    "1"
+  ],
+  "start_state": "A",
+  "accept_states": [
+    "A",
+    "B",
+    "C"
+  ],
+  "transitions": {
+    "A": {
+      "0": [
+        "A",
+        "B",
+        "C"
+      ],
+      "1": [
+        "B",
+        "C"
+      ]
+    },
+    "B": {
+      "0": [
+        "C"
+      ],
+      "1": [
+        "B",
+        "C"
+      ]
+    },
+    "C": {
+      "0": [
+        "C"
+      ],
+      "1": [
+        "C"
+      ]
+    }
+  },
+  "positions": {
+    "A": [
+      100,
+      110
+    ],
+    "B": [
+      420,
+      110
+    ],
+    "C": [
+      260,
+      380
+    ]
+  }
+}

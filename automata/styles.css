@@ -1,0 +1,226 @@
+:root {
+  color-scheme: light;
+  font:
+    17px/1.6 system-ui,
+    sans-serif;
+  color: #25342a;
+  background: #f7f6ee;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+header,
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 1rem;
+}
+header {
+  border-bottom: 1px solid #cad5c8;
+}
+main {
+  padding-bottom: 4rem;
+}
+h1,
+h2,
+h3 {
+  font-family: Georgia, serif;
+  line-height: 1.2;
+  color: #244d34;
+}
+h1 {
+  font-size: 2.4rem;
+}
+h2 {
+  margin-top: 2rem;
+}
+a {
+  color: #235f3a;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #b4791b;
+  outline-offset: 3px;
+}
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  background: white;
+  z-index: 2;
+}
+.card,
+section.segment,
+fieldset,
+.notice {
+  display: block;
+  background: #fff;
+  border: 1px solid #d1ddce;
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin: 1rem 0;
+}
+.card:hover {
+  border-color: #46865a;
+}
+.card span {
+  display: block;
+  color: #4a5c50;
+}
+button,
+.button {
+  display: inline-block;
+  background: #285e3b;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  padding: 0.7rem 1rem;
+  min-height: 44px;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+button.secondary {
+  background: #e6eee4;
+  color: #214b30;
+}
+input[type="number"],
+input[type="search"] {
+  font: inherit;
+  padding: 0.6rem;
+  border: 1px solid #829889;
+  border-radius: 4px;
+  max-width: 100%;
+}
+label.choice {
+  display: block;
+  padding: 0.6rem;
+  min-height: 44px;
+}
+input[type="radio"],
+input[type="checkbox"] {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: #285e3b;
+}
+fieldset {
+  min-width: 0;
+}
+legend {
+  font-weight: bold;
+}
+details {
+  margin: 1rem 0;
+}
+summary {
+  cursor: pointer;
+  padding: 0.6rem 0;
+  font-weight: bold;
+}
+figure {
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+figure img {
+  max-width: 100%;
+  height: auto;
+}
+table {
+  border-collapse: collapse;
+  min-width: 24rem;
+}
+td,
+th {
+  border: 1px solid #a6b8a8;
+  padding: 0.5rem;
+  text-align: left;
+}
+.scroll {
+  overflow-x: auto;
+}
+.feedback {
+  padding: 0.7rem;
+  background: #edf4eb;
+  border: 1px solid #9ab8a0;
+}
+.error {
+  background: #fff0e5;
+  border-color: #ad542b;
+}
+iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border: 0;
+}
+nav a {
+  margin-right: 1rem;
+}
+small,
+.muted {
+  color: #526356;
+}
+button + button {
+  margin-left: 0.5rem;
+}
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.9rem;
+  }
+  main,
+  header {
+    padding: 1rem;
+  }
+  .card,
+  section.segment,
+  fieldset {
+    padding: 1rem;
+  }
+}
+
+.choice:has(input:checked) {
+  background: #edf4eb;
+  outline: 1px solid #438453;
+}
+.choice:focus-within {
+  outline: 2px solid #285e3b;
+  outline-offset: 2px;
+}
+
+/* Long mathematical state sets wrap; tables keep their own horizontal scroll. */
+main {
+  min-width: 0;
+}
+.segment,
+figure,
+.scroll {
+  min-width: 0;
+  max-width: 100%;
+}
+p,
+li,
+legend,
+figcaption,
+nav a {
+  overflow-wrap: anywhere;
+}
+.figure-source {
+  font-size: 0.85rem;
+}
+figure > a {
+  display: inline-block;
+  min-height: 44px;
+  padding: 0.55rem 0;
+  margin-right: 1rem;
+}
+::selection {
+  background: #d8e8cc;
+  color: #25342a;
+}

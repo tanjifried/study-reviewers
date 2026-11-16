@@ -1,0 +1,43 @@
+{
+  "name": "Source Example 2: subset DFA (AB means {A,B})",
+  "states": [
+    "A",
+    "AB"
+  ],
+  "alphabet": [
+    "0",
+    "1"
+  ],
+  "start_state": "A",
+  "accept_states": [
+    "AB"
+  ],
+  "transitions": {
+    "A": {
+      "0": [
+        "A"
+      ],
+      "1": [
+        "AB"
+      ]
+    },
+    "AB": {
+      "0": [
+        "A"
+      ],
+      "1": [
+        "AB"
+      ]
+    }
+  },
+  "positions": {
+    "A": [
+      100,
+      150
+    ],
+    "AB": [
+      370,
+      150
+    ]
+  }
+}

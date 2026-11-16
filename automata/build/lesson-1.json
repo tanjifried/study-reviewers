@@ -1,0 +1,359 @@
+{
+  "id": "lesson-1",
+  "number": 1,
+  "title": "Introduction to Automata Theory",
+  "videoId": "yPaUNLEyFxo",
+  "duration": 609.8,
+  "overview": "An introductory tour of automata theory: why abstract machine models are useful, how everyday devices illustrate stateful behavior, and how inputs, outputs, states, and broad machine families fit into the subject.",
+  "objectives": [
+    "Explain why computer scientists study abstract machine models.",
+    "Use a thermostat and familiar devices to illustrate automatic behavior and states.",
+    "Distinguish automaton (singular) from automata (plural).",
+    "Describe automata theory as the study and analysis of abstract computational models.",
+    "Identify input, output, and state as machine characteristics and name the four families introduced."
+  ],
+  "keyTerms": [
+    {
+      "term": "Automaton",
+      "definition": "A formal model of a machine or computational process; automata is its plural."
+    },
+    {
+      "term": "Automata theory",
+      "definition": "A branch of computer science and mathematics that studies abstract models of computation and their behavior."
+    },
+    {
+      "term": "Abstract machine",
+      "definition": "A simplified formal model that captures relevant computational behavior without requiring every physical implementation detail."
+    },
+    {
+      "term": "State",
+      "definition": "A condition or configuration of a machine that summarizes information relevant to its behavior."
+    },
+    {
+      "term": "Input",
+      "definition": "A symbol or sequence of symbols supplied to a machine, typically drawn from a specified input alphabet."
+    },
+    {
+      "term": "Output",
+      "definition": "A symbol or sequence of symbols a machine produces, when that model defines output behavior."
+    },
+    {
+      "term": "Discrete system",
+      "definition": "A system modeled through distinct events or values, often with signals sampled at separate time points."
+    },
+    {
+      "term": "Turing machine",
+      "definition": "A highly general formal model of computation, introduced in this lesson as one of four machine families."
+    }
+  ],
+  "segments": [
+    {
+      "id": "why-study",
+      "start": 20.5,
+      "end": 133.5,
+      "title": "Why study automata?",
+      "notes": [
+        "Automata theory lets us reason systematically about what a machine does without first building or inspecting its hardware.",
+        "A model helps explain how a system solves a problem and how an input can affect its behavior.",
+        "The lecture connects this way of thinking to designing repeatable systems, including computers and aircraft autopilot systems."
+      ],
+      "speakerNotes": "Pag-aralan ang behavior ng machine kahit wala sa harap natin ang mismong hardware. Nakakatulong ang model sa pag-intindi kung paano nagiging output ang inputs at kung paano gumagawa ng repeatable actions ang isang system.",
+      "visualDescription": "Slides titled “WHY WE STUDY AUTOMATA” show bullets about reasoning without hardware detail and understanding how machines solve problems, alongside pictures of computer, phone, industrial automation, and laboratory equipment."
+    },
+    {
+      "id": "thermostat",
+      "start": 133.5,
+      "end": 212.03,
+      "title": "A thermostat as a small state-based example",
+      "notes": [
+        "The thermostat example has two named states: on and off.",
+        "It checks surrounding temperature and changes operation in response to a temperature condition.",
+        "The example demonstrates how a simple model can describe behavior while larger computing systems may involve many more states and inputs."
+      ],
+      "speakerNotes": "Sa thermostat example, on at off ang dalawang states. Nagbabago ang operation depende sa temperature condition. Mas komplikado ang computer dahil mas marami ang inputs at posibleng states.",
+      "visualDescription": "A thermostat slide shows an on/off control and the two-state idea; surrounding examples include a pendulum clock, missile guidance, and telephone networks."
+    },
+    {
+      "id": "automaton-elevator",
+      "start": 212.03,
+      "end": 326.51,
+      "title": "Automaton, automata, and automatic devices",
+      "notes": [
+        "The word automata is presented as referring to self-acting or automatic machines; automaton is singular and automata plural.",
+        "An elevator illustrates input and response: selecting a floor prompts the system to act toward that floor.",
+        "The speaker also uses choosing a television channel, typing a character, and entering an ATM PIN to illustrate input-driven behavior.",
+        "A formal automaton is a model of behavior; a physical elevator, TV, or ATM is a real system that may be modeled in many ways."
+      ],
+      "speakerNotes": "Automaton ang singular at automata ang plural. Ipinapakita ng elevator, TV at ATM examples kung paano may automatic na response sa isang input.",
+      "visualDescription": "The slide gives the Greek-root/“self-acting” explanation and singular/plural labels. A photo of an elevator and a small state diagram appear, followed by images of automated devices."
+    },
+    {
+      "id": "theory-and-models",
+      "start": 326.51,
+      "end": 494.61,
+      "title": "Automata theory and abstract machine models",
+      "notes": [
+        "Automata theory is introduced as a theoretical area of computer science and mathematics concerned with mathematical models of computation.",
+        "Abstract models let us analyze how a system behaves without tying the reasoning to one physical implementation.",
+        "The lecture describes a model in terms of inputs, outputs, and operations; it uses a banking-system model with deposit, withdrawal, and transfer operations.",
+        "The Turing machine is introduced as a particularly general and powerful abstract model.",
+        "The speaker distinguishes a model implemented in software (called a virtual machine in the slide) from a hardware implementation."
+      ],
+      "speakerNotes": "Ang automata theory ay tungkol sa abstract machine models. Sa model, puwedeng pag-aralan ang inputs, outputs at operations nang hindi kailangang isama ang lahat ng hardware details.",
+      "visualDescription": "Slides define theory as study of abstract machines; a banking example lists deposit/withdraw/transfer. Later slides show large state-machine illustrations, a Turing-machine label, and “virtual machine” versus “machine” implementation labels.",
+      "caution": "An abstract machine is a mathematical model, not necessarily a runnable software virtual machine. Also, hardware implementation does not by itself make an abstract model “a machine”; implementation and formal model are different levels."
+    },
+    {
+      "id": "objective-discrete",
+      "start": 494.61,
+      "end": 515.9,
+      "title": "The objective: describe and analyze discrete behavior",
+      "notes": [
+        "The stated objective is to develop methods for describing and analyzing the dynamic behavior of discrete systems.",
+        "The slide mentions signals sampled periodically as one way such systems may be represented."
+      ],
+      "speakerNotes": "Layunin na magkaroon ng paraan para ilarawan at suriin ang pagbabago ng behavior ng discrete systems. Ang note na ito ay buod, hindi eksaktong salita ng speaker.",
+      "visualDescription": "A slide titled “OBJECTIVE OF AUTOMATA THEORY” summarizes methods for describing and analyzing dynamic behavior of discrete systems with periodically sampled signals."
+    },
+    {
+      "id": "machine-characteristics",
+      "start": 515.9,
+      "end": 558.13,
+      "title": "Inputs, outputs, and states",
+      "notes": [
+        "Inputs and outputs are described as sequences of symbols chosen from finite sets (alphabets).",
+        "The state set depends on the particular machine model.",
+        "A block diagram shows an input sequence entering an automaton and an output sequence leaving it, with states inside the machine.",
+        "Treat these as common modeling dimensions, not a universal promise that every automaton produces an output sequence."
+      ],
+      "speakerNotes": "Tatlong characteristics ang ipinapakita: inputs, outputs at states. Ang kahulugan ng state ay nakadepende sa klase ng machine model na pinag-aaralan.",
+      "visualDescription": "A “CHARACTERISTICS OF MACHINES” slide lists inputs, outputs, and states; a subsequent block diagram routes an input sequence through an automaton with internal states to an output sequence.",
+      "caution": "The diagram is a broad machine-model picture. Many standard finite automata are acceptors: they classify an input string as accepted or rejected instead of emitting an arbitrary output string. Output behavior depends on the chosen model."
+    },
+    {
+      "id": "four-families",
+      "start": 558.13,
+      "end": 609.8,
+      "title": "Four major families of automata",
+      "notes": [
+        "The lesson names finite-state machines, pushdown automata, linear-bounded automata, and Turing machines.",
+        "The closing narration presents them in an increasing-complexity hierarchy, from finite-state machines toward Turing machines.",
+        "This is a first-pass orientation; later lessons are needed to compare their memory, computational power, and formal definitions."
+      ],
+      "speakerNotes": "Apat na families ang binanggit: finite-state machine, pushdown automata, linear-bounded automata at Turing machine. Ipinapakita sila bilang mas simple hanggang mas general na computational models.",
+      "visualDescription": "A slide lists the four families in order and briefly highlights finite-state machine at the beginning and Turing machine at the end.",
+      "caution": "“Complexity” here is an informal teaching shorthand. The formal distinctions are about computational resources and language-recognition power, not simply how complicated a physical machine looks."
+    }
+  ],
+  "recap": [
+    "Automata theory uses abstract models to reason about computational behavior.",
+    "A thermostat offers an intuitive two-state example; familiar devices also illustrate inputs followed by actions.",
+    "Automaton is singular; automata is plural.",
+    "Inputs, outputs (when applicable), and states help describe machine models.",
+    "The introduction names four families: finite-state, pushdown, linear-bounded, and Turing machines."
+  ],
+  "commonMistakes": [
+    "Treating the physical device as identical to its abstract model.",
+    "Assuming every automaton emits an output sequence; some models only accept or reject strings.",
+    "Using automata as a singular noun instead of automaton.",
+    "Interpreting the four-family ordering as a complete formal account of their power."
+  ],
+  "questions": [
+    {
+      "id": "l1-q01",
+      "prompt": "What is the main reason the lesson gives for studying automata?",
+      "choices": [
+        "To design hardware without using mathematics",
+        "To reason systematically about machine behavior without needing its physical hardware details",
+        "To replace all physical machines with software",
+        "To memorize the names of computer components"
+      ],
+      "answer": 1,
+      "explanation": "The opening motivation is to analyze what a machine does at an abstract level, without depending on access to its hardware.",
+      "segmentId": "why-study"
+    },
+    {
+      "id": "l1-q02",
+      "prompt": "In the thermostat example, which two states does the lesson focus on?",
+      "choices": [
+        "Heating and cooling",
+        "High and low temperature",
+        "On and off",
+        "Open and closed"
+      ],
+      "answer": 2,
+      "explanation": "The example deliberately reduces the thermostat to two relevant states: on and off.",
+      "segmentId": "thermostat"
+    },
+    {
+      "id": "l1-q03",
+      "prompt": "A user selects floor 5 in the elevator example. What role does that selection play in the illustration?",
+      "choices": [
+        "It is an input that prompts the elevator system to respond",
+        "It is the elevator’s output alphabet",
+        "It is a proof that elevators have only five states",
+        "It is an implementation of a Turing machine"
+      ],
+      "answer": 0,
+      "explanation": "The selected floor is the input; the elevator’s resulting action illustrates input-driven behavior.",
+      "segmentId": "automaton-elevator"
+    },
+    {
+      "id": "l1-q04",
+      "prompt": "Which statement correctly uses the terms introduced in the lesson?",
+      "choices": [
+        "Automaton is plural; automata is singular",
+        "Automaton and automata both mean output",
+        "Automata is singular; automaton is plural",
+        "Automaton is singular; automata is plural"
+      ],
+      "answer": 3,
+      "explanation": "The lecture explicitly distinguishes automaton (singular) from automata (plural).",
+      "segmentId": "automaton-elevator"
+    },
+    {
+      "id": "l1-q05",
+      "prompt": "Why is an abstract machine useful when analyzing a computer system?",
+      "choices": [
+        "It guarantees that the system has no bugs",
+        "It removes the need to define inputs",
+        "It supports precise reasoning about behavior without depending on one physical implementation",
+        "It describes only the system’s appearance"
+      ],
+      "answer": 2,
+      "explanation": "An abstract model captures relevant behavior so it can be analyzed independently of hardware details.",
+      "segmentId": "theory-and-models"
+    },
+    {
+      "id": "l1-q06",
+      "prompt": "Which set of banking operations is used to illustrate a modeled system?",
+      "choices": [
+        "Deposit, withdraw, and transfer",
+        "Print, scan, and copy",
+        "Search, sort, and compile",
+        "Lock, unlock, and restart"
+      ],
+      "answer": 0,
+      "explanation": "The speaker uses a banking-system model with deposit, withdrawal, and transfer as example operations.",
+      "segmentId": "theory-and-models"
+    },
+    {
+      "id": "l1-q07",
+      "prompt": "Which description best matches the lesson’s stated objective for automata theory?",
+      "choices": [
+        "To build every machine from the same parts",
+        "To make all signals continuous",
+        "To classify devices by their physical size",
+        "To develop methods to describe and analyze dynamic behavior of discrete systems"
+      ],
+      "answer": 3,
+      "explanation": "The objective slide emphasizes describing and analyzing the dynamic behavior of discrete systems.",
+      "segmentId": "objective-discrete"
+    },
+    {
+      "id": "l1-q08",
+      "prompt": "According to the lesson, what is true of input sequences?",
+      "choices": [
+        "They must contain words from natural language",
+        "They are always a single number",
+        "They are sequences chosen from a finite set of input symbols",
+        "They are states emitted after processing"
+      ],
+      "answer": 2,
+      "explanation": "The characteristics slide defines inputs as symbol sequences selected from a finite input set.",
+      "segmentId": "machine-characteristics"
+    },
+    {
+      "id": "l1-q09",
+      "prompt": "Why should the output block in the lesson’s machine diagram be treated as model-dependent?",
+      "choices": [
+        "Outputs are only possible in physical machines",
+        "Some automata models recognize or reject strings instead of emitting an output sequence",
+        "An output is the same thing as a state",
+        "The diagram proves every model uses the same output alphabet"
+      ],
+      "answer": 1,
+      "explanation": "The diagram is a broad illustration; standard finite automata often accept or reject strings rather than emit general output sequences.",
+      "segmentId": "machine-characteristics"
+    },
+    {
+      "id": "l1-q10",
+      "prompt": "Which item is not one of the three machine characteristics listed in the lesson?",
+      "choices": [
+        "Input",
+        "Output",
+        "State",
+        "Clock speed"
+      ],
+      "answer": 3,
+      "explanation": "The lesson lists input, output, and state. Clock speed is not one of those conceptual characteristics.",
+      "segmentId": "machine-characteristics"
+    },
+    {
+      "id": "l1-q11",
+      "prompt": "Which list matches the four families named near the end of the video?",
+      "choices": [
+        "Finite-state, pushdown, linear-bounded, Turing",
+        "Thermostat, elevator, ATM, telephone",
+        "DFA, NFA, regular, context-free",
+        "Input, output, process, operation"
+      ],
+      "answer": 0,
+      "explanation": "The slide names finite-state machines, pushdown automata, linear-bounded automata, and Turing machines.",
+      "segmentId": "four-families"
+    },
+    {
+      "id": "l1-q12",
+      "prompt": "What does the lesson’s simplest-to-most-complex ordering of the families chiefly provide?",
+      "choices": [
+        "A complete proof of how each machine works",
+        "A first-pass orientation that later study must formalize",
+        "A ranking of physical device prices",
+        "A statement that each family has identical memory"
+      ],
+      "answer": 1,
+      "explanation": "The hierarchy is presented as an introductory orientation. Formal comparisons require definitions and computational-resource analysis.",
+      "segmentId": "four-families"
+    },
+    {
+      "id": "l1-q13",
+      "prompt": "A student says, “An automaton is the elevator itself.” Which correction best reflects the lesson?",
+      "choices": [
+        "An automaton is only the elevator’s control panel",
+        "An automaton is always a human operator",
+        "An automaton means the elevator’s destination floor",
+        "An automaton is a model that can describe relevant elevator behavior; the physical elevator is the system being modeled"
+      ],
+      "answer": 3,
+      "explanation": "The examples motivate modeling, but the formal automaton is the abstract model rather than the physical device itself.",
+      "segmentId": "automaton-elevator"
+    },
+    {
+      "id": "l1-q14",
+      "prompt": "The speaker calls a software implementation a “virtual machine.” What distinction should a learner keep in mind?",
+      "choices": [
+        "A formal model and its implementation are different levels of description",
+        "Software cannot implement computational models",
+        "A virtual machine has no inputs",
+        "Hardware is always an abstract machine"
+      ],
+      "answer": 0,
+      "explanation": "The lesson uses implementation labels, but an abstract machine is a formal model while software or hardware is an implementation medium.",
+      "segmentId": "theory-and-models"
+    },
+    {
+      "id": "l1-q15",
+      "prompt": "Which statement about the thermostat example is the most careful interpretation?",
+      "choices": [
+        "Every real thermostat has exactly two possible internal configurations",
+        "The lesson uses on/off as a simplified model of relevant thermostat states",
+        "The example proves thermostats recognize strings",
+        "A thermostat cannot react to a temperature condition"
+      ],
+      "answer": 1,
+      "explanation": "The two-state presentation is pedagogical. Real thermostats may contain more modes and control details than the simplified example shows.",
+      "segmentId": "thermostat"
+    }
+  ],
+  "provenance": "Based on TeacherCat 4U’s Introduction video, reviewed with full-video samples and automatic transcription. English explanations, questions and Taglish speaker notes are newly written. Speaker notes are paraphrases, and timestamps locate topics approximately."
+}

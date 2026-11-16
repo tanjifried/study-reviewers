@@ -1,0 +1,418 @@
+{
+  "id": "lesson-2",
+  "number": 2,
+  "title": "Finite automata: states, symbols, DFA and NFA",
+  "videoId": "cmx06k7XSno",
+  "duration": 2266,
+  "overview": "Turn the five-part definition into something you can read, trace, and classify. Then inspect the lecture’s DFA/NFA figures one state and input symbol at a time.",
+  "objectives": [
+    "Identify Q, Σ, δ, q₀ and F in a finite automaton.",
+    "Trace an input through a finite-state machine.",
+    "Distinguish a complete DFA from an NFA with genuine branching."
+  ],
+  "keyTerms": [
+    {
+      "term": "State",
+      "definition": "A member of the finite set Q representing current machine memory."
+    },
+    {
+      "term": "Alphabet",
+      "definition": "The finite set Σ of input symbols."
+    },
+    {
+      "term": "Transition function",
+      "definition": "The rule δ for moving on an input symbol."
+    },
+    {
+      "term": "DFA",
+      "definition": "A deterministic finite automaton with one next state per state–symbol pair."
+    },
+    {
+      "term": "NFA",
+      "definition": "A finite automaton whose next-step relation can yield a set of possible states."
+    },
+    {
+      "term": "Accepting state",
+      "definition": "A state in F that makes a complete run accept."
+    }
+  ],
+  "segments": [
+    {
+      "id": "recognize-patterns",
+      "start": 43,
+      "end": 254,
+      "title": "A finite machine recognizes a pattern",
+      "notes": [
+        "A finite automaton has a fixed, finite collection of states. Each input symbol determines which transition can be taken. Its current state summarizes the information remembered about the input read so far.",
+        "The opening example distinguishes accepting and rejecting outcomes. For language recognition, acceptance is decided after the entire input has been consumed—not merely when an accepting state is visited along the way."
+      ],
+      "speakerNotes": "Sa finite automaton, may states at rules ng paglipat depende sa input symbol. Binabasa ang string at sinusunod ang transitions para malaman kung accepted ang buong input.",
+      "visualDescription": "The definition slide adds input-string, state-change, and accept/reject explanations next to a small transition graph."
+    },
+    {
+      "id": "machine-features",
+      "start": 254,
+      "end": 285,
+      "title": "Input, output, and internal state",
+      "notes": [
+        "The lecture briefly returns to the machine model: an input sequence enters the automaton, internal states change, and an output is produced by the modeled machine.",
+        "For the DFA/NFA language recognizers studied next, focus on the final accept/reject result. Do not assume that every finite automaton in this course is a transducer that emits one output symbol per input symbol."
+      ],
+      "speakerNotes": "Ipinapakita ang input, output, states, state relation at output relation bilang mga bahagi ng model ng machine.",
+      "visualDescription": "An input–automaton–output block diagram replaces the opening definition."
+    },
+    {
+      "id": "five-tuple",
+      "start": 285,
+      "end": 356,
+      "title": "Read the five-part specification",
+      "notes": [
+        "Write a finite automaton as (Q, Σ, δ, q₀, F). Q is the finite set of states; Σ is the finite input alphabet; δ gives the transitions; q₀ is the initial state; F is the set of accepting states.",
+        "Keep a set separate from an element: q₀ belongs to Q, whereas F is a subset of Q. A machine can have more than one accepting state even though it has one designated start state."
+      ],
+      "speakerNotes": "Ang five-tuple ay Q, sigma, delta, q-zero at F. Magkakaiba ang papel ng states, input symbols, transition function, initial state at final-state set.",
+      "visualDescription": "The formula is revealed first, followed by the meaning of each symbol."
+    },
+    {
+      "id": "tuple-example",
+      "start": 356,
+      "end": 645,
+      "title": "Connect the tuple to an actual graph",
+      "notes": [
+        "The source labels its four states A, B, C, and D, its alphabet {0, 1}, its start A, and its accepting set {D}. Read the state names from nodes, not from arrow labels.",
+        "The recreated figure preserves the visible square example: 0 changes between the top and bottom rows, and 1 changes between the left and right columns. A double circle marks D as accepting."
+      ],
+      "speakerNotes": "Sa example, Q ay A, B, C at D; ang input symbols ay 0 at 1; A ang simula at D ang final state. Gamitin ang arrows para basahin ang transition function.",
+      "visualDescription": "A handwritten four-state automaton is placed beside the tuple definitions. The recreated figure turns the same transitions into a readable diagram.",
+      "diagram": "l2-parity-square",
+      "workedSteps": [
+        "Start at A. On input 0, move to C.",
+        "From C on input 1, move to D.",
+        "The full string 01 ends in D, so it is accepted. A later symbol would still have to be consumed before deciding acceptance."
+      ]
+    },
+    {
+      "id": "tuple-table",
+      "start": 645,
+      "end": 790,
+      "title": "Build the four-state transition table row by row",
+      "notes": [
+        "The source now translates the square graph into a table with columns 0 and 1. The table is a second representation of the same machine, not a different example.",
+        "Use one row per current state: A gives [C,B], B gives [D,A], C gives [A,D], and D gives [B,C]. Every entry is a destination state, not an output symbol."
+      ],
+      "speakerNotes": "Sa table, ilagay ang A, B, C at D sa rows at 0 at 1 sa columns. Basahin ang arrows: A sa 0 ay C, A sa 1 ay B; sundan din ang transitions ng B, C at D.",
+      "visualDescription": "The handwritten example develops into a state/input table while the speaker checks each row. The accessible full-video frame corroborates the table.",
+      "diagram": "l2-parity-square",
+      "workedSteps": [
+        "About 11:14–11:45: read A on 0 as C and A on 1 as B.",
+        "About 11:45–12:15: read B on 0 as D and B on 1 as A.",
+        "About 12:15–12:44: read C on 0 as A and C on 1 as D.",
+        "About 12:44–13:10: read D on 0 as B and D on 1 as C."
+      ]
+    },
+    {
+      "id": "input-tape",
+      "start": 790,
+      "end": 1084,
+      "title": "The tape and the finite control",
+      "notes": [
+        "The input tape is drawn as a row of cells, with one input symbol per cell. A read head identifies the next symbol, while finite control stores the current state.",
+        "The lesson reads the tape from left to right, one symbol at a time. The current state changes according to δ; the machine does not gain a new state for every extra character in the input."
+      ],
+      "speakerNotes": "Ang input tape ay may cells para sa symbols. Binabasa ng read head ang symbols pakaliwa-pakanan habang ang finite control ang sumusunod sa rules ng state transitions.",
+      "visualDescription": "The tape/control schematic changes into a tape labeled with the example input a b a a b and a read-head pointer."
+    },
+    {
+      "id": "dfa-and-nfa",
+      "start": 1084,
+      "end": 1494,
+      "title": "Deterministic and nondeterministic choices",
+      "notes": [
+        "For a complete DFA, every state and every symbol in Σ have exactly one destination. There are no ε-transitions. One current state and the next symbol therefore determine a unique next state.",
+        "An NFA transition returns a set of possible destinations. That set may be empty or have several members. A word is accepted when at least one complete path consumes the word and ends in an accepting state.",
+        "The source presents DFA and NFA as two kinds of finite automata, then notes that every DFA can also be regarded as an NFA. To make classification questions unambiguous, these quizzes use “DFA” and “NFA but not DFA” as separate choices."
+      ],
+      "speakerNotes": "Sa DFA, unique ang susunod na state para sa isang state at symbol. Sa NFA, puwedeng maraming choices. Puwede ring ituring ang isang DFA bilang espesyal na NFA.",
+      "visualDescription": "A branching classification chart is shown with small deterministic and nondeterministic transition examples; later bullet points compare the two.",
+      "caution": "Convention: this pack uses complete DFAs. A partially drawn deterministic graph may omit an implicit rejecting sink. NFA definitions differ on whether ε-moves are included; ε-NFA is identified explicitly when needed."
+    },
+    {
+      "id": "comparison",
+      "start": 1494,
+      "end": 1958,
+      "title": "Compare the transition rules, not the drawing style",
+      "notes": [
+        "DFA means deterministic finite automaton; NFA means nondeterministic finite automaton. State count, curved arrows, and multiple final states do not by themselves identify nondeterminism.",
+        "Check one state–symbol pair at a time. Different symbols leaving one state are normal in a DFA; the problem is two distinct destinations for the same symbol, or an ε-move."
+      ],
+      "speakerNotes": "Sa pag-compare, tingnan ang transitions at choices sa bawat input, hindi lang kung maraming bilog o arrows ang figure.",
+      "visualDescription": "The comparison section introduces the names, a unique-versus-several-choices comparison, and then a gallery of six diagrams."
+    },
+    {
+      "id": "gallery-branching",
+      "start": 1982,
+      "end": 2013,
+      "title": "The first gallery figure branches on the same symbol",
+      "notes": [
+        "The enlarged first gallery graph begins at A and has two outgoing a-arrows, one toward B and one toward E. That single state–symbol pair is enough to show that the graph is not deterministic.",
+        "Do not stop at counting all outgoing arrows: identify the labels and destinations. Several arrows with different labels can still be deterministic."
+      ],
+      "speakerNotes": "Sa unang malaking figure, dalawang a-transitions ang lumalabas sa A. Iyon ang mahalagang ebidensiya ng nondeterministic choice.",
+      "visualDescription": "The gallery zooms into a six-state graph with two a-labeled branches from its start."
+    },
+    {
+      "id": "gallery-dfa",
+      "start": 2013,
+      "end": 2047,
+      "title": "A complete five-state DFA",
+      "notes": [
+        "In the next enlarged figure, q0 chooses q3 on 0 and q1 on 1. q3 loops on 1 and reaches accepting q4 on 0; q1 loops on 0 and reaches accepting q2 on 1.",
+        "Both accepting states loop on 0 and 1. Every state has exactly one destination per input symbol, so this is a DFA. Two accepting states do not make it an NFA but not DFA."
+      ],
+      "speakerNotes": "Sa five-state figure, tig-iisa ang destination sa 0 at 1 sa bawat state. Ang q2 at q4 ay parehong final states; hindi iyon dahilan para maging nondeterministic.",
+      "visualDescription": "A five-state blue diagram fills the screen around 33:41. It is recreated below.",
+      "diagram": "l2-five-state-dfa"
+    },
+    {
+      "id": "gallery-nfa",
+      "start": 2047,
+      "end": 2097,
+      "title": "A loop can compete with another edge",
+      "notes": [
+        "The next figure has a self-loop at q0 labeled 0,1, plus a 0-edge to q1 and a 1-edge to q2. For input 0 at q0, both staying at q0 and moving to q1 are possible.",
+        "The accepting state is q3. A path may choose when to leave the loop, but it must consume every symbol of the word and finish in q3 to accept."
+      ],
+      "speakerNotes": "Sa q0, may loop sa 0 at 1 at may hiwalay pang arrows sa parehong symbols. Kaya may pagpipilian sa susunod na state.",
+      "visualDescription": "The gallery enlarges the four-state purple NFA around 34:13, exposing overlapping labels on the start-state loop and outgoing edges.",
+      "diagram": "l2-loop-nfa"
+    },
+    {
+      "id": "remaining-gallery",
+      "start": 2097,
+      "end": 2250,
+      "title": "Use the same checklist on the remaining figures",
+      "notes": [
+        "The gallery continues with different alphabets and graph shapes. Check the alphabet, the start marker, the accepting markers, ε-edges, and each state–symbol destination set in that order.",
+        "For a dense figure, write the transition table before classifying it. This prevents overlapping curves or repeated labels from hiding a nondeterministic choice."
+      ],
+      "speakerNotes": "Sa natitirang figures, ulitin ang pag-check sa bawat state at symbol. Mas madaling makita ang choices kung ilalagay muna sa transition table.",
+      "visualDescription": "The final three gallery examples are enlarged in sequence before the closing animation."
+    }
+  ],
+  "recap": [
+    "Read node labels as states and edge labels as symbols.",
+    "Acceptance is determined after the entire word is consumed.",
+    "Classify transitions per state and per symbol.",
+    "Multiple final states are allowed in both DFA and NFA."
+  ],
+  "commonMistakes": [
+    "Calling a graph nondeterministic just because a state has several differently labeled arrows.",
+    "Accepting a word immediately on visiting a final state with unread symbols.",
+    "Treating a partially drawn graph as a complete DFA without stating the implicit sink convention."
+  ],
+  "questions": [
+    {
+      "id": "l2-q01",
+      "prompt": "What does the current state of a finite automaton represent?",
+      "choices": [
+        "The information about the input prefix that the machine currently remembers",
+        "The complete source code of the input",
+        "A new memory cell created for each input character",
+        "Only the length of the full input before it is read"
+      ],
+      "answer": 0,
+      "explanation": "A fixed set of states summarizes the relevant history; it does not grow with the input.",
+      "segmentId": "recognize-patterns"
+    },
+    {
+      "id": "l2-q02",
+      "prompt": "When does a finite automaton accept a word?",
+      "choices": [
+        "As soon as an accepting state is visited, even with unread input",
+        "Whenever the start state has an outgoing arrow",
+        "Whenever a transition is missing",
+        "After consuming the entire word, a valid run ends in an accepting state"
+      ],
+      "answer": 3,
+      "explanation": "Unread symbols must still be processed. For an NFA, at least one complete run must accept.",
+      "segmentId": "recognize-patterns"
+    },
+    {
+      "id": "l2-q03",
+      "prompt": "In (Q, Σ, δ, q₀, F), which component is the input alphabet?",
+      "choices": [
+        "F",
+        "q₀",
+        "Σ",
+        "Q"
+      ],
+      "answer": 2,
+      "explanation": "Σ contains the symbols that can appear in input strings.",
+      "segmentId": "five-tuple"
+    },
+    {
+      "id": "l2-q04",
+      "prompt": "Which statement correctly relates the start and accepting states to Q?",
+      "choices": [
+        "q₀ must belong to F",
+        "q₀ ∈ Q and F ⊆ Q",
+        "q₀ ⊆ Q and F ∈ Σ",
+        "q₀ = Σ and F = δ"
+      ],
+      "answer": 1,
+      "explanation": "The start is one state; the accepting states form a subset of the state set.",
+      "segmentId": "five-tuple"
+    },
+    {
+      "id": "l2-q05",
+      "prompt": "In the recreated square example, which input takes A to accepting D?",
+      "choices": [
+        "01",
+        "00",
+        "11",
+        "ε"
+      ],
+      "answer": 0,
+      "explanation": "A goes to C on 0, then C goes to D on 1. A is not accepting, so ε is rejected.",
+      "segmentId": "tuple-example",
+      "diagram": "l2-parity-square"
+    },
+    {
+      "id": "l2-q06",
+      "prompt": "In the square example, where does input 11 leave a run that starts at A?",
+      "choices": [
+        "B",
+        "C",
+        "D",
+        "A"
+      ],
+      "answer": 3,
+      "explanation": "A goes to B on the first 1; B returns to A on the second 1.",
+      "segmentId": "tuple-example",
+      "diagram": "l2-parity-square"
+    },
+    {
+      "id": "l2-q07",
+      "prompt": "In the tape model, what does the finite control keep track of?",
+      "choices": [
+        "The full list of all possible programs",
+        "Only the final output string",
+        "The current state",
+        "A separate state for every unread cell"
+      ],
+      "answer": 2,
+      "explanation": "The finite control updates the current state as the read head consumes each symbol.",
+      "segmentId": "input-tape"
+    },
+    {
+      "id": "l2-q08",
+      "prompt": "Which condition is required for a complete DFA?",
+      "choices": [
+        "A self-loop on every state",
+        "Exactly one destination for every state–symbol pair, with no ε-moves",
+        "Two accepting states for every input symbol",
+        "At least two destinations for every state–symbol pair"
+      ],
+      "answer": 1,
+      "explanation": "Completeness gives a destination everywhere, and determinism makes it unique.",
+      "segmentId": "dfa-and-nfa"
+    },
+    {
+      "id": "l2-q09",
+      "prompt": "Which classification fits this five-state figure under the pack’s complete-DFA convention?",
+      "choices": [
+        "DFA",
+        "NFA but not DFA",
+        "ε-NFA because it has two final states",
+        "Not a finite automaton because q4 has a loop"
+      ],
+      "answer": 0,
+      "explanation": "Every state has one transition on 0 and one on 1, with no ε-edge.",
+      "segmentId": "gallery-dfa",
+      "diagram": "l2-five-state-dfa"
+    },
+    {
+      "id": "l2-q10",
+      "prompt": "What happens in the five-state DFA on input 10 from q0?",
+      "choices": [
+        "It ends at q2 and accepts",
+        "It ends at q4 and accepts",
+        "It follows two different paths",
+        "It ends at q1 and rejects"
+      ],
+      "answer": 3,
+      "explanation": "The 1 reaches q1; its 0-loop stays at nonaccepting q1.",
+      "segmentId": "gallery-dfa",
+      "diagram": "l2-five-state-dfa"
+    },
+    {
+      "id": "l2-q11",
+      "prompt": "Why is the four-state loop figure an NFA but not a DFA?",
+      "choices": [
+        "The alphabet has two symbols",
+        "q1 has a curved incoming edge",
+        "q0 has two destinations on input 0",
+        "q3 is accepting"
+      ],
+      "answer": 2,
+      "explanation": "The 0 on the q0 loop competes with the 0-edge to q1. There are also two choices on 1.",
+      "segmentId": "gallery-nfa",
+      "diagram": "l2-loop-nfa"
+    },
+    {
+      "id": "l2-q12",
+      "prompt": "For the loop NFA, which destination set is possible after reading a single 1 from q0?",
+      "choices": [
+        "∅",
+        "{q0, q2}",
+        "{q1, q3}",
+        "{q3}"
+      ],
+      "answer": 1,
+      "explanation": "The 1-loop keeps q0 active and the other 1-edge reaches q2.",
+      "segmentId": "gallery-nfa",
+      "diagram": "l2-loop-nfa"
+    },
+    {
+      "id": "l2-q13",
+      "prompt": "Which word is accepted by the loop NFA?",
+      "choices": [
+        "100",
+        "01",
+        "10",
+        "ε"
+      ],
+      "answer": 0,
+      "explanation": "One accepting run loops at q0 on 1, takes 0 to q1, then 0 to final q3.",
+      "segmentId": "gallery-nfa",
+      "diagram": "l2-loop-nfa"
+    },
+    {
+      "id": "l2-q14",
+      "prompt": "Which feature alone does NOT make a finite automaton nondeterministic?",
+      "choices": [
+        "Two destinations on the same input from one state",
+        "An ε-transition",
+        "A loop and a second outgoing edge with the same symbol",
+        "Having two accepting states"
+      ],
+      "answer": 3,
+      "explanation": "Determinism concerns transition choices, not the number of accepting states.",
+      "segmentId": "comparison"
+    },
+    {
+      "id": "l2-q15",
+      "prompt": "A diagram omits all outgoing arrows from a rejecting state. What should you establish before calling it a complete DFA?",
+      "choices": [
+        "Whether the start state is named q0",
+        "Whether the final state is on the right",
+        "Whether the course assumes an implicit sink and how its missing transitions are completed",
+        "Whether its states are drawn clockwise"
+      ],
+      "answer": 2,
+      "explanation": "This pack makes the total-transition convention explicit; omitted rejecting behavior must not be mistaken for verified complete transitions.",
+      "segmentId": "dfa-and-nfa"
+    }
+  ],
+  "provenance": "Based on TeacherCat 4U’s Topic 2 video, inspected full-video frames and machine-assisted speech review. Explanations and questions are newly written; Taglish speaker notes are paraphrases, not a transcript. Source examples are recreated as labeled. Timestamp boundaries are navigation approximations, not word-level alignment."
+}
