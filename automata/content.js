@@ -1,6 +1,7 @@
 // Original study explanations and practice questions; source videos remain on YouTube.
 window.AUTOMATA_DATA = {
-  "version": "fce2731284cbda61",
+  "version": "d5cb88ae174d28ca",
+  "compatibleVersions": [],
   "lessons": [
     {
       "id": "lesson-1",
@@ -62,7 +63,25 @@ window.AUTOMATA_DATA = {
             "The lecture connects this way of thinking to designing repeatable systems, including computers and aircraft autopilot systems."
           ],
           "speakerNotes": "Pag-aralan ang behavior ng machine kahit wala sa harap natin ang mismong hardware. Nakakatulong ang model sa pag-intindi kung paano nagiging output ang inputs at kung paano gumagawa ng repeatable actions ang isang system.",
-          "visualDescription": "Slides titled “WHY WE STUDY AUTOMATA” show bullets about reasoning without hardware detail and understanding how machines solve problems, alongside pictures of computer, phone, industrial automation, and laboratory equipment."
+          "visualDescription": "Slides titled “WHY WE STUDY AUTOMATA” show bullets about reasoning without hardware detail and understanding how machines solve problems, alongside pictures of computer, phone, industrial automation, and laboratory equipment.",
+          "frames": [
+            {
+              "src": "frames/lesson-1/frame-0050.jpg",
+              "seconds": 50,
+              "width": 854,
+              "height": 480,
+              "caption": "0:50 · Why study automata?",
+              "alt": "Source video frame at 0:50: Why study automata?"
+            },
+            {
+              "src": "frames/lesson-1/frame-0095.jpg",
+              "seconds": 95,
+              "width": 854,
+              "height": 480,
+              "caption": "1:35 · Why study automata?",
+              "alt": "Source video frame at 1:35: Why study automata?"
+            }
+          ]
         },
         {
           "id": "thermostat",
@@ -75,7 +94,17 @@ window.AUTOMATA_DATA = {
             "The example demonstrates how a simple model can describe behavior while larger computing systems may involve many more states and inputs."
           ],
           "speakerNotes": "Sa thermostat example, on at off ang dalawang states. Nagbabago ang operation depende sa temperature condition. Mas komplikado ang computer dahil mas marami ang inputs at posibleng states.",
-          "visualDescription": "A thermostat slide shows an on/off control and the two-state idea; surrounding examples include a pendulum clock, missile guidance, and telephone networks."
+          "visualDescription": "A thermostat slide shows an on/off control and the two-state idea; surrounding examples include a pendulum clock, missile guidance, and telephone networks.",
+          "frames": [
+            {
+              "src": "frames/lesson-1/frame-0170.jpg",
+              "seconds": 170,
+              "width": 854,
+              "height": 480,
+              "caption": "2:50 · A thermostat as a small state-based example",
+              "alt": "Source video frame at 2:50: A thermostat as a small state-based example"
+            }
+          ]
         },
         {
           "id": "automaton-elevator",
@@ -89,7 +118,33 @@ window.AUTOMATA_DATA = {
             "A formal automaton is a model of behavior; a physical elevator, TV, or ATM is a real system that may be modeled in many ways."
           ],
           "speakerNotes": "Automaton ang singular at automata ang plural. Ipinapakita ng elevator, TV at ATM examples kung paano may automatic na response sa isang input.",
-          "visualDescription": "The slide gives the Greek-root/“self-acting” explanation and singular/plural labels. A photo of an elevator and a small state diagram appear, followed by images of automated devices."
+          "visualDescription": "The slide gives the Greek-root/“self-acting” explanation and singular/plural labels. A photo of an elevator and a small state diagram appear, followed by images of automated devices.",
+          "frames": [
+            {
+              "src": "frames/lesson-1/frame-0220.jpg",
+              "seconds": 220,
+              "width": 854,
+              "height": 480,
+              "caption": "3:40 · Automaton, automata, and automatic devices",
+              "alt": "Source video frame at 3:40: Automaton, automata, and automatic devices"
+            },
+            {
+              "src": "frames/lesson-1/frame-0245.jpg",
+              "seconds": 245,
+              "width": 854,
+              "height": 480,
+              "caption": "4:05 · Automaton, automata, and automatic devices",
+              "alt": "Source video frame at 4:05: Automaton, automata, and automatic devices"
+            },
+            {
+              "src": "frames/lesson-1/frame-0280.jpg",
+              "seconds": 280,
+              "width": 854,
+              "height": 480,
+              "caption": "4:40 · Automaton, automata, and automatic devices",
+              "alt": "Source video frame at 4:40: Automaton, automata, and automatic devices"
+            }
+          ]
         },
         {
           "id": "theory-and-models",
@@ -105,7 +160,41 @@ window.AUTOMATA_DATA = {
           ],
           "speakerNotes": "Ang automata theory ay tungkol sa abstract machine models. Sa model, puwedeng pag-aralan ang inputs, outputs at operations nang hindi kailangang isama ang lahat ng hardware details.",
           "visualDescription": "Slides define theory as study of abstract machines; a banking example lists deposit/withdraw/transfer. Later slides show large state-machine illustrations, a Turing-machine label, and “virtual machine” versus “machine” implementation labels.",
-          "caution": "An abstract machine is a mathematical model, not necessarily a runnable software virtual machine. Also, hardware implementation does not by itself make an abstract model “a machine”; implementation and formal model are different levels."
+          "caution": "An abstract machine is a mathematical model, not necessarily a runnable software virtual machine. Also, hardware implementation does not by itself make an abstract model “a machine”; implementation and formal model are different levels.",
+          "frames": [
+            {
+              "src": "frames/lesson-1/frame-0330.jpg",
+              "seconds": 330,
+              "width": 854,
+              "height": 480,
+              "caption": "5:30 · Automata theory and abstract machine models",
+              "alt": "Source video frame at 5:30: Automata theory and abstract machine models"
+            },
+            {
+              "src": "frames/lesson-1/frame-0385.jpg",
+              "seconds": 385,
+              "width": 854,
+              "height": 480,
+              "caption": "6:25 · Automata theory and abstract machine models",
+              "alt": "Source video frame at 6:25: Automata theory and abstract machine models"
+            },
+            {
+              "src": "frames/lesson-1/frame-0445.jpg",
+              "seconds": 445,
+              "width": 854,
+              "height": 480,
+              "caption": "7:25 · Automata theory and abstract machine models",
+              "alt": "Source video frame at 7:25: Automata theory and abstract machine models"
+            },
+            {
+              "src": "frames/lesson-1/frame-0475.jpg",
+              "seconds": 475,
+              "width": 854,
+              "height": 480,
+              "caption": "7:55 · Automata theory and abstract machine models",
+              "alt": "Source video frame at 7:55: Automata theory and abstract machine models"
+            }
+          ]
         },
         {
           "id": "objective-discrete",
@@ -117,7 +206,17 @@ window.AUTOMATA_DATA = {
             "The slide mentions signals sampled periodically as one way such systems may be represented."
           ],
           "speakerNotes": "Layunin na magkaroon ng paraan para ilarawan at suriin ang pagbabago ng behavior ng discrete systems. Ang note na ito ay buod, hindi eksaktong salita ng speaker.",
-          "visualDescription": "A slide titled “OBJECTIVE OF AUTOMATA THEORY” summarizes methods for describing and analyzing dynamic behavior of discrete systems with periodically sampled signals."
+          "visualDescription": "A slide titled “OBJECTIVE OF AUTOMATA THEORY” summarizes methods for describing and analyzing dynamic behavior of discrete systems with periodically sampled signals.",
+          "frames": [
+            {
+              "src": "frames/lesson-1/frame-0500.jpg",
+              "seconds": 500,
+              "width": 854,
+              "height": 480,
+              "caption": "8:20 · The objective: describe and analyze discrete behavior",
+              "alt": "Source video frame at 8:20: The objective: describe and analyze discrete behavior"
+            }
+          ]
         },
         {
           "id": "machine-characteristics",
@@ -132,7 +231,25 @@ window.AUTOMATA_DATA = {
           ],
           "speakerNotes": "Tatlong characteristics ang ipinapakita: inputs, outputs at states. Ang kahulugan ng state ay nakadepende sa klase ng machine model na pinag-aaralan.",
           "visualDescription": "A “CHARACTERISTICS OF MACHINES” slide lists inputs, outputs, and states; a subsequent block diagram routes an input sequence through an automaton with internal states to an output sequence.",
-          "caution": "The diagram is a broad machine-model picture. Many standard finite automata are acceptors: they classify an input string as accepted or rejected instead of emitting an arbitrary output string. Output behavior depends on the chosen model."
+          "caution": "The diagram is a broad machine-model picture. Many standard finite automata are acceptors: they classify an input string as accepted or rejected instead of emitting an arbitrary output string. Output behavior depends on the chosen model.",
+          "frames": [
+            {
+              "src": "frames/lesson-1/frame-0526.jpg",
+              "seconds": 526,
+              "width": 854,
+              "height": 480,
+              "caption": "8:46 · Inputs, outputs, and states",
+              "alt": "Source video frame at 8:46: Inputs, outputs, and states"
+            },
+            {
+              "src": "frames/lesson-1/frame-0550.jpg",
+              "seconds": 550,
+              "width": 854,
+              "height": 480,
+              "caption": "9:10 · Inputs, outputs, and states",
+              "alt": "Source video frame at 9:10: Inputs, outputs, and states"
+            }
+          ]
         },
         {
           "id": "four-families",
@@ -146,7 +263,17 @@ window.AUTOMATA_DATA = {
           ],
           "speakerNotes": "Apat na families ang binanggit: finite-state machine, pushdown automata, linear-bounded automata at Turing machine. Ipinapakita sila bilang mas simple hanggang mas general na computational models.",
           "visualDescription": "A slide lists the four families in order and briefly highlights finite-state machine at the beginning and Turing machine at the end.",
-          "caution": "“Complexity” here is an informal teaching shorthand. The formal distinctions are about computational resources and language-recognition power, not simply how complicated a physical machine looks."
+          "caution": "“Complexity” here is an informal teaching shorthand. The formal distinctions are about computational resources and language-recognition power, not simply how complicated a physical machine looks.",
+          "frames": [
+            {
+              "src": "frames/lesson-1/frame-0570.jpg",
+              "seconds": 570,
+              "width": 854,
+              "height": 480,
+              "caption": "9:30 · Four major families of automata",
+              "alt": "Source video frame at 9:30: Four major families of automata"
+            }
+          ]
         }
       ],
       "recap": [
@@ -203,30 +330,34 @@ window.AUTOMATA_DATA = {
           "segmentId": "automaton-elevator"
         },
         {
-          "id": "l1-q04",
-          "prompt": "Which statement correctly uses the terms introduced in the lesson?",
-          "choices": [
-            "Automaton is plural; automata is singular",
-            "Automaton and automata both mean output",
-            "Automata is singular; automaton is plural",
-            "Automaton is singular; automata is plural"
+          "id": "l1-q04-id",
+          "kind": "identification",
+          "prompt": "Study of abstract machines",
+          "definitionLabel": "Preserved source definition (excerpt)",
+          "answer": "Automata theory",
+          "acceptedAnswers": [
+            "Automata theory",
+            "theory of automata"
           ],
-          "answer": 3,
-          "explanation": "The lecture explicitly distinguishes automaton (singular) from automata (plural).",
-          "segmentId": "automaton-elevator"
+          "explanation": "This source wording identifies automata theory. Use the source frame to review it in context.",
+          "segmentId": "theory-and-models",
+          "sourceFrame": "frames/lesson-1/frame-0385.jpg",
+          "sourceSeconds": 385
         },
         {
-          "id": "l1-q05",
-          "prompt": "Why is an abstract machine useful when analyzing a computer system?",
-          "choices": [
-            "It guarantees that the system has no bugs",
-            "It removes the need to define inputs",
-            "It supports precise reasoning about behavior without depending on one physical implementation",
-            "It describes only the system’s appearance"
+          "id": "l1-q05-id",
+          "kind": "identification",
+          "prompt": "model of a computer system",
+          "definitionLabel": "Preserved source definition (excerpt)",
+          "answer": "Abstract machine",
+          "acceptedAnswers": [
+            "Abstract machine",
+            "abstract machines"
           ],
-          "answer": 2,
-          "explanation": "An abstract model captures relevant behavior so it can be analyzed independently of hardware details.",
-          "segmentId": "theory-and-models"
+          "explanation": "This source wording identifies abstract machine. Use the source frame to review it in context.",
+          "segmentId": "theory-and-models",
+          "sourceFrame": "frames/lesson-1/frame-0405.jpg",
+          "sourceSeconds": 405
         },
         {
           "id": "l1-q06",
@@ -333,17 +464,19 @@ window.AUTOMATA_DATA = {
           "segmentId": "automaton-elevator"
         },
         {
-          "id": "l1-q14",
-          "prompt": "The speaker calls a software implementation a “virtual machine.” What distinction should a learner keep in mind?",
-          "choices": [
-            "A formal model and its implementation are different levels of description",
-            "Software cannot implement computational models",
-            "A virtual machine has no inputs",
-            "Hardware is always an abstract machine"
+          "id": "l1-q14-id",
+          "kind": "identification",
+          "prompt": "implemented in software",
+          "definitionLabel": "Preserved source definition (excerpt)",
+          "answer": "Virtual machine",
+          "acceptedAnswers": [
+            "Virtual machine",
+            "virtual machines"
           ],
-          "answer": 0,
-          "explanation": "The lesson uses implementation labels, but an abstract machine is a formal model while software or hardware is an implementation medium.",
-          "segmentId": "theory-and-models"
+          "explanation": "This source wording identifies virtual machine. Use the source frame to review it in context.",
+          "segmentId": "theory-and-models",
+          "sourceFrame": "frames/lesson-1/frame-0475.jpg",
+          "sourceSeconds": 475
         },
         {
           "id": "l1-q15",
@@ -410,7 +543,25 @@ window.AUTOMATA_DATA = {
             "The opening example distinguishes accepting and rejecting outcomes. For language recognition, acceptance is decided after the entire input has been consumed—not merely when an accepting state is visited along the way."
           ],
           "speakerNotes": "Sa finite automaton, may states at rules ng paglipat depende sa input symbol. Binabasa ang string at sinusunod ang transitions para malaman kung accepted ang buong input.",
-          "visualDescription": "The definition slide adds input-string, state-change, and accept/reject explanations next to a small transition graph."
+          "visualDescription": "The definition slide adds input-string, state-change, and accept/reject explanations next to a small transition graph.",
+          "frames": [
+            {
+              "src": "frames/lesson-2/frame-0050.jpg",
+              "seconds": 50,
+              "width": 854,
+              "height": 480,
+              "caption": "0:50 · A finite machine recognizes a pattern",
+              "alt": "Source video frame at 0:50: A finite machine recognizes a pattern"
+            },
+            {
+              "src": "frames/lesson-2/frame-0100.jpg",
+              "seconds": 100,
+              "width": 854,
+              "height": 480,
+              "caption": "1:40 · A finite machine recognizes a pattern",
+              "alt": "Source video frame at 1:40: A finite machine recognizes a pattern"
+            }
+          ]
         },
         {
           "id": "machine-features",
@@ -422,7 +573,17 @@ window.AUTOMATA_DATA = {
             "For the DFA/NFA language recognizers studied next, focus on the final accept/reject result. Do not assume that every finite automaton in this course is a transducer that emits one output symbol per input symbol."
           ],
           "speakerNotes": "Ipinapakita ang input, output, states, state relation at output relation bilang mga bahagi ng model ng machine.",
-          "visualDescription": "An input–automaton–output block diagram replaces the opening definition."
+          "visualDescription": "An input–automaton–output block diagram replaces the opening definition.",
+          "frames": [
+            {
+              "src": "frames/lesson-2/frame-0260.jpg",
+              "seconds": 260,
+              "width": 854,
+              "height": 480,
+              "caption": "4:20 · Input, output, and internal state",
+              "alt": "Source video frame at 4:20: Input, output, and internal state"
+            }
+          ]
         },
         {
           "id": "five-tuple",
@@ -434,7 +595,25 @@ window.AUTOMATA_DATA = {
             "Keep a set separate from an element: q₀ belongs to Q, whereas F is a subset of Q. A machine can have more than one accepting state even though it has one designated start state."
           ],
           "speakerNotes": "Ang five-tuple ay Q, sigma, delta, q-zero at F. Magkakaiba ang papel ng states, input symbols, transition function, initial state at final-state set.",
-          "visualDescription": "The formula is revealed first, followed by the meaning of each symbol."
+          "visualDescription": "The formula is revealed first, followed by the meaning of each symbol.",
+          "frames": [
+            {
+              "src": "frames/lesson-2/frame-0290.jpg",
+              "seconds": 290,
+              "width": 854,
+              "height": 480,
+              "caption": "4:50 · Read the five-part specification",
+              "alt": "Source video frame at 4:50: Read the five-part specification"
+            },
+            {
+              "src": "frames/lesson-2/frame-0330.jpg",
+              "seconds": 330,
+              "width": 854,
+              "height": 480,
+              "caption": "5:30 · Read the five-part specification",
+              "alt": "Source video frame at 5:30: Read the five-part specification"
+            }
+          ]
         },
         {
           "id": "tuple-example",
@@ -452,6 +631,16 @@ window.AUTOMATA_DATA = {
             "Start at A. On input 0, move to C.",
             "From C on input 1, move to D.",
             "The full string 01 ends in D, so it is accepted. A later symbol would still have to be consumed before deciding acceptance."
+          ],
+          "frames": [
+            {
+              "src": "frames/lesson-2/frame-0365.jpg",
+              "seconds": 365,
+              "width": 854,
+              "height": 480,
+              "caption": "6:05 · Connect the tuple to an actual graph",
+              "alt": "Source video frame at 6:05: Connect the tuple to an actual graph"
+            }
           ]
         },
         {
@@ -471,6 +660,32 @@ window.AUTOMATA_DATA = {
             "About 11:45–12:15: read B on 0 as D and B on 1 as A.",
             "About 12:15–12:44: read C on 0 as A and C on 1 as D.",
             "About 12:44–13:10: read D on 0 as B and D on 1 as C."
+          ],
+          "frames": [
+            {
+              "src": "frames/lesson-2/frame-0700.jpg",
+              "seconds": 700,
+              "width": 854,
+              "height": 480,
+              "caption": "11:40 · Build the four-state transition table row by row",
+              "alt": "Source video frame at 11:40: Build the four-state transition table row by row"
+            },
+            {
+              "src": "frames/lesson-2/frame-0740.jpg",
+              "seconds": 740,
+              "width": 854,
+              "height": 480,
+              "caption": "12:20 · Build the four-state transition table row by row",
+              "alt": "Source video frame at 12:20: Build the four-state transition table row by row"
+            },
+            {
+              "src": "frames/lesson-2/frame-0785.jpg",
+              "seconds": 785,
+              "width": 854,
+              "height": 480,
+              "caption": "13:05 · Build the four-state transition table row by row",
+              "alt": "Source video frame at 13:05: Build the four-state transition table row by row"
+            }
           ]
         },
         {
@@ -483,7 +698,25 @@ window.AUTOMATA_DATA = {
             "The lesson reads the tape from left to right, one symbol at a time. The current state changes according to δ; the machine does not gain a new state for every extra character in the input."
           ],
           "speakerNotes": "Ang input tape ay may cells para sa symbols. Binabasa ng read head ang symbols pakaliwa-pakanan habang ang finite control ang sumusunod sa rules ng state transitions.",
-          "visualDescription": "The tape/control schematic changes into a tape labeled with the example input a b a a b and a read-head pointer."
+          "visualDescription": "The tape/control schematic changes into a tape labeled with the example input a b a a b and a read-head pointer.",
+          "frames": [
+            {
+              "src": "frames/lesson-2/frame-0800.jpg",
+              "seconds": 800,
+              "width": 854,
+              "height": 480,
+              "caption": "13:20 · The tape and the finite control",
+              "alt": "Source video frame at 13:20: The tape and the finite control"
+            },
+            {
+              "src": "frames/lesson-2/frame-0920.jpg",
+              "seconds": 920,
+              "width": 854,
+              "height": 480,
+              "caption": "15:20 · The tape and the finite control",
+              "alt": "Source video frame at 15:20: The tape and the finite control"
+            }
+          ]
         },
         {
           "id": "dfa-and-nfa",
@@ -497,7 +730,25 @@ window.AUTOMATA_DATA = {
           ],
           "speakerNotes": "Sa DFA, unique ang susunod na state para sa isang state at symbol. Sa NFA, puwedeng maraming choices. Puwede ring ituring ang isang DFA bilang espesyal na NFA.",
           "visualDescription": "A branching classification chart is shown with small deterministic and nondeterministic transition examples; later bullet points compare the two.",
-          "caution": "Convention: this pack uses complete DFAs. A partially drawn deterministic graph may omit an implicit rejecting sink. NFA definitions differ on whether ε-moves are included; ε-NFA is identified explicitly when needed."
+          "caution": "Convention: this pack uses complete DFAs. A partially drawn deterministic graph may omit an implicit rejecting sink. NFA definitions differ on whether ε-moves are included; ε-NFA is identified explicitly when needed.",
+          "frames": [
+            {
+              "src": "frames/lesson-2/frame-1235.jpg",
+              "seconds": 1235,
+              "width": 854,
+              "height": 480,
+              "caption": "20:35 · Deterministic and nondeterministic choices",
+              "alt": "Source video frame at 20:35: Deterministic and nondeterministic choices"
+            },
+            {
+              "src": "frames/lesson-2/frame-1395.jpg",
+              "seconds": 1395,
+              "width": 854,
+              "height": 480,
+              "caption": "23:15 · Deterministic and nondeterministic choices",
+              "alt": "Source video frame at 23:15: Deterministic and nondeterministic choices"
+            }
+          ]
         },
         {
           "id": "comparison",
@@ -509,7 +760,33 @@ window.AUTOMATA_DATA = {
             "Check one state–symbol pair at a time. Different symbols leaving one state are normal in a DFA; the problem is two distinct destinations for the same symbol, or an ε-move."
           ],
           "speakerNotes": "Sa pag-compare, tingnan ang transitions at choices sa bawat input, hindi lang kung maraming bilog o arrows ang figure.",
-          "visualDescription": "The comparison section introduces the names, a unique-versus-several-choices comparison, and then a gallery of six diagrams."
+          "visualDescription": "The comparison section introduces the names, a unique-versus-several-choices comparison, and then a gallery of six diagrams.",
+          "frames": [
+            {
+              "src": "frames/lesson-2/frame-1505.jpg",
+              "seconds": 1505,
+              "width": 854,
+              "height": 480,
+              "caption": "25:05 · Compare the transition rules, not the drawing style",
+              "alt": "Source video frame at 25:05: Compare the transition rules, not the drawing style"
+            },
+            {
+              "src": "frames/lesson-2/frame-1700.jpg",
+              "seconds": 1700,
+              "width": 854,
+              "height": 480,
+              "caption": "28:20 · Compare the transition rules, not the drawing style",
+              "alt": "Source video frame at 28:20: Compare the transition rules, not the drawing style"
+            },
+            {
+              "src": "frames/lesson-2/frame-1815.jpg",
+              "seconds": 1815,
+              "width": 854,
+              "height": 480,
+              "caption": "30:15 · Compare the transition rules, not the drawing style",
+              "alt": "Source video frame at 30:15: Compare the transition rules, not the drawing style"
+            }
+          ]
         },
         {
           "id": "gallery-branching",
@@ -521,7 +798,17 @@ window.AUTOMATA_DATA = {
             "Do not stop at counting all outgoing arrows: identify the labels and destinations. Several arrows with different labels can still be deterministic."
           ],
           "speakerNotes": "Sa unang malaking figure, dalawang a-transitions ang lumalabas sa A. Iyon ang mahalagang ebidensiya ng nondeterministic choice.",
-          "visualDescription": "The gallery zooms into a six-state graph with two a-labeled branches from its start."
+          "visualDescription": "The gallery zooms into a six-state graph with two a-labeled branches from its start.",
+          "frames": [
+            {
+              "src": "frames/lesson-2/frame-1990.jpg",
+              "seconds": 1990,
+              "width": 854,
+              "height": 480,
+              "caption": "33:10 · The first gallery figure branches on the same symbol",
+              "alt": "Source video frame at 33:10: The first gallery figure branches on the same symbol"
+            }
+          ]
         },
         {
           "id": "gallery-dfa",
@@ -534,7 +821,17 @@ window.AUTOMATA_DATA = {
           ],
           "speakerNotes": "Sa five-state figure, tig-iisa ang destination sa 0 at 1 sa bawat state. Ang q2 at q4 ay parehong final states; hindi iyon dahilan para maging nondeterministic.",
           "visualDescription": "A five-state blue diagram fills the screen around 33:41. It is recreated below.",
-          "diagram": "l2-five-state-dfa"
+          "diagram": "l2-five-state-dfa",
+          "frames": [
+            {
+              "src": "frames/lesson-2/frame-2023.jpg",
+              "seconds": 2023,
+              "width": 854,
+              "height": 480,
+              "caption": "33:43 · A complete five-state DFA",
+              "alt": "Source video frame at 33:43: A complete five-state DFA"
+            }
+          ]
         },
         {
           "id": "gallery-nfa",
@@ -547,7 +844,17 @@ window.AUTOMATA_DATA = {
           ],
           "speakerNotes": "Sa q0, may loop sa 0 at 1 at may hiwalay pang arrows sa parehong symbols. Kaya may pagpipilian sa susunod na state.",
           "visualDescription": "The gallery enlarges the four-state purple NFA around 34:13, exposing overlapping labels on the start-state loop and outgoing edges.",
-          "diagram": "l2-loop-nfa"
+          "diagram": "l2-loop-nfa",
+          "frames": [
+            {
+              "src": "frames/lesson-2/frame-2054.jpg",
+              "seconds": 2054,
+              "width": 854,
+              "height": 480,
+              "caption": "34:14 · A loop can compete with another edge",
+              "alt": "Source video frame at 34:14: A loop can compete with another edge"
+            }
+          ]
         },
         {
           "id": "remaining-gallery",
@@ -559,7 +866,33 @@ window.AUTOMATA_DATA = {
             "For a dense figure, write the transition table before classifying it. This prevents overlapping curves or repeated labels from hiding a nondeterministic choice."
           ],
           "speakerNotes": "Sa natitirang figures, ulitin ang pag-check sa bawat state at symbol. Mas madaling makita ang choices kung ilalagay muna sa transition table.",
-          "visualDescription": "The final three gallery examples are enlarged in sequence before the closing animation."
+          "visualDescription": "The final three gallery examples are enlarged in sequence before the closing animation.",
+          "frames": [
+            {
+              "src": "frames/lesson-2/frame-2103.jpg",
+              "seconds": 2103,
+              "width": 854,
+              "height": 480,
+              "caption": "35:03 · Use the same checklist on the remaining figures",
+              "alt": "Source video frame at 35:03: Use the same checklist on the remaining figures"
+            },
+            {
+              "src": "frames/lesson-2/frame-2158.jpg",
+              "seconds": 2158,
+              "width": 854,
+              "height": 480,
+              "caption": "35:58 · Use the same checklist on the remaining figures",
+              "alt": "Source video frame at 35:58: Use the same checklist on the remaining figures"
+            },
+            {
+              "src": "frames/lesson-2/frame-2220.jpg",
+              "seconds": 2220,
+              "width": 854,
+              "height": 480,
+              "caption": "37:00 · Use the same checklist on the remaining figures",
+              "alt": "Source video frame at 37:00: Use the same checklist on the remaining figures"
+            }
+          ]
         }
       ],
       "recap": [
@@ -575,17 +908,20 @@ window.AUTOMATA_DATA = {
       ],
       "questions": [
         {
-          "id": "l2-q01",
-          "prompt": "What does the current state of a finite automaton represent?",
-          "choices": [
-            "The information about the input prefix that the machine currently remembers",
-            "The complete source code of the input",
-            "A new memory cell created for each input character",
-            "Only the length of the full input before it is read"
+          "id": "l2-q01-id",
+          "kind": "identification",
+          "prompt": "The simplest machine to recognize patterns.",
+          "definitionLabel": "Preserved source definition (excerpt)",
+          "answer": "Finite automaton",
+          "acceptedAnswers": [
+            "Finite automaton",
+            "finite automata",
+            "FA"
           ],
-          "answer": 0,
-          "explanation": "A fixed set of states summarizes the relevant history; it does not grow with the input.",
-          "segmentId": "recognize-patterns"
+          "explanation": "This source wording identifies finite automaton. Use the source frame to review it in context.",
+          "segmentId": "recognize-patterns",
+          "sourceFrame": "frames/lesson-2/frame-0050.jpg",
+          "sourceSeconds": 50
         },
         {
           "id": "l2-q02",
@@ -668,17 +1004,20 @@ window.AUTOMATA_DATA = {
           "segmentId": "input-tape"
         },
         {
-          "id": "l2-q08",
-          "prompt": "Which condition is required for a complete DFA?",
-          "choices": [
-            "A self-loop on every state",
-            "Exactly one destination for every state–symbol pair, with no ε-moves",
-            "Two accepting states for every input symbol",
-            "At least two destinations for every state–symbol pair"
+          "id": "l2-q08-id",
+          "kind": "identification",
+          "prompt": "There is always a unique state to go next",
+          "definitionLabel": "Preserved source definition (excerpt)",
+          "answer": "Deterministic finite automaton",
+          "acceptedAnswers": [
+            "Deterministic finite automaton",
+            "DFA",
+            "deterministic finite automata"
           ],
-          "answer": 1,
-          "explanation": "Completeness gives a destination everywhere, and determinism makes it unique.",
-          "segmentId": "dfa-and-nfa"
+          "explanation": "This source wording identifies deterministic finite automaton. Use the source frame to review it in context.",
+          "segmentId": "comparison",
+          "sourceFrame": "frames/lesson-2/frame-1700.jpg",
+          "sourceSeconds": 1700
         },
         {
           "id": "l2-q09",
@@ -751,17 +1090,21 @@ window.AUTOMATA_DATA = {
           "diagram": "l2-loop-nfa"
         },
         {
-          "id": "l2-q14",
-          "prompt": "Which feature alone does NOT make a finite automaton nondeterministic?",
-          "choices": [
-            "Two destinations on the same input from one state",
-            "An ε-transition",
-            "A loop and a second outgoing edge with the same symbol",
-            "Having two accepting states"
+          "id": "l2-q14-id",
+          "kind": "identification",
+          "prompt": "Several choices may exist for next state",
+          "definitionLabel": "Preserved source definition (excerpt)",
+          "answer": "Nondeterministic finite automaton",
+          "acceptedAnswers": [
+            "Nondeterministic finite automaton",
+            "NFA",
+            "non-deterministic finite automaton",
+            "nondeterministic finite automata"
           ],
-          "answer": 3,
-          "explanation": "Determinism concerns transition choices, not the number of accepting states.",
-          "segmentId": "comparison"
+          "explanation": "This source wording identifies nondeterministic finite automaton. Use the source frame to review it in context.",
+          "segmentId": "comparison",
+          "sourceFrame": "frames/lesson-2/frame-1700.jpg",
+          "sourceSeconds": 1700
         },
         {
           "id": "l2-q15",
@@ -828,7 +1171,17 @@ window.AUTOMATA_DATA = {
             "An arrow labeled a from q to p means that reading a in state q can move the machine to p. A loop has the same source and destination."
           ],
           "speakerNotes": "Sa transition diagram, circles ang states at arrows ang transitions. Ang arrow na walang source ang simula; double circle ang final state.",
-          "visualDescription": "The notation slide displays separate icons for a state, a labeled edge, a start arrow, a loop, and an accepting state."
+          "visualDescription": "The notation slide displays separate icons for a state, a labeled edge, a start arrow, a loop, and an accepting state.",
+          "frames": [
+            {
+              "src": "frames/lesson-3/frame-0050.jpg",
+              "seconds": 50,
+              "width": 854,
+              "height": 480,
+              "caption": "0:50 · Read the notation before following the arrows",
+              "alt": "Source video frame at 0:50: Read the notation before following the arrows"
+            }
+          ]
         },
         {
           "id": "read-an-edge",
@@ -840,7 +1193,17 @@ window.AUTOMATA_DATA = {
             "Preserve arrow direction. The existence of q —a→ p does not imply p —a→ q. Several symbols on one edge abbreviate separate transitions with the same destination."
           ],
           "speakerNotes": "Kapag may arrow mula q papuntang p na may label a, iyon ang destination sa input a mula sa q. Huwag baligtarin ang direksiyon ng arrow.",
-          "visualDescription": "The lecture stays on the notation slide while explaining states, edge labels, and the start/accepting markers."
+          "visualDescription": "The lecture stays on the notation slide while explaining states, edge labels, and the start/accepting markers.",
+          "frames": [
+            {
+              "src": "frames/lesson-3/frame-0180.jpg",
+              "seconds": 180,
+              "width": 854,
+              "height": 480,
+              "caption": "3:00 · Translate an edge into δ notation",
+              "alt": "Source video frame at 3:00: Translate an edge into δ notation"
+            }
+          ]
         },
         {
           "id": "starts-with-one",
@@ -860,7 +1223,17 @@ window.AUTOMATA_DATA = {
             "For 011: q0 —0→ q2; the completed sink loops retain q2, so reject.",
             "For ε: remain at q0, so reject."
           ],
-          "caution": "Source clarification: the q2 loops in this recreation are an explicit completion of the source’s partially drawn DFA, not a recovered visual detail."
+          "caution": "Source clarification: the q2 loops in this recreation are an explicit completion of the source’s partially drawn DFA, not a recovered visual detail.",
+          "frames": [
+            {
+              "src": "frames/lesson-3/frame-0300.jpg",
+              "seconds": 300,
+              "width": 854,
+              "height": 480,
+              "caption": "5:00 · Example: strings that start with 1",
+              "alt": "Source video frame at 5:00: Example: strings that start with 1"
+            }
+          ]
         },
         {
           "id": "transition-table",
@@ -872,7 +1245,17 @@ window.AUTOMATA_DATA = {
             "Changing from diagram to table does not create a different automaton. Both representations must agree on states, alphabet, start state, accepting states, and every transition."
           ],
           "speakerNotes": "Ang transition table ay tabular form ng transition function. State at input symbol ang tinitingnan para malaman ang next state.",
-          "visualDescription": "A new slide defines the table as a representation of the transition function."
+          "visualDescription": "A new slide defines the table as a representation of the transition function.",
+          "frames": [
+            {
+              "src": "frames/lesson-3/frame-0515.jpg",
+              "seconds": 515,
+              "width": 854,
+              "height": 480,
+              "caption": "8:35 · A table is another view of the same transition rule",
+              "alt": "Source video frame at 8:35: A table is another view of the same transition rule"
+            }
+          ]
         },
         {
           "id": "rows-columns-markers",
@@ -884,7 +1267,17 @@ window.AUTOMATA_DATA = {
             "The source uses → beside a row for the start state and * beside a row for an accepting state. A star in a table is a marker; it is not an additional input symbol."
           ],
           "speakerNotes": "Rows para sa states, columns para sa input symbols at entries para sa next state. Arrow ang start marker; star ang accept-state marker sa table.",
-          "visualDescription": "The table-components slide lists row and column meanings plus the arrow/star notation."
+          "visualDescription": "The table-components slide lists row and column meanings plus the arrow/star notation.",
+          "frames": [
+            {
+              "src": "frames/lesson-3/frame-0540.jpg",
+              "seconds": 540,
+              "width": 854,
+              "height": 480,
+              "caption": "9:00 · Rows, columns, and the start/final markers",
+              "alt": "Source video frame at 9:00: Rows, columns, and the start/final markers"
+            }
+          ]
         },
         {
           "id": "worked-table",
@@ -904,6 +1297,32 @@ window.AUTOMATA_DATA = {
             "Read the q1 row: 0→q0 and 1→q2.",
             "Read the q2 row: 0→q2 and 1→q2.",
             "Check 001: q0→q1→q0→q2. It ends accepting even though it starts with 0."
+          ],
+          "frames": [
+            {
+              "src": "frames/lesson-3/frame-0620.jpg",
+              "seconds": 620,
+              "width": 854,
+              "height": 480,
+              "caption": "10:20 · Work between the displayed DFA and its table",
+              "alt": "Source video frame at 10:20: Work between the displayed DFA and its table"
+            },
+            {
+              "src": "frames/lesson-3/frame-0675.jpg",
+              "seconds": 675,
+              "width": 854,
+              "height": 480,
+              "caption": "11:15 · Work between the displayed DFA and its table",
+              "alt": "Source video frame at 11:15: Work between the displayed DFA and its table"
+            },
+            {
+              "src": "frames/lesson-3/frame-0730.jpg",
+              "seconds": 730,
+              "width": 854,
+              "height": 480,
+              "caption": "12:10 · Work between the displayed DFA and its table",
+              "alt": "Source video frame at 12:10: Work between the displayed DFA and its table"
+            }
           ]
         },
         {
@@ -917,7 +1336,17 @@ window.AUTOMATA_DATA = {
           ],
           "speakerNotes": "I-check ang bawat cell sa katumbas nitong arrow. Pagkatapos, subukan ang maikling strings para makita kung pareho ang trace sa table at diagram.",
           "visualDescription": "The lecture remains on the paired graph and table while explaining the correspondence before the closing animation.",
-          "diagram": "l3-source-table"
+          "diagram": "l3-source-table",
+          "frames": [
+            {
+              "src": "frames/lesson-3/frame-0840.jpg",
+              "seconds": 840,
+              "width": 854,
+              "height": 480,
+              "caption": "14:00 · Verify a table against its graph",
+              "alt": "Source video frame at 14:00: Verify a table against its graph"
+            }
+          ]
         }
       ],
       "recap": [
@@ -934,30 +1363,34 @@ window.AUTOMATA_DATA = {
       ],
       "questions": [
         {
-          "id": "l3-q01",
-          "prompt": "What does an incoming arrow with no source node mark?",
-          "choices": [
-            "The start state",
-            "Every accepting state",
-            "An ε-transition",
-            "An unreachable state"
+          "id": "l3-q01-id",
+          "kind": "identification",
+          "prompt": "a directed graph",
+          "definitionLabel": "Preserved source definition (excerpt)",
+          "answer": "Transition diagram",
+          "acceptedAnswers": [
+            "Transition diagram",
+            "state transition diagram"
           ],
-          "answer": 0,
-          "explanation": "The source-less arrow identifies where a run begins.",
-          "segmentId": "diagram-notation"
+          "explanation": "This source wording identifies transition diagram. Use the source frame to review it in context.",
+          "segmentId": "diagram-notation",
+          "sourceFrame": "frames/lesson-3/frame-0050.jpg",
+          "sourceSeconds": 50
         },
         {
-          "id": "l3-q02",
-          "prompt": "What does a double circle mean in a transition diagram?",
-          "choices": [
-            "A state with two outgoing edges",
-            "The only start state",
-            "A dead state",
-            "An accepting state"
+          "id": "l3-q02-id",
+          "kind": "identification",
+          "prompt": "there is an arrow with no source",
+          "definitionLabel": "Preserved source definition (excerpt)",
+          "answer": "Start state",
+          "acceptedAnswers": [
+            "Start state",
+            "initial state"
           ],
-          "answer": 3,
-          "explanation": "Acceptance is encoded by the double circle, independently of edge count.",
-          "segmentId": "diagram-notation"
+          "explanation": "This source wording identifies start state. Use the source frame to review it in context.",
+          "segmentId": "diagram-notation",
+          "sourceFrame": "frames/lesson-3/frame-0050.jpg",
+          "sourceSeconds": 50
         },
         {
           "id": "l3-q03",
@@ -1029,17 +1462,18 @@ window.AUTOMATA_DATA = {
           "diagram": "l3-starts-one"
         },
         {
-          "id": "l3-q08",
-          "prompt": "In a transition table, what do rows and input columns represent?",
-          "choices": [
-            "Word lengths and output strings",
-            "Current states and input symbols",
-            "Input symbols and accepting states only",
-            "Final states and start states only"
+          "id": "l3-q08-id",
+          "kind": "identification",
+          "prompt": "tabular representation of the transition function",
+          "definitionLabel": "Preserved source definition (excerpt)",
+          "answer": "Transition table",
+          "acceptedAnswers": [
+            "Transition table"
           ],
-          "answer": 1,
-          "explanation": "Their intersection gives the next state for that state–symbol pair.",
-          "segmentId": "rows-columns-markers"
+          "explanation": "This source wording identifies transition table. Use the source frame to review it in context.",
+          "segmentId": "transition-table",
+          "sourceFrame": "frames/lesson-3/frame-0515.jpg",
+          "sourceSeconds": 515
         },
         {
           "id": "l3-q09",
@@ -1187,7 +1621,17 @@ window.AUTOMATA_DATA = {
             "The conversion in this lesson removes ε-transitions while preserving the accepted language. It does not require the result to be deterministic."
           ],
           "speakerNotes": "Sa hierarchy, magkakaiba ang DFA, NFA at ε-NFA. Ang gagawin dito ay alisin ang ε-transitions para maging ordinary NFA.",
-          "visualDescription": "The source shows a finite-state-machine family chart before introducing ε."
+          "visualDescription": "The source shows a finite-state-machine family chart before introducing ε.",
+          "frames": [
+            {
+              "src": "frames/lesson-4/frame-0050.jpg",
+              "seconds": 50,
+              "width": 854,
+              "height": 480,
+              "caption": "0:50 · Locate ε-NFA among finite-state machines",
+              "alt": "Source video frame at 0:50: Locate ε-NFA among finite-state machines"
+            }
+          ]
         },
         {
           "id": "l4-s02",
@@ -1199,7 +1643,17 @@ window.AUTOMATA_DATA = {
             "Do not treat ε as a third alphabet symbol beside0 and 1. It is a transition that consumes zero symbols."
           ],
           "speakerNotes": "Ang epsilon ay empty string. Puwedeng lumipat sa state gamit ang epsilon nang walang binabasang input symbol.",
-          "visualDescription": "The ε slide shows simple graphs and the meaning of the empty string."
+          "visualDescription": "The ε slide shows simple graphs and the meaning of the empty string.",
+          "frames": [
+            {
+              "src": "frames/lesson-4/frame-0180.jpg",
+              "seconds": 180,
+              "width": 854,
+              "height": 480,
+              "caption": "3:00 · ε consumes no input symbol",
+              "alt": "Source video frame at 3:00: ε consumes no input symbol"
+            }
+          ]
         },
         {
           "id": "l4-s03",
@@ -1211,7 +1665,41 @@ window.AUTOMATA_DATA = {
             "The zero-step case matters: q always belongs to E(q), even when no ε-edge leaves it. Use a set so repeated reachable states appear only once."
           ],
           "speakerNotes": "Sa closure, isama lagi ang sarili mong state. Sundan lang ang epsilon transitions at huwag ulitin ang kaparehong member ng set.",
-          "visualDescription": "The source introduces ε-moves and later emphasizes that every closure contains the state itself."
+          "visualDescription": "The source introduces ε-moves and later emphasizes that every closure contains the state itself.",
+          "frames": [
+            {
+              "src": "frames/lesson-4/frame-0450.jpg",
+              "seconds": 450,
+              "width": 854,
+              "height": 480,
+              "caption": "7:30 · Compute ε-closure, including the state itself",
+              "alt": "Source video frame at 7:30: Compute ε-closure, including the state itself"
+            },
+            {
+              "src": "frames/lesson-4/frame-0500.jpg",
+              "seconds": 500,
+              "width": 854,
+              "height": 480,
+              "caption": "8:20 · Compute ε-closure, including the state itself",
+              "alt": "Source video frame at 8:20: Compute ε-closure, including the state itself"
+            },
+            {
+              "src": "frames/lesson-4/frame-0600.jpg",
+              "seconds": 600,
+              "width": 854,
+              "height": 480,
+              "caption": "10:00 · Compute ε-closure, including the state itself",
+              "alt": "Source video frame at 10:00: Compute ε-closure, including the state itself"
+            },
+            {
+              "src": "frames/lesson-4/frame-0850.jpg",
+              "seconds": 850,
+              "width": 854,
+              "height": 480,
+              "caption": "14:10 · Compute ε-closure, including the state itself",
+              "alt": "Source video frame at 14:10: Compute ε-closure, including the state itself"
+            }
+          ]
         },
         {
           "id": "l4-s04",
@@ -1223,7 +1711,17 @@ window.AUTOMATA_DATA = {
             "We keep the same state names and input alphabet, replace the transition relation, and update accepting states when ε-reachability requires it."
           ],
           "speakerNotes": "Ang epsilon-NFA ay gagawing NFA, hindi agad DFA. Puwede pa ring set ang destination sa isang input.",
-          "visualDescription": "The comparison slide puts an NFA and ε-NFA beside their transition mappings."
+          "visualDescription": "The comparison slide puts an NFA and ε-NFA beside their transition mappings.",
+          "frames": [
+            {
+              "src": "frames/lesson-4/frame-0930.jpg",
+              "seconds": 930,
+              "width": 854,
+              "height": 480,
+              "caption": "15:30 · Separate conversion from determinization",
+              "alt": "Source video frame at 15:30: Separate conversion from determinization"
+            }
+          ]
         },
         {
           "id": "l4-s05",
@@ -1235,7 +1733,17 @@ window.AUTOMATA_DATA = {
             "This convention includes ε-moves both before and after the symbol. Repeat it independently for every state and every alphabet symbol."
           ],
           "speakerNotes": "Ang proseso ay state, epsilon closure, input, tapos epsilon closure ulit. Gawin ito para sa bawat state at bawat input symbol.",
-          "visualDescription": "The procedure slide gives way to the worked example and its closure–input–closure flow."
+          "visualDescription": "The procedure slide gives way to the worked example and its closure–input–closure flow.",
+          "frames": [
+            {
+              "src": "frames/lesson-4/frame-1160.jpg",
+              "seconds": 1160,
+              "width": 854,
+              "height": 480,
+              "caption": "19:20 · Use closure → symbol → closure",
+              "alt": "Source video frame at 19:20: Use closure → symbol → closure"
+            }
+          ]
         },
         {
           "id": "l4-s06",
@@ -1248,7 +1756,25 @@ window.AUTOMATA_DATA = {
           ],
           "speakerNotes": "Sa source example, A ang initial state at C ang final. May epsilon mula A sa B at mula B sa C. Ihanda ang rows na A,B,C at columns na0 at 1.",
           "visualDescription": "The blue source graph is shown beside the closure rule; the blank NFA table is introduced around 22:50.",
-          "diagram": "l4-source-enfa"
+          "diagram": "l4-source-enfa",
+          "frames": [
+            {
+              "src": "frames/lesson-4/frame-1270.jpg",
+              "seconds": 1270,
+              "width": 854,
+              "height": 480,
+              "caption": "21:10 · Read the source example and prepare its table",
+              "alt": "Source video frame at 21:10: Read the source example and prepare its table"
+            },
+            {
+              "src": "frames/lesson-4/frame-1380.jpg",
+              "seconds": 1380,
+              "width": 854,
+              "height": 480,
+              "caption": "23:00 · Read the source example and prepare its table",
+              "alt": "Source video frame at 23:00: Read the source example and prepare its table"
+            }
+          ]
         },
         {
           "id": "l4-s07",
@@ -1266,6 +1792,40 @@ window.AUTOMATA_DATA = {
             "E(A)={A,B,C}.",
             "On0: {A}∪∅∪{C}={A,C}; E({A,C})={A,B,C}.",
             "On1: ∅∪{B}∪{C}={B,C}; E({B,C})={B,C}."
+          ],
+          "frames": [
+            {
+              "src": "frames/lesson-4/frame-1450.jpg",
+              "seconds": 1450,
+              "width": 854,
+              "height": 480,
+              "caption": "24:10 · Fill A’s two converted transitions",
+              "alt": "Source video frame at 24:10: Fill A’s two converted transitions"
+            },
+            {
+              "src": "frames/lesson-4/frame-1510.jpg",
+              "seconds": 1510,
+              "width": 854,
+              "height": 480,
+              "caption": "25:10 · Fill A’s two converted transitions",
+              "alt": "Source video frame at 25:10: Fill A’s two converted transitions"
+            },
+            {
+              "src": "frames/lesson-4/frame-1600.jpg",
+              "seconds": 1600,
+              "width": 854,
+              "height": 480,
+              "caption": "26:40 · Fill A’s two converted transitions",
+              "alt": "Source video frame at 26:40: Fill A’s two converted transitions"
+            },
+            {
+              "src": "frames/lesson-4/frame-1650.jpg",
+              "seconds": 1650,
+              "width": 854,
+              "height": 480,
+              "caption": "27:30 · Fill A’s two converted transitions",
+              "alt": "Source video frame at 27:30: Fill A’s two converted transitions"
+            }
           ]
         },
         {
@@ -1280,7 +1840,33 @@ window.AUTOMATA_DATA = {
           ],
           "speakerNotes": "Ulitin ang proseso kay B at C. Para kay B,0 ay C at 1 ay B,C. Para kay C, pareho lang na C ang destination sa0 at 1.",
           "visualDescription": "The remaining table cells are calculated before the lesson decides which rows are accepting.",
-          "diagram": "l4-source-nfa"
+          "diagram": "l4-source-nfa",
+          "frames": [
+            {
+              "src": "frames/lesson-4/frame-1715.jpg",
+              "seconds": 1715,
+              "width": 854,
+              "height": 480,
+              "caption": "28:35 · Finish the B and C rows",
+              "alt": "Source video frame at 28:35: Finish the B and C rows"
+            },
+            {
+              "src": "frames/lesson-4/frame-1810.jpg",
+              "seconds": 1810,
+              "width": 854,
+              "height": 480,
+              "caption": "30:10 · Finish the B and C rows",
+              "alt": "Source video frame at 30:10: Finish the B and C rows"
+            },
+            {
+              "src": "frames/lesson-4/frame-1880.jpg",
+              "seconds": 1880,
+              "width": 854,
+              "height": 480,
+              "caption": "31:20 · Finish the B and C rows",
+              "alt": "Source video frame at 31:20: Finish the B and C rows"
+            }
+          ]
         },
         {
           "id": "l4-s09",
@@ -1293,7 +1879,25 @@ window.AUTOMATA_DATA = {
           ],
           "speakerNotes": "A at B ay makakarating sa original final C gamit lang ang epsilon. Kaya sa converted NFA, final na silang tatlo: A,B,C.",
           "visualDescription": "The table gains accepting markers beside all three state rows.",
-          "diagram": "l4-source-nfa"
+          "diagram": "l4-source-nfa",
+          "frames": [
+            {
+              "src": "frames/lesson-4/frame-1940.jpg",
+              "seconds": 1940,
+              "width": 854,
+              "height": 480,
+              "caption": "32:20 · Update accepting states: A, B, and C all accept",
+              "alt": "Source video frame at 32:20: Update accepting states: A, B, and C all accept"
+            },
+            {
+              "src": "frames/lesson-4/frame-2015.jpg",
+              "seconds": 2015,
+              "width": 854,
+              "height": 480,
+              "caption": "33:35 · Update accepting states: A, B, and C all accept",
+              "alt": "Source video frame at 33:35: Update accepting states: A, B, and C all accept"
+            }
+          ]
         },
         {
           "id": "l4-s10",
@@ -1308,7 +1912,41 @@ window.AUTOMATA_DATA = {
           "speakerNotes": "Iguhit ang lahat ng destinations sa table. Kapag pareho ang source at target ng arrows, puwedeng pagsamahin ang labels na0 at 1 para mas malinaw ang diagram.",
           "visualDescription": "The source draws the three final-state nodes, adds edges, then simplifies repeated arrows.",
           "diagram": "l4-source-nfa",
-          "caution": "Editorial clarification: the recreated C loop is labeled0,1, following the table and the spoken correction rather than the duplicated label visible in one source frame."
+          "caution": "Editorial clarification: the recreated C loop is labeled0,1, following the table and the spoken correction rather than the duplicated label visible in one source frame.",
+          "frames": [
+            {
+              "src": "frames/lesson-4/frame-2060.jpg",
+              "seconds": 2060,
+              "width": 854,
+              "height": 480,
+              "caption": "34:20 · Draw the new NFA and combine repeated edges",
+              "alt": "Source video frame at 34:20: Draw the new NFA and combine repeated edges"
+            },
+            {
+              "src": "frames/lesson-4/frame-2120.jpg",
+              "seconds": 2120,
+              "width": 854,
+              "height": 480,
+              "caption": "35:20 · Draw the new NFA and combine repeated edges",
+              "alt": "Source video frame at 35:20: Draw the new NFA and combine repeated edges"
+            },
+            {
+              "src": "frames/lesson-4/frame-2190.jpg",
+              "seconds": 2190,
+              "width": 854,
+              "height": 480,
+              "caption": "36:30 · Draw the new NFA and combine repeated edges",
+              "alt": "Source video frame at 36:30: Draw the new NFA and combine repeated edges"
+            },
+            {
+              "src": "frames/lesson-4/frame-2250.jpg",
+              "seconds": 2250,
+              "width": 854,
+              "height": 480,
+              "caption": "37:30 · Draw the new NFA and combine repeated edges",
+              "alt": "Source video frame at 37:30: Draw the new NFA and combine repeated edges"
+            }
+          ]
         },
         {
           "id": "l4-practice",
@@ -1321,7 +1959,8 @@ window.AUTOMATA_DATA = {
           ],
           "speakerNotes": "Dagdag na practice variation ito, hindi sinabi o iginuhit na example sa video. I-apply ang parehong closure–input–closure procedure.",
           "visualDescription": "Original practice figure derived from the method, with a source link back to its explanation.",
-          "diagram": "l4-practice-enfa"
+          "diagram": "l4-practice-enfa",
+          "frames": []
         }
       ],
       "recap": [
@@ -1408,30 +2047,38 @@ window.AUTOMATA_DATA = {
           "segmentId": "l4-s08"
         },
         {
-          "id": "l4-q06",
-          "prompt": "Which statement about E(q) is correct?",
-          "choices": [
-            "It excludes q unless q has an ε-loop",
-            "It includes states reached by any alphabet symbol",
-            "It contains only final states",
-            "It includes q via zero ε-moves"
+          "id": "l4-q06-id",
+          "kind": "identification",
+          "prompt": "stands for the empty string",
+          "definitionLabel": "Preserved source definition (excerpt)",
+          "answer": "Epsilon",
+          "acceptedAnswers": [
+            "Epsilon",
+            "ε",
+            "epsilon symbol"
           ],
-          "answer": 3,
-          "explanation": "Zero ε-moves are allowed, so q belongs to its own epsilon closure.",
-          "segmentId": "l4-s03"
+          "explanation": "This source wording identifies epsilon. Use the source frame to review it in context.",
+          "segmentId": "l4-s02",
+          "sourceFrame": "frames/lesson-4/frame-0180.jpg",
+          "sourceSeconds": 180
         },
         {
-          "id": "l4-q07",
-          "prompt": "Why close destinations after following a symbol under the chosen convention?",
-          "choices": [
-            "To include states reachable by further ε-moves after that consumed symbol",
-            "To remove the symbol from the alphabet",
-            "To make the NFA deterministic",
-            "To force the destination to be final"
+          "id": "l4-q07-id",
+          "kind": "identification",
+          "prompt": "without consuming an input symbol",
+          "definitionLabel": "Preserved source definition (excerpt)",
+          "answer": "Epsilon transition",
+          "acceptedAnswers": [
+            "Epsilon transition",
+            "epsilon transitions",
+            "ε-transition",
+            "ε transition",
+            "e-transition"
           ],
-          "answer": 0,
-          "explanation": "The target set must include all ε-reachable states after consuming a.",
-          "segmentId": "l4-s04"
+          "explanation": "This source wording identifies epsilon transition. Use the source frame to review it in context.",
+          "segmentId": "l4-s03",
+          "sourceFrame": "frames/lesson-4/frame-0450.jpg",
+          "sourceSeconds": 450
         },
         {
           "id": "l4-q08",
@@ -1516,17 +2163,21 @@ window.AUTOMATA_DATA = {
           "diagram": "l4-practice-nfa"
         },
         {
-          "id": "l4-q14",
-          "prompt": "Which diagram property confirms ε-elimination succeeded?",
-          "choices": [
-            "Every state is accepting",
-            "There are no ε-labeled edges",
-            "Every state has one outgoing edge",
-            "The start state is removed"
+          "id": "l4-q14-id",
+          "kind": "identification",
+          "prompt": "All the states that can be Reached … only by seeing ε symbol",
+          "definitionLabel": "Preserved source definition (excerpt)",
+          "answer": "Epsilon closure",
+          "acceptedAnswers": [
+            "Epsilon closure",
+            "ε-closure",
+            "ε closure",
+            "epsilon-closure"
           ],
-          "answer": 1,
-          "explanation": "The target machine uses only input-alphabet labels; NFA branching can remain.",
-          "segmentId": "l4-s09"
+          "explanation": "This source wording identifies epsilon closure. Use the source frame to review it in context.",
+          "segmentId": "l4-s06",
+          "sourceFrame": "frames/lesson-4/frame-1270.jpg",
+          "sourceSeconds": 1270
         },
         {
           "id": "l4-q15",
@@ -1592,7 +2243,17 @@ window.AUTOMATA_DATA = {
             "Subset construction records all NFA possibilities after one input prefix inside a single DFA state. It does not choose an arbitrary branch and discard the others."
           ],
           "speakerNotes": "Ang target ay equivalent DFA: pareho pa rin ang accepted strings. Sa DFA, isang destination; sa NFA, set ng mga posibleng states.",
-          "visualDescription": "The opening comparison displays the DFA/NFA transition mappings before the worked examples."
+          "visualDescription": "The opening comparison displays the DFA/NFA transition mappings before the worked examples.",
+          "frames": [
+            {
+              "src": "frames/lesson-5/frame-0090.jpg",
+              "seconds": 90,
+              "width": 854,
+              "height": 480,
+              "caption": "1:30 · Conversion keeps the same language",
+              "alt": "Source video frame at 1:30: Conversion keeps the same language"
+            }
+          ]
         },
         {
           "id": "l5-s02",
@@ -1605,7 +2266,25 @@ window.AUTOMATA_DATA = {
           ],
           "speakerNotes": "Sa unang example, 0 ang unang symbol para makapunta sa B. Final ang B at may loop sa 0 at 1. Walang destination mula A sa input 1.",
           "visualDescription": "At the checked 4:30–6:30 frames, the NFA and its table are introduced and filled.",
-          "diagram": "l5-starts-zero-nfa"
+          "diagram": "l5-starts-zero-nfa",
+          "frames": [
+            {
+              "src": "frames/lesson-5/frame-0270.jpg",
+              "seconds": 270,
+              "width": 854,
+              "height": 480,
+              "caption": "4:30 · Example 1: read the NFA for words starting with 0",
+              "alt": "Source video frame at 4:30: Example 1: read the NFA for words starting with 0"
+            },
+            {
+              "src": "frames/lesson-5/frame-0390.jpg",
+              "seconds": 390,
+              "width": 854,
+              "height": 480,
+              "caption": "6:30 · Example 1: read the NFA for words starting with 0",
+              "alt": "Source video frame at 6:30: Example 1: read the NFA for words starting with 0"
+            }
+          ]
         },
         {
           "id": "l5-s03",
@@ -1618,7 +2297,25 @@ window.AUTOMATA_DATA = {
           ],
           "speakerNotes": "Ang walang destination ay papalitan ng dead state C sa complete DFA. Mula A sa 1, C ang pupuntahan; ang C ay hindi final.",
           "visualDescription": "The NFA table and new DFA table appear side by side. At the checked 8:30 frame, the first DFA row includes the new C destination.",
-          "diagram": "l5-starts-zero-dfa"
+          "diagram": "l5-starts-zero-dfa",
+          "frames": [
+            {
+              "src": "frames/lesson-5/frame-0450.jpg",
+              "seconds": 450,
+              "width": 854,
+              "height": 480,
+              "caption": "7:30 · Name the missing destination as a dead state",
+              "alt": "Source video frame at 7:30: Name the missing destination as a dead state"
+            },
+            {
+              "src": "frames/lesson-5/frame-0510.jpg",
+              "seconds": 510,
+              "width": 854,
+              "height": 480,
+              "caption": "8:30 · Name the missing destination as a dead state",
+              "alt": "Source video frame at 8:30: Name the missing destination as a dead state"
+            }
+          ]
         },
         {
           "id": "l5-s04",
@@ -1637,6 +2334,32 @@ window.AUTOMATA_DATA = {
             "B on either symbol→B.",
             "C on either symbol→C.",
             "Only B is accepting."
+          ],
+          "frames": [
+            {
+              "src": "frames/lesson-5/frame-0570.jpg",
+              "seconds": 570,
+              "width": 854,
+              "height": 480,
+              "caption": "9:30 · Complete the new row and draw the DFA",
+              "alt": "Source video frame at 9:30: Complete the new row and draw the DFA"
+            },
+            {
+              "src": "frames/lesson-5/frame-0630.jpg",
+              "seconds": 630,
+              "width": 854,
+              "height": 480,
+              "caption": "10:30 · Complete the new row and draw the DFA",
+              "alt": "Source video frame at 10:30: Complete the new row and draw the DFA"
+            },
+            {
+              "src": "frames/lesson-5/frame-0690.jpg",
+              "seconds": 690,
+              "width": 854,
+              "height": 480,
+              "caption": "11:30 · Complete the new row and draw the DFA",
+              "alt": "Source video frame at 11:30: Complete the new row and draw the DFA"
+            }
           ]
         },
         {
@@ -1650,7 +2373,17 @@ window.AUTOMATA_DATA = {
           ],
           "speakerNotes": "Sa pangalawang NFA, may loop sa A at may 1-arrow papunta sa final B. Kaya sa input 1, parehong A at B ang posibleng states.",
           "visualDescription": "The second example’s enlarged graph is visible in the checked 12:30 frame. The source briefly revisits the previous table before returning to this example.",
-          "diagram": "l5-ends-one-nfa"
+          "diagram": "l5-ends-one-nfa",
+          "frames": [
+            {
+              "src": "frames/lesson-5/frame-0750.jpg",
+              "seconds": 750,
+              "width": 854,
+              "height": 480,
+              "caption": "12:30 · Example 2: one input can leave two possibilities",
+              "alt": "Source video frame at 12:30: Example 2: one input can leave two possibilities"
+            }
+          ]
         },
         {
           "id": "l5-s06",
@@ -1663,7 +2396,25 @@ window.AUTOMATA_DATA = {
           ],
           "speakerNotes": "Ang AB ay isang DFA state na kumakatawan sa set na A at B. Hindi ito dalawang sunod na input symbols.",
           "visualDescription": "The checked 14:30–16:30 frames show A’s NFA destination set and the new AB row in the DFA table.",
-          "diagram": "l5-ends-one-dfa"
+          "diagram": "l5-ends-one-dfa",
+          "frames": [
+            {
+              "src": "frames/lesson-5/frame-0870.jpg",
+              "seconds": 870,
+              "width": 854,
+              "height": 480,
+              "caption": "14:30 · Build the singleton and composite rows",
+              "alt": "Source video frame at 14:30: Build the singleton and composite rows"
+            },
+            {
+              "src": "frames/lesson-5/frame-0930.jpg",
+              "seconds": 930,
+              "width": 854,
+              "height": 480,
+              "caption": "15:30 · Build the singleton and composite rows",
+              "alt": "Source video frame at 15:30: Build the singleton and composite rows"
+            }
+          ]
         },
         {
           "id": "l5-s07",
@@ -1676,7 +2427,33 @@ window.AUTOMATA_DATA = {
           ],
           "speakerNotes": "Para sa AB, pagsamahin ang destinations mula A at B. Sa 0, A ang sagot; sa 1, AB. Final ang AB dahil kasama ang final state B.",
           "visualDescription": "At checked 17:30 the source writes the union calculation; by 18:30 the two DFA rows are complete.",
-          "diagram": "l5-ends-one-dfa"
+          "diagram": "l5-ends-one-dfa",
+          "frames": [
+            {
+              "src": "frames/lesson-5/frame-0990.jpg",
+              "seconds": 990,
+              "width": 854,
+              "height": 480,
+              "caption": "16:30 · Union the transitions of every subset member",
+              "alt": "Source video frame at 16:30: Union the transitions of every subset member"
+            },
+            {
+              "src": "frames/lesson-5/frame-1050.jpg",
+              "seconds": 1050,
+              "width": 854,
+              "height": 480,
+              "caption": "17:30 · Union the transitions of every subset member",
+              "alt": "Source video frame at 17:30: Union the transitions of every subset member"
+            },
+            {
+              "src": "frames/lesson-5/frame-1110.jpg",
+              "seconds": 1110,
+              "width": 854,
+              "height": 480,
+              "caption": "18:30 · Union the transitions of every subset member",
+              "alt": "Source video frame at 18:30: Union the transitions of every subset member"
+            }
+          ]
         },
         {
           "id": "l5-s08",
@@ -1689,7 +2466,33 @@ window.AUTOMATA_DATA = {
           ],
           "speakerNotes": "Sa third example, A ang start at C ang final. Basahin ang given table: A sa a ay A at B, A sa b ay C; B sa a ay A at sa b ay B; C sa a ay empty at sa b ay A at B.",
           "visualDescription": "The checked 19:30 frame introduces Example 3, 20:30 shows its tuple/table, and 21:30–22:30 progressively adds the graph’s edges.",
-          "diagram": "l5-example-three-nfa"
+          "diagram": "l5-example-three-nfa",
+          "frames": [
+            {
+              "src": "frames/lesson-5/frame-1230.jpg",
+              "seconds": 1230,
+              "width": 854,
+              "height": 480,
+              "caption": "20:30 · Example 3: reconstruct the input NFA from its tuple and table",
+              "alt": "Source video frame at 20:30: Example 3: reconstruct the input NFA from its tuple and table"
+            },
+            {
+              "src": "frames/lesson-5/frame-1290.jpg",
+              "seconds": 1290,
+              "width": 854,
+              "height": 480,
+              "caption": "21:30 · Example 3: reconstruct the input NFA from its tuple and table",
+              "alt": "Source video frame at 21:30: Example 3: reconstruct the input NFA from its tuple and table"
+            },
+            {
+              "src": "frames/lesson-5/frame-1350.jpg",
+              "seconds": 1350,
+              "width": 854,
+              "height": 480,
+              "caption": "22:30 · Example 3: reconstruct the input NFA from its tuple and table",
+              "alt": "Source video frame at 22:30: Example 3: reconstruct the input NFA from its tuple and table"
+            }
+          ]
         },
         {
           "id": "l5-s09",
@@ -1707,6 +2510,24 @@ window.AUTOMATA_DATA = {
             "Δ(A,a)=AB and Δ(A,b)=C.",
             "Δ(AB,a)=AB.",
             "Δ(AB,b)=BC; add BC as a new row."
+          ],
+          "frames": [
+            {
+              "src": "frames/lesson-5/frame-1410.jpg",
+              "seconds": 1410,
+              "width": 854,
+              "height": 480,
+              "caption": "23:30 · Process A, then the newly discovered AB",
+              "alt": "Source video frame at 23:30: Process A, then the newly discovered AB"
+            },
+            {
+              "src": "frames/lesson-5/frame-1470.jpg",
+              "seconds": 1470,
+              "width": 854,
+              "height": 480,
+              "caption": "24:30 · Process A, then the newly discovered AB",
+              "alt": "Source video frame at 24:30: Process A, then the newly discovered AB"
+            }
           ]
         },
         {
@@ -1720,7 +2541,25 @@ window.AUTOMATA_DATA = {
           ],
           "speakerNotes": "Sa BC, a ay A at b ay AB. Sa C, walang a-destination kaya kailangan ng dead state D; sa b ay AB.",
           "visualDescription": "The checked 25:30 frame fills BC’s row; by 26:30 C’s a-transition introduces D.",
-          "diagram": "l5-example-three-dfa"
+          "diagram": "l5-example-three-dfa",
+          "frames": [
+            {
+              "src": "frames/lesson-5/frame-1530.jpg",
+              "seconds": 1530,
+              "width": 854,
+              "height": 480,
+              "caption": "25:30 · Process BC and C without skipping empty sets",
+              "alt": "Source video frame at 25:30: Process BC and C without skipping empty sets"
+            },
+            {
+              "src": "frames/lesson-5/frame-1590.jpg",
+              "seconds": 1590,
+              "width": 854,
+              "height": 480,
+              "caption": "26:30 · Process BC and C without skipping empty sets",
+              "alt": "Source video frame at 26:30: Process BC and C without skipping empty sets"
+            }
+          ]
         },
         {
           "id": "l5-s11",
@@ -1733,7 +2572,25 @@ window.AUTOMATA_DATA = {
           ],
           "speakerNotes": "Kumpletuhin ang D row gamit ang D sa parehong inputs. C at BC ang final dito, dahil C ang original final state sa third example.",
           "visualDescription": "The checked 27:30 frame has the full table; around 28:30 the source draws the nodes and accepting markers.",
-          "diagram": "l5-example-three-dfa"
+          "diagram": "l5-example-three-dfa",
+          "frames": [
+            {
+              "src": "frames/lesson-5/frame-1650.jpg",
+              "seconds": 1650,
+              "width": 854,
+              "height": 480,
+              "caption": "27:30 · Complete D and mark the accepting subsets",
+              "alt": "Source video frame at 27:30: Complete D and mark the accepting subsets"
+            },
+            {
+              "src": "frames/lesson-5/frame-1710.jpg",
+              "seconds": 1710,
+              "width": 854,
+              "height": 480,
+              "caption": "28:30 · Complete D and mark the accepting subsets",
+              "alt": "Source video frame at 28:30: Complete D and mark the accepting subsets"
+            }
+          ]
         },
         {
           "id": "l5-s12",
@@ -1746,7 +2603,17 @@ window.AUTOMATA_DATA = {
           ],
           "speakerNotes": "Pagkatapos makumpleto ang table, iguhit ang bawat transition at i-check ang accepting states. Gamitin ang parehong inputs para maikumpara ang NFA at DFA.",
           "visualDescription": "The checked 29:30 frame draws the final DFA from its table. The recreation completes every listed cell explicitly.",
-          "diagram": "l5-example-three-dfa"
+          "diagram": "l5-example-three-dfa",
+          "frames": [
+            {
+              "src": "frames/lesson-5/frame-1770.jpg",
+              "seconds": 1770,
+              "width": 854,
+              "height": 480,
+              "caption": "29:30 · Draw the final DFA and cross-check its table",
+              "alt": "Source video frame at 29:30: Draw the final DFA and cross-check its table"
+            }
+          ]
         }
       ],
       "recap": [
@@ -1766,17 +2633,20 @@ window.AUTOMATA_DATA = {
       ],
       "questions": [
         {
-          "id": "l5-q01",
-          "prompt": "What must an NFA-to-DFA conversion preserve?",
-          "choices": [
-            "The set of accepted words",
-            "The number of states",
-            "The exact drawing layout",
-            "Every original state name"
+          "id": "l5-q01-id",
+          "kind": "identification",
+          "prompt": "δ = Q × Σ → Q",
+          "definitionLabel": "Preserved source notation",
+          "answer": "Deterministic finite automaton",
+          "acceptedAnswers": [
+            "Deterministic finite automaton",
+            "DFA",
+            "deterministic finite automata"
           ],
-          "answer": 0,
-          "explanation": "Equivalence concerns the recognized language, not state count or layout.",
-          "segmentId": "l5-s01"
+          "explanation": "This source wording identifies deterministic finite automaton. Use the source frame to review it in context.",
+          "segmentId": "l5-s01",
+          "sourceFrame": "frames/lesson-5/frame-0090.jpg",
+          "sourceSeconds": 90
         },
         {
           "id": "l5-q02",
@@ -1863,18 +2733,21 @@ window.AUTOMATA_DATA = {
           "diagram": "l5-ends-one-nfa"
         },
         {
-          "id": "l5-q08",
-          "prompt": "Why is AB accepting in Source Example 2?",
-          "choices": [
-            "It contains the start state A",
-            "It contains the original final state B",
-            "Its label has two letters",
-            "Every composite subset is final"
+          "id": "l5-q08-id",
+          "kind": "identification",
+          "prompt": "δ = Q × Σ → 2^Q",
+          "definitionLabel": "Preserved source notation",
+          "answer": "Nondeterministic finite automaton",
+          "acceptedAnswers": [
+            "Nondeterministic finite automaton",
+            "NFA",
+            "non-deterministic finite automaton",
+            "nondeterministic finite automata"
           ],
-          "answer": 1,
-          "explanation": "At least one accepting member is sufficient.",
-          "segmentId": "l5-s07",
-          "diagram": "l5-ends-one-dfa"
+          "explanation": "This source wording identifies nondeterministic finite automaton. Use the source frame to review it in context.",
+          "segmentId": "l5-s01",
+          "sourceFrame": "frames/lesson-5/frame-0090.jpg",
+          "sourceSeconds": 90
         },
         {
           "id": "l5-q09",
@@ -1947,17 +2820,20 @@ window.AUTOMATA_DATA = {
           "diagram": "l5-example-three-dfa"
         },
         {
-          "id": "l5-q14",
-          "prompt": "What does the label AB represent in a subset DFA?",
-          "choices": [
-            "An input string that must be read next",
-            "Two separate DFA start states",
-            "Proof that A and B are equivalent NFA states",
-            "One DFA state representing the subset {A,B}"
+          "id": "l5-q14-id",
+          "kind": "identification",
+          "prompt": "AB = A ∪ B",
+          "definitionLabel": "Preserved source notation",
+          "answer": "Union",
+          "acceptedAnswers": [
+            "Union",
+            "union method",
+            "set union"
           ],
-          "answer": 3,
-          "explanation": "Subset construction tracks possibilities; it does not assert that its members are equivalent or merged by minimization.",
-          "segmentId": "l5-s06"
+          "explanation": "The ∪ symbol is set union. In subset construction, the destinations contributed by each member are combined using this operation.",
+          "segmentId": "l5-s07",
+          "sourceFrame": "frames/lesson-5/frame-1050.jpg",
+          "sourceSeconds": 1050
         },
         {
           "id": "l5-q15",
@@ -2029,7 +2905,17 @@ window.AUTOMATA_DATA = {
           "speakerNotes": "Ang minimization ay pagbawas ng states habang pareho pa rin ang accepted language. Hahanapin kung aling states ang puwedeng pagsamahin.",
           "visualDescription": "Opening title and motivation, followed by the topic title.",
           "diagram": "",
-          "workedSteps": []
+          "workedSteps": [],
+          "frames": [
+            {
+              "src": "frames/lesson-6/frame-0040.jpg",
+              "seconds": 40,
+              "width": 854,
+              "height": 480,
+              "caption": "0:40 · Goal: reduce states while preserving the language",
+              "alt": "Source video frame at 0:40: Goal: reduce states while preserving the language"
+            }
+          ]
         },
         {
           "id": "l6-s02",
@@ -2048,6 +2934,24 @@ window.AUTOMATA_DATA = {
             "For ε, check whether the states themselves are accepting.",
             "For each symbol and then longer suffixes, compare the states reached.",
             "A suffix that produces different acceptance is a witness that they are distinguishable."
+          ],
+          "frames": [
+            {
+              "src": "frames/lesson-6/frame-0240.jpg",
+              "seconds": 240,
+              "width": 854,
+              "height": 480,
+              "caption": "4:00 · Equivalent states have identical future answers",
+              "alt": "Source video frame at 4:00: Equivalent states have identical future answers"
+            },
+            {
+              "src": "frames/lesson-6/frame-0390.jpg",
+              "seconds": 390,
+              "width": 854,
+              "height": 480,
+              "caption": "6:30 · Equivalent states have identical future answers",
+              "alt": "Source video frame at 6:30: Equivalent states have identical future answers"
+            }
           ]
         },
         {
@@ -2069,6 +2973,16 @@ window.AUTOMATA_DATA = {
             "C: 0→B, 1→C",
             "D: 0→B, 1→E",
             "E: 0→B, 1→C"
+          ],
+          "frames": [
+            {
+              "src": "frames/lesson-6/frame-0510.jpg",
+              "seconds": 510,
+              "width": 854,
+              "height": 480,
+              "caption": "8:30 · Example 1: read the five-state DFA",
+              "alt": "Source video frame at 8:30: Example 1: read the five-state DFA"
+            }
           ]
         },
         {
@@ -2089,6 +3003,56 @@ window.AUTOMATA_DATA = {
             "After one-symbol refinement: {A,B,C} | {D} | {E}; D alone reaches accepting E on 1.",
             "Next refinement: {A,C} | {B} | {D} | {E}; B differs because its 1-transition reaches the D class.",
             "The next refinement is unchanged. Construct AC,B,D,E, with start AC and accepting E."
+          ],
+          "frames": [
+            {
+              "src": "frames/lesson-6/frame-0610.jpg",
+              "seconds": 610,
+              "width": 854,
+              "height": 480,
+              "caption": "10:10 · Example 1: prove A and C equivalent",
+              "alt": "Source video frame at 10:10: Example 1: prove A and C equivalent"
+            },
+            {
+              "src": "frames/lesson-6/frame-0710.jpg",
+              "seconds": 710,
+              "width": 854,
+              "height": 480,
+              "caption": "11:50 · Example 1: prove A and C equivalent",
+              "alt": "Source video frame at 11:50: Example 1: prove A and C equivalent"
+            },
+            {
+              "src": "frames/lesson-6/frame-0900.jpg",
+              "seconds": 900,
+              "width": 854,
+              "height": 480,
+              "caption": "15:00 · Example 1: prove A and C equivalent",
+              "alt": "Source video frame at 15:00: Example 1: prove A and C equivalent"
+            },
+            {
+              "src": "frames/lesson-6/frame-1050.jpg",
+              "seconds": 1050,
+              "width": 854,
+              "height": 480,
+              "caption": "17:30 · Example 1: prove A and C equivalent",
+              "alt": "Source video frame at 17:30: Example 1: prove A and C equivalent"
+            },
+            {
+              "src": "frames/lesson-6/frame-1200.jpg",
+              "seconds": 1200,
+              "width": 854,
+              "height": 480,
+              "caption": "20:00 · Example 1: prove A and C equivalent",
+              "alt": "Source video frame at 20:00: Example 1: prove A and C equivalent"
+            },
+            {
+              "src": "frames/lesson-6/frame-1370.jpg",
+              "seconds": 1370,
+              "width": 854,
+              "height": 480,
+              "caption": "22:50 · Example 1: prove A and C equivalent",
+              "alt": "Source video frame at 22:50: Example 1: prove A and C equivalent"
+            }
           ]
         },
         {
@@ -2113,6 +3077,16 @@ window.AUTOMATA_DATA = {
             "q5: 0→q2, 1→q6",
             "q6: 0→q6, 1→q4",
             "q7: 0→q6, 1→q2"
+          ],
+          "frames": [
+            {
+              "src": "frames/lesson-6/frame-1440.jpg",
+              "seconds": 1440,
+              "width": 854,
+              "height": 480,
+              "caption": "24:00 · Second example: initial partition",
+              "alt": "Source video frame at 24:00: Second example: initial partition"
+            }
           ]
         },
         {
@@ -2132,6 +3106,32 @@ window.AUTOMATA_DATA = {
             "Round 0: {q2} | {q0,q1,q3,q4,q5,q6,q7}.",
             "Round 1: {q0,q4,q6} | {q1,q7} | {q3,q5} | {q2}.",
             "Compare destination-group pairs for each symbol to decide whether a block must split."
+          ],
+          "frames": [
+            {
+              "src": "frames/lesson-6/frame-1600.jpg",
+              "seconds": 1600,
+              "width": 854,
+              "height": 480,
+              "caption": "26:40 · Second example: refine by destination classes",
+              "alt": "Source video frame at 26:40: Second example: refine by destination classes"
+            },
+            {
+              "src": "frames/lesson-6/frame-1680.jpg",
+              "seconds": 1680,
+              "width": 854,
+              "height": 480,
+              "caption": "28:00 · Second example: refine by destination classes",
+              "alt": "Source video frame at 28:00: Second example: refine by destination classes"
+            },
+            {
+              "src": "frames/lesson-6/frame-1800.jpg",
+              "seconds": 1800,
+              "width": 854,
+              "height": 480,
+              "caption": "30:00 · Second example: refine by destination classes",
+              "alt": "Source video frame at 30:00: Second example: refine by destination classes"
+            }
           ]
         },
         {
@@ -2153,7 +3153,41 @@ window.AUTOMATA_DATA = {
             "After deleting q3 and q7, q0 and q4 remain equivalent; merging them leaves five reachable quotient states.",
             "The source quotient transitions are consistent because unreachable q3/q7 share the same destination behavior as q5/q1 respectively."
           ],
-          "caution": "Additional reachability check: q3 and q7 are unreachable from q0. Removing them first and merging the reachable equivalent pair q0/q4 gives the same five-state minimal result. This check is an editorial clarification of the source’s full-table refinement."
+          "caution": "Additional reachability check: q3 and q7 are unreachable from q0. Removing them first and merging the reachable equivalent pair q0/q4 gives the same five-state minimal result. This check is an editorial clarification of the source’s full-table refinement.",
+          "frames": [
+            {
+              "src": "frames/lesson-6/frame-1900.jpg",
+              "seconds": 1900,
+              "width": 854,
+              "height": 480,
+              "caption": "31:40 · Second example: final partition and minimized table",
+              "alt": "Source video frame at 31:40: Second example: final partition and minimized table"
+            },
+            {
+              "src": "frames/lesson-6/frame-2020.jpg",
+              "seconds": 2020,
+              "width": 854,
+              "height": 480,
+              "caption": "33:40 · Second example: final partition and minimized table",
+              "alt": "Source video frame at 33:40: Second example: final partition and minimized table"
+            },
+            {
+              "src": "frames/lesson-6/frame-2150.jpg",
+              "seconds": 2150,
+              "width": 854,
+              "height": 480,
+              "caption": "35:50 · Second example: final partition and minimized table",
+              "alt": "Source video frame at 35:50: Second example: final partition and minimized table"
+            },
+            {
+              "src": "frames/lesson-6/frame-2270.jpg",
+              "seconds": 2270,
+              "width": 854,
+              "height": 480,
+              "caption": "37:50 · Second example: final partition and minimized table",
+              "alt": "Source video frame at 37:50: Second example: final partition and minimized table"
+            }
+          ]
         },
         {
           "id": "l6-s08",
@@ -2173,7 +3207,8 @@ window.AUTOMATA_DATA = {
             "Equivalence asks whether two reachable states have identical future language behavior.",
             "Do not conflate deleting unreachable states with merging equivalent states."
           ],
-          "caution": "Additional explanation or practice, separate from the source examples. The time link points to the related source procedure, not to this newly authored exercise."
+          "caution": "Additional explanation or practice, separate from the source examples. The time link points to the related source procedure, not to this newly authored exercise.",
+          "frames": []
         },
         {
           "id": "l6-s09",
@@ -2194,7 +3229,8 @@ window.AUTOMATA_DATA = {
             "For each block, compare the destination block for every alphabet symbol.",
             "Repeat until the partition no longer changes, then build one state per block."
           ],
-          "caution": "Additional explanation or practice, separate from the source examples. The time link points to the related source procedure, not to this newly authored exercise."
+          "caution": "Additional explanation or practice, separate from the source examples. The time link points to the related source procedure, not to this newly authored exercise.",
+          "frames": []
         },
         {
           "id": "l6-s10",
@@ -2214,7 +3250,8 @@ window.AUTOMATA_DATA = {
             "From p and r, 0 stays in the nonfinal block and 1 goes to f.",
             "They remain together; quotient has two states."
           ],
-          "caution": "Additional explanation or practice, separate from the source examples. The time link points to the related source procedure, not to this newly authored exercise."
+          "caution": "Additional explanation or practice, separate from the source examples. The time link points to the related source procedure, not to this newly authored exercise.",
+          "frames": []
         },
         {
           "id": "l6-s11",
@@ -2234,7 +3271,8 @@ window.AUTOMATA_DATA = {
             "Both states are reachable from e.",
             "Two states are necessary and sufficient."
           ],
-          "caution": "Additional explanation or practice, separate from the source examples. The time link points to the related source procedure, not to this newly authored exercise."
+          "caution": "Additional explanation or practice, separate from the source examples. The time link points to the related source procedure, not to this newly authored exercise.",
+          "frames": []
         },
         {
           "id": "l6-s12",
@@ -2254,7 +3292,8 @@ window.AUTOMATA_DATA = {
             "Delete u.",
             "There is only one reachable state, so no two reachable states remain to merge."
           ],
-          "caution": "Additional explanation or practice, separate from the source examples. The time link points to the related source procedure, not to this newly authored exercise."
+          "caution": "Additional explanation or practice, separate from the source examples. The time link points to the related source procedure, not to this newly authored exercise.",
+          "frames": []
         }
       ],
       "recap": [
@@ -2429,43 +3468,54 @@ window.AUTOMATA_DATA = {
           "diagram": "l6-practice-unreachable"
         },
         {
-          "id": "l6-q12",
-          "prompt": "Which statement about DFA minimization is correct?",
-          "choices": [
-            "Every DFA can be minimized to fewer states.",
-            "A DFA is minimal when every pair of reachable states is distinguishable.",
-            "Only accepting states can be merged.",
-            "Minimization changes the recognized language."
+          "id": "l6-q12-id",
+          "kind": "identification",
+          "prompt": "reducing the number of states from given FA.",
+          "definitionLabel": "Preserved source definition (excerpt)",
+          "answer": "DFA minimization",
+          "acceptedAnswers": [
+            "DFA minimization",
+            "minimization",
+            "minimization of DFA",
+            "finite automaton minimization"
           ],
-          "answer": 1,
-          "explanation": "A minimal DFA has no equivalent pair among its reachable states; its language is unchanged.",
-          "segmentId": "l6-s08"
+          "explanation": "This source wording identifies dfa minimization. Use the source frame to review it in context.",
+          "segmentId": "l6-s01",
+          "sourceFrame": "frames/lesson-6/frame-0095.jpg",
+          "sourceSeconds": 95
         },
         {
-          "id": "l6-q13",
-          "prompt": "What does a distinguishing suffix prove?",
-          "choices": [
-            "That both states are unreachable.",
-            "That two states are equivalent.",
-            "That the DFA is nondeterministic.",
-            "That the states are not equivalent."
+          "id": "l6-q13-id",
+          "kind": "identification",
+          "prompt": "δ(A,X) → F and δ(B,X) → F OR δ(A,X) ↛ F and δ(B,X) ↛ F",
+          "definitionLabel": "Preserved source notation",
+          "answer": "Equivalent states",
+          "acceptedAnswers": [
+            "Equivalent states",
+            "state equivalence",
+            "equivalence",
+            "equivalent"
           ],
-          "answer": 3,
-          "explanation": "If a continuation produces different accept/reject outcomes, the states cannot represent the same future behavior.",
-          "segmentId": "l6-s02"
+          "explanation": "The source compares acceptance from the two states for an arbitrary continuation X. Equivalent states give the same accept/reject result for every continuation, including ε.",
+          "segmentId": "l6-s02",
+          "sourceFrame": "frames/lesson-6/frame-0260.jpg",
+          "sourceSeconds": 260
         },
         {
-          "id": "l6-q14",
-          "prompt": "When should partition refinement stop?",
-          "choices": [
-            "After exactly one split.",
-            "When each state has a different name.",
-            "When another refinement makes no block split.",
-            "When all nonfinal states are deleted."
+          "id": "l6-q14-id",
+          "kind": "identification",
+          "prompt": "minimum number of states possible.",
+          "definitionLabel": "Preserved source definition (excerpt)",
+          "answer": "Minimal DFA",
+          "acceptedAnswers": [
+            "Minimal DFA",
+            "minimal deterministic finite automaton",
+            "minimum DFA"
           ],
-          "answer": 2,
-          "explanation": "A stable partition is a fixed point: each block’s members transition to the same destination blocks for every symbol.",
-          "segmentId": "l6-s09"
+          "explanation": "This source wording identifies minimal dfa. Use the source frame to review it in context.",
+          "segmentId": "l6-s01",
+          "sourceFrame": "frames/lesson-6/frame-0095.jpg",
+          "sourceSeconds": 95
         },
         {
           "id": "l6-q15",

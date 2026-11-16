@@ -47,7 +47,25 @@
         "The opening example distinguishes accepting and rejecting outcomes. For language recognition, acceptance is decided after the entire input has been consumed—not merely when an accepting state is visited along the way."
       ],
       "speakerNotes": "Sa finite automaton, may states at rules ng paglipat depende sa input symbol. Binabasa ang string at sinusunod ang transitions para malaman kung accepted ang buong input.",
-      "visualDescription": "The definition slide adds input-string, state-change, and accept/reject explanations next to a small transition graph."
+      "visualDescription": "The definition slide adds input-string, state-change, and accept/reject explanations next to a small transition graph.",
+      "frames": [
+        {
+          "src": "frames/lesson-2/frame-0050.jpg",
+          "seconds": 50,
+          "width": 854,
+          "height": 480,
+          "caption": "0:50 · A finite machine recognizes a pattern",
+          "alt": "Source video frame at 0:50: A finite machine recognizes a pattern"
+        },
+        {
+          "src": "frames/lesson-2/frame-0100.jpg",
+          "seconds": 100,
+          "width": 854,
+          "height": 480,
+          "caption": "1:40 · A finite machine recognizes a pattern",
+          "alt": "Source video frame at 1:40: A finite machine recognizes a pattern"
+        }
+      ]
     },
     {
       "id": "machine-features",
@@ -59,7 +77,17 @@
         "For the DFA/NFA language recognizers studied next, focus on the final accept/reject result. Do not assume that every finite automaton in this course is a transducer that emits one output symbol per input symbol."
       ],
       "speakerNotes": "Ipinapakita ang input, output, states, state relation at output relation bilang mga bahagi ng model ng machine.",
-      "visualDescription": "An input–automaton–output block diagram replaces the opening definition."
+      "visualDescription": "An input–automaton–output block diagram replaces the opening definition.",
+      "frames": [
+        {
+          "src": "frames/lesson-2/frame-0260.jpg",
+          "seconds": 260,
+          "width": 854,
+          "height": 480,
+          "caption": "4:20 · Input, output, and internal state",
+          "alt": "Source video frame at 4:20: Input, output, and internal state"
+        }
+      ]
     },
     {
       "id": "five-tuple",
@@ -71,7 +99,25 @@
         "Keep a set separate from an element: q₀ belongs to Q, whereas F is a subset of Q. A machine can have more than one accepting state even though it has one designated start state."
       ],
       "speakerNotes": "Ang five-tuple ay Q, sigma, delta, q-zero at F. Magkakaiba ang papel ng states, input symbols, transition function, initial state at final-state set.",
-      "visualDescription": "The formula is revealed first, followed by the meaning of each symbol."
+      "visualDescription": "The formula is revealed first, followed by the meaning of each symbol.",
+      "frames": [
+        {
+          "src": "frames/lesson-2/frame-0290.jpg",
+          "seconds": 290,
+          "width": 854,
+          "height": 480,
+          "caption": "4:50 · Read the five-part specification",
+          "alt": "Source video frame at 4:50: Read the five-part specification"
+        },
+        {
+          "src": "frames/lesson-2/frame-0330.jpg",
+          "seconds": 330,
+          "width": 854,
+          "height": 480,
+          "caption": "5:30 · Read the five-part specification",
+          "alt": "Source video frame at 5:30: Read the five-part specification"
+        }
+      ]
     },
     {
       "id": "tuple-example",
@@ -89,6 +135,16 @@
         "Start at A. On input 0, move to C.",
         "From C on input 1, move to D.",
         "The full string 01 ends in D, so it is accepted. A later symbol would still have to be consumed before deciding acceptance."
+      ],
+      "frames": [
+        {
+          "src": "frames/lesson-2/frame-0365.jpg",
+          "seconds": 365,
+          "width": 854,
+          "height": 480,
+          "caption": "6:05 · Connect the tuple to an actual graph",
+          "alt": "Source video frame at 6:05: Connect the tuple to an actual graph"
+        }
       ]
     },
     {
@@ -108,6 +164,32 @@
         "About 11:45–12:15: read B on 0 as D and B on 1 as A.",
         "About 12:15–12:44: read C on 0 as A and C on 1 as D.",
         "About 12:44–13:10: read D on 0 as B and D on 1 as C."
+      ],
+      "frames": [
+        {
+          "src": "frames/lesson-2/frame-0700.jpg",
+          "seconds": 700,
+          "width": 854,
+          "height": 480,
+          "caption": "11:40 · Build the four-state transition table row by row",
+          "alt": "Source video frame at 11:40: Build the four-state transition table row by row"
+        },
+        {
+          "src": "frames/lesson-2/frame-0740.jpg",
+          "seconds": 740,
+          "width": 854,
+          "height": 480,
+          "caption": "12:20 · Build the four-state transition table row by row",
+          "alt": "Source video frame at 12:20: Build the four-state transition table row by row"
+        },
+        {
+          "src": "frames/lesson-2/frame-0785.jpg",
+          "seconds": 785,
+          "width": 854,
+          "height": 480,
+          "caption": "13:05 · Build the four-state transition table row by row",
+          "alt": "Source video frame at 13:05: Build the four-state transition table row by row"
+        }
       ]
     },
     {
@@ -120,7 +202,25 @@
         "The lesson reads the tape from left to right, one symbol at a time. The current state changes according to δ; the machine does not gain a new state for every extra character in the input."
       ],
       "speakerNotes": "Ang input tape ay may cells para sa symbols. Binabasa ng read head ang symbols pakaliwa-pakanan habang ang finite control ang sumusunod sa rules ng state transitions.",
-      "visualDescription": "The tape/control schematic changes into a tape labeled with the example input a b a a b and a read-head pointer."
+      "visualDescription": "The tape/control schematic changes into a tape labeled with the example input a b a a b and a read-head pointer.",
+      "frames": [
+        {
+          "src": "frames/lesson-2/frame-0800.jpg",
+          "seconds": 800,
+          "width": 854,
+          "height": 480,
+          "caption": "13:20 · The tape and the finite control",
+          "alt": "Source video frame at 13:20: The tape and the finite control"
+        },
+        {
+          "src": "frames/lesson-2/frame-0920.jpg",
+          "seconds": 920,
+          "width": 854,
+          "height": 480,
+          "caption": "15:20 · The tape and the finite control",
+          "alt": "Source video frame at 15:20: The tape and the finite control"
+        }
+      ]
     },
     {
       "id": "dfa-and-nfa",
@@ -134,7 +234,25 @@
       ],
       "speakerNotes": "Sa DFA, unique ang susunod na state para sa isang state at symbol. Sa NFA, puwedeng maraming choices. Puwede ring ituring ang isang DFA bilang espesyal na NFA.",
       "visualDescription": "A branching classification chart is shown with small deterministic and nondeterministic transition examples; later bullet points compare the two.",
-      "caution": "Convention: this pack uses complete DFAs. A partially drawn deterministic graph may omit an implicit rejecting sink. NFA definitions differ on whether ε-moves are included; ε-NFA is identified explicitly when needed."
+      "caution": "Convention: this pack uses complete DFAs. A partially drawn deterministic graph may omit an implicit rejecting sink. NFA definitions differ on whether ε-moves are included; ε-NFA is identified explicitly when needed.",
+      "frames": [
+        {
+          "src": "frames/lesson-2/frame-1235.jpg",
+          "seconds": 1235,
+          "width": 854,
+          "height": 480,
+          "caption": "20:35 · Deterministic and nondeterministic choices",
+          "alt": "Source video frame at 20:35: Deterministic and nondeterministic choices"
+        },
+        {
+          "src": "frames/lesson-2/frame-1395.jpg",
+          "seconds": 1395,
+          "width": 854,
+          "height": 480,
+          "caption": "23:15 · Deterministic and nondeterministic choices",
+          "alt": "Source video frame at 23:15: Deterministic and nondeterministic choices"
+        }
+      ]
     },
     {
       "id": "comparison",
@@ -146,7 +264,33 @@
         "Check one state–symbol pair at a time. Different symbols leaving one state are normal in a DFA; the problem is two distinct destinations for the same symbol, or an ε-move."
       ],
       "speakerNotes": "Sa pag-compare, tingnan ang transitions at choices sa bawat input, hindi lang kung maraming bilog o arrows ang figure.",
-      "visualDescription": "The comparison section introduces the names, a unique-versus-several-choices comparison, and then a gallery of six diagrams."
+      "visualDescription": "The comparison section introduces the names, a unique-versus-several-choices comparison, and then a gallery of six diagrams.",
+      "frames": [
+        {
+          "src": "frames/lesson-2/frame-1505.jpg",
+          "seconds": 1505,
+          "width": 854,
+          "height": 480,
+          "caption": "25:05 · Compare the transition rules, not the drawing style",
+          "alt": "Source video frame at 25:05: Compare the transition rules, not the drawing style"
+        },
+        {
+          "src": "frames/lesson-2/frame-1700.jpg",
+          "seconds": 1700,
+          "width": 854,
+          "height": 480,
+          "caption": "28:20 · Compare the transition rules, not the drawing style",
+          "alt": "Source video frame at 28:20: Compare the transition rules, not the drawing style"
+        },
+        {
+          "src": "frames/lesson-2/frame-1815.jpg",
+          "seconds": 1815,
+          "width": 854,
+          "height": 480,
+          "caption": "30:15 · Compare the transition rules, not the drawing style",
+          "alt": "Source video frame at 30:15: Compare the transition rules, not the drawing style"
+        }
+      ]
     },
     {
       "id": "gallery-branching",
@@ -158,7 +302,17 @@
         "Do not stop at counting all outgoing arrows: identify the labels and destinations. Several arrows with different labels can still be deterministic."
       ],
       "speakerNotes": "Sa unang malaking figure, dalawang a-transitions ang lumalabas sa A. Iyon ang mahalagang ebidensiya ng nondeterministic choice.",
-      "visualDescription": "The gallery zooms into a six-state graph with two a-labeled branches from its start."
+      "visualDescription": "The gallery zooms into a six-state graph with two a-labeled branches from its start.",
+      "frames": [
+        {
+          "src": "frames/lesson-2/frame-1990.jpg",
+          "seconds": 1990,
+          "width": 854,
+          "height": 480,
+          "caption": "33:10 · The first gallery figure branches on the same symbol",
+          "alt": "Source video frame at 33:10: The first gallery figure branches on the same symbol"
+        }
+      ]
     },
     {
       "id": "gallery-dfa",
@@ -171,7 +325,17 @@
       ],
       "speakerNotes": "Sa five-state figure, tig-iisa ang destination sa 0 at 1 sa bawat state. Ang q2 at q4 ay parehong final states; hindi iyon dahilan para maging nondeterministic.",
       "visualDescription": "A five-state blue diagram fills the screen around 33:41. It is recreated below.",
-      "diagram": "l2-five-state-dfa"
+      "diagram": "l2-five-state-dfa",
+      "frames": [
+        {
+          "src": "frames/lesson-2/frame-2023.jpg",
+          "seconds": 2023,
+          "width": 854,
+          "height": 480,
+          "caption": "33:43 · A complete five-state DFA",
+          "alt": "Source video frame at 33:43: A complete five-state DFA"
+        }
+      ]
     },
     {
       "id": "gallery-nfa",
@@ -184,7 +348,17 @@
       ],
       "speakerNotes": "Sa q0, may loop sa 0 at 1 at may hiwalay pang arrows sa parehong symbols. Kaya may pagpipilian sa susunod na state.",
       "visualDescription": "The gallery enlarges the four-state purple NFA around 34:13, exposing overlapping labels on the start-state loop and outgoing edges.",
-      "diagram": "l2-loop-nfa"
+      "diagram": "l2-loop-nfa",
+      "frames": [
+        {
+          "src": "frames/lesson-2/frame-2054.jpg",
+          "seconds": 2054,
+          "width": 854,
+          "height": 480,
+          "caption": "34:14 · A loop can compete with another edge",
+          "alt": "Source video frame at 34:14: A loop can compete with another edge"
+        }
+      ]
     },
     {
       "id": "remaining-gallery",
@@ -196,7 +370,33 @@
         "For a dense figure, write the transition table before classifying it. This prevents overlapping curves or repeated labels from hiding a nondeterministic choice."
       ],
       "speakerNotes": "Sa natitirang figures, ulitin ang pag-check sa bawat state at symbol. Mas madaling makita ang choices kung ilalagay muna sa transition table.",
-      "visualDescription": "The final three gallery examples are enlarged in sequence before the closing animation."
+      "visualDescription": "The final three gallery examples are enlarged in sequence before the closing animation.",
+      "frames": [
+        {
+          "src": "frames/lesson-2/frame-2103.jpg",
+          "seconds": 2103,
+          "width": 854,
+          "height": 480,
+          "caption": "35:03 · Use the same checklist on the remaining figures",
+          "alt": "Source video frame at 35:03: Use the same checklist on the remaining figures"
+        },
+        {
+          "src": "frames/lesson-2/frame-2158.jpg",
+          "seconds": 2158,
+          "width": 854,
+          "height": 480,
+          "caption": "35:58 · Use the same checklist on the remaining figures",
+          "alt": "Source video frame at 35:58: Use the same checklist on the remaining figures"
+        },
+        {
+          "src": "frames/lesson-2/frame-2220.jpg",
+          "seconds": 2220,
+          "width": 854,
+          "height": 480,
+          "caption": "37:00 · Use the same checklist on the remaining figures",
+          "alt": "Source video frame at 37:00: Use the same checklist on the remaining figures"
+        }
+      ]
     }
   ],
   "recap": [
@@ -212,17 +412,20 @@
   ],
   "questions": [
     {
-      "id": "l2-q01",
-      "prompt": "What does the current state of a finite automaton represent?",
-      "choices": [
-        "The information about the input prefix that the machine currently remembers",
-        "The complete source code of the input",
-        "A new memory cell created for each input character",
-        "Only the length of the full input before it is read"
+      "id": "l2-q01-id",
+      "kind": "identification",
+      "prompt": "The simplest machine to recognize patterns.",
+      "definitionLabel": "Preserved source definition (excerpt)",
+      "answer": "Finite automaton",
+      "acceptedAnswers": [
+        "Finite automaton",
+        "finite automata",
+        "FA"
       ],
-      "answer": 0,
-      "explanation": "A fixed set of states summarizes the relevant history; it does not grow with the input.",
-      "segmentId": "recognize-patterns"
+      "explanation": "This source wording identifies finite automaton. Use the source frame to review it in context.",
+      "segmentId": "recognize-patterns",
+      "sourceFrame": "frames/lesson-2/frame-0050.jpg",
+      "sourceSeconds": 50
     },
     {
       "id": "l2-q02",
@@ -305,17 +508,20 @@
       "segmentId": "input-tape"
     },
     {
-      "id": "l2-q08",
-      "prompt": "Which condition is required for a complete DFA?",
-      "choices": [
-        "A self-loop on every state",
-        "Exactly one destination for every state–symbol pair, with no ε-moves",
-        "Two accepting states for every input symbol",
-        "At least two destinations for every state–symbol pair"
+      "id": "l2-q08-id",
+      "kind": "identification",
+      "prompt": "There is always a unique state to go next",
+      "definitionLabel": "Preserved source definition (excerpt)",
+      "answer": "Deterministic finite automaton",
+      "acceptedAnswers": [
+        "Deterministic finite automaton",
+        "DFA",
+        "deterministic finite automata"
       ],
-      "answer": 1,
-      "explanation": "Completeness gives a destination everywhere, and determinism makes it unique.",
-      "segmentId": "dfa-and-nfa"
+      "explanation": "This source wording identifies deterministic finite automaton. Use the source frame to review it in context.",
+      "segmentId": "comparison",
+      "sourceFrame": "frames/lesson-2/frame-1700.jpg",
+      "sourceSeconds": 1700
     },
     {
       "id": "l2-q09",
@@ -388,17 +594,21 @@
       "diagram": "l2-loop-nfa"
     },
     {
-      "id": "l2-q14",
-      "prompt": "Which feature alone does NOT make a finite automaton nondeterministic?",
-      "choices": [
-        "Two destinations on the same input from one state",
-        "An ε-transition",
-        "A loop and a second outgoing edge with the same symbol",
-        "Having two accepting states"
+      "id": "l2-q14-id",
+      "kind": "identification",
+      "prompt": "Several choices may exist for next state",
+      "definitionLabel": "Preserved source definition (excerpt)",
+      "answer": "Nondeterministic finite automaton",
+      "acceptedAnswers": [
+        "Nondeterministic finite automaton",
+        "NFA",
+        "non-deterministic finite automaton",
+        "nondeterministic finite automata"
       ],
-      "answer": 3,
-      "explanation": "Determinism concerns transition choices, not the number of accepting states.",
-      "segmentId": "comparison"
+      "explanation": "This source wording identifies nondeterministic finite automaton. Use the source frame to review it in context.",
+      "segmentId": "comparison",
+      "sourceFrame": "frames/lesson-2/frame-1700.jpg",
+      "sourceSeconds": 1700
     },
     {
       "id": "l2-q15",

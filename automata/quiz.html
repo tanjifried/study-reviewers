@@ -3,17 +3,28 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Automata Quiz</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Automata • Study &amp; Quiz</title>
+    <link rel="stylesheet" href="quiz.css" />
   </head>
   <body>
-    <a class="skip" href="#main">Skip to content</a>
+    <a class="skip-link" href="#app">Skip to quiz</a>
     <header>
-      <a href="../index.html">All subjects</a> /
-      <a href="index.html">Automata</a>
+      <div class="wrap">
+        <div class="brand">Automata / Study &amp; Quiz</div>
+        <a class="subject-home" href="../index.html">All subjects</a
+        ><a class="subject-home" href="index.html">Read lessons</a
+        ><button class="home" id="home">All quizzes</button>
+      </div>
     </header>
-    <main id="main" data-page="quiz"><p>Loading study material…</p></main>
+    <main class="wrap" id="app"></main>
+    <footer>
+      <div class="wrap">
+        15 questions per lesson. Your first submitted answer is scored in lesson
+        practice; final-exam feedback is configurable. Progress saves in this
+        browser.
+      </div>
+    </footer>
     <script src="content.js"></script>
-    <script src="app.js"></script>
+    <script src="quiz.js"></script>
   </body>
 </html>

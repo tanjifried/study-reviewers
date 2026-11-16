@@ -51,7 +51,17 @@
       "speakerNotes": "Ang minimization ay pagbawas ng states habang pareho pa rin ang accepted language. Hahanapin kung aling states ang puwedeng pagsamahin.",
       "visualDescription": "Opening title and motivation, followed by the topic title.",
       "diagram": "",
-      "workedSteps": []
+      "workedSteps": [],
+      "frames": [
+        {
+          "src": "frames/lesson-6/frame-0040.jpg",
+          "seconds": 40,
+          "width": 854,
+          "height": 480,
+          "caption": "0:40 · Goal: reduce states while preserving the language",
+          "alt": "Source video frame at 0:40: Goal: reduce states while preserving the language"
+        }
+      ]
     },
     {
       "id": "l6-s02",
@@ -70,6 +80,24 @@
         "For ε, check whether the states themselves are accepting.",
         "For each symbol and then longer suffixes, compare the states reached.",
         "A suffix that produces different acceptance is a witness that they are distinguishable."
+      ],
+      "frames": [
+        {
+          "src": "frames/lesson-6/frame-0240.jpg",
+          "seconds": 240,
+          "width": 854,
+          "height": 480,
+          "caption": "4:00 · Equivalent states have identical future answers",
+          "alt": "Source video frame at 4:00: Equivalent states have identical future answers"
+        },
+        {
+          "src": "frames/lesson-6/frame-0390.jpg",
+          "seconds": 390,
+          "width": 854,
+          "height": 480,
+          "caption": "6:30 · Equivalent states have identical future answers",
+          "alt": "Source video frame at 6:30: Equivalent states have identical future answers"
+        }
       ]
     },
     {
@@ -91,6 +119,16 @@
         "C: 0→B, 1→C",
         "D: 0→B, 1→E",
         "E: 0→B, 1→C"
+      ],
+      "frames": [
+        {
+          "src": "frames/lesson-6/frame-0510.jpg",
+          "seconds": 510,
+          "width": 854,
+          "height": 480,
+          "caption": "8:30 · Example 1: read the five-state DFA",
+          "alt": "Source video frame at 8:30: Example 1: read the five-state DFA"
+        }
       ]
     },
     {
@@ -111,6 +149,56 @@
         "After one-symbol refinement: {A,B,C} | {D} | {E}; D alone reaches accepting E on 1.",
         "Next refinement: {A,C} | {B} | {D} | {E}; B differs because its 1-transition reaches the D class.",
         "The next refinement is unchanged. Construct AC,B,D,E, with start AC and accepting E."
+      ],
+      "frames": [
+        {
+          "src": "frames/lesson-6/frame-0610.jpg",
+          "seconds": 610,
+          "width": 854,
+          "height": 480,
+          "caption": "10:10 · Example 1: prove A and C equivalent",
+          "alt": "Source video frame at 10:10: Example 1: prove A and C equivalent"
+        },
+        {
+          "src": "frames/lesson-6/frame-0710.jpg",
+          "seconds": 710,
+          "width": 854,
+          "height": 480,
+          "caption": "11:50 · Example 1: prove A and C equivalent",
+          "alt": "Source video frame at 11:50: Example 1: prove A and C equivalent"
+        },
+        {
+          "src": "frames/lesson-6/frame-0900.jpg",
+          "seconds": 900,
+          "width": 854,
+          "height": 480,
+          "caption": "15:00 · Example 1: prove A and C equivalent",
+          "alt": "Source video frame at 15:00: Example 1: prove A and C equivalent"
+        },
+        {
+          "src": "frames/lesson-6/frame-1050.jpg",
+          "seconds": 1050,
+          "width": 854,
+          "height": 480,
+          "caption": "17:30 · Example 1: prove A and C equivalent",
+          "alt": "Source video frame at 17:30: Example 1: prove A and C equivalent"
+        },
+        {
+          "src": "frames/lesson-6/frame-1200.jpg",
+          "seconds": 1200,
+          "width": 854,
+          "height": 480,
+          "caption": "20:00 · Example 1: prove A and C equivalent",
+          "alt": "Source video frame at 20:00: Example 1: prove A and C equivalent"
+        },
+        {
+          "src": "frames/lesson-6/frame-1370.jpg",
+          "seconds": 1370,
+          "width": 854,
+          "height": 480,
+          "caption": "22:50 · Example 1: prove A and C equivalent",
+          "alt": "Source video frame at 22:50: Example 1: prove A and C equivalent"
+        }
       ]
     },
     {
@@ -135,6 +223,16 @@
         "q5: 0→q2, 1→q6",
         "q6: 0→q6, 1→q4",
         "q7: 0→q6, 1→q2"
+      ],
+      "frames": [
+        {
+          "src": "frames/lesson-6/frame-1440.jpg",
+          "seconds": 1440,
+          "width": 854,
+          "height": 480,
+          "caption": "24:00 · Second example: initial partition",
+          "alt": "Source video frame at 24:00: Second example: initial partition"
+        }
       ]
     },
     {
@@ -154,6 +252,32 @@
         "Round 0: {q2} | {q0,q1,q3,q4,q5,q6,q7}.",
         "Round 1: {q0,q4,q6} | {q1,q7} | {q3,q5} | {q2}.",
         "Compare destination-group pairs for each symbol to decide whether a block must split."
+      ],
+      "frames": [
+        {
+          "src": "frames/lesson-6/frame-1600.jpg",
+          "seconds": 1600,
+          "width": 854,
+          "height": 480,
+          "caption": "26:40 · Second example: refine by destination classes",
+          "alt": "Source video frame at 26:40: Second example: refine by destination classes"
+        },
+        {
+          "src": "frames/lesson-6/frame-1680.jpg",
+          "seconds": 1680,
+          "width": 854,
+          "height": 480,
+          "caption": "28:00 · Second example: refine by destination classes",
+          "alt": "Source video frame at 28:00: Second example: refine by destination classes"
+        },
+        {
+          "src": "frames/lesson-6/frame-1800.jpg",
+          "seconds": 1800,
+          "width": 854,
+          "height": 480,
+          "caption": "30:00 · Second example: refine by destination classes",
+          "alt": "Source video frame at 30:00: Second example: refine by destination classes"
+        }
       ]
     },
     {
@@ -175,7 +299,41 @@
         "After deleting q3 and q7, q0 and q4 remain equivalent; merging them leaves five reachable quotient states.",
         "The source quotient transitions are consistent because unreachable q3/q7 share the same destination behavior as q5/q1 respectively."
       ],
-      "caution": "Additional reachability check: q3 and q7 are unreachable from q0. Removing them first and merging the reachable equivalent pair q0/q4 gives the same five-state minimal result. This check is an editorial clarification of the source’s full-table refinement."
+      "caution": "Additional reachability check: q3 and q7 are unreachable from q0. Removing them first and merging the reachable equivalent pair q0/q4 gives the same five-state minimal result. This check is an editorial clarification of the source’s full-table refinement.",
+      "frames": [
+        {
+          "src": "frames/lesson-6/frame-1900.jpg",
+          "seconds": 1900,
+          "width": 854,
+          "height": 480,
+          "caption": "31:40 · Second example: final partition and minimized table",
+          "alt": "Source video frame at 31:40: Second example: final partition and minimized table"
+        },
+        {
+          "src": "frames/lesson-6/frame-2020.jpg",
+          "seconds": 2020,
+          "width": 854,
+          "height": 480,
+          "caption": "33:40 · Second example: final partition and minimized table",
+          "alt": "Source video frame at 33:40: Second example: final partition and minimized table"
+        },
+        {
+          "src": "frames/lesson-6/frame-2150.jpg",
+          "seconds": 2150,
+          "width": 854,
+          "height": 480,
+          "caption": "35:50 · Second example: final partition and minimized table",
+          "alt": "Source video frame at 35:50: Second example: final partition and minimized table"
+        },
+        {
+          "src": "frames/lesson-6/frame-2270.jpg",
+          "seconds": 2270,
+          "width": 854,
+          "height": 480,
+          "caption": "37:50 · Second example: final partition and minimized table",
+          "alt": "Source video frame at 37:50: Second example: final partition and minimized table"
+        }
+      ]
     },
     {
       "id": "l6-s08",
@@ -195,7 +353,8 @@
         "Equivalence asks whether two reachable states have identical future language behavior.",
         "Do not conflate deleting unreachable states with merging equivalent states."
       ],
-      "caution": "Additional explanation or practice, separate from the source examples. The time link points to the related source procedure, not to this newly authored exercise."
+      "caution": "Additional explanation or practice, separate from the source examples. The time link points to the related source procedure, not to this newly authored exercise.",
+      "frames": []
     },
     {
       "id": "l6-s09",
@@ -216,7 +375,8 @@
         "For each block, compare the destination block for every alphabet symbol.",
         "Repeat until the partition no longer changes, then build one state per block."
       ],
-      "caution": "Additional explanation or practice, separate from the source examples. The time link points to the related source procedure, not to this newly authored exercise."
+      "caution": "Additional explanation or practice, separate from the source examples. The time link points to the related source procedure, not to this newly authored exercise.",
+      "frames": []
     },
     {
       "id": "l6-s10",
@@ -236,7 +396,8 @@
         "From p and r, 0 stays in the nonfinal block and 1 goes to f.",
         "They remain together; quotient has two states."
       ],
-      "caution": "Additional explanation or practice, separate from the source examples. The time link points to the related source procedure, not to this newly authored exercise."
+      "caution": "Additional explanation or practice, separate from the source examples. The time link points to the related source procedure, not to this newly authored exercise.",
+      "frames": []
     },
     {
       "id": "l6-s11",
@@ -256,7 +417,8 @@
         "Both states are reachable from e.",
         "Two states are necessary and sufficient."
       ],
-      "caution": "Additional explanation or practice, separate from the source examples. The time link points to the related source procedure, not to this newly authored exercise."
+      "caution": "Additional explanation or practice, separate from the source examples. The time link points to the related source procedure, not to this newly authored exercise.",
+      "frames": []
     },
     {
       "id": "l6-s12",
@@ -276,7 +438,8 @@
         "Delete u.",
         "There is only one reachable state, so no two reachable states remain to merge."
       ],
-      "caution": "Additional explanation or practice, separate from the source examples. The time link points to the related source procedure, not to this newly authored exercise."
+      "caution": "Additional explanation or practice, separate from the source examples. The time link points to the related source procedure, not to this newly authored exercise.",
+      "frames": []
     }
   ],
   "recap": [
@@ -451,43 +614,54 @@
       "diagram": "l6-practice-unreachable"
     },
     {
-      "id": "l6-q12",
-      "prompt": "Which statement about DFA minimization is correct?",
-      "choices": [
-        "Every DFA can be minimized to fewer states.",
-        "A DFA is minimal when every pair of reachable states is distinguishable.",
-        "Only accepting states can be merged.",
-        "Minimization changes the recognized language."
+      "id": "l6-q12-id",
+      "kind": "identification",
+      "prompt": "reducing the number of states from given FA.",
+      "definitionLabel": "Preserved source definition (excerpt)",
+      "answer": "DFA minimization",
+      "acceptedAnswers": [
+        "DFA minimization",
+        "minimization",
+        "minimization of DFA",
+        "finite automaton minimization"
       ],
-      "answer": 1,
-      "explanation": "A minimal DFA has no equivalent pair among its reachable states; its language is unchanged.",
-      "segmentId": "l6-s08"
+      "explanation": "This source wording identifies dfa minimization. Use the source frame to review it in context.",
+      "segmentId": "l6-s01",
+      "sourceFrame": "frames/lesson-6/frame-0095.jpg",
+      "sourceSeconds": 95
     },
     {
-      "id": "l6-q13",
-      "prompt": "What does a distinguishing suffix prove?",
-      "choices": [
-        "That both states are unreachable.",
-        "That two states are equivalent.",
-        "That the DFA is nondeterministic.",
-        "That the states are not equivalent."
+      "id": "l6-q13-id",
+      "kind": "identification",
+      "prompt": "δ(A,X) → F and δ(B,X) → F OR δ(A,X) ↛ F and δ(B,X) ↛ F",
+      "definitionLabel": "Preserved source notation",
+      "answer": "Equivalent states",
+      "acceptedAnswers": [
+        "Equivalent states",
+        "state equivalence",
+        "equivalence",
+        "equivalent"
       ],
-      "answer": 3,
-      "explanation": "If a continuation produces different accept/reject outcomes, the states cannot represent the same future behavior.",
-      "segmentId": "l6-s02"
+      "explanation": "The source compares acceptance from the two states for an arbitrary continuation X. Equivalent states give the same accept/reject result for every continuation, including ε.",
+      "segmentId": "l6-s02",
+      "sourceFrame": "frames/lesson-6/frame-0260.jpg",
+      "sourceSeconds": 260
     },
     {
-      "id": "l6-q14",
-      "prompt": "When should partition refinement stop?",
-      "choices": [
-        "After exactly one split.",
-        "When each state has a different name.",
-        "When another refinement makes no block split.",
-        "When all nonfinal states are deleted."
+      "id": "l6-q14-id",
+      "kind": "identification",
+      "prompt": "minimum number of states possible.",
+      "definitionLabel": "Preserved source definition (excerpt)",
+      "answer": "Minimal DFA",
+      "acceptedAnswers": [
+        "Minimal DFA",
+        "minimal deterministic finite automaton",
+        "minimum DFA"
       ],
-      "answer": 2,
-      "explanation": "A stable partition is a fixed point: each block’s members transition to the same destination blocks for every symbol.",
-      "segmentId": "l6-s09"
+      "explanation": "This source wording identifies minimal dfa. Use the source frame to review it in context.",
+      "segmentId": "l6-s01",
+      "sourceFrame": "frames/lesson-6/frame-0095.jpg",
+      "sourceSeconds": 95
     },
     {
       "id": "l6-q15",

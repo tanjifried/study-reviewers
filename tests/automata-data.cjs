@@ -46,14 +46,40 @@ for (const l of data.lessons) {
   for (const q of l.questions) {
     assert(!qids.has(q.id));
     qids.add(q.id);
-    assert.equal(q.choices.length, 4);
-    assert.equal(new Set(q.choices).size, 4);
-    assert(Number.isInteger(q.answer) && q.answer >= 0 && q.answer < 4);
+    if (q.kind === "identification") {
+      assert.equal(typeof q.answer, "string");
+      assert(q.acceptedAnswers.includes(q.answer));
+      assert(fs.existsSync(path.join(root, q.sourceFrame)));
+    } else {
+      assert.equal(q.choices.length, 4);
+      assert.equal(new Set(q.choices).size, 4);
+      assert(Number.isInteger(q.answer) && q.answer >= 0 && q.answer < 4);
+    }
     assert(segments.has(q.segmentId));
     if (q.diagram) assert(raw[q.diagram]);
   }
 }
 assert.equal(qids.size, 90);
+assert.equal(
+  data.lessons
+    .flatMap((l) => l.questions)
+    .filter((q) => q.kind === "identification").length,
+  18,
+);
+let frameCount = 0;
+for (const l of data.lessons) {
+  let count = 0;
+  for (const segment of l.segments)
+    for (const frame of segment.frames || []) {
+      assert(fs.existsSync(path.join(root, frame.src)), frame.src);
+      assert(frame.seconds >= 0 && frame.seconds < l.duration);
+      assert(frame.width >= 640 && frame.height >= 360);
+      count++;
+      frameCount++;
+    }
+  assert(count >= 7, l.id + " needs source frames");
+}
+assert(frameCount >= 100, "missing source screenshot coverage");
 function model(id) {
   c.raw = raw[id];
   assert(c.raw, id);

@@ -44,7 +44,17 @@
         "The conversion in this lesson removes ε-transitions while preserving the accepted language. It does not require the result to be deterministic."
       ],
       "speakerNotes": "Sa hierarchy, magkakaiba ang DFA, NFA at ε-NFA. Ang gagawin dito ay alisin ang ε-transitions para maging ordinary NFA.",
-      "visualDescription": "The source shows a finite-state-machine family chart before introducing ε."
+      "visualDescription": "The source shows a finite-state-machine family chart before introducing ε.",
+      "frames": [
+        {
+          "src": "frames/lesson-4/frame-0050.jpg",
+          "seconds": 50,
+          "width": 854,
+          "height": 480,
+          "caption": "0:50 · Locate ε-NFA among finite-state machines",
+          "alt": "Source video frame at 0:50: Locate ε-NFA among finite-state machines"
+        }
+      ]
     },
     {
       "id": "l4-s02",
@@ -56,7 +66,17 @@
         "Do not treat ε as a third alphabet symbol beside0 and 1. It is a transition that consumes zero symbols."
       ],
       "speakerNotes": "Ang epsilon ay empty string. Puwedeng lumipat sa state gamit ang epsilon nang walang binabasang input symbol.",
-      "visualDescription": "The ε slide shows simple graphs and the meaning of the empty string."
+      "visualDescription": "The ε slide shows simple graphs and the meaning of the empty string.",
+      "frames": [
+        {
+          "src": "frames/lesson-4/frame-0180.jpg",
+          "seconds": 180,
+          "width": 854,
+          "height": 480,
+          "caption": "3:00 · ε consumes no input symbol",
+          "alt": "Source video frame at 3:00: ε consumes no input symbol"
+        }
+      ]
     },
     {
       "id": "l4-s03",
@@ -68,7 +88,41 @@
         "The zero-step case matters: q always belongs to E(q), even when no ε-edge leaves it. Use a set so repeated reachable states appear only once."
       ],
       "speakerNotes": "Sa closure, isama lagi ang sarili mong state. Sundan lang ang epsilon transitions at huwag ulitin ang kaparehong member ng set.",
-      "visualDescription": "The source introduces ε-moves and later emphasizes that every closure contains the state itself."
+      "visualDescription": "The source introduces ε-moves and later emphasizes that every closure contains the state itself.",
+      "frames": [
+        {
+          "src": "frames/lesson-4/frame-0450.jpg",
+          "seconds": 450,
+          "width": 854,
+          "height": 480,
+          "caption": "7:30 · Compute ε-closure, including the state itself",
+          "alt": "Source video frame at 7:30: Compute ε-closure, including the state itself"
+        },
+        {
+          "src": "frames/lesson-4/frame-0500.jpg",
+          "seconds": 500,
+          "width": 854,
+          "height": 480,
+          "caption": "8:20 · Compute ε-closure, including the state itself",
+          "alt": "Source video frame at 8:20: Compute ε-closure, including the state itself"
+        },
+        {
+          "src": "frames/lesson-4/frame-0600.jpg",
+          "seconds": 600,
+          "width": 854,
+          "height": 480,
+          "caption": "10:00 · Compute ε-closure, including the state itself",
+          "alt": "Source video frame at 10:00: Compute ε-closure, including the state itself"
+        },
+        {
+          "src": "frames/lesson-4/frame-0850.jpg",
+          "seconds": 850,
+          "width": 854,
+          "height": 480,
+          "caption": "14:10 · Compute ε-closure, including the state itself",
+          "alt": "Source video frame at 14:10: Compute ε-closure, including the state itself"
+        }
+      ]
     },
     {
       "id": "l4-s04",
@@ -80,7 +134,17 @@
         "We keep the same state names and input alphabet, replace the transition relation, and update accepting states when ε-reachability requires it."
       ],
       "speakerNotes": "Ang epsilon-NFA ay gagawing NFA, hindi agad DFA. Puwede pa ring set ang destination sa isang input.",
-      "visualDescription": "The comparison slide puts an NFA and ε-NFA beside their transition mappings."
+      "visualDescription": "The comparison slide puts an NFA and ε-NFA beside their transition mappings.",
+      "frames": [
+        {
+          "src": "frames/lesson-4/frame-0930.jpg",
+          "seconds": 930,
+          "width": 854,
+          "height": 480,
+          "caption": "15:30 · Separate conversion from determinization",
+          "alt": "Source video frame at 15:30: Separate conversion from determinization"
+        }
+      ]
     },
     {
       "id": "l4-s05",
@@ -92,7 +156,17 @@
         "This convention includes ε-moves both before and after the symbol. Repeat it independently for every state and every alphabet symbol."
       ],
       "speakerNotes": "Ang proseso ay state, epsilon closure, input, tapos epsilon closure ulit. Gawin ito para sa bawat state at bawat input symbol.",
-      "visualDescription": "The procedure slide gives way to the worked example and its closure–input–closure flow."
+      "visualDescription": "The procedure slide gives way to the worked example and its closure–input–closure flow.",
+      "frames": [
+        {
+          "src": "frames/lesson-4/frame-1160.jpg",
+          "seconds": 1160,
+          "width": 854,
+          "height": 480,
+          "caption": "19:20 · Use closure → symbol → closure",
+          "alt": "Source video frame at 19:20: Use closure → symbol → closure"
+        }
+      ]
     },
     {
       "id": "l4-s06",
@@ -105,7 +179,25 @@
       ],
       "speakerNotes": "Sa source example, A ang initial state at C ang final. May epsilon mula A sa B at mula B sa C. Ihanda ang rows na A,B,C at columns na0 at 1.",
       "visualDescription": "The blue source graph is shown beside the closure rule; the blank NFA table is introduced around 22:50.",
-      "diagram": "l4-source-enfa"
+      "diagram": "l4-source-enfa",
+      "frames": [
+        {
+          "src": "frames/lesson-4/frame-1270.jpg",
+          "seconds": 1270,
+          "width": 854,
+          "height": 480,
+          "caption": "21:10 · Read the source example and prepare its table",
+          "alt": "Source video frame at 21:10: Read the source example and prepare its table"
+        },
+        {
+          "src": "frames/lesson-4/frame-1380.jpg",
+          "seconds": 1380,
+          "width": 854,
+          "height": 480,
+          "caption": "23:00 · Read the source example and prepare its table",
+          "alt": "Source video frame at 23:00: Read the source example and prepare its table"
+        }
+      ]
     },
     {
       "id": "l4-s07",
@@ -123,6 +215,40 @@
         "E(A)={A,B,C}.",
         "On0: {A}∪∅∪{C}={A,C}; E({A,C})={A,B,C}.",
         "On1: ∅∪{B}∪{C}={B,C}; E({B,C})={B,C}."
+      ],
+      "frames": [
+        {
+          "src": "frames/lesson-4/frame-1450.jpg",
+          "seconds": 1450,
+          "width": 854,
+          "height": 480,
+          "caption": "24:10 · Fill A’s two converted transitions",
+          "alt": "Source video frame at 24:10: Fill A’s two converted transitions"
+        },
+        {
+          "src": "frames/lesson-4/frame-1510.jpg",
+          "seconds": 1510,
+          "width": 854,
+          "height": 480,
+          "caption": "25:10 · Fill A’s two converted transitions",
+          "alt": "Source video frame at 25:10: Fill A’s two converted transitions"
+        },
+        {
+          "src": "frames/lesson-4/frame-1600.jpg",
+          "seconds": 1600,
+          "width": 854,
+          "height": 480,
+          "caption": "26:40 · Fill A’s two converted transitions",
+          "alt": "Source video frame at 26:40: Fill A’s two converted transitions"
+        },
+        {
+          "src": "frames/lesson-4/frame-1650.jpg",
+          "seconds": 1650,
+          "width": 854,
+          "height": 480,
+          "caption": "27:30 · Fill A’s two converted transitions",
+          "alt": "Source video frame at 27:30: Fill A’s two converted transitions"
+        }
       ]
     },
     {
@@ -137,7 +263,33 @@
       ],
       "speakerNotes": "Ulitin ang proseso kay B at C. Para kay B,0 ay C at 1 ay B,C. Para kay C, pareho lang na C ang destination sa0 at 1.",
       "visualDescription": "The remaining table cells are calculated before the lesson decides which rows are accepting.",
-      "diagram": "l4-source-nfa"
+      "diagram": "l4-source-nfa",
+      "frames": [
+        {
+          "src": "frames/lesson-4/frame-1715.jpg",
+          "seconds": 1715,
+          "width": 854,
+          "height": 480,
+          "caption": "28:35 · Finish the B and C rows",
+          "alt": "Source video frame at 28:35: Finish the B and C rows"
+        },
+        {
+          "src": "frames/lesson-4/frame-1810.jpg",
+          "seconds": 1810,
+          "width": 854,
+          "height": 480,
+          "caption": "30:10 · Finish the B and C rows",
+          "alt": "Source video frame at 30:10: Finish the B and C rows"
+        },
+        {
+          "src": "frames/lesson-4/frame-1880.jpg",
+          "seconds": 1880,
+          "width": 854,
+          "height": 480,
+          "caption": "31:20 · Finish the B and C rows",
+          "alt": "Source video frame at 31:20: Finish the B and C rows"
+        }
+      ]
     },
     {
       "id": "l4-s09",
@@ -150,7 +302,25 @@
       ],
       "speakerNotes": "A at B ay makakarating sa original final C gamit lang ang epsilon. Kaya sa converted NFA, final na silang tatlo: A,B,C.",
       "visualDescription": "The table gains accepting markers beside all three state rows.",
-      "diagram": "l4-source-nfa"
+      "diagram": "l4-source-nfa",
+      "frames": [
+        {
+          "src": "frames/lesson-4/frame-1940.jpg",
+          "seconds": 1940,
+          "width": 854,
+          "height": 480,
+          "caption": "32:20 · Update accepting states: A, B, and C all accept",
+          "alt": "Source video frame at 32:20: Update accepting states: A, B, and C all accept"
+        },
+        {
+          "src": "frames/lesson-4/frame-2015.jpg",
+          "seconds": 2015,
+          "width": 854,
+          "height": 480,
+          "caption": "33:35 · Update accepting states: A, B, and C all accept",
+          "alt": "Source video frame at 33:35: Update accepting states: A, B, and C all accept"
+        }
+      ]
     },
     {
       "id": "l4-s10",
@@ -165,7 +335,41 @@
       "speakerNotes": "Iguhit ang lahat ng destinations sa table. Kapag pareho ang source at target ng arrows, puwedeng pagsamahin ang labels na0 at 1 para mas malinaw ang diagram.",
       "visualDescription": "The source draws the three final-state nodes, adds edges, then simplifies repeated arrows.",
       "diagram": "l4-source-nfa",
-      "caution": "Editorial clarification: the recreated C loop is labeled0,1, following the table and the spoken correction rather than the duplicated label visible in one source frame."
+      "caution": "Editorial clarification: the recreated C loop is labeled0,1, following the table and the spoken correction rather than the duplicated label visible in one source frame.",
+      "frames": [
+        {
+          "src": "frames/lesson-4/frame-2060.jpg",
+          "seconds": 2060,
+          "width": 854,
+          "height": 480,
+          "caption": "34:20 · Draw the new NFA and combine repeated edges",
+          "alt": "Source video frame at 34:20: Draw the new NFA and combine repeated edges"
+        },
+        {
+          "src": "frames/lesson-4/frame-2120.jpg",
+          "seconds": 2120,
+          "width": 854,
+          "height": 480,
+          "caption": "35:20 · Draw the new NFA and combine repeated edges",
+          "alt": "Source video frame at 35:20: Draw the new NFA and combine repeated edges"
+        },
+        {
+          "src": "frames/lesson-4/frame-2190.jpg",
+          "seconds": 2190,
+          "width": 854,
+          "height": 480,
+          "caption": "36:30 · Draw the new NFA and combine repeated edges",
+          "alt": "Source video frame at 36:30: Draw the new NFA and combine repeated edges"
+        },
+        {
+          "src": "frames/lesson-4/frame-2250.jpg",
+          "seconds": 2250,
+          "width": 854,
+          "height": 480,
+          "caption": "37:30 · Draw the new NFA and combine repeated edges",
+          "alt": "Source video frame at 37:30: Draw the new NFA and combine repeated edges"
+        }
+      ]
     },
     {
       "id": "l4-practice",
@@ -178,7 +382,8 @@
       ],
       "speakerNotes": "Dagdag na practice variation ito, hindi sinabi o iginuhit na example sa video. I-apply ang parehong closure–input–closure procedure.",
       "visualDescription": "Original practice figure derived from the method, with a source link back to its explanation.",
-      "diagram": "l4-practice-enfa"
+      "diagram": "l4-practice-enfa",
+      "frames": []
     }
   ],
   "recap": [
@@ -265,30 +470,38 @@
       "segmentId": "l4-s08"
     },
     {
-      "id": "l4-q06",
-      "prompt": "Which statement about E(q) is correct?",
-      "choices": [
-        "It excludes q unless q has an ε-loop",
-        "It includes states reached by any alphabet symbol",
-        "It contains only final states",
-        "It includes q via zero ε-moves"
+      "id": "l4-q06-id",
+      "kind": "identification",
+      "prompt": "stands for the empty string",
+      "definitionLabel": "Preserved source definition (excerpt)",
+      "answer": "Epsilon",
+      "acceptedAnswers": [
+        "Epsilon",
+        "ε",
+        "epsilon symbol"
       ],
-      "answer": 3,
-      "explanation": "Zero ε-moves are allowed, so q belongs to its own epsilon closure.",
-      "segmentId": "l4-s03"
+      "explanation": "This source wording identifies epsilon. Use the source frame to review it in context.",
+      "segmentId": "l4-s02",
+      "sourceFrame": "frames/lesson-4/frame-0180.jpg",
+      "sourceSeconds": 180
     },
     {
-      "id": "l4-q07",
-      "prompt": "Why close destinations after following a symbol under the chosen convention?",
-      "choices": [
-        "To include states reachable by further ε-moves after that consumed symbol",
-        "To remove the symbol from the alphabet",
-        "To make the NFA deterministic",
-        "To force the destination to be final"
+      "id": "l4-q07-id",
+      "kind": "identification",
+      "prompt": "without consuming an input symbol",
+      "definitionLabel": "Preserved source definition (excerpt)",
+      "answer": "Epsilon transition",
+      "acceptedAnswers": [
+        "Epsilon transition",
+        "epsilon transitions",
+        "ε-transition",
+        "ε transition",
+        "e-transition"
       ],
-      "answer": 0,
-      "explanation": "The target set must include all ε-reachable states after consuming a.",
-      "segmentId": "l4-s04"
+      "explanation": "This source wording identifies epsilon transition. Use the source frame to review it in context.",
+      "segmentId": "l4-s03",
+      "sourceFrame": "frames/lesson-4/frame-0450.jpg",
+      "sourceSeconds": 450
     },
     {
       "id": "l4-q08",
@@ -373,17 +586,21 @@
       "diagram": "l4-practice-nfa"
     },
     {
-      "id": "l4-q14",
-      "prompt": "Which diagram property confirms ε-elimination succeeded?",
-      "choices": [
-        "Every state is accepting",
-        "There are no ε-labeled edges",
-        "Every state has one outgoing edge",
-        "The start state is removed"
+      "id": "l4-q14-id",
+      "kind": "identification",
+      "prompt": "All the states that can be Reached … only by seeing ε symbol",
+      "definitionLabel": "Preserved source definition (excerpt)",
+      "answer": "Epsilon closure",
+      "acceptedAnswers": [
+        "Epsilon closure",
+        "ε-closure",
+        "ε closure",
+        "epsilon-closure"
       ],
-      "answer": 1,
-      "explanation": "The target machine uses only input-alphabet labels; NFA branching can remain.",
-      "segmentId": "l4-s09"
+      "explanation": "This source wording identifies epsilon closure. Use the source frame to review it in context.",
+      "segmentId": "l4-s06",
+      "sourceFrame": "frames/lesson-4/frame-1270.jpg",
+      "sourceSeconds": 1270
     },
     {
       "id": "l4-q15",

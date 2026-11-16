@@ -2,7 +2,7 @@
 
 Six complete videos were downloaded and verified to contain audio and video. The obsolete first-pass access blockers are resolved: current yt-dlp plus JavaScript support retrieved the media, and binary-safe JPEG extraction recovered storyboards previously called corrupt.
 
-The study pack contains six teaching lessons, 61 timestamped sections (including explicitly marked supplements), 90 original MCQs and 20 diagrams rendered with AutomataStudio's real SVG engine. Lessons3 and4 follow topic order rather than the playlist's swapped order.
+The study pack contains six teaching lessons, 61 timestamped sections (including explicitly marked supplements), 90 questions (72 multiple choice and 18 typed identification) and 20 diagrams rendered with AutomataStudio's real SVG engine. Lessons3 and4 follow topic order rather than the playlist's swapped order.
 
 | Teaching lesson | Playlist position | Video | Questions |
 |---|---|---|---|
@@ -27,3 +27,7 @@ The study pack contains six teaching lessons, 61 timestamped sections (including
 ## Verification
 
 The data suite checks all90 questions, their answer/segment references,20 machine definitions and generated tables,1,275 short-word conversion comparisons and source/practice minimization counts. Browser checks cover320/390/1440px, six lessons and quizzes, video timestamp links, speaker search, configurable exam length, immediate/delayed feedback, answer editing, resuming, scoring, keyboard focus and storage failures. Reports describe sampled source review; they do not claim every spoken word or every video frame was manually checked.
+
+## Owner-requested interface revision
+
+The lessons directly show 110 source screenshots, including intermediate table/diagram updates. Quizzes reuse the one-question layout of the existing Software Engineering/Security outputs. Automata alone has 12 multiple-choice and 3 typed identification questions per lesson. Identification presents preserved source excerpts/notation and expects a term/name; the source frame is available after answering.

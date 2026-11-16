@@ -27,6 +27,7 @@ const server = http.createServer((req, res) => {
     ".css": "text/css",
     ".svg": "image/svg+xml",
     ".afjson": "application/json",
+    ".jpg": "image/jpeg",
   };
   res.setHeader(
     "Content-Type",
@@ -73,229 +74,348 @@ async function saved(page, id = "final") {
     const context = await browser.newContext();
     const page = await context.newPage();
     page.on("pageerror", (e) => errors.push(e.message));
-    await page.goto(base + "index.html");
-    assert.equal(await page.locator('a.card[href^="lesson"]').count(), 6);
     for (const width of [1440, 390, 320]) {
       await page.setViewportSize({ width, height: 900 });
       for (let n = 1; n <= 6; n++) {
         await page.goto(base + `lesson.html?lesson=lesson-${n}`);
         await fit(page);
-        assert.equal(await page.locator("h1").count(), 1);
-        assert((await page.locator("section.segment").count()) >= 7);
-        assert(
-          await page
-            .locator("img")
-            .evaluateAll((images) =>
-              images.every((i) => i.complete && i.naturalWidth > 0),
-            ),
-          "missing diagram",
+        const frames = page.locator(".source-frame img");
+        assert((await frames.count()) >= 7);
+        await frames.first().scrollIntoViewIfNeeded();
+        await frames.first().evaluate((i) => i.decode());
+        assert(await frames.first().evaluate((i) => i.naturalWidth >= 640));
+        assert.equal(
+          await page.getByRole("button", { name: "Load video here" }).count(),
+          0,
+          "lessons still rely on video embeds",
         );
-        assert(
+        await page.goto(base + `quiz.html?lesson=lesson-${n}`);
+        await page.evaluate(() => {
+          index = saved[active].ids.findIndex((id) => lookup[id].kind === "mc");
+          renderQuestion();
+        });
+        await fit(page);
+        assert.equal(
+          await page.locator(".question").count(),
+          1,
+          "must show one question at a time",
+        );
+        assert.equal(await page.locator(".option").count(), 4);
+        assert.equal(await page.locator("[data-jump]").count(), 15);
+        assert.equal(
           await page
-            .locator('nav[aria-label="Lesson sections"] a')
-            .evaluateAll((links) =>
-              links.every(
-                (a) =>
-                  !!document.getElementById(
-                    decodeURIComponent(a.hash.slice(1)),
-                  ),
-              ),
-            ),
-          "broken section link",
+            .locator(".letter")
+            .allTextContents()
+            .then((x) => x.join("")),
+          "ABCD",
         );
       }
     }
     fs.mkdirSync(captures, { recursive: true });
-    await page.setViewportSize({ width: 1440, height: 1000 });
+    for (const [name, width, height] of [
+      ["desktop", 1440, 1000],
+      ["mobile", 390, 844],
+      ["user-320", 320, 844],
+    ]) {
+      await page.setViewportSize({ width, height });
+      await page.goto(base + "quiz.html?lesson=lesson-2");
+      await page.evaluate(() => {
+        index = saved[active].ids.findIndex(
+          (id) => lookup[id].kind === "mc" && lookup[id].diagram,
+        );
+        renderQuestion();
+      });
+      await page.screenshot({ path: path.join(captures, name + ".png") });
+      await page.evaluate(() => {
+        index = saved[active].ids.findIndex(
+          (id) => lookup[id].kind === "identification",
+        );
+        renderQuestion();
+      });
+      await page.screenshot({
+        path: path.join(captures, name + "-identification.png"),
+      });
+      await page.goto(base + "lesson.html?lesson=lesson-4#l4-s07");
+      await page
+        .locator(".source-frame img")
+        .first()
+        .evaluate((i) => i.decode());
+      await page.screenshot({
+        path: path.join(captures, name + "-frames.png"),
+      });
+    }
     await page.goto(base + "lesson.html?lesson=lesson-4");
-    await page.screenshot({
-      path: path.join(captures, "desktop.png"),
-      fullPage: true,
-    });
-    await page.setViewportSize({ width: 390, height: 844 });
-    await page.screenshot({
-      path: path.join(captures, "mobile.png"),
-      fullPage: true,
-    });
     await page.locator("details summary").click();
     await page.getByRole("searchbox").fill("closure");
     assert((await page.locator("details div p").count()) > 0);
-    await page.route("https://www.youtube-nocookie.com/**", (r) =>
-      r.fulfill({
-        status: 200,
-        contentType: "text/html",
-        body: "<p>Test player</p>",
-      }),
+    await page.goto(base + "quiz.html?lesson=final");
+    assert.equal(await page.locator("#final-count").getAttribute("max"), "90");
+    for (const value of ["0", "1.5", "91", ""]) {
+      await page.fill("#final-count", value);
+      await page.click("#final-start");
+      assert.equal(await page.locator(".question").count(), 0);
+    }
+    await page.fill("#final-count", "5");
+    await page.uncheck("#final-instant");
+    await page.click("#final-start");
+    assert.equal(await page.evaluate(() => saved.final.ids.length), 5);
+    await page.evaluate(() => {
+      const all = LESSONS.flatMap((l) => l.questions);
+      saved.final.ids = [
+        all.find((q) => q.kind === "identification").id,
+        ...all
+          .filter((q) => q.kind === "mc")
+          .slice(0, 4)
+          .map((q) => q.id),
+      ];
+      index = 0;
+      renderQuestion();
+    });
+    const firstKind = await page.evaluate(
+      () => lookup[saved.final.ids[index]].kind,
     );
-    await page.getByRole("button", { name: "Load video here" }).first().click();
-    assert(
-      (await page.locator("iframe").first().getAttribute("src")).includes(
-        "start=41",
-      ),
+    if (firstKind === "identification") {
+      await page.fill("#typed-answer", "wrong term");
+      await page.locator("#identification-form button").click();
+      await page.fill(
+        "#typed-answer",
+        "  " +
+          (await page.evaluate(() =>
+            lookup[saved.final.ids[index]].options[0].toUpperCase(),
+          )) +
+          "  ",
+      );
+      await page.locator("#identification-form button").click();
+      assert.equal(
+        await page.evaluate(() => saved.final.answers[saved.final.ids[0]]),
+        0,
+      );
+    } else {
+      await page.click('[data-option="0"]');
+      await page.click('[data-option="1"]');
+      assert.equal(
+        await page.evaluate(() => saved.final.answers[saved.final.ids[0]]),
+        1,
+      );
+    }
+    assert.equal(await page.locator(".feedback").count(), 0);
+    await page.reload();
+    await page.click("#final-resume");
+    assert.equal(await page.locator(".feedback").count(), 0);
+    for (let i = 0; i < 5; i++) {
+      const answer = await page.evaluate(
+        () => lookup[saved.final.ids[index]].answer,
+      );
+      if (await page.locator("#typed-answer").count()) {
+        await page.fill(
+          "#typed-answer",
+          await page.evaluate(() => lookup[saved.final.ids[index]].options[0]),
+        );
+        await page.locator("#identification-form button").click();
+      } else await page.click(`[data-option="${answer}"]`);
+      assert.equal(await page.locator(".feedback").count(), 0);
+      if (i < 4) await page.click("#next");
+    }
+    await page.click("#submit-exam");
+    assert.equal((await page.locator(".score").textContent()).trim(), "5 / 5");
+    await page.click("#review");
+    assert.equal(await page.locator(".feedback").count(), 1);
+    // Lesson practice scores and locks the first selection, matching the other packs.
+    await page.goto(base + "quiz.html?lesson=lesson-2");
+    await page.evaluate(() => {
+      index = saved[active].ids.findIndex((id) => lookup[id].kind === "mc");
+      renderQuestion();
+    });
+    const chosen = await page.evaluate(
+      () => lookup[saved[active].ids[index]].answer,
     );
-    // All six lesson quizzes expose fifteen questions and source references.
+    await page.click(`[data-option="${chosen}"]`);
+    assert.equal(await page.locator(".feedback").count(), 1);
+    assert(await page.locator(".option").first().isDisabled());
+    const questionBefore = await page.locator("#prompt").textContent();
+    await page.click("#next");
+    assert.notEqual(
+      await page.locator("#prompt").textContent(),
+      questionBefore,
+    );
+    await page.click("#prev");
+    assert.equal(await page.locator("#prompt").textContent(), questionBefore);
+    // All18 source identification prompts accept normalized terms/aliases and lock practice after checking.
     for (let n = 1; n <= 6; n++) {
       await page.goto(base + `quiz.html?lesson=lesson-${n}`);
-      await page
-        .getByRole("button", { name: "Start new attempt", exact: true })
-        .click();
-      assert.equal(await page.locator("fieldset").count(), 15);
-      assert.equal(
-        await page.getByRole("link", { name: /Review source:/ }).count(),
-        15,
+      const ids = await page.evaluate(() =>
+        saved[active].ids.filter((id) => lookup[id].kind === "identification"),
       );
-      await fit(page);
+      assert.equal(ids.length, 3);
+      for (const id of ids) {
+        await page.evaluate((id) => {
+          index = saved[active].ids.indexOf(id);
+          renderQuestion();
+        }, id);
+        assert.equal(await page.locator(".option").count(), 0);
+        assert(await page.locator("#typed-answer").count());
+        const term = await page.evaluate(
+          (id) => lookup[id].acceptedAnswers.at(-1).toUpperCase(),
+          id,
+        );
+        await page.fill("#typed-answer", "  " + term + "  ");
+        await page.locator("#identification-form button").click();
+        assert(
+          (await page.locator(".feedback strong").textContent()).startsWith(
+            "Correct.",
+          ),
+        );
+        assert(await page.locator("#typed-answer").isDisabled());
+      }
     }
-    await page.goto(base + "quiz.html?lesson=final");
-    const count = page.locator("input[type=number]");
-    assert.equal(await count.getAttribute("max"), "90");
-    for (const value of ["0", "1.5", "91", ""]) {
-      await count.fill(value);
-      await page
-        .getByRole("button", { name: "Start new attempt", exact: true })
-        .click();
-      assert.equal(
-        await page.locator("fieldset").count(),
-        0,
-        "invalid count started attempt",
+    await page.goto(base + "quiz.html?lesson=lesson-1");
+    await page.evaluate(() => {
+      start("lesson-1", true);
+      index = saved[active].ids.findIndex(
+        (id) => lookup[id].kind === "identification",
       );
-    }
-    await count.fill("5");
-    await page.locator("#instant").uncheck();
-    await page
-      .getByRole("button", { name: "Start new attempt", exact: true })
-      .click();
-    let attempt = await saved(page);
-    assert.equal(attempt.items.length, 5);
-    assert.equal(new Set(attempt.items.map((i) => i.questionId)).size, 5);
-    const first = page.locator("fieldset").first();
-    await first.locator('input[value="0"]').check();
-    await first.locator('input[value="1"]').check();
-    assert.equal((await saved(page)).answers[attempt.items[0].questionId], 1);
-    assert.equal(await page.locator(".feedback").count(), 0);
-    await page.reload();
-    await page
-      .getByRole("button", { name: "Resume attempt", exact: true })
-      .click();
-    assert.equal(await page.locator(".feedback").count(), 0);
+      renderQuestion();
+    });
+    await page.fill("#typed-answer", "---");
+    await page.locator("#identification-form button").click();
     assert(
       await page
-        .locator("fieldset")
-        .first()
-        .locator('input[value="1"]')
-        .isChecked(),
+        .locator("#typed-answer")
+        .evaluate((input) => input.validity.customError),
     );
-    const answers = await page.evaluate(() => {
-      const s = JSON.parse(localStorage.getItem("automata-progress-v1"))
-        .attempts.final;
-      return s.items.map(
-        (item) =>
-          AUTOMATA_DATA.lessons
-            .find((l) => l.id === item.lessonId)
-            .questions.find((q) => q.id === item.questionId).answer,
+    await page.fill(
+      "#typed-answer",
+      await page.evaluate(() => lookup[saved[active].ids[index]].options[0]),
+    );
+    assert.equal(
+      await page
+        .locator("#typed-answer")
+        .evaluate((input) => input.validity.customError),
+      false,
+    );
+    await page.locator("#identification-form button").click();
+    assert(
+      (await page.locator(".feedback strong").textContent()).startsWith(
+        "Correct.",
+      ),
+    );
+    await page.evaluate(() => {
+      start("lesson-1", true);
+      index = saved[active].ids.findIndex(
+        (id) => lookup[id].kind === "identification",
+      );
+      renderQuestion();
+    });
+    await page.fill("#typed-answer", "not the term");
+    await page.locator("#identification-form button").click();
+    assert(
+      (await page.locator(".feedback strong").textContent()).startsWith(
+        "Incorrect.",
+      ),
+    );
+    assert(await page.locator("#typed-answer").isDisabled());
+    assert.equal(await page.locator(".definition-frame").count(), 1);
+    // A saved attempt from the former UI migrates into the shared question layout.
+    const old = await page.evaluate(() => {
+      const id = AUTOMATA_DATA.lessons[0].questions.find(
+        (q) => q.kind !== "identification",
+      ).id;
+      return {
+        completed: {},
+        attempts: {
+          "lesson-1": {
+            items: AUTOMATA_DATA.lessons[0].questions.map((q) => ({
+              lessonId: "lesson-1",
+              questionId: q.id,
+            })),
+            answers: { [id]: 2 },
+            instant: true,
+            submitted: false,
+            version:
+              AUTOMATA_DATA.compatibleVersions[0] || AUTOMATA_DATA.version,
+          },
+        },
+        history: [],
+      };
+    });
+    await page.evaluate((old) => {
+      localStorage.removeItem("automata-quiz-v2");
+      localStorage.setItem("automata-progress-v1", JSON.stringify(old));
+    }, old);
+    await page.goto(base + "quiz.html?lesson=lesson-1");
+    assert.equal(
+      await page.evaluate(() => Object.keys(saved["lesson-1"].answers).length),
+      1,
+    );
+    await page.evaluate(() => {
+      localStorage.setItem(
+        "automata-quiz-v2",
+        '{"final":{"ids":"bad","answers":{}}}',
+      );
+      localStorage.setItem("automata-progress-v1", "{}");
+    });
+    await page.goto(base + "quiz.html?lesson=final");
+    assert.equal(await page.locator("#final-count").count(), 1);
+    // The published former bank maps replaced MC slots to new unanswered typed slots.
+    await page.evaluate(() => {
+      localStorage.removeItem("automata-quiz-v2");
+      const l = AUTOMATA_DATA.lessons[0];
+      const kept = l.questions.find((q) => q.kind !== "identification").id;
+      localStorage.setItem(
+        "automata-progress-v1",
+        JSON.stringify({
+          completed: {},
+          attempts: {
+            "lesson-1": {
+              items: l.questions.map((q) => ({
+                lessonId: l.id,
+                questionId: q.id.replace(/-id$/, ""),
+              })),
+              answers: { [kept]: 2 },
+              instant: true,
+              submitted: false,
+              version: "fce2731284cbda61",
+            },
+          },
+          history: [],
+        }),
       );
     });
-    for (let i = 0; i < answers.length; i++)
-      await page
-        .locator("fieldset")
-        .nth(i)
-        .locator(`input[value="${answers[i]}"]`)
-        .check();
-    assert.equal(await page.locator(".feedback").count(), 0);
-    await page
-      .getByRole("button", { name: "Submit answers", exact: true })
-      .click();
+    await page.goto(base + "quiz.html?lesson=lesson-1");
+    assert.equal(await page.evaluate(() => saved["lesson-1"].ids.length), 15);
     assert.equal(
-      (await page.locator("[data-score]").textContent()).trim(),
-      "Score: 5 / 5",
-    );
-    assert.equal(await page.locator(".feedback").count(), 5);
-    assert(await page.locator("fieldset input").first().isDisabled());
-    await page.reload();
-    await page
-      .getByRole("button", { name: "Review submitted attempt" })
-      .click();
-    assert.equal(await page.locator(".feedback").count(), 5);
-    // Immediate feedback preserves the selected input and keyboard focus.
-    await page.goto(base + "quiz.html?lesson=lesson-2");
-    await page.getByRole("button", { name: "Resume attempt" }).click();
-    const target = page.locator("fieldset").nth(3).locator('input[value="0"]');
-    await target.focus();
-    await target.check();
-    assert(await target.evaluate((el) => document.activeElement === el));
-    assert.equal(await page.locator(".feedback").count(), 1);
-    await page
-      .getByRole("button", { name: "Submit answers", exact: true })
-      .click();
-    assert(
-      await page
-        .getByRole("status")
-        .filter({ hasText: "Please answer every question" })
-        .count(),
+      await page.evaluate(() => Object.keys(saved["lesson-1"].answers).length),
+      1,
     );
     assert.equal(
-      await page
-        .locator("fieldset")
-        .first()
-        .locator("input")
-        .first()
-        .evaluate((el) => document.activeElement === el),
-      true,
-    );
-    // Both stale bank revisions and malformed saved shapes recover without crashing.
-    for (const bad of [
-      { items: "bad", answers: {} },
-      { items: [null], answers: {}, instant: true, submitted: false },
-      {
-        items: attempt.items,
-        answers: {},
-        instant: false,
-        submitted: false,
-        version: "old",
-      },
-    ]) {
       await page.evaluate(
-        (bad) =>
-          localStorage.setItem(
-            "automata-progress-v1",
-            JSON.stringify({ attempts: { final: bad } }),
-          ),
-        bad,
-      );
-      await page.goto(base + "quiz.html?lesson=final");
-      assert(
-        await page
-          .getByRole("status")
-          .filter({ hasText: "saved attempt is invalid" })
-          .count(),
-      );
-    }
-    await page.evaluate(() =>
-      localStorage.setItem("automata-progress-v1", "{broken"),
+        () =>
+          saved["lesson-1"].ids.filter(
+            (id) => lookup[id].kind === "identification",
+          ).length,
+      ),
+      3,
     );
-    await page.goto(base + "index.html");
-    assert.equal(await page.locator('a.card[href^="lesson"]').count(), 6);
-    assert(await page.locator("#storage-warning").count());
     await context.close();
     const blocked = await browser.newContext();
     await blocked.addInitScript(() => {
       Storage.prototype.setItem = function () {
-        throw new Error("storage disabled");
+        throw Error("storage disabled");
       };
     });
     const p = await blocked.newPage();
     p.on("pageerror", (e) => errors.push(e.message));
     await p.goto(base + "quiz.html?lesson=lesson-1");
-    await p
-      .getByRole("button", { name: "Start new attempt", exact: true })
-      .click();
-    assert(await p.locator("#storage-warning").count());
-    await p.locator("fieldset input").first().check();
+    await p.evaluate(() => {
+      index = saved[active].ids.findIndex((id) => lookup[id].kind === "mc");
+      renderQuestion();
+    });
+    await p.locator(".option").first().click();
     assert.equal(await p.locator(".feedback").count(), 1);
     await blocked.close();
     assert.deepEqual(errors, []);
     console.log(
-      "Passed six lesson/quizzes,320/390/1440px layouts,player links,search,exam limits,both feedback modes,resume,scoring,focus and storage recovery.",
+      "Passed source screenshot coverage, shared one-question quiz UI, A–D/progress/navigation, exam limits, both feedback modes, answer editing, resume, migration, scoring and phone layouts.",
     );
   } finally {
     await browser.close();

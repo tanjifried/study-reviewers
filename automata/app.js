@@ -232,32 +232,38 @@
     (lesson.segments || []).forEach((s) =>
       nav.append(link(s.title, `#${encodeURIComponent(s.id)}`)),
     );
+    nav.append(link("Speaker notes", "#speaker-notes"));
     main.append(nav);
     (lesson.segments || []).forEach((s) => {
       const section = el("section", null, { id: s.id, class: "segment" });
       add(
         section,
         el("h2", s.title),
-        link(
-          `Watch source at ${time(s.start)}`,
-          `https://www.youtube.com/watch?v=${encodeURIComponent(lesson.videoId)}&t=${Math.floor(s.start || 0)}s`,
-        ),
+        el("p", `${time(s.start)}–${time(s.end)} · Lesson notes`, {
+          class: "muted",
+        }),
       );
-      const load = el("button", "Load video here", {
-        type: "button",
-        class: "secondary",
+      (s.frames || []).forEach((frame) => {
+        const capture = el("figure", null, { class: "source-frame" });
+        const full = link(null, frame.src);
+        full.setAttribute("target", "_blank");
+        full.setAttribute("rel", "noopener");
+        full.append(
+          el("img", null, {
+            src: frame.src,
+            alt: frame.alt,
+            width: String(frame.width),
+            height: String(frame.height),
+            loading: "lazy",
+            decoding: "async",
+          }),
+        );
+        capture.append(
+          full,
+          el("figcaption", "Source frame · TeacherCat 4U · " + frame.caption),
+        );
+        section.append(capture);
       });
-      load.onclick = () => {
-        const frame = el("iframe", null, {
-          title: `${s.title} source video`,
-          src: `https://www.youtube-nocookie.com/embed/${encodeURIComponent(lesson.videoId)}?start=${Math.floor(s.start || 0)}`,
-          allow:
-            "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
-          allowfullscreen: "",
-        });
-        load.replaceWith(frame);
-      };
-      section.append(document.createTextNode(" "), load);
       (s.notes || []).forEach((x) => section.append(el("p", x)));
       if (s.diagram) section.append(figure(s.diagram));
       if (s.visualDescription) section.append(el("p", s.visualDescription));
@@ -283,7 +289,7 @@
       (items || []).forEach((x) => list.append(el("li", x)));
       main.append(list);
     }
-    const notes = el("details");
+    const notes = el("details", null, { id: "speaker-notes" });
     add(
       notes,
       el("summary", "Search speaker notes (Taglish paraphrases, not verbatim)"),
@@ -313,7 +319,7 @@
             p,
             link(
               `${time(s.start)} · ${s.title}`,
-              `https://www.youtube.com/watch?v=${encodeURIComponent(lesson.videoId)}&t=${Math.floor(s.start || 0)}s`,
+              `#${encodeURIComponent(s.id)}`,
             ),
             document.createTextNode(` — ${s.speakerNotes || ""}`),
           );
@@ -324,6 +330,10 @@
     render();
     main.append(
       notes,
+      link(
+        "Original video (optional reference)",
+        `https://www.youtube.com/watch?v=${encodeURIComponent(lesson.videoId)}`,
+      ),
       el(
         "p",
         lesson.provenance ||
@@ -351,292 +361,6 @@
     );
     warn();
   }
-  function quiz() {
-    const final = params.get("lesson") === "final",
-      selected = final ? null : lesson;
-    if (!final && !selected) {
-      main.replaceChildren(
-        el("h1", "Quiz not found"),
-        link("Return to Automata", "index.html"),
-      );
-      return;
-    }
-    const bank = final
-        ? lessons.flatMap((l) => (l.questions || []).map((q) => ({ q, l })))
-        : (selected.questions || []).map((q) => ({ q, l: selected })),
-      id = final ? "final" : selected.id;
-    main.replaceChildren(
-      el("h1", final ? "Final exam" : `${selected.title} quiz`),
-    );
-    if (!bank.length) {
-      main.append(el("p", "Questions are not available yet."));
-      return;
-    }
-    let attempt = state.attempts[id];
-    let invalidAttempt = false;
-    const validAttempt = (a) => {
-      if (
-        !a ||
-        typeof a !== "object" ||
-        Array.isArray(a) ||
-        !Array.isArray(a.items) ||
-        !a.items.length ||
-        a.items.length > bank.length ||
-        !a.answers ||
-        typeof a.answers !== "object" ||
-        Array.isArray(a.answers) ||
-        typeof a.instant !== "boolean" ||
-        typeof a.submitted !== "boolean" ||
-        a.version !== data.version
-      )
-        return false;
-      const seen = new Set();
-      for (const item of a.items) {
-        if (!item || typeof item !== "object") return false;
-        const entry = bank.find(
-          ({ l, q }) => l.id === item.lessonId && q.id === item.questionId,
-        );
-        if (!entry || seen.has(item.questionId)) return false;
-        seen.add(item.questionId);
-        if (
-          Object.hasOwn(a.answers, item.questionId) &&
-          (!Number.isInteger(a.answers[item.questionId]) ||
-            a.answers[item.questionId] < 0 ||
-            a.answers[item.questionId] >= entry.q.choices.length)
-        )
-          return false;
-        if (a.submitted && !Object.hasOwn(a.answers, item.questionId))
-          return false;
-      }
-      return Object.keys(a.answers).every((key) => seen.has(key));
-    };
-    if (attempt && !validAttempt(attempt)) {
-      invalidAttempt = true;
-      attempt = null;
-      delete state.attempts[id];
-    }
-    const start = () => {
-      main.replaceChildren(
-        el("h1", final ? "Final exam" : `${selected.title} quiz`),
-      );
-      if (invalidAttempt)
-        main.append(
-          el(
-            "p",
-            "The saved attempt is invalid or no longer matches the question bank. Start a new attempt.",
-            { class: "notice", role: "status" },
-          ),
-        );
-      if (attempt) {
-        main.append(
-          el(
-            "p",
-            `${Object.keys(attempt.answers).length} of ${attempt.items.length} answered.`,
-          ),
-        );
-        const resume = el(
-          "button",
-          attempt.submitted ? "Review submitted attempt" : "Resume attempt",
-        );
-        resume.onclick = render;
-        main.append(resume, document.createTextNode(" "));
-      }
-      const form = el("form");
-      if (final) {
-        const label = el("label", `Number of questions (1–${bank.length}) `),
-          count = el("input", null, {
-            type: "number",
-            min: "1",
-            max: String(bank.length),
-            value: String(bank.length),
-            required: "",
-          });
-        label.append(count);
-        form.append(label, el("br"));
-        const check = el("input", null, {
-            type: "checkbox",
-            id: "instant",
-            checked: "",
-          }),
-          cl = el("label", " Show feedback immediately", { for: "instant" });
-        form.append(check, cl);
-        form.onsubmit = (e) => {
-          e.preventDefault();
-          const value = Number(count.value);
-          if (!Number.isInteger(value) || value < 1 || value > bank.length) {
-            count.setCustomValidity(
-              `Enter a whole number from 1 to ${bank.length}.`,
-            );
-            count.reportValidity();
-            count.setCustomValidity("");
-            return;
-          }
-          begin(value, check.checked);
-        };
-      } else
-        form.onsubmit = (e) => {
-          e.preventDefault();
-          begin(bank.length, true);
-        };
-      form.append(
-        el("p", "Starting a new attempt replaces any unfinished attempt."),
-        el("button", "Start new attempt", { type: "submit" }),
-      );
-      main.append(form);
-      warn();
-    };
-    function begin(count, instant) {
-      count = Math.max(
-        1,
-        Math.min(bank.length, Number.isInteger(count) ? count : bank.length),
-      );
-      const shuffled = [...bank];
-      for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-      }
-      shuffled.length = count;
-      invalidAttempt = false;
-      attempt = {
-        items: shuffled.map((x) => ({ lessonId: x.l.id, questionId: x.q.id })),
-        answers: {},
-        version: data.version,
-        instant,
-        submitted: false,
-      };
-      state.attempts[id] = attempt;
-      save();
-      render();
-    }
-    function render() {
-      main.replaceChildren(
-        el("h1", final ? "Final exam" : `${selected.title} quiz`),
-      );
-      const items = (attempt.items || [])
-        .map((x) => {
-          const l = lessons.find((y) => y.id === x.lessonId);
-          return {
-            l,
-            q: l && (l.questions || []).find((q) => q.id === x.questionId),
-          };
-        })
-        .filter((x) => x.q);
-      if (!items.length) {
-        attempt = null;
-        start();
-        return;
-      }
-      const form = el("form");
-      items.forEach(({ l, q }, i) => {
-        const fs = el("fieldset"),
-          legend = el("legend", `${i + 1}. ${q.prompt}`);
-        fs.append(legend);
-        if (q.diagram) fs.append(figure(q.diagram));
-        const feedback = el("div", null, { "aria-live": "polite" });
-        const updateFeedback = () => {
-          feedback.replaceChildren();
-          if (
-            (!attempt.instant && !attempt.submitted) ||
-            !Number.isInteger(attempt.answers[q.id])
-          )
-            return;
-          const correct = attempt.answers[q.id] === q.answer;
-          feedback.append(
-            el("p", `${correct ? "Correct." : "Incorrect."} ${q.explanation}`, {
-              class: "feedback",
-            }),
-          );
-          if (!correct)
-            feedback.append(el("p", `Correct answer: ${q.choices[q.answer]}`));
-        };
-        (q.choices || []).forEach((choice, j) => {
-          const label = el("label", null, { class: "choice" }),
-            radio = el("input", null, {
-              type: "radio",
-              name: `q${i}`,
-              value: String(j),
-            });
-          radio.checked = attempt.answers[q.id] === j;
-          radio.disabled = !!attempt.submitted;
-          radio.onchange = () => {
-            attempt.answers[q.id] = j;
-            save();
-            updateFeedback();
-          };
-          label.append(radio, document.createTextNode(" " + choice));
-          fs.append(label);
-        });
-        fs.append(
-          link(
-            `Review source: ${l.title}`,
-            `lesson.html?lesson=${encodeURIComponent(l.id)}#${encodeURIComponent(q.segmentId)}`,
-          ),
-        );
-        updateFeedback();
-        fs.append(feedback);
-        form.append(fs);
-      });
-      if (!attempt.submitted) {
-        const status = el("p", "", { role: "status" });
-        form.append(status, el("button", "Submit answers", { type: "submit" }));
-        form.onsubmit = (e) => {
-          e.preventDefault();
-          if (items.some(({ q }) => !Number.isInteger(attempt.answers[q.id]))) {
-            status.textContent =
-              "Please answer every question before submitting.";
-            const first = items.findIndex(
-              ({ q }) => !Number.isInteger(attempt.answers[q.id]),
-            );
-            form
-              .querySelectorAll("fieldset")
-              [first].querySelector("input")
-              .focus();
-            return;
-          }
-          attempt.submitted = true;
-          const score = items.filter(
-            ({ q }) => attempt.answers[q.id] === q.answer,
-          ).length;
-          state.history.push({
-            title: final ? "Final exam" : selected.title,
-            score,
-            total: items.length,
-            date: new Date().toLocaleDateString(),
-          });
-          state.history = state.history.slice(-30);
-          save();
-          render();
-          main.querySelector("[data-score]").focus();
-        };
-      } else {
-        const score = items.filter(
-          ({ q }) => attempt.answers[q.id] === q.answer,
-        ).length;
-        main.append(
-          el("p", `Score: ${score} / ${items.length}`, {
-            class: "notice",
-            role: "status",
-            tabindex: "-1",
-            "data-score": "",
-          }),
-        );
-      }
-      main.append(form);
-      const restart = el("button", "Restart / settings", {
-        type: "button",
-        class: "secondary",
-      });
-      restart.onclick = start;
-      main.append(
-        restart,
-        document.createTextNode(" "),
-        link("Back to Automata", "index.html"),
-      );
-      warn();
-    }
-    start();
-  }
   if (page === "index") home();
   else if (page === "lesson") lessonPage();
-  else quiz();
 })();

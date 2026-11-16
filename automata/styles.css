@@ -224,3 +224,27 @@ figure > a {
   background: #d8e8cc;
   color: #25342a;
 }
+
+.source-frame {
+  margin: 1.25rem 0 1.75rem;
+}
+.source-frame a {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+.source-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #cad5c8;
+}
+.source-frame figcaption {
+  font-size: 0.85rem;
+  color: #526356;
+  margin-top: 0.5rem;
+}
+.source-frame a:focus-visible {
+  outline: 3px solid #b4791b;
+  outline-offset: 3px;
+}

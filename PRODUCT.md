@@ -37,3 +37,9 @@ Retain the existing study-pack appearance. The subject chooser and Automata exte
 The `python`, `software-engineering`, and `information-security` directories contain the incumbent generated lessons, quizzes, and supporting assets. `automata` contains the fourth pack; `automata/build` contains authored lesson data, machine definitions, renderer sources, and generation scripts. `automata/build/research-summary.md` records source coverage and factual corrections.
 
 The incumbent CSS already varies by subject: the chooser uses system type and a blue accent; Python uses system type, green/teal accents, white reading panels, and a separate exam layout; the slide-based subjects use Arial, blue accents, white reading surfaces, and bordered lesson sections. Automata retains the same readable static-pack conventions with a constrained reading column, restrained green accents, white bordered sections, visible focus states, and phone-sized controls. Its Georgia headings are local to that subject, not a new site-wide typography rule. There is no existing `DESIGN.md` or design sidecar to update; that documentation gap predates this ordinary extension.
+
+## Automata corrections confirmed by the owner
+
+- Use the same single-question quiz layout and A–D controls as the Software Engineering and Security packs.
+- Display 110 source screenshots directly in the lesson flow; video links are supplementary.
+- Automata alone uses 12 multiple-choice questions and 3 typed identification items per lesson. Identification presents preserved source wording or notation and expects the term/name. Other subject banks are unchanged.

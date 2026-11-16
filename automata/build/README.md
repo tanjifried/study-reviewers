@@ -26,3 +26,9 @@ All six videos were downloaded using yt-dlp2026.10.26 with its EJS dependency an
 The local ASR can mistranscribe state names, negation and technical Taglish; it is working evidence, not authoritative text. Diagram transitions were checked against readable source tables/frames and independently simulated. Timestamps locate conceptual sections approximately. New examples and corrections are labeled; source material is not silently replaced by a practice variation.
 
 `research-summary.md` records the important source corrections and verification limits. The public site contains the same provenance distinctions in lesson prose and figure captions.
+
+## Source frames and typed identification
+
+`../frames/` contains source-video screenshots at meaningful visual updates. `frame-manifest.json` and each segment’s `frames` metadata record their times; identification questions also point to the source frame containing their preserved excerpt or notation. Frames are displayed in lesson sections, while source-video links remain supplementary. All published captures use the source’s 854×480 stream.
+
+There are 72 multiple-choice questions and 18 identification items. Identification stores a canonical term and explicit accepted aliases. The quiz normalizes case, spacing and punctuation before exact matching; it does not infer correctness from a partial answer. Tests cover editable deferred identification, immediate scoring and old-bank progress migration.

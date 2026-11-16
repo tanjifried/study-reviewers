@@ -96,19 +96,49 @@ async function build() {
   } finally {
     await browser.close();
   }
+  const bankOf = (value) => ({
+    questions: value.lessons.map((l) => l.questions),
+    tables: Object.fromEntries(
+      Object.entries(value.diagrams).map(([id, d]) => [id, d.table]),
+    ),
+  });
+  const bank = bankOf({ lessons, diagrams });
   const version = crypto
     .createHash("sha256")
-    .update(JSON.stringify({ lessons, machines }))
+    .update(JSON.stringify(bank))
     .digest("hex")
     .slice(0, 16);
-  const data = { version, lessons, diagrams };
+  let compatibleVersions = [];
+  try {
+    const oldText = fs.readFileSync(path.join(root, "content.js"), "utf8");
+    const previous = JSON.parse(
+      oldText
+        .slice(oldText.indexOf("window.AUTOMATA_DATA = ") + 23)
+        .replace(/;\s*$/, ""),
+    );
+    if (JSON.stringify(bankOf(previous)) === JSON.stringify(bank))
+      compatibleVersions = [
+        ...new Set([previous.version, ...(previous.compatibleVersions || [])]),
+      ].filter((v) => v !== version);
+  } catch {}
+  const data = { version, compatibleVersions, lessons, diagrams };
   const ids = new Set();
   for (const l of lessons) {
     if (l.questions.length !== 15) throw Error(`${l.id}: expected15 questions`);
     for (const q of l.questions) {
       if (ids.has(q.id)) throw Error(`Duplicate question ID ${q.id}`);
       ids.add(q.id);
-      if (
+      if (q.kind === "identification") {
+        if (
+          typeof q.answer !== "string" ||
+          !q.answer ||
+          !Array.isArray(q.acceptedAnswers) ||
+          !q.acceptedAnswers.includes(q.answer)
+        )
+          throw Error(`Bad identification ${q.id}`);
+        if (!q.sourceFrame || !fs.existsSync(path.join(root, q.sourceFrame)))
+          throw Error(`Missing definition frame ${q.id}`);
+      } else if (
         q.choices.length !== 4 ||
         !Number.isInteger(q.answer) ||
         q.answer < 0 ||

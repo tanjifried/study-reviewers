@@ -58,7 +58,25 @@
         "The lecture connects this way of thinking to designing repeatable systems, including computers and aircraft autopilot systems."
       ],
       "speakerNotes": "Pag-aralan ang behavior ng machine kahit wala sa harap natin ang mismong hardware. Nakakatulong ang model sa pag-intindi kung paano nagiging output ang inputs at kung paano gumagawa ng repeatable actions ang isang system.",
-      "visualDescription": "Slides titled “WHY WE STUDY AUTOMATA” show bullets about reasoning without hardware detail and understanding how machines solve problems, alongside pictures of computer, phone, industrial automation, and laboratory equipment."
+      "visualDescription": "Slides titled “WHY WE STUDY AUTOMATA” show bullets about reasoning without hardware detail and understanding how machines solve problems, alongside pictures of computer, phone, industrial automation, and laboratory equipment.",
+      "frames": [
+        {
+          "src": "frames/lesson-1/frame-0050.jpg",
+          "seconds": 50,
+          "width": 854,
+          "height": 480,
+          "caption": "0:50 · Why study automata?",
+          "alt": "Source video frame at 0:50: Why study automata?"
+        },
+        {
+          "src": "frames/lesson-1/frame-0095.jpg",
+          "seconds": 95,
+          "width": 854,
+          "height": 480,
+          "caption": "1:35 · Why study automata?",
+          "alt": "Source video frame at 1:35: Why study automata?"
+        }
+      ]
     },
     {
       "id": "thermostat",
@@ -71,7 +89,17 @@
         "The example demonstrates how a simple model can describe behavior while larger computing systems may involve many more states and inputs."
       ],
       "speakerNotes": "Sa thermostat example, on at off ang dalawang states. Nagbabago ang operation depende sa temperature condition. Mas komplikado ang computer dahil mas marami ang inputs at posibleng states.",
-      "visualDescription": "A thermostat slide shows an on/off control and the two-state idea; surrounding examples include a pendulum clock, missile guidance, and telephone networks."
+      "visualDescription": "A thermostat slide shows an on/off control and the two-state idea; surrounding examples include a pendulum clock, missile guidance, and telephone networks.",
+      "frames": [
+        {
+          "src": "frames/lesson-1/frame-0170.jpg",
+          "seconds": 170,
+          "width": 854,
+          "height": 480,
+          "caption": "2:50 · A thermostat as a small state-based example",
+          "alt": "Source video frame at 2:50: A thermostat as a small state-based example"
+        }
+      ]
     },
     {
       "id": "automaton-elevator",
@@ -85,7 +113,33 @@
         "A formal automaton is a model of behavior; a physical elevator, TV, or ATM is a real system that may be modeled in many ways."
       ],
       "speakerNotes": "Automaton ang singular at automata ang plural. Ipinapakita ng elevator, TV at ATM examples kung paano may automatic na response sa isang input.",
-      "visualDescription": "The slide gives the Greek-root/“self-acting” explanation and singular/plural labels. A photo of an elevator and a small state diagram appear, followed by images of automated devices."
+      "visualDescription": "The slide gives the Greek-root/“self-acting” explanation and singular/plural labels. A photo of an elevator and a small state diagram appear, followed by images of automated devices.",
+      "frames": [
+        {
+          "src": "frames/lesson-1/frame-0220.jpg",
+          "seconds": 220,
+          "width": 854,
+          "height": 480,
+          "caption": "3:40 · Automaton, automata, and automatic devices",
+          "alt": "Source video frame at 3:40: Automaton, automata, and automatic devices"
+        },
+        {
+          "src": "frames/lesson-1/frame-0245.jpg",
+          "seconds": 245,
+          "width": 854,
+          "height": 480,
+          "caption": "4:05 · Automaton, automata, and automatic devices",
+          "alt": "Source video frame at 4:05: Automaton, automata, and automatic devices"
+        },
+        {
+          "src": "frames/lesson-1/frame-0280.jpg",
+          "seconds": 280,
+          "width": 854,
+          "height": 480,
+          "caption": "4:40 · Automaton, automata, and automatic devices",
+          "alt": "Source video frame at 4:40: Automaton, automata, and automatic devices"
+        }
+      ]
     },
     {
       "id": "theory-and-models",
@@ -101,7 +155,41 @@
       ],
       "speakerNotes": "Ang automata theory ay tungkol sa abstract machine models. Sa model, puwedeng pag-aralan ang inputs, outputs at operations nang hindi kailangang isama ang lahat ng hardware details.",
       "visualDescription": "Slides define theory as study of abstract machines; a banking example lists deposit/withdraw/transfer. Later slides show large state-machine illustrations, a Turing-machine label, and “virtual machine” versus “machine” implementation labels.",
-      "caution": "An abstract machine is a mathematical model, not necessarily a runnable software virtual machine. Also, hardware implementation does not by itself make an abstract model “a machine”; implementation and formal model are different levels."
+      "caution": "An abstract machine is a mathematical model, not necessarily a runnable software virtual machine. Also, hardware implementation does not by itself make an abstract model “a machine”; implementation and formal model are different levels.",
+      "frames": [
+        {
+          "src": "frames/lesson-1/frame-0330.jpg",
+          "seconds": 330,
+          "width": 854,
+          "height": 480,
+          "caption": "5:30 · Automata theory and abstract machine models",
+          "alt": "Source video frame at 5:30: Automata theory and abstract machine models"
+        },
+        {
+          "src": "frames/lesson-1/frame-0385.jpg",
+          "seconds": 385,
+          "width": 854,
+          "height": 480,
+          "caption": "6:25 · Automata theory and abstract machine models",
+          "alt": "Source video frame at 6:25: Automata theory and abstract machine models"
+        },
+        {
+          "src": "frames/lesson-1/frame-0445.jpg",
+          "seconds": 445,
+          "width": 854,
+          "height": 480,
+          "caption": "7:25 · Automata theory and abstract machine models",
+          "alt": "Source video frame at 7:25: Automata theory and abstract machine models"
+        },
+        {
+          "src": "frames/lesson-1/frame-0475.jpg",
+          "seconds": 475,
+          "width": 854,
+          "height": 480,
+          "caption": "7:55 · Automata theory and abstract machine models",
+          "alt": "Source video frame at 7:55: Automata theory and abstract machine models"
+        }
+      ]
     },
     {
       "id": "objective-discrete",
@@ -113,7 +201,17 @@
         "The slide mentions signals sampled periodically as one way such systems may be represented."
       ],
       "speakerNotes": "Layunin na magkaroon ng paraan para ilarawan at suriin ang pagbabago ng behavior ng discrete systems. Ang note na ito ay buod, hindi eksaktong salita ng speaker.",
-      "visualDescription": "A slide titled “OBJECTIVE OF AUTOMATA THEORY” summarizes methods for describing and analyzing dynamic behavior of discrete systems with periodically sampled signals."
+      "visualDescription": "A slide titled “OBJECTIVE OF AUTOMATA THEORY” summarizes methods for describing and analyzing dynamic behavior of discrete systems with periodically sampled signals.",
+      "frames": [
+        {
+          "src": "frames/lesson-1/frame-0500.jpg",
+          "seconds": 500,
+          "width": 854,
+          "height": 480,
+          "caption": "8:20 · The objective: describe and analyze discrete behavior",
+          "alt": "Source video frame at 8:20: The objective: describe and analyze discrete behavior"
+        }
+      ]
     },
     {
       "id": "machine-characteristics",
@@ -128,7 +226,25 @@
       ],
       "speakerNotes": "Tatlong characteristics ang ipinapakita: inputs, outputs at states. Ang kahulugan ng state ay nakadepende sa klase ng machine model na pinag-aaralan.",
       "visualDescription": "A “CHARACTERISTICS OF MACHINES” slide lists inputs, outputs, and states; a subsequent block diagram routes an input sequence through an automaton with internal states to an output sequence.",
-      "caution": "The diagram is a broad machine-model picture. Many standard finite automata are acceptors: they classify an input string as accepted or rejected instead of emitting an arbitrary output string. Output behavior depends on the chosen model."
+      "caution": "The diagram is a broad machine-model picture. Many standard finite automata are acceptors: they classify an input string as accepted or rejected instead of emitting an arbitrary output string. Output behavior depends on the chosen model.",
+      "frames": [
+        {
+          "src": "frames/lesson-1/frame-0526.jpg",
+          "seconds": 526,
+          "width": 854,
+          "height": 480,
+          "caption": "8:46 · Inputs, outputs, and states",
+          "alt": "Source video frame at 8:46: Inputs, outputs, and states"
+        },
+        {
+          "src": "frames/lesson-1/frame-0550.jpg",
+          "seconds": 550,
+          "width": 854,
+          "height": 480,
+          "caption": "9:10 · Inputs, outputs, and states",
+          "alt": "Source video frame at 9:10: Inputs, outputs, and states"
+        }
+      ]
     },
     {
       "id": "four-families",
@@ -142,7 +258,17 @@
       ],
       "speakerNotes": "Apat na families ang binanggit: finite-state machine, pushdown automata, linear-bounded automata at Turing machine. Ipinapakita sila bilang mas simple hanggang mas general na computational models.",
       "visualDescription": "A slide lists the four families in order and briefly highlights finite-state machine at the beginning and Turing machine at the end.",
-      "caution": "“Complexity” here is an informal teaching shorthand. The formal distinctions are about computational resources and language-recognition power, not simply how complicated a physical machine looks."
+      "caution": "“Complexity” here is an informal teaching shorthand. The formal distinctions are about computational resources and language-recognition power, not simply how complicated a physical machine looks.",
+      "frames": [
+        {
+          "src": "frames/lesson-1/frame-0570.jpg",
+          "seconds": 570,
+          "width": 854,
+          "height": 480,
+          "caption": "9:30 · Four major families of automata",
+          "alt": "Source video frame at 9:30: Four major families of automata"
+        }
+      ]
     }
   ],
   "recap": [
@@ -199,30 +325,34 @@
       "segmentId": "automaton-elevator"
     },
     {
-      "id": "l1-q04",
-      "prompt": "Which statement correctly uses the terms introduced in the lesson?",
-      "choices": [
-        "Automaton is plural; automata is singular",
-        "Automaton and automata both mean output",
-        "Automata is singular; automaton is plural",
-        "Automaton is singular; automata is plural"
+      "id": "l1-q04-id",
+      "kind": "identification",
+      "prompt": "Study of abstract machines",
+      "definitionLabel": "Preserved source definition (excerpt)",
+      "answer": "Automata theory",
+      "acceptedAnswers": [
+        "Automata theory",
+        "theory of automata"
       ],
-      "answer": 3,
-      "explanation": "The lecture explicitly distinguishes automaton (singular) from automata (plural).",
-      "segmentId": "automaton-elevator"
+      "explanation": "This source wording identifies automata theory. Use the source frame to review it in context.",
+      "segmentId": "theory-and-models",
+      "sourceFrame": "frames/lesson-1/frame-0385.jpg",
+      "sourceSeconds": 385
     },
     {
-      "id": "l1-q05",
-      "prompt": "Why is an abstract machine useful when analyzing a computer system?",
-      "choices": [
-        "It guarantees that the system has no bugs",
-        "It removes the need to define inputs",
-        "It supports precise reasoning about behavior without depending on one physical implementation",
-        "It describes only the system’s appearance"
+      "id": "l1-q05-id",
+      "kind": "identification",
+      "prompt": "model of a computer system",
+      "definitionLabel": "Preserved source definition (excerpt)",
+      "answer": "Abstract machine",
+      "acceptedAnswers": [
+        "Abstract machine",
+        "abstract machines"
       ],
-      "answer": 2,
-      "explanation": "An abstract model captures relevant behavior so it can be analyzed independently of hardware details.",
-      "segmentId": "theory-and-models"
+      "explanation": "This source wording identifies abstract machine. Use the source frame to review it in context.",
+      "segmentId": "theory-and-models",
+      "sourceFrame": "frames/lesson-1/frame-0405.jpg",
+      "sourceSeconds": 405
     },
     {
       "id": "l1-q06",
@@ -329,17 +459,19 @@
       "segmentId": "automaton-elevator"
     },
     {
-      "id": "l1-q14",
-      "prompt": "The speaker calls a software implementation a “virtual machine.” What distinction should a learner keep in mind?",
-      "choices": [
-        "A formal model and its implementation are different levels of description",
-        "Software cannot implement computational models",
-        "A virtual machine has no inputs",
-        "Hardware is always an abstract machine"
+      "id": "l1-q14-id",
+      "kind": "identification",
+      "prompt": "implemented in software",
+      "definitionLabel": "Preserved source definition (excerpt)",
+      "answer": "Virtual machine",
+      "acceptedAnswers": [
+        "Virtual machine",
+        "virtual machines"
       ],
-      "answer": 0,
-      "explanation": "The lesson uses implementation labels, but an abstract machine is a formal model while software or hardware is an implementation medium.",
-      "segmentId": "theory-and-models"
+      "explanation": "This source wording identifies virtual machine. Use the source frame to review it in context.",
+      "segmentId": "theory-and-models",
+      "sourceFrame": "frames/lesson-1/frame-0475.jpg",
+      "sourceSeconds": 475
     },
     {
       "id": "l1-q15",
