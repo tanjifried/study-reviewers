@@ -43,6 +43,9 @@ def prepare():
                 target = OUT / pack / relative
                 target.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy2(source, target)
+    doc = Path('information-security/lessons/RANDOMNESS-TESTING-LECTURE-AND-ASSESSMENT-TASK.docx')
+    (OUT / doc).parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(ROOT / doc, OUT / doc)
     (OUT / '.nojekyll').touch()
 
     pages = {}

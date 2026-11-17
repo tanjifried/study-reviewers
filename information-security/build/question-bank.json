@@ -36,12 +36,6 @@
         "falsehood": "MD4 and MD5 are encryption algorithms rather than hash algorithms."
       },
       {
-        "term": "SHA-1",
-        "definition": "SHA-1 (Secure Hash Algorithm 1) uses 80 rounds and has a hash value of 160 bits.",
-        "slide": 16,
-        "falsehood": "SHA-1 produces a 512-bit digest and performs only one round."
-      },
-      {
         "term": "SHA-2 and SHA-3",
         "definition": "The slide names SHA-3 (512) among the latest and strongest hash algorithms at the time.",
         "slide": 7,
@@ -72,10 +66,22 @@
         "falsehood": "A plain unkeyed hash sent alongside a message by itself authenticates the sender against an active attacker."
       },
       {
+        "term": "SHA-1",
+        "definition": "SHA-1 (Secure Hash Algorithm 1) uses 80 rounds and has a hash value of 160 bits.",
+        "slide": 16,
+        "falsehood": "SHA-1 produces a 512-bit digest and performs only one round."
+      },
+      {
         "term": "SHA-1 digest size",
         "definition": "SHA-1 outputs 160 bits, equivalent to 20 bytes or 40 hexadecimal digits.",
         "slide": 16,
         "falsehood": "SHA-1 outputs 160 hexadecimal digits for every message."
+      },
+      {
+        "term": "SHA-1 security status",
+        "definition": "SHA-1 has collision weaknesses; NIST recommends transitioning to SHA-2 or SHA-3.",
+        "slide": 16,
+        "falsehood": "SHA-1 is recommended for new digital signatures because it is collision resistant."
       },
       {
         "term": "SHA-1 block size",
@@ -118,12 +124,6 @@
         "definition": "Each of four SHA-1 round ranges uses a specified constant, beginning with 5a827999 for rounds 0–19.",
         "slide": 17,
         "falsehood": "Every SHA-1 round uses the same constant regardless of its range."
-      },
-      {
-        "term": "SHA-1 security status",
-        "definition": "SHA-1 has collision weaknesses; NIST recommends transitioning to SHA-2 or SHA-3.",
-        "slide": 16,
-        "falsehood": "SHA-1 is recommended for new digital signatures because it is collision resistant."
       }
     ],
     "questions": [
@@ -132,14 +132,14 @@
         "concept": "Authentication",
         "explanation": "Authentication: The process of verifying identity; it can validate identity documents or ensure that a product or document is not forged.",
         "slide": 2,
-        "id": "lesson-1-c0-mc",
+        "id": "lesson-1-v2-mc0",
         "kind": "mc",
-        "prompt": "Which term best matches this description? The process of verifying identity; it can validate identity documents or ensure that a product or document is not forged.",
+        "prompt": "Which statement best describes Authentication?",
         "options": [
-          "Hash function",
-          "SHA-1",
-          "Authentication",
-          "Hashing and encryption"
+          "A function that maps data of any size to fixed-size values.",
+          "The slide names SHA-3 (512) among the latest and strongest hash algorithms at the time.",
+          "The process of verifying identity; it can validate identity documents or ensure that a product or document is not forged.",
+          "Hashing produces a digest; encryption uses a key and is designed to be reversed by authorized parties."
         ],
         "answer": 2
       },
@@ -148,13 +148,13 @@
         "concept": "Hash function",
         "explanation": "Hash function: A function that maps data of any size to fixed-size values.",
         "slide": 5,
-        "id": "lesson-1-c1-mc",
+        "id": "lesson-1-v2-mc1",
         "kind": "mc",
         "prompt": "Which statement best describes Hash function?",
         "options": [
-          "Supplemental reference: MD5 produces a 128-bit digest, commonly displayed as 32 hexadecimal characters.",
+          "Supplemental: comparing a computed digest with a trusted expected digest can reveal changes to the message.",
           "The values returned by a hash function are called hash values, hash codes, digests, or hashes.",
-          "SHA-1 (Secure Hash Algorithm 1) uses 80 rounds and has a hash value of 160 bits.",
+          "The slide names SHA-3 (512) among the latest and strongest hash algorithms at the time.",
           "A function that maps data of any size to fixed-size values."
         ],
         "answer": 3
@@ -164,14 +164,14 @@
         "concept": "Message digest",
         "explanation": "Message digest: The values returned by a hash function are called hash values, hash codes, digests, or hashes.",
         "slide": 5,
-        "id": "lesson-1-c2-mc",
+        "id": "lesson-1-v2-mc2",
         "kind": "mc",
-        "prompt": "Which term best matches this description? The values returned by a hash function are called hash values, hash codes, digests, or hashes.",
+        "prompt": "Which statement best describes Message digest?",
         "options": [
-          "Message digest",
-          "Hash sensitivity",
-          "MD4 and MD5",
-          "SHA-1"
+          "The values returned by a hash function are called hash values, hash codes, digests, or hashes.",
+          "Supplemental reference: MD5 produces a 128-bit digest, commonly displayed as 32 hexadecimal characters.",
+          "MD4 (Message Digest 4) and MD5 (Message Digest 5) are hash algorithms named on the slide.",
+          "The slide names SHA-3 (512) among the latest and strongest hash algorithms at the time."
         ],
         "answer": 0
       },
@@ -180,12 +180,12 @@
         "concept": "Hashing and encryption",
         "explanation": "Hashing and encryption: Hashing produces a digest; encryption uses a key and is designed to be reversed by authorized parties.",
         "slide": 5,
-        "id": "lesson-1-c3-mc",
+        "id": "lesson-1-v2-mc3",
         "kind": "mc",
         "prompt": "Which statement best describes Hashing and encryption?",
         "options": [
           "MD4 (Message Digest 4) and MD5 (Message Digest 5) are hash algorithms named on the slide.",
-          "Supplemental: comparing a computed digest with a trusted expected digest can reveal changes to the message.",
+          "An HMAC or digital signature can protect message integrity and help authenticate the source when keys are managed correctly.",
           "SHA-1 outputs 160 bits, equivalent to 20 bytes or 40 hexadecimal digits.",
           "Hashing produces a digest; encryption uses a key and is designed to be reversed by authorized parties."
         ],
@@ -196,46 +196,30 @@
         "concept": "MD4 and MD5",
         "explanation": "MD4 and MD5: MD4 (Message Digest 4) and MD5 (Message Digest 5) are hash algorithms named on the slide.",
         "slide": 7,
-        "id": "lesson-1-c4-mc",
+        "id": "lesson-1-v2-mc4",
         "kind": "mc",
-        "prompt": "Which term best matches this description? MD4 (Message Digest 4) and MD5 (Message Digest 5) are hash algorithms named on the slide.",
+        "prompt": "Which statement best describes MD4 and MD5?",
         "options": [
-          "MD4 and MD5",
-          "SHA-1 initial words",
-          "Authentication",
-          "Integrity check"
+          "MD4 (Message Digest 4) and MD5 (Message Digest 5) are hash algorithms named on the slide.",
+          "SHA-1 processes padded messages in 512-bit blocks.",
+          "The process of verifying identity; it can validate identity documents or ensure that a product or document is not forged.",
+          "An HMAC or digital signature can protect message integrity and help authenticate the source when keys are managed correctly."
         ],
         "answer": 0
-      },
-      {
-        "lesson": "lesson-1",
-        "concept": "SHA-1",
-        "explanation": "SHA-1: SHA-1 (Secure Hash Algorithm 1) uses 80 rounds and has a hash value of 160 bits.",
-        "slide": 16,
-        "id": "lesson-1-c5-mc",
-        "kind": "mc",
-        "prompt": "Which statement best describes SHA-1?",
-        "options": [
-          "The process of verifying identity; it can validate identity documents or ensure that a product or document is not forged.",
-          "SHA-1 processes padded messages in 512-bit blocks.",
-          "SHA-1 (Secure Hash Algorithm 1) uses 80 rounds and has a hash value of 160 bits.",
-          "The values returned by a hash function are called hash values, hash codes, digests, or hashes."
-        ],
-        "answer": 2
       },
       {
         "lesson": "lesson-1",
         "concept": "SHA-2 and SHA-3",
         "explanation": "SHA-2 and SHA-3: The slide names SHA-3 (512) among the latest and strongest hash algorithms at the time.",
         "slide": 7,
-        "id": "lesson-1-c6-mc",
+        "id": "lesson-1-v2-mc5",
         "kind": "mc",
-        "prompt": "Which term best matches this description? The slide names SHA-3 (512) among the latest and strongest hash algorithms at the time.",
+        "prompt": "Which statement best describes SHA-2 and SHA-3?",
         "options": [
-          "MD5 output length",
-          "SHA-1 initial parsing",
-          "SHA-2 and SHA-3",
-          "Hash function"
+          "The process of verifying identity; it can validate identity documents or ensure that a product or document is not forged.",
+          "SHA-1 has collision weaknesses; NIST recommends transitioning to SHA-2 or SHA-3.",
+          "The slide names SHA-3 (512) among the latest and strongest hash algorithms at the time.",
+          "The values returned by a hash function are called hash values, hash codes, digests, or hashes."
         ],
         "answer": 2
       },
@@ -244,46 +228,46 @@
         "concept": "Hash sensitivity",
         "explanation": "Hash sensitivity: The MD5 hash algorithm is case sensitive: the hash value differs when the same word or phrase uses lowercase and uppercase.",
         "slide": 8,
-        "id": "lesson-1-c7-mc",
+        "id": "lesson-1-v2-mc6",
         "kind": "mc",
         "prompt": "Which statement best describes Hash sensitivity?",
         "options": [
-          "The MD5 hash algorithm is case sensitive: the hash value differs when the same word or phrase uses lowercase and uppercase.",
-          "SHA-1 has collision weaknesses; NIST recommends transitioning to SHA-2 or SHA-3.",
+          "Supplemental: comparing a computed digest with a trusted expected digest can reveal changes to the message.",
           "SHA-1 starts with five 32-bit state words, often named H0 through H4 or A through E.",
-          "A 512-bit message block is parsed into sixteen 32-bit words before the schedule is expanded."
+          "The MD5 hash algorithm is case sensitive: the hash value differs when the same word or phrase uses lowercase and uppercase.",
+          "A function that maps data of any size to fixed-size values."
         ],
-        "answer": 0
+        "answer": 2
       },
       {
         "lesson": "lesson-1",
         "concept": "MD5 output length",
         "explanation": "MD5 output length: Supplemental reference: MD5 produces a 128-bit digest, commonly displayed as 32 hexadecimal characters.",
         "slide": 10,
-        "id": "lesson-1-c8-mc",
+        "id": "lesson-1-v2-mc7",
         "kind": "mc",
-        "prompt": "Which term best matches this description? Supplemental reference: MD5 produces a 128-bit digest, commonly displayed as 32 hexadecimal characters.",
+        "prompt": "Which statement best describes MD5 output length?",
         "options": [
-          "SHA-1 initial words",
-          "MD5 output length",
-          "SHA-1 digest size",
-          "SHA-1 constants"
+          "Supplemental reference: MD5 produces a 128-bit digest, commonly displayed as 32 hexadecimal characters.",
+          "Each of four SHA-1 round ranges uses a specified constant, beginning with 5a827999 for rounds 0–19.",
+          "SHA-1 processes padded messages in 512-bit blocks.",
+          "SHA-1 starts with five 32-bit state words, often named H0 through H4 or A through E."
         ],
-        "answer": 1
+        "answer": 0
       },
       {
         "lesson": "lesson-1",
         "concept": "Integrity check",
         "explanation": "Integrity check: Supplemental: comparing a computed digest with a trusted expected digest can reveal changes to the message.",
         "slide": 12,
-        "id": "lesson-1-c9-mc",
+        "id": "lesson-1-v2-mc8",
         "kind": "mc",
         "prompt": "Which statement best describes Integrity check?",
         "options": [
-          "An HMAC or digital signature can protect message integrity and help authenticate the source when keys are managed correctly.",
+          "SHA-1 processes padded messages in 512-bit blocks.",
           "Supplemental: comparing a computed digest with a trusted expected digest can reveal changes to the message.",
-          "Each of four SHA-1 round ranges uses a specified constant, beginning with 5a827999 for rounds 0–19.",
-          "Append a 1 bit, then zero bits, then the original message length encoded in 64 bits to reach a multiple of 512 bits."
+          "SHA-1 outputs 160 bits, equivalent to 20 bytes or 40 hexadecimal digits.",
+          "The round function changes across four 20-round ranges; the first uses (B AND C) OR ((NOT B) AND D)."
         ],
         "answer": 1
       },
@@ -292,14 +276,30 @@
         "concept": "Authenticated integrity",
         "explanation": "Authenticated integrity: An HMAC or digital signature can protect message integrity and help authenticate the source when keys are managed correctly.",
         "slide": 12,
-        "id": "lesson-1-c10-mc",
+        "id": "lesson-1-v2-mc9",
         "kind": "mc",
-        "prompt": "Which term best matches this description? An HMAC or digital signature can protect message integrity and help authenticate the source when keys are managed correctly.",
+        "prompt": "Which statement best describes Authenticated integrity?",
         "options": [
-          "Authenticated integrity",
-          "SHA-1 schedule expansion",
-          "SHA-1 initial parsing",
-          "Hashing and encryption"
+          "SHA-1 (Secure Hash Algorithm 1) uses 80 rounds and has a hash value of 160 bits.",
+          "An HMAC or digital signature can protect message integrity and help authenticate the source when keys are managed correctly.",
+          "The round function changes across four 20-round ranges; the first uses (B AND C) OR ((NOT B) AND D).",
+          "A 512-bit message block is parsed into sixteen 32-bit words before the schedule is expanded."
+        ],
+        "answer": 1
+      },
+      {
+        "lesson": "lesson-1",
+        "concept": "SHA-1",
+        "explanation": "SHA-1: SHA-1 (Secure Hash Algorithm 1) uses 80 rounds and has a hash value of 160 bits.",
+        "slide": 16,
+        "id": "lesson-1-v2-mc10",
+        "kind": "mc",
+        "prompt": "Which statement best describes SHA-1?",
+        "options": [
+          "SHA-1 (Secure Hash Algorithm 1) uses 80 rounds and has a hash value of 160 bits.",
+          "Append a 1 bit, then zero bits, then the original message length encoded in 64 bits to reach a multiple of 512 bits.",
+          "SHA-1 starts with five 32-bit state words, often named H0 through H4 or A through E.",
+          "Hashing produces a digest; encryption uses a key and is designed to be reversed by authorized parties."
         ],
         "answer": 0
       },
@@ -308,30 +308,46 @@
         "concept": "SHA-1 digest size",
         "explanation": "SHA-1 digest size: SHA-1 outputs 160 bits, equivalent to 20 bytes or 40 hexadecimal digits.",
         "slide": 16,
-        "id": "lesson-1-c11-mc",
+        "id": "lesson-1-v2-mc11",
         "kind": "mc",
         "prompt": "Which statement best describes SHA-1 digest size?",
         "options": [
-          "For t from 16 to 79, W[t] is a one-bit left rotation of W[t-3] XOR W[t-8] XOR W[t-14] XOR W[t-16].",
+          "Append a 1 bit, then zero bits, then the original message length encoded in 64 bits to reach a multiple of 512 bits.",
           "SHA-1 outputs 160 bits, equivalent to 20 bytes or 40 hexadecimal digits.",
-          "Supplemental: comparing a computed digest with a trusted expected digest can reveal changes to the message.",
-          "SHA-1 processes padded messages in 512-bit blocks."
+          "An HMAC or digital signature can protect message integrity and help authenticate the source when keys are managed correctly.",
+          "SHA-1 has collision weaknesses; NIST recommends transitioning to SHA-2 or SHA-3."
         ],
         "answer": 1
+      },
+      {
+        "lesson": "lesson-1",
+        "concept": "SHA-1 security status",
+        "explanation": "SHA-1 security status: SHA-1 has collision weaknesses; NIST recommends transitioning to SHA-2 or SHA-3.",
+        "slide": 16,
+        "id": "lesson-1-v2-mc12",
+        "kind": "mc",
+        "prompt": "Which statement best describes SHA-1 security status?",
+        "options": [
+          "SHA-1 outputs 160 bits, equivalent to 20 bytes or 40 hexadecimal digits.",
+          "A function that maps data of any size to fixed-size values.",
+          "SHA-1 has collision weaknesses; NIST recommends transitioning to SHA-2 or SHA-3.",
+          "A 512-bit message block is parsed into sixteen 32-bit words before the schedule is expanded."
+        ],
+        "answer": 2
       },
       {
         "lesson": "lesson-1",
         "concept": "SHA-1 block size",
         "explanation": "SHA-1 block size: SHA-1 processes padded messages in 512-bit blocks.",
         "slide": 17,
-        "id": "lesson-1-c12-mc",
+        "id": "lesson-1-v2-mc13",
         "kind": "mc",
-        "prompt": "Which term best matches this description? SHA-1 processes padded messages in 512-bit blocks.",
+        "prompt": "Which statement best describes SHA-1 block size?",
         "options": [
-          "SHA-1 digest size",
-          "Hash function",
-          "SHA-1 block size",
-          "SHA-1 padding"
+          "The round function changes across four 20-round ranges; the first uses (B AND C) OR ((NOT B) AND D).",
+          "For t from 16 to 79, W[t] is a one-bit left rotation of W[t-3] XOR W[t-8] XOR W[t-14] XOR W[t-16].",
+          "SHA-1 processes padded messages in 512-bit blocks.",
+          "The values returned by a hash function are called hash values, hash codes, digests, or hashes."
         ],
         "answer": 2
       },
@@ -340,30 +356,30 @@
         "concept": "SHA-1 initial words",
         "explanation": "SHA-1 initial words: SHA-1 starts with five 32-bit state words, often named H0 through H4 or A through E.",
         "slide": 17,
-        "id": "lesson-1-c13-mc",
+        "id": "lesson-1-v2-mc14",
         "kind": "mc",
         "prompt": "Which statement best describes SHA-1 initial words?",
         "options": [
+          "SHA-1 processes padded messages in 512-bit blocks.",
+          "An HMAC or digital signature can protect message integrity and help authenticate the source when keys are managed correctly.",
           "Each of four SHA-1 round ranges uses a specified constant, beginning with 5a827999 for rounds 0–19.",
-          "The round function changes across four 20-round ranges; the first uses (B AND C) OR ((NOT B) AND D).",
-          "SHA-1 starts with five 32-bit state words, often named H0 through H4 or A through E.",
-          "The values returned by a hash function are called hash values, hash codes, digests, or hashes."
+          "SHA-1 starts with five 32-bit state words, often named H0 through H4 or A through E."
         ],
-        "answer": 2
+        "answer": 3
       },
       {
         "lesson": "lesson-1",
         "concept": "SHA-1 initial parsing",
         "explanation": "SHA-1 initial parsing: A 512-bit message block is parsed into sixteen 32-bit words before the schedule is expanded.",
         "slide": 17,
-        "id": "lesson-1-c14-mc",
+        "id": "lesson-1-v2-mc15",
         "kind": "mc",
-        "prompt": "Which term best matches this description? A 512-bit message block is parsed into sixteen 32-bit words before the schedule is expanded.",
+        "prompt": "Which statement best describes SHA-1 initial parsing?",
         "options": [
-          "SHA-1 initial words",
-          "Integrity check",
-          "SHA-1 security status",
-          "SHA-1 initial parsing"
+          "Supplemental reference: MD5 produces a 128-bit digest, commonly displayed as 32 hexadecimal characters.",
+          "For t from 16 to 79, W[t] is a one-bit left rotation of W[t-3] XOR W[t-8] XOR W[t-14] XOR W[t-16].",
+          "Supplemental: comparing a computed digest with a trusted expected digest can reveal changes to the message.",
+          "A 512-bit message block is parsed into sixteen 32-bit words before the schedule is expanded."
         ],
         "answer": 3
       },
@@ -372,46 +388,328 @@
         "concept": "SHA-1 padding",
         "explanation": "SHA-1 padding: Append a 1 bit, then zero bits, then the original message length encoded in 64 bits to reach a multiple of 512 bits.",
         "slide": 17,
-        "id": "lesson-1-c15-mc",
+        "id": "lesson-1-v2-mc16",
         "kind": "mc",
         "prompt": "Which statement best describes SHA-1 padding?",
         "options": [
-          "The MD5 hash algorithm is case sensitive: the hash value differs when the same word or phrase uses lowercase and uppercase.",
-          "The round function changes across four 20-round ranges; the first uses (B AND C) OR ((NOT B) AND D).",
-          "Supplemental reference: MD5 produces a 128-bit digest, commonly displayed as 32 hexadecimal characters.",
-          "Append a 1 bit, then zero bits, then the original message length encoded in 64 bits to reach a multiple of 512 bits."
+          "SHA-1 (Secure Hash Algorithm 1) uses 80 rounds and has a hash value of 160 bits.",
+          "The process of verifying identity; it can validate identity documents or ensure that a product or document is not forged.",
+          "Append a 1 bit, then zero bits, then the original message length encoded in 64 bits to reach a multiple of 512 bits.",
+          "The MD5 hash algorithm is case sensitive: the hash value differs when the same word or phrase uses lowercase and uppercase."
         ],
-        "answer": 3
+        "answer": 2
       },
       {
         "lesson": "lesson-1",
         "concept": "SHA-1 schedule expansion",
         "explanation": "SHA-1 schedule expansion: For t from 16 to 79, W[t] is a one-bit left rotation of W[t-3] XOR W[t-8] XOR W[t-14] XOR W[t-16].",
         "slide": 17,
-        "id": "lesson-1-c16-mc",
+        "id": "lesson-1-v2-mc17",
         "kind": "mc",
-        "prompt": "Which term best matches this description? For t from 16 to 79, W[t] is a one-bit left rotation of W[t-3] XOR W[t-8] XOR W[t-14] XOR W[t-16].",
+        "prompt": "Which statement best describes SHA-1 schedule expansion?",
         "options": [
-          "Authenticated integrity",
-          "Authentication",
-          "SHA-1 schedule expansion",
-          "SHA-2 and SHA-3"
+          "For t from 16 to 79, W[t] is a one-bit left rotation of W[t-3] XOR W[t-8] XOR W[t-14] XOR W[t-16].",
+          "Hashing produces a digest; encryption uses a key and is designed to be reversed by authorized parties.",
+          "A function that maps data of any size to fixed-size values.",
+          "SHA-1 (Secure Hash Algorithm 1) uses 80 rounds and has a hash value of 160 bits."
         ],
-        "answer": 2
+        "answer": 0
       },
       {
         "lesson": "lesson-1",
         "concept": "SHA-1 round function",
         "explanation": "SHA-1 round function: The round function changes across four 20-round ranges; the first uses (B AND C) OR ((NOT B) AND D).",
         "slide": 17,
-        "id": "lesson-1-c17-mc",
+        "id": "lesson-1-v2-mc18",
         "kind": "mc",
         "prompt": "Which statement best describes SHA-1 round function?",
         "options": [
+          "An HMAC or digital signature can protect message integrity and help authenticate the source when keys are managed correctly.",
+          "Supplemental: comparing a computed digest with a trusted expected digest can reveal changes to the message.",
           "The round function changes across four 20-round ranges; the first uses (B AND C) OR ((NOT B) AND D).",
-          "Hashing produces a digest; encryption uses a key and is designed to be reversed by authorized parties.",
-          "A function that maps data of any size to fixed-size values.",
-          "An HMAC or digital signature can protect message integrity and help authenticate the source when keys are managed correctly."
+          "For t from 16 to 79, W[t] is a one-bit left rotation of W[t-3] XOR W[t-8] XOR W[t-14] XOR W[t-16]."
+        ],
+        "answer": 2
+      },
+      {
+        "lesson": "lesson-1",
+        "concept": "SHA-1 constants",
+        "explanation": "SHA-1 constants: Each of four SHA-1 round ranges uses a specified constant, beginning with 5a827999 for rounds 0–19.",
+        "slide": 17,
+        "id": "lesson-1-v2-mc19",
+        "kind": "mc",
+        "prompt": "Which statement best describes SHA-1 constants?",
+        "options": [
+          "SHA-1 (Secure Hash Algorithm 1) uses 80 rounds and has a hash value of 160 bits.",
+          "Each of four SHA-1 round ranges uses a specified constant, beginning with 5a827999 for rounds 0–19.",
+          "SHA-1 outputs 160 bits, equivalent to 20 bytes or 40 hexadecimal digits.",
+          "SHA-1 has collision weaknesses; NIST recommends transitioning to SHA-2 or SHA-3."
+        ],
+        "answer": 1
+      },
+      {
+        "lesson": "lesson-1",
+        "concept": "Authentication",
+        "explanation": "Authentication: The process of verifying identity; it can validate identity documents or ensure that a product or document is not forged.",
+        "slide": 2,
+        "id": "lesson-1-v2-id0",
+        "kind": "identification",
+        "prompt": "Identify the term: The process of verifying identity; it can validate identity documents or ensure that a product or document is not forged.",
+        "options": [
+          "Authentication",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-1",
+        "concept": "Hash function",
+        "explanation": "Hash function: A function that maps data of any size to fixed-size values.",
+        "slide": 5,
+        "id": "lesson-1-v2-id1",
+        "kind": "identification",
+        "prompt": "Identify the term: A function that maps data of any size to fixed-size values.",
+        "options": [
+          "Hash function",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-1",
+        "concept": "Message digest",
+        "explanation": "Message digest: The values returned by a hash function are called hash values, hash codes, digests, or hashes.",
+        "slide": 5,
+        "id": "lesson-1-v2-id2",
+        "kind": "identification",
+        "prompt": "Identify the term: The values returned by a hash function are called hash values, hash codes, digests, or hashes.",
+        "options": [
+          "Message digest",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-1",
+        "concept": "Hashing and encryption",
+        "explanation": "Hashing and encryption: Hashing produces a digest; encryption uses a key and is designed to be reversed by authorized parties.",
+        "slide": 5,
+        "id": "lesson-1-v2-id3",
+        "kind": "identification",
+        "prompt": "Identify the term: Hashing produces a digest; encryption uses a key and is designed to be reversed by authorized parties.",
+        "options": [
+          "Hashing and encryption",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-1",
+        "concept": "MD4 and MD5",
+        "explanation": "MD4 and MD5: MD4 (Message Digest 4) and MD5 (Message Digest 5) are hash algorithms named on the slide.",
+        "slide": 7,
+        "id": "lesson-1-v2-id4",
+        "kind": "identification",
+        "prompt": "Identify the term: MD4 (Message Digest 4) and MD5 (Message Digest 5) are hash algorithms named on the slide.",
+        "options": [
+          "MD4 and MD5",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-1",
+        "concept": "SHA-2 and SHA-3",
+        "explanation": "SHA-2 and SHA-3: The slide names SHA-3 (512) among the latest and strongest hash algorithms at the time.",
+        "slide": 7,
+        "id": "lesson-1-v2-id5",
+        "kind": "identification",
+        "prompt": "Identify the term: The slide names SHA-3 (512) among the latest and strongest hash algorithms at the time.",
+        "options": [
+          "SHA-2 and SHA-3",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-1",
+        "concept": "Hash sensitivity",
+        "explanation": "Hash sensitivity: The MD5 hash algorithm is case sensitive: the hash value differs when the same word or phrase uses lowercase and uppercase.",
+        "slide": 8,
+        "id": "lesson-1-v2-id6",
+        "kind": "identification",
+        "prompt": "Identify the term: The MD5 hash algorithm is case sensitive: the hash value differs when the same word or phrase uses lowercase and uppercase.",
+        "options": [
+          "Hash sensitivity",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-1",
+        "concept": "MD5 output length",
+        "explanation": "MD5 output length: Supplemental reference: MD5 produces a 128-bit digest, commonly displayed as 32 hexadecimal characters.",
+        "slide": 10,
+        "id": "lesson-1-v2-id7",
+        "kind": "identification",
+        "prompt": "Identify the term: Supplemental reference: MD5 produces a 128-bit digest, commonly displayed as 32 hexadecimal characters.",
+        "options": [
+          "MD5 output length",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-1",
+        "concept": "Integrity check",
+        "explanation": "Integrity check: Supplemental: comparing a computed digest with a trusted expected digest can reveal changes to the message.",
+        "slide": 12,
+        "id": "lesson-1-v2-id8",
+        "kind": "identification",
+        "prompt": "Identify the term: Supplemental: comparing a computed digest with a trusted expected digest can reveal changes to the message.",
+        "options": [
+          "Integrity check",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-1",
+        "concept": "Authenticated integrity",
+        "explanation": "Authenticated integrity: An HMAC or digital signature can protect message integrity and help authenticate the source when keys are managed correctly.",
+        "slide": 12,
+        "id": "lesson-1-v2-id9",
+        "kind": "identification",
+        "prompt": "Identify the term: An HMAC or digital signature can protect message integrity and help authenticate the source when keys are managed correctly.",
+        "options": [
+          "Authenticated integrity",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-1",
+        "concept": "SHA-1",
+        "explanation": "SHA-1: SHA-1 (Secure Hash Algorithm 1) uses 80 rounds and has a hash value of 160 bits.",
+        "slide": 16,
+        "id": "lesson-1-v2-id10",
+        "kind": "identification",
+        "prompt": "Identify the term: SHA-1 (Secure Hash Algorithm 1) uses 80 rounds and has a hash value of 160 bits.",
+        "options": [
+          "SHA-1",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-1",
+        "concept": "SHA-1 digest size",
+        "explanation": "SHA-1 digest size: SHA-1 outputs 160 bits, equivalent to 20 bytes or 40 hexadecimal digits.",
+        "slide": 16,
+        "id": "lesson-1-v2-id11",
+        "kind": "identification",
+        "prompt": "Identify the term: SHA-1 outputs 160 bits, equivalent to 20 bytes or 40 hexadecimal digits.",
+        "options": [
+          "SHA-1 digest size",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-1",
+        "concept": "SHA-1 security status",
+        "explanation": "SHA-1 security status: SHA-1 has collision weaknesses; NIST recommends transitioning to SHA-2 or SHA-3.",
+        "slide": 16,
+        "id": "lesson-1-v2-id12",
+        "kind": "identification",
+        "prompt": "Identify the term: SHA-1 has collision weaknesses; NIST recommends transitioning to SHA-2 or SHA-3.",
+        "options": [
+          "SHA-1 security status",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-1",
+        "concept": "SHA-1 block size",
+        "explanation": "SHA-1 block size: SHA-1 processes padded messages in 512-bit blocks.",
+        "slide": 17,
+        "id": "lesson-1-v2-id13",
+        "kind": "identification",
+        "prompt": "Identify the term: SHA-1 processes padded messages in 512-bit blocks.",
+        "options": [
+          "SHA-1 block size",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-1",
+        "concept": "SHA-1 initial words",
+        "explanation": "SHA-1 initial words: SHA-1 starts with five 32-bit state words, often named H0 through H4 or A through E.",
+        "slide": 17,
+        "id": "lesson-1-v2-id14",
+        "kind": "identification",
+        "prompt": "Identify the term: SHA-1 starts with five 32-bit state words, often named H0 through H4 or A through E.",
+        "options": [
+          "SHA-1 initial words",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-1",
+        "concept": "SHA-1 initial parsing",
+        "explanation": "SHA-1 initial parsing: A 512-bit message block is parsed into sixteen 32-bit words before the schedule is expanded.",
+        "slide": 17,
+        "id": "lesson-1-v2-id15",
+        "kind": "identification",
+        "prompt": "Identify the term: A 512-bit message block is parsed into sixteen 32-bit words before the schedule is expanded.",
+        "options": [
+          "SHA-1 initial parsing",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-1",
+        "concept": "SHA-1 padding",
+        "explanation": "SHA-1 padding: Append a 1 bit, then zero bits, then the original message length encoded in 64 bits to reach a multiple of 512 bits.",
+        "slide": 17,
+        "id": "lesson-1-v2-id16",
+        "kind": "identification",
+        "prompt": "Identify the term: Append a 1 bit, then zero bits, then the original message length encoded in 64 bits to reach a multiple of 512 bits.",
+        "options": [
+          "SHA-1 padding",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-1",
+        "concept": "SHA-1 schedule expansion",
+        "explanation": "SHA-1 schedule expansion: For t from 16 to 79, W[t] is a one-bit left rotation of W[t-3] XOR W[t-8] XOR W[t-14] XOR W[t-16].",
+        "slide": 17,
+        "id": "lesson-1-v2-id17",
+        "kind": "identification",
+        "prompt": "Identify the term: For t from 16 to 79, W[t] is a one-bit left rotation of W[t-3] XOR W[t-8] XOR W[t-14] XOR W[t-16].",
+        "options": [
+          "SHA-1 schedule expansion",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-1",
+        "concept": "SHA-1 round function",
+        "explanation": "SHA-1 round function: The round function changes across four 20-round ranges; the first uses (B AND C) OR ((NOT B) AND D).",
+        "slide": 17,
+        "id": "lesson-1-v2-id18",
+        "kind": "identification",
+        "prompt": "Identify the term: The round function changes across four 20-round ranges; the first uses (B AND C) OR ((NOT B) AND D).",
+        "options": [
+          "SHA-1 round function",
+          "Incorrect"
         ],
         "answer": 0
       },
@@ -420,32 +718,14 @@
         "concept": "SHA-1 constants",
         "explanation": "SHA-1 constants: Each of four SHA-1 round ranges uses a specified constant, beginning with 5a827999 for rounds 0–19.",
         "slide": 17,
-        "id": "lesson-1-c18-mc",
-        "kind": "mc",
-        "prompt": "Which term best matches this description? Each of four SHA-1 round ranges uses a specified constant, beginning with 5a827999 for rounds 0–19.",
+        "id": "lesson-1-v2-id19",
+        "kind": "identification",
+        "prompt": "Identify the term: Each of four SHA-1 round ranges uses a specified constant, beginning with 5a827999 for rounds 0–19.",
         "options": [
-          "Integrity check",
-          "MD5 output length",
           "SHA-1 constants",
-          "SHA-1 round function"
+          "Incorrect"
         ],
-        "answer": 2
-      },
-      {
-        "lesson": "lesson-1",
-        "concept": "SHA-1 security status",
-        "explanation": "SHA-1 security status: SHA-1 has collision weaknesses; NIST recommends transitioning to SHA-2 or SHA-3.",
-        "slide": 16,
-        "id": "lesson-1-c19-mc",
-        "kind": "mc",
-        "prompt": "Which statement best describes SHA-1 security status?",
-        "options": [
-          "An HMAC or digital signature can protect message integrity and help authenticate the source when keys are managed correctly.",
-          "SHA-1 has collision weaknesses; NIST recommends transitioning to SHA-2 or SHA-3.",
-          "SHA-1 outputs 160 bits, equivalent to 20 bytes or 40 hexadecimal digits.",
-          "SHA-1 processes padded messages in 512-bit blocks."
-        ],
-        "answer": 1
+        "answer": 0
       }
     ]
   },
@@ -492,6 +772,12 @@
         "falsehood": "Knowing only a plaintext and the algorithm name always determines a unique ciphertext."
       },
       {
+        "term": "Mode and block boundaries",
+        "definition": "Encryption mode, padding, and block boundaries affect what is compared across multi-block ciphertexts.",
+        "slide": 4,
+        "falsehood": "The mode of operation cannot affect how a change propagates across ciphertext blocks."
+      },
+      {
         "term": "XOR comparison",
         "definition": "XOR corresponding output bits; the 1 bits in the result mark positions where the outputs differ.",
         "slide": 5,
@@ -528,12 +814,6 @@
         "falsehood": "Passing an avalanche test proves an algorithm is secure against all attacks."
       },
       {
-        "term": "Mode and block boundaries",
-        "definition": "Encryption mode, padding, and block boundaries affect what is compared across multi-block ciphertexts.",
-        "slide": 4,
-        "falsehood": "The mode of operation cannot affect how a change propagates across ciphertext blocks."
-      },
-      {
         "term": "Statistical randomness testing",
         "definition": "Testing output statistics can provide evidence about patterns, but passing tests alone does not establish security.",
         "slide": 7,
@@ -546,14 +826,14 @@
         "concept": "Security evaluation",
         "explanation": "Security evaluation: A critical process to assess how well an algorithm resists attacks and protects data.",
         "slide": 2,
-        "id": "lesson-2-c0-mc",
+        "id": "lesson-2-v2-mc0",
         "kind": "mc",
-        "prompt": "Which term best matches this description? A critical process to assess how well an algorithm resists attacks and protects data.",
+        "prompt": "Which statement best describes Security evaluation?",
         "options": [
-          "Security evaluation",
-          "Controlled comparison",
-          "Avalanche percentage formula",
-          "Ideal 50% interpretation"
+          "A critical process to assess how well an algorithm resists attacks and protects data.",
+          "Compare outputs from the same algorithm and key with settings held constant while changing the intended input bit.",
+          "The number of bit positions at which two equal-length bit strings differ.",
+          "The formula uses changed bits divided by total bits, multiplied by 100."
         ],
         "answer": 0
       },
@@ -562,11 +842,11 @@
         "concept": "Avalanche effect",
         "explanation": "Avalanche effect: A phenomenon where a small change in input leads to a significant change in output; flipping a single bit can cause this change.",
         "slide": 3,
-        "id": "lesson-2-c1-mc",
+        "id": "lesson-2-v2-mc1",
         "kind": "mc",
         "prompt": "Which statement best describes Avalanche effect?",
         "options": [
-          "The slide says the ideal avalanche effect should be at least 50% or above.",
+          "The formula uses changed bits divided by total bits, multiplied by 100.",
           "A symmetric-key block cipher with a 64-bit block size; the lesson uses it as an example for comparison.",
           "A phenomenon where a small change in input leads to a significant change in output; flipping a single bit can cause this change.",
           "A critical process to assess how well an algorithm resists attacks and protects data."
@@ -578,14 +858,14 @@
         "concept": "Ciphertext",
         "explanation": "Ciphertext: The encrypted result generated by the Blowfish algorithm for an input.",
         "slide": 4,
-        "id": "lesson-2-c2-mc",
+        "id": "lesson-2-v2-mc2",
         "kind": "mc",
-        "prompt": "Which term best matches this description? The encrypted result generated by the Blowfish algorithm for an input.",
+        "prompt": "Which statement best describes Ciphertext?",
         "options": [
-          "Security evaluation",
-          "Mode and block boundaries",
-          "XOR comparison",
-          "Ciphertext"
+          "A critical process to assess how well an algorithm resists attacks and protects data.",
+          "Avalanche behavior is one useful property but does not by itself prove cryptographic security.",
+          "Encryption mode, padding, and block boundaries affect what is compared across multi-block ciphertexts.",
+          "The encrypted result generated by the Blowfish algorithm for an input."
         ],
         "answer": 3
       },
@@ -594,14 +874,14 @@
         "concept": "Blowfish",
         "explanation": "Blowfish: A symmetric-key block cipher with a 64-bit block size; the lesson uses it as an example for comparison.",
         "slide": 4,
-        "id": "lesson-2-c3-mc",
+        "id": "lesson-2-v2-mc3",
         "kind": "mc",
         "prompt": "Which statement best describes Blowfish?",
         "options": [
-          "Avalanche behavior is one useful property but does not by itself prove cryptographic security.",
+          "Use multiple independent controlled input changes and inspect the distribution of changed output bits.",
           "A symmetric-key block cipher with a 64-bit block size; the lesson uses it as an example for comparison.",
           "Testing output statistics can provide evidence about patterns, but passing tests alone does not establish security.",
-          "The formula uses changed bits divided by total bits, multiplied by 100."
+          "The number of bit positions at which two equal-length bit strings differ."
         ],
         "answer": 1
       },
@@ -610,14 +890,14 @@
         "concept": "Controlled comparison",
         "explanation": "Controlled comparison: Compare outputs from the same algorithm and key with settings held constant while changing the intended input bit.",
         "slide": 4,
-        "id": "lesson-2-c4-mc",
+        "id": "lesson-2-v2-mc4",
         "kind": "mc",
-        "prompt": "Which term best matches this description? Compare outputs from the same algorithm and key with settings held constant while changing the intended input bit.",
+        "prompt": "Which statement best describes Controlled comparison?",
         "options": [
-          "XOR comparison",
-          "Security evaluation",
-          "Avalanche is not proof",
-          "Controlled comparison"
+          "Encryption mode, padding, and block boundaries affect what is compared across multi-block ciphertexts.",
+          "A critical process to assess how well an algorithm resists attacks and protects data.",
+          "Use multiple independent controlled input changes and inspect the distribution of changed output bits.",
+          "Compare outputs from the same algorithm and key with settings held constant while changing the intended input bit."
         ],
         "answer": 3
       },
@@ -626,11 +906,11 @@
         "concept": "Reproducibility settings",
         "explanation": "Reproducibility settings: To reproduce encrypted output, specify the key, mode, IV or nonce when applicable, encoding, and padding.",
         "slide": 4,
-        "id": "lesson-2-c5-mc",
+        "id": "lesson-2-v2-mc5",
         "kind": "mc",
         "prompt": "Which statement best describes Reproducibility settings?",
         "options": [
-          "The number of bit positions at which two equal-length bit strings differ.",
+          "XOR corresponding output bits; the 1 bits in the result mark positions where the outputs differ.",
           "A symmetric-key block cipher with a 64-bit block size; the lesson uses it as an example for comparison.",
           "To reproduce encrypted output, specify the key, mode, IV or nonce when applicable, encoding, and padding.",
           "The encrypted result generated by the Blowfish algorithm for an input."
@@ -639,81 +919,97 @@
       },
       {
         "lesson": "lesson-2",
+        "concept": "Mode and block boundaries",
+        "explanation": "Mode and block boundaries: Encryption mode, padding, and block boundaries affect what is compared across multi-block ciphertexts.",
+        "slide": 4,
+        "id": "lesson-2-v2-mc6",
+        "kind": "mc",
+        "prompt": "Which statement best describes Mode and block boundaries?",
+        "options": [
+          "To reproduce encrypted output, specify the key, mode, IV or nonce when applicable, encoding, and padding.",
+          "Encryption mode, padding, and block boundaries affect what is compared across multi-block ciphertexts.",
+          "The encrypted result generated by the Blowfish algorithm for an input.",
+          "The slide says the ideal avalanche effect should be at least 50% or above."
+        ],
+        "answer": 1
+      },
+      {
+        "lesson": "lesson-2",
         "concept": "XOR comparison",
         "explanation": "XOR comparison: XOR corresponding output bits; the 1 bits in the result mark positions where the outputs differ.",
         "slide": 5,
-        "id": "lesson-2-c6-mc",
+        "id": "lesson-2-v2-mc7",
         "kind": "mc",
-        "prompt": "Which term best matches this description? XOR corresponding output bits; the 1 bits in the result mark positions where the outputs differ.",
+        "prompt": "Which statement best describes XOR comparison?",
         "options": [
-          "Reproducibility settings",
-          "XOR comparison",
-          "Ciphertext",
-          "Many-trial evaluation"
+          "Avalanche behavior is one useful property but does not by itself prove cryptographic security.",
+          "Use multiple independent controlled input changes and inspect the distribution of changed output bits.",
+          "XOR corresponding output bits; the 1 bits in the result mark positions where the outputs differ.",
+          "Encryption mode, padding, and block boundaries affect what is compared across multi-block ciphertexts."
         ],
-        "answer": 1
+        "answer": 2
       },
       {
         "lesson": "lesson-2",
         "concept": "Hamming distance",
         "explanation": "Hamming distance: The number of bit positions at which two equal-length bit strings differ.",
         "slide": 5,
-        "id": "lesson-2-c7-mc",
+        "id": "lesson-2-v2-mc8",
         "kind": "mc",
         "prompt": "Which statement best describes Hamming distance?",
         "options": [
-          "Encryption mode, padding, and block boundaries affect what is compared across multi-block ciphertexts.",
-          "Avalanche behavior is one useful property but does not by itself prove cryptographic security.",
+          "The encrypted result generated by the Blowfish algorithm for an input.",
           "The number of bit positions at which two equal-length bit strings differ.",
-          "XOR corresponding output bits; the 1 bits in the result mark positions where the outputs differ."
+          "Encryption mode, padding, and block boundaries affect what is compared across multi-block ciphertexts.",
+          "The formula uses changed bits divided by total bits, multiplied by 100."
         ],
-        "answer": 2
+        "answer": 1
       },
       {
         "lesson": "lesson-2",
         "concept": "Avalanche percentage formula",
         "explanation": "Avalanche percentage formula: The formula uses changed bits divided by total bits, multiplied by 100.",
         "slide": 6,
-        "id": "lesson-2-c8-mc",
+        "id": "lesson-2-v2-mc9",
         "kind": "mc",
-        "prompt": "Which term best matches this description? The formula uses changed bits divided by total bits, multiplied by 100.",
+        "prompt": "Which statement best describes Avalanche percentage formula?",
         "options": [
-          "Ciphertext",
-          "Avalanche percentage formula",
-          "XOR comparison",
-          "Ideal 50% interpretation"
-        ],
-        "answer": 1
-      },
-      {
-        "lesson": "lesson-2",
-        "concept": "Ideal 50% interpretation",
-        "explanation": "Ideal 50% interpretation: The slide says the ideal avalanche effect should be at least 50% or above.",
-        "slide": 6,
-        "id": "lesson-2-c9-mc",
-        "kind": "mc",
-        "prompt": "Which statement best describes Ideal 50% interpretation?",
-        "options": [
-          "Encryption mode, padding, and block boundaries affect what is compared across multi-block ciphertexts.",
           "Avalanche behavior is one useful property but does not by itself prove cryptographic security.",
-          "The slide says the ideal avalanche effect should be at least 50% or above.",
+          "Use multiple independent controlled input changes and inspect the distribution of changed output bits.",
+          "The formula uses changed bits divided by total bits, multiplied by 100.",
           "Testing output statistics can provide evidence about patterns, but passing tests alone does not establish security."
         ],
         "answer": 2
       },
       {
         "lesson": "lesson-2",
+        "concept": "Ideal 50% interpretation",
+        "explanation": "Ideal 50% interpretation: The slide says the ideal avalanche effect should be at least 50% or above.",
+        "slide": 6,
+        "id": "lesson-2-v2-mc10",
+        "kind": "mc",
+        "prompt": "Which statement best describes Ideal 50% interpretation?",
+        "options": [
+          "The slide says the ideal avalanche effect should be at least 50% or above.",
+          "Avalanche behavior is one useful property but does not by itself prove cryptographic security.",
+          "A critical process to assess how well an algorithm resists attacks and protects data.",
+          "To reproduce encrypted output, specify the key, mode, IV or nonce when applicable, encoding, and padding."
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-2",
         "concept": "Many-trial evaluation",
         "explanation": "Many-trial evaluation: Use multiple independent controlled input changes and inspect the distribution of changed output bits.",
         "slide": 6,
-        "id": "lesson-2-c10-mc",
+        "id": "lesson-2-v2-mc11",
         "kind": "mc",
-        "prompt": "Which term best matches this description? Use multiple independent controlled input changes and inspect the distribution of changed output bits.",
+        "prompt": "Which statement best describes Many-trial evaluation?",
         "options": [
-          "Many-trial evaluation",
-          "Mode and block boundaries",
-          "Security evaluation",
-          "Reproducibility settings"
+          "Use multiple independent controlled input changes and inspect the distribution of changed output bits.",
+          "Compare outputs from the same algorithm and key with settings held constant while changing the intended input bit.",
+          "Encryption mode, padding, and block boundaries affect what is compared across multi-block ciphertexts.",
+          "A critical process to assess how well an algorithm resists attacks and protects data."
         ],
         "answer": 0
       },
@@ -722,30 +1018,14 @@
         "concept": "Avalanche is not proof",
         "explanation": "Avalanche is not proof: Avalanche behavior is one useful property but does not by itself prove cryptographic security.",
         "slide": 6,
-        "id": "lesson-2-c11-mc",
+        "id": "lesson-2-v2-mc12",
         "kind": "mc",
         "prompt": "Which statement best describes Avalanche is not proof?",
         "options": [
+          "Use multiple independent controlled input changes and inspect the distribution of changed output bits.",
+          "A phenomenon where a small change in input leads to a significant change in output; flipping a single bit can cause this change.",
           "Avalanche behavior is one useful property but does not by itself prove cryptographic security.",
-          "Compare outputs from the same algorithm and key with settings held constant while changing the intended input bit.",
-          "XOR corresponding output bits; the 1 bits in the result mark positions where the outputs differ.",
-          "A critical process to assess how well an algorithm resists attacks and protects data."
-        ],
-        "answer": 0
-      },
-      {
-        "lesson": "lesson-2",
-        "concept": "Mode and block boundaries",
-        "explanation": "Mode and block boundaries: Encryption mode, padding, and block boundaries affect what is compared across multi-block ciphertexts.",
-        "slide": 4,
-        "id": "lesson-2-c12-mc",
-        "kind": "mc",
-        "prompt": "Which term best matches this description? Encryption mode, padding, and block boundaries affect what is compared across multi-block ciphertexts.",
-        "options": [
-          "Avalanche is not proof",
-          "Avalanche effect",
-          "Mode and block boundaries",
-          "Avalanche percentage formula"
+          "The number of bit positions at which two equal-length bit strings differ."
         ],
         "answer": 2
       },
@@ -754,16 +1034,618 @@
         "concept": "Statistical randomness testing",
         "explanation": "Statistical randomness testing: Testing output statistics can provide evidence about patterns, but passing tests alone does not establish security.",
         "slide": 7,
-        "id": "lesson-2-c13-mc",
+        "id": "lesson-2-v2-mc13",
         "kind": "mc",
         "prompt": "Which statement best describes Statistical randomness testing?",
         "options": [
           "The encrypted result generated by the Blowfish algorithm for an input.",
-          "Encryption mode, padding, and block boundaries affect what is compared across multi-block ciphertexts.",
+          "Avalanche behavior is one useful property but does not by itself prove cryptographic security.",
           "Testing output statistics can provide evidence about patterns, but passing tests alone does not establish security.",
-          "The number of bit positions at which two equal-length bit strings differ."
+          "XOR corresponding output bits; the 1 bits in the result mark positions where the outputs differ."
         ],
         "answer": 2
+      },
+      {
+        "lesson": "lesson-2",
+        "concept": "Security evaluation",
+        "explanation": "Security evaluation: A critical process to assess how well an algorithm resists attacks and protects data.",
+        "slide": 2,
+        "id": "lesson-2-v2-id0",
+        "kind": "identification",
+        "prompt": "Identify the term: A critical process to assess how well an algorithm resists attacks and protects data.",
+        "options": [
+          "Security evaluation",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-2",
+        "concept": "Avalanche effect",
+        "explanation": "Avalanche effect: A phenomenon where a small change in input leads to a significant change in output; flipping a single bit can cause this change.",
+        "slide": 3,
+        "id": "lesson-2-v2-id1",
+        "kind": "identification",
+        "prompt": "Identify the term: A phenomenon where a small change in input leads to a significant change in output; flipping a single bit can cause this change.",
+        "options": [
+          "Avalanche effect",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-2",
+        "concept": "Ciphertext",
+        "explanation": "Ciphertext: The encrypted result generated by the Blowfish algorithm for an input.",
+        "slide": 4,
+        "id": "lesson-2-v2-id2",
+        "kind": "identification",
+        "prompt": "Identify the term: The encrypted result generated by the Blowfish algorithm for an input.",
+        "options": [
+          "Ciphertext",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-2",
+        "concept": "Blowfish",
+        "explanation": "Blowfish: A symmetric-key block cipher with a 64-bit block size; the lesson uses it as an example for comparison.",
+        "slide": 4,
+        "id": "lesson-2-v2-id3",
+        "kind": "identification",
+        "prompt": "Identify the term: A symmetric-key block cipher with a 64-bit block size; the lesson uses it as an example for comparison.",
+        "options": [
+          "Blowfish",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-2",
+        "concept": "Controlled comparison",
+        "explanation": "Controlled comparison: Compare outputs from the same algorithm and key with settings held constant while changing the intended input bit.",
+        "slide": 4,
+        "id": "lesson-2-v2-id4",
+        "kind": "identification",
+        "prompt": "Identify the term: Compare outputs from the same algorithm and key with settings held constant while changing the intended input bit.",
+        "options": [
+          "Controlled comparison",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-2",
+        "concept": "Reproducibility settings",
+        "explanation": "Reproducibility settings: To reproduce encrypted output, specify the key, mode, IV or nonce when applicable, encoding, and padding.",
+        "slide": 4,
+        "id": "lesson-2-v2-id5",
+        "kind": "identification",
+        "prompt": "Identify the term: To reproduce encrypted output, specify the key, mode, IV or nonce when applicable, encoding, and padding.",
+        "options": [
+          "Reproducibility settings",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-2",
+        "concept": "Mode and block boundaries",
+        "explanation": "Mode and block boundaries: Encryption mode, padding, and block boundaries affect what is compared across multi-block ciphertexts.",
+        "slide": 4,
+        "id": "lesson-2-v2-id6",
+        "kind": "identification",
+        "prompt": "Identify the term: Encryption mode, padding, and block boundaries affect what is compared across multi-block ciphertexts.",
+        "options": [
+          "Mode and block boundaries",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-2",
+        "concept": "XOR comparison",
+        "explanation": "XOR comparison: XOR corresponding output bits; the 1 bits in the result mark positions where the outputs differ.",
+        "slide": 5,
+        "id": "lesson-2-v2-id7",
+        "kind": "identification",
+        "prompt": "Identify the term: XOR corresponding output bits; the 1 bits in the result mark positions where the outputs differ.",
+        "options": [
+          "XOR comparison",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-2",
+        "concept": "Hamming distance",
+        "explanation": "Hamming distance: The number of bit positions at which two equal-length bit strings differ.",
+        "slide": 5,
+        "id": "lesson-2-v2-id8",
+        "kind": "identification",
+        "prompt": "Identify the term: The number of bit positions at which two equal-length bit strings differ.",
+        "options": [
+          "Hamming distance",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-2",
+        "concept": "Avalanche percentage formula",
+        "explanation": "Avalanche percentage formula: The formula uses changed bits divided by total bits, multiplied by 100.",
+        "slide": 6,
+        "id": "lesson-2-v2-id9",
+        "kind": "identification",
+        "prompt": "Identify the term: The formula uses changed bits divided by total bits, multiplied by 100.",
+        "options": [
+          "Avalanche percentage formula",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-2",
+        "concept": "Ideal 50% interpretation",
+        "explanation": "Ideal 50% interpretation: The slide says the ideal avalanche effect should be at least 50% or above.",
+        "slide": 6,
+        "id": "lesson-2-v2-id10",
+        "kind": "identification",
+        "prompt": "Identify the term: The slide says the ideal avalanche effect should be at least 50% or above.",
+        "options": [
+          "Ideal 50% interpretation",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-2",
+        "concept": "Many-trial evaluation",
+        "explanation": "Many-trial evaluation: Use multiple independent controlled input changes and inspect the distribution of changed output bits.",
+        "slide": 6,
+        "id": "lesson-2-v2-id11",
+        "kind": "identification",
+        "prompt": "Identify the term: Use multiple independent controlled input changes and inspect the distribution of changed output bits.",
+        "options": [
+          "Many-trial evaluation",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-2",
+        "concept": "Avalanche is not proof",
+        "explanation": "Avalanche is not proof: Avalanche behavior is one useful property but does not by itself prove cryptographic security.",
+        "slide": 6,
+        "id": "lesson-2-v2-id12",
+        "kind": "identification",
+        "prompt": "Identify the term: Avalanche behavior is one useful property but does not by itself prove cryptographic security.",
+        "options": [
+          "Avalanche is not proof",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-2",
+        "concept": "Statistical randomness testing",
+        "explanation": "Statistical randomness testing: Testing output statistics can provide evidence about patterns, but passing tests alone does not establish security.",
+        "slide": 7,
+        "id": "lesson-2-v2-id13",
+        "kind": "identification",
+        "prompt": "Identify the term: Testing output statistics can provide evidence about patterns, but passing tests alone does not establish security.",
+        "options": [
+          "Statistical randomness testing",
+          "Incorrect"
+        ],
+        "answer": 0
+      }
+    ]
+  },
+  {
+    "id": "lesson-3",
+    "file": "RANDOMNESS-TESTING-LECTURE-AND-ASSESSMENT-TASK.docx",
+    "title": "Statistical Randomness Testing",
+    "subtitle": "NIST SP 800-22 and the runs test",
+    "concepts": [
+      {
+        "term": "Statistical randomness testing",
+        "definition": "Tests bit sequences for detectable statistical patterns.",
+        "slide": 1,
+        "falsehood": "Passing a statistical test proves cryptographic security."
+      },
+      {
+        "term": "NIST SP 800-22",
+        "definition": "A suite of 15 statistical tests for random and pseudorandom sequences.",
+        "slide": 1,
+        "falsehood": "NIST SP 800-22 is an encryption algorithm."
+      },
+      {
+        "term": "Runs test",
+        "definition": "A test that examines consecutive groups of identical bits in a sequence.",
+        "slide": 2,
+        "falsehood": "A runs test encrypts each bit."
+      },
+      {
+        "term": "Run",
+        "definition": "An uninterrupted consecutive group of identical bits.",
+        "slide": 2,
+        "falsehood": "A run is always a single bit."
+      },
+      {
+        "term": "Null hypothesis",
+        "definition": "The hypothesis that the sequence is random under the test model.",
+        "slide": 3,
+        "falsehood": "The null hypothesis asserts that the sequence is not random."
+      },
+      {
+        "term": "Alternative hypothesis",
+        "definition": "The hypothesis that the sequence is not random under the test model.",
+        "slide": 3,
+        "falsehood": "The alternative asserts that the sequence is random."
+      },
+      {
+        "term": "N1",
+        "definition": "The number of one bits in the sequence.",
+        "slide": 4,
+        "falsehood": "N1 counts zero bits."
+      },
+      {
+        "term": "N2",
+        "definition": "The number of zero bits in the sequence.",
+        "slide": 4,
+        "falsehood": "N2 counts one bits."
+      },
+      {
+        "term": "Total runs",
+        "definition": "The number of groups of consecutive identical bits, counting both zero and one runs.",
+        "slide": 5,
+        "falsehood": "Total runs counts only one bits."
+      },
+      {
+        "term": "Critical values",
+        "definition": "Thresholds used to decide whether to reject the null hypothesis at a specified significance level.",
+        "slide": 6,
+        "falsehood": "Critical values prove a generator is secure."
+      },
+      {
+        "term": "Failure to reject",
+        "definition": "The document’s result when the total runs falls between its example critical values.",
+        "slide": 6,
+        "falsehood": "Failing to reject means the null hypothesis must be rejected."
+      }
+    ],
+    "questions": [
+      {
+        "lesson": "lesson-3",
+        "concept": "Statistical randomness testing",
+        "explanation": "Statistical randomness testing: Tests bit sequences for detectable statistical patterns.",
+        "slide": 1,
+        "id": "lesson-3-v2-mc0",
+        "kind": "mc",
+        "prompt": "Which statement best describes Statistical randomness testing?",
+        "options": [
+          "Tests bit sequences for detectable statistical patterns.",
+          "A test that examines consecutive groups of identical bits in a sequence.",
+          "The number of zero bits in the sequence.",
+          "An uninterrupted consecutive group of identical bits."
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-3",
+        "concept": "NIST SP 800-22",
+        "explanation": "NIST SP 800-22: A suite of 15 statistical tests for random and pseudorandom sequences.",
+        "slide": 1,
+        "id": "lesson-3-v2-mc1",
+        "kind": "mc",
+        "prompt": "Which statement best describes NIST SP 800-22?",
+        "options": [
+          "A suite of 15 statistical tests for random and pseudorandom sequences.",
+          "The hypothesis that the sequence is not random under the test model.",
+          "The number of one bits in the sequence.",
+          "The document’s result when the total runs falls between its example critical values."
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-3",
+        "concept": "Runs test",
+        "explanation": "Runs test: A test that examines consecutive groups of identical bits in a sequence.",
+        "slide": 2,
+        "id": "lesson-3-v2-mc2",
+        "kind": "mc",
+        "prompt": "Which statement best describes Runs test?",
+        "options": [
+          "The number of zero bits in the sequence.",
+          "A test that examines consecutive groups of identical bits in a sequence.",
+          "The hypothesis that the sequence is not random under the test model.",
+          "Thresholds used to decide whether to reject the null hypothesis at a specified significance level."
+        ],
+        "answer": 1
+      },
+      {
+        "lesson": "lesson-3",
+        "concept": "Run",
+        "explanation": "Run: An uninterrupted consecutive group of identical bits.",
+        "slide": 2,
+        "id": "lesson-3-v2-mc3",
+        "kind": "mc",
+        "prompt": "Which statement best describes Run?",
+        "options": [
+          "The number of one bits in the sequence.",
+          "An uninterrupted consecutive group of identical bits.",
+          "The hypothesis that the sequence is not random under the test model.",
+          "The number of zero bits in the sequence."
+        ],
+        "answer": 1
+      },
+      {
+        "lesson": "lesson-3",
+        "concept": "Null hypothesis",
+        "explanation": "Null hypothesis: The hypothesis that the sequence is random under the test model.",
+        "slide": 3,
+        "id": "lesson-3-v2-mc4",
+        "kind": "mc",
+        "prompt": "Which statement best describes Null hypothesis?",
+        "options": [
+          "The document’s result when the total runs falls between its example critical values.",
+          "The hypothesis that the sequence is random under the test model.",
+          "A test that examines consecutive groups of identical bits in a sequence.",
+          "A suite of 15 statistical tests for random and pseudorandom sequences."
+        ],
+        "answer": 1
+      },
+      {
+        "lesson": "lesson-3",
+        "concept": "Alternative hypothesis",
+        "explanation": "Alternative hypothesis: The hypothesis that the sequence is not random under the test model.",
+        "slide": 3,
+        "id": "lesson-3-v2-mc5",
+        "kind": "mc",
+        "prompt": "Which statement best describes Alternative hypothesis?",
+        "options": [
+          "The number of groups of consecutive identical bits, counting both zero and one runs.",
+          "The hypothesis that the sequence is not random under the test model.",
+          "Thresholds used to decide whether to reject the null hypothesis at a specified significance level.",
+          "The hypothesis that the sequence is random under the test model."
+        ],
+        "answer": 1
+      },
+      {
+        "lesson": "lesson-3",
+        "concept": "N1",
+        "explanation": "N1: The number of one bits in the sequence.",
+        "slide": 4,
+        "id": "lesson-3-v2-mc6",
+        "kind": "mc",
+        "prompt": "Which statement best describes N1?",
+        "options": [
+          "Tests bit sequences for detectable statistical patterns.",
+          "The number of one bits in the sequence.",
+          "The hypothesis that the sequence is random under the test model.",
+          "An uninterrupted consecutive group of identical bits."
+        ],
+        "answer": 1
+      },
+      {
+        "lesson": "lesson-3",
+        "concept": "N2",
+        "explanation": "N2: The number of zero bits in the sequence.",
+        "slide": 4,
+        "id": "lesson-3-v2-mc7",
+        "kind": "mc",
+        "prompt": "Which statement best describes N2?",
+        "options": [
+          "The number of one bits in the sequence.",
+          "The number of zero bits in the sequence.",
+          "Thresholds used to decide whether to reject the null hypothesis at a specified significance level.",
+          "Tests bit sequences for detectable statistical patterns."
+        ],
+        "answer": 1
+      },
+      {
+        "lesson": "lesson-3",
+        "concept": "Total runs",
+        "explanation": "Total runs: The number of groups of consecutive identical bits, counting both zero and one runs.",
+        "slide": 5,
+        "id": "lesson-3-v2-mc8",
+        "kind": "mc",
+        "prompt": "Which statement best describes Total runs?",
+        "options": [
+          "A test that examines consecutive groups of identical bits in a sequence.",
+          "Tests bit sequences for detectable statistical patterns.",
+          "The number of one bits in the sequence.",
+          "The number of groups of consecutive identical bits, counting both zero and one runs."
+        ],
+        "answer": 3
+      },
+      {
+        "lesson": "lesson-3",
+        "concept": "Critical values",
+        "explanation": "Critical values: Thresholds used to decide whether to reject the null hypothesis at a specified significance level.",
+        "slide": 6,
+        "id": "lesson-3-v2-mc9",
+        "kind": "mc",
+        "prompt": "Which statement best describes Critical values?",
+        "options": [
+          "A test that examines consecutive groups of identical bits in a sequence.",
+          "The hypothesis that the sequence is random under the test model.",
+          "The hypothesis that the sequence is not random under the test model.",
+          "Thresholds used to decide whether to reject the null hypothesis at a specified significance level."
+        ],
+        "answer": 3
+      },
+      {
+        "lesson": "lesson-3",
+        "concept": "Failure to reject",
+        "explanation": "Failure to reject: The document’s result when the total runs falls between its example critical values.",
+        "slide": 6,
+        "id": "lesson-3-v2-mc10",
+        "kind": "mc",
+        "prompt": "Which statement best describes Failure to reject?",
+        "options": [
+          "Tests bit sequences for detectable statistical patterns.",
+          "An uninterrupted consecutive group of identical bits.",
+          "A suite of 15 statistical tests for random and pseudorandom sequences.",
+          "The document’s result when the total runs falls between its example critical values."
+        ],
+        "answer": 3
+      },
+      {
+        "lesson": "lesson-3",
+        "concept": "Statistical randomness testing",
+        "explanation": "Statistical randomness testing: Tests bit sequences for detectable statistical patterns.",
+        "slide": 1,
+        "id": "lesson-3-v2-id0",
+        "kind": "identification",
+        "prompt": "Identify the term: Tests bit sequences for detectable statistical patterns.",
+        "options": [
+          "Statistical randomness testing",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-3",
+        "concept": "NIST SP 800-22",
+        "explanation": "NIST SP 800-22: A suite of 15 statistical tests for random and pseudorandom sequences.",
+        "slide": 1,
+        "id": "lesson-3-v2-id1",
+        "kind": "identification",
+        "prompt": "Identify the term: A suite of 15 statistical tests for random and pseudorandom sequences.",
+        "options": [
+          "NIST SP 800-22",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-3",
+        "concept": "Runs test",
+        "explanation": "Runs test: A test that examines consecutive groups of identical bits in a sequence.",
+        "slide": 2,
+        "id": "lesson-3-v2-id2",
+        "kind": "identification",
+        "prompt": "Identify the term: A test that examines consecutive groups of identical bits in a sequence.",
+        "options": [
+          "Runs test",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-3",
+        "concept": "Run",
+        "explanation": "Run: An uninterrupted consecutive group of identical bits.",
+        "slide": 2,
+        "id": "lesson-3-v2-id3",
+        "kind": "identification",
+        "prompt": "Identify the term: An uninterrupted consecutive group of identical bits.",
+        "options": [
+          "Run",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-3",
+        "concept": "Null hypothesis",
+        "explanation": "Null hypothesis: The hypothesis that the sequence is random under the test model.",
+        "slide": 3,
+        "id": "lesson-3-v2-id4",
+        "kind": "identification",
+        "prompt": "Identify the term: The hypothesis that the sequence is random under the test model.",
+        "options": [
+          "Null hypothesis",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-3",
+        "concept": "Alternative hypothesis",
+        "explanation": "Alternative hypothesis: The hypothesis that the sequence is not random under the test model.",
+        "slide": 3,
+        "id": "lesson-3-v2-id5",
+        "kind": "identification",
+        "prompt": "Identify the term: The hypothesis that the sequence is not random under the test model.",
+        "options": [
+          "Alternative hypothesis",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-3",
+        "concept": "N1",
+        "explanation": "N1: The number of one bits in the sequence.",
+        "slide": 4,
+        "id": "lesson-3-v2-id6",
+        "kind": "identification",
+        "prompt": "Identify the term: The number of one bits in the sequence.",
+        "options": [
+          "N1",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-3",
+        "concept": "N2",
+        "explanation": "N2: The number of zero bits in the sequence.",
+        "slide": 4,
+        "id": "lesson-3-v2-id7",
+        "kind": "identification",
+        "prompt": "Identify the term: The number of zero bits in the sequence.",
+        "options": [
+          "N2",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-3",
+        "concept": "Total runs",
+        "explanation": "Total runs: The number of groups of consecutive identical bits, counting both zero and one runs.",
+        "slide": 5,
+        "id": "lesson-3-v2-id8",
+        "kind": "identification",
+        "prompt": "Identify the term: The number of groups of consecutive identical bits, counting both zero and one runs.",
+        "options": [
+          "Total runs",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-3",
+        "concept": "Critical values",
+        "explanation": "Critical values: Thresholds used to decide whether to reject the null hypothesis at a specified significance level.",
+        "slide": 6,
+        "id": "lesson-3-v2-id9",
+        "kind": "identification",
+        "prompt": "Identify the term: Thresholds used to decide whether to reject the null hypothesis at a specified significance level.",
+        "options": [
+          "Critical values",
+          "Incorrect"
+        ],
+        "answer": 0
+      },
+      {
+        "lesson": "lesson-3",
+        "concept": "Failure to reject",
+        "explanation": "Failure to reject: The document’s result when the total runs falls between its example critical values.",
+        "slide": 6,
+        "id": "lesson-3-v2-id10",
+        "kind": "identification",
+        "prompt": "Identify the term: The document’s result when the total runs falls between its example critical values.",
+        "options": [
+          "Failure to reject",
+          "Incorrect"
+        ],
+        "answer": 0
       }
     ]
   }

@@ -1,0 +1,33 @@
+Security Evaluation 
+Statistical Randomness Testing (NIST SP 800-22)
+Statistical Randomness Testing (NIST SP 800-22) It is widely used in cryptography, security, and simulation to ensure that generated random numbers do not exhibit a detectable pattern. It is a standardized suite of 15 statistical tests developed by the U.S. National Institute of Standards and Technology (NIST) to evaluate whether random or pseudorandom number generators produce sequences that are sufficiently random for cryptographic use. For this research, the author will use the Runs Test. This test will focus on the randomness based on the length of consecutive identical bits. Supposed the bits: 1001101110100011 will be tested for its randomness using runs test. The illustration of runs test is provided below.
+Bits of randomness testing: 1001101110100011
+First step: Setting of the Hypothesis:
+H0: Yes, the sequence is random
+Ha: No, the sequence is not random
+Second step: Count each of the category (N1=number of 1’s, N2= number of 0’s)
+	N1 = 9 (1)
+N2 = 7 (0)
+
+Third step: Count the Total Runs for 1 and 0
+76691616133100	 Runs for r1 (1) = 5
+78334440576500 Runs for r2 (0) = 4
+Total Runs r=r1+r2 = 5+4 = 9
+
+Fourth step: Critical value of r in the runs test table considering the value of N1 and N2
+	Where: N1 = 9 (column) and N2 = 7 (row)
+	The result based on table of Critical value is 4 and 14
+Fifth step: Randomness testing 
+	Where: Total Runs=9
+	4 < Total Runs < 14
+	4 < 9 < 14      lies in the critical region
+Sixth step: Result
+	Failed to reject the null hypothesis
+This means that the sequence of bits is random
+
+ASSESSMENT TASK
+
+Compute for statistical randomness testing for the following and determine whether the result pass the randomness testing. 
+
+10011010001011011101
+11000101011100101010

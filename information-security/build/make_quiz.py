@@ -72,17 +72,33 @@ Mode and block boundaries|Encryption mode, padding, and block boundaries affect 
 One-round comparison|The assessment task asks to perform avalanche effect to the 1st round of the enhanced Blowfish algorithm and compare it to the original algorithm for the 1st round.|7|The assessment task asks to compare only the final rounds of the enhanced and original Blowfish algorithms.
 Statistical randomness testing|Testing output statistics can provide evidence about patterns, but passing tests alone does not establish security.|7|Passing a randomness test proves a cipher cannot have exploitable weaknesses.
 ''')
+lesson('RANDOMNESS-TESTING-LECTURE-AND-ASSESSMENT-TASK.docx','Statistical Randomness Testing','NIST SP 800-22 and the runs test','''
+Statistical randomness testing|Tests bit sequences for detectable statistical patterns.|1|Passing a statistical test proves cryptographic security.
+NIST SP 800-22|A suite of 15 statistical tests for random and pseudorandom sequences.|1|NIST SP 800-22 is an encryption algorithm.
+Runs test|A test that examines consecutive groups of identical bits in a sequence.|2|A runs test encrypts each bit.
+Run|An uninterrupted consecutive group of identical bits.|2|A run is always a single bit.
+Null hypothesis|The hypothesis that the sequence is random under the test model.|3|The null hypothesis asserts that the sequence is not random.
+Alternative hypothesis|The hypothesis that the sequence is not random under the test model.|3|The alternative asserts that the sequence is random.
+N1|The number of one bits in the sequence.|4|N1 counts zero bits.
+N2|The number of zero bits in the sequence.|4|N2 counts one bits.
+Total runs|The number of groups of consecutive identical bits, counting both zero and one runs.|5|Total runs counts only one bits.
+Critical values|Thresholds used to decide whether to reject the null hypothesis at a specified significance level.|6|Critical values prove a generator is secure.
+Failure to reject|The document’s result when the total runs falls between its example critical values.|6|Failing to reject means the null hypothesis must be rejected.
+''')
+for l in lessons:
+ l['concepts'].sort(key=lambda c:c['slide'])
 rng=random.Random(180)
 for l in lessons:
  qs=[]
  for i,c in enumerate(l['concepts']):
   others=rng.sample([x for x in l['concepts'] if x!=c],3)
-  if i%2==0: prompt='Which term best matches this description? '+c['definition'];options=[c['term']]+[x['term'] for x in others]
-  else: prompt='Which statement best describes '+c['term']+'?';options=[c['definition']]+[x['definition'] for x in others]
-  correct=options[0];rng.shuffle(options)
+  options=[c['definition']]+[x['definition'] for x in others]; correct=options[0];rng.shuffle(options)
   base=dict(lesson=l['id'],concept=c['term'],explanation=c['term']+': '+c['definition'],slide=c['slide'])
-  qs.append(dict(base,id=l['id']+'-c'+str(i)+'-mc',kind='mc',prompt=prompt,options=options,answer=options.index(correct)))
+  qs.append(dict(base,id=l['id']+'-v2-mc'+str(i),kind='mc',prompt='Which statement best describes '+c['term']+'?',options=options,answer=options.index(correct)))
+ for i,c in enumerate(l['concepts']):
+  base=dict(lesson=l['id'],concept=c['term'],explanation=c['term']+': '+c['definition'],slide=c['slide'])
+  qs.append(dict(base,id=l['id']+'-v2-id'+str(i),kind='identification',prompt='Identify the term: '+c['definition'],options=[c['term'],'Incorrect'],answer=0))
  l['questions']=qs
 (R/'build/question-bank.json').write_text(json.dumps(lessons,ensure_ascii=False,indent=2))
 (R/'quiz.html').write_text((R/'build/template.html').read_text().replace('__DATA__',json.dumps(lessons,ensure_ascii=False).replace('</','<\\/')))
-print([(l['title'],len(l['concepts'])) for l in lessons])
+print([(l['title'],len(l['questions'])) for l in lessons])
