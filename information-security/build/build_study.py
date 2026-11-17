@@ -22,7 +22,7 @@ def page(title,body):
  return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(title)+'</title><link rel="stylesheet" href="study.css"></head><body>'+body+'</body></html>'
 
 def practice_count(l):
- return len(l['concepts'])+sum(1 for i in range(len(l['concepts'])) if i%3==0)
+ return len(l['concepts'])
 
 def linkpdf(l):return 'pdfs/'+urllib.parse.quote(Path(l['file']).stem+'.pdf')
 

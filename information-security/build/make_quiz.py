@@ -2,10 +2,13 @@ from pathlib import Path
 import json,random
 R=Path(__file__).resolve().parent.parent
 lessons=[]
+DROP={'32-bit left rotation', 'Corrected slide percentage', 'Tamper evidence', 'Early hashing history', 'SHA-1 first-round example', 'SHA-1 schedule note', 'One-round comparison', 'Block-level comparison', 'Hash bucket', 'MD5 case example', 'Hexadecimal digit', 'Single-bit input change', 'SHA-1 first rotation example', 'Historical wax seal', 'Fixed-length digest', 'Input comparison exercise', 'SHA-1 worked message', 'Processing time', 'Input case change', 'SHA-1 padded sample', 'Slide ciphertext comparison', 'SHA-1 state update', 'Unchanged second block', 'MD4 meaning'}
 def lesson(file,title,subtitle,raw):
  cs=[]
  for row in raw.strip().splitlines():
-  t,d,p,f=row.split('|');cs.append(dict(term=t,definition=d,slide=int(p),falsehood=f))
+  t,d,p,f=row.split('|')
+  if t in DROP: continue
+  cs.append(dict(term=t,definition=d,slide=int(p),falsehood=f))
  lessons.append(dict(id=f'lesson-{len(lessons)+1}',file=file,title=title,subtitle=subtitle,concepts=cs))
 lesson('AUTHENTICATION.pptx','Authentication and Hash Functions','Identity, message digests, and SHA-1','''
 Authentication|The process of verifying identity; it can validate identity documents or ensure that a product or document is not forged.|2|Authentication means granting permissions without checking any identity.
@@ -79,8 +82,6 @@ for l in lessons:
   correct=options[0];rng.shuffle(options)
   base=dict(lesson=l['id'],concept=c['term'],explanation=c['term']+': '+c['definition'],slide=c['slide'])
   qs.append(dict(base,id=l['id']+'-c'+str(i)+'-mc',kind='mc',prompt=prompt,options=options,answer=options.index(correct)))
-  truth=i%2==0
-  qs.append(dict(base,id=l['id']+'-c'+str(i)+'-tf',kind='tf',prompt=c['term']+': '+c['definition'] if truth else c['falsehood'],options=['True','False'],answer=0 if truth else 1))
  l['questions']=qs
 (R/'build/question-bank.json').write_text(json.dumps(lessons,ensure_ascii=False,indent=2))
 (R/'quiz.html').write_text((R/'build/template.html').read_text().replace('__DATA__',json.dumps(lessons,ensure_ascii=False).replace('</','<\\/')))

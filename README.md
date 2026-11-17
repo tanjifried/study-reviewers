@@ -15,7 +15,7 @@ Source: https://github.com/tanjifried/study-reviewers (public).
 
 Open `index.html`, choose a subject, and start a lesson or quiz. Progress is stored separately for each subject in the current browser on the current device. It does not sync across devices. Previous progress from local files belongs to a different browser origin and does not automatically transfer to the hosted website.
 
-Final-exam setup lets you choose the number of questions and feedback after each answer or after submission. Python supports up to 302 questions; Software Engineering supports up to 180, Security up to 58 (one per concept), and Automata up to 90. Settings apply to new attempts. The slide-based quiz wording follows the original slide terminology and definitions, retaining the documented corrections where a source slide has an error.
+Final-exam setup lets you choose the number of questions and feedback after each answer or after submission. Python supports up to 302 questions; Software Engineering supports up to 180, Security up to 34 (one per concept), and Automata up to 90. Settings apply to new attempts. The slide-based quiz wording follows the original slide terminology and definitions, retaining the documented corrections where a source slide has an error.
 
 Automata adds English explanations, timestamped source steps, searchable Taglish paraphrases of the speaker's points, optional YouTube players, diagram transition tables, and downloadable SVG and AutomataStudio `.afjson` files. It saves in-progress attempts and completed-attempt history locally. See [Automata documentation](automata/README.md) for source attribution, limitations, and regeneration.
 
