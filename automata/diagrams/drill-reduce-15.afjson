@@ -1,0 +1,26 @@
+{
+  "states": [
+    "s",
+    "u"
+  ],
+  "alphabet": [
+    "a"
+  ],
+  "start_state": "s",
+  "accept_states": [
+    "s"
+  ],
+  "transitions": {
+    "s": {
+      "a": [
+        "s"
+      ]
+    },
+    "u": {
+      "a": [
+        "u"
+      ]
+    }
+  },
+  "name": "Graph M15"
+}

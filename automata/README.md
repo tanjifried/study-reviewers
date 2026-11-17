@@ -45,3 +45,12 @@ Omit `PLAYWRIGHT_MODULE` when `playwright` resolves normally. The generator and 
 The data suite checks all 90 questions, 20 machines and their tables, 1,275 bounded-word conversion comparisons, and minimization results. These checks support the encoded examples; bounded comparisons alone are not general proofs of equivalence. Browser checks cover all lessons and quizzes at desktop and phone widths, source navigation, note search, exam feedback/settings, editing, resume, scoring, focus, and unavailable storage. They verify directly displayed source frames, all 18 identification items, deferred typed-answer editing, saved-progress migration, and recovery after invalid punctuation-only input.
 
 Lesson 1 prioritizes core terms and concepts. Everyday-device examples remain optional source context and are excluded from its quiz. Key terms appear before the source walkthrough.
+
+## Focused graph quizzes
+
+- [DFA or NFA?](quiz.html?lesson=dfa-nfa): 15 original graph-classification questions, including branching, epsilon transitions, multiple accepting states and unreachable states.
+- [Can this DFA be reduced?](quiz.html?lesson=minimization): 15 complete DFAs, mixing already-minimal graphs with equivalent-state and unreachable-state reductions. “Yes” means strictly fewer states for the same language.
+
+These two tracks use 30 additional diagrams from AutomataStudio and have independent saved attempts/history. They are separate from the six-lesson 90-question final-exam pool. Classification uses the stated complete-DFA convention. Figure captions remain neutral so they do not reveal the answer. Each explanation identifies the relevant graph property; minimization feedback gives the minimum state count. Answer keys are tested against direct transition counting and an independent product-graph state-distinguishability search.
+
+Authoring inputs are `build/drills.json` and `build/diagrams-drills.json`. Regenerate these inputs with `node automata/build/create-drills.cjs`, then run the usual renderer/data/browser checks.

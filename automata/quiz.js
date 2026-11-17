@@ -13,6 +13,18 @@ const LESSONS = AUTOMATA_DATA.lessons.map((l) => ({
     concept: l.segments.find((s) => s.id === q.segmentId)?.title || l.title,
   })),
 }));
+const DRILLS = (AUTOMATA_DATA.drills || []).map((d) => ({
+  ...d,
+  concepts: d.questions.map((q) => q.prompt),
+  questions: d.questions.map((q) => ({
+    ...q,
+    lesson: d.id,
+    kind: "mc",
+    options: q.choices,
+    concept: d.title,
+  })),
+}));
+const TRACKS = [...LESSONS, ...DRILLS];
 function questionFigure(id) {
   const d = AUTOMATA_DATA.diagrams[id];
   if (!d) return "";
@@ -95,10 +107,11 @@ const esc = (s) =>
         c
       ],
   );
-const all = LESSONS.flatMap((l) => l.questions),
+const all = TRACKS.flatMap((l) => l.questions),
   lookup = Object.fromEntries(all.map((q) => [q.id, q]));
-const getLesson = (id) => LESSONS.find((l) => l.id === id);
-const lectureSource = (l) => "lesson.html?lesson=" + encodeURIComponent(l.id);
+const getLesson = (id) => TRACKS.find((l) => l.id === id);
+const lectureSource = (l) =>
+  "lesson.html?lesson=" + encodeURIComponent(l.sourceLessonId || l.id);
 function shuffle(a) {
   a = [...a];
   for (let i = a.length - 1; i > 0; i--) {
@@ -297,6 +310,9 @@ function dashboard() {
   ).join(
     "",
   )}<p class="save-note">Progress saves in this browser when local storage is available. Completed scores and current attempts stay in this browser, including when you start again. ${storageOK ? "" : "Storage is unavailable; keep this tab open to preserve this session."}</p>`;
+  const drillsSection = document.createElement("section");
+  drillsSection.innerHTML = `<div class="section-head"><h2>Focused graph quizzes</h2></div>${DRILLS.map((d) => `<article class="lesson-row"><div class="num" aria-hidden="true">→</div><div><h3>${esc(d.title)}</h3><p>${esc(d.subtitle)}</p><p>${esc(d.instructions)}</p>${historyText(d.id) ? `<p>${historyText(d.id)}</p>` : ""}</div><button class="btn secondary" data-start="${d.id}">${label(d.id)}</button></article>`).join("")}`;
+  app.querySelector(".intro-grid").after(drillsSection);
   app
     .querySelectorAll("[data-start]")
     .forEach((b) => (b.onclick = () => start(b.dataset.start)));
@@ -395,6 +411,12 @@ function renderQuestion() {
   s.position = index;
   persist();
   app.innerHTML = `<div class="quiz-shell"><div class="quiz-head"><div><h1>${active === "final" ? "Final exam" : esc(l.title)}</h1><div class="quiet">${active === "final" ? esc(l.title) + " · " : ""}${esc(l.subtitle)}</div></div><div class="quiet">${deferred ? st.answered + " answered" : st.correct + " correct / " + st.answered + " answered"}</div></div><div class="progress" role="progressbar" aria-label="Answered questions" aria-valuenow="${st.answered}" aria-valuemin="0" aria-valuemax="${st.total}"><span style="width:${(st.answered / st.total) * 100}%"></span></div><div class="status"><span>Question ${index + 1} of ${st.total}</span><span>${st.answered} answered · ${st.total - st.answered} remaining</span></div><section class="question" aria-labelledby="prompt"><div class="type">${q.kind === "identification" ? "Identification · Type the term or name" : "Multiple choice · Choose one answer"}</div><h2 id="prompt">${esc(q.prompt)}</h2>${questionFigure(q.diagram)}${q.kind === "identification" ? identificationForm(q, s, locked || s.submitted, deferred) : `<div class="options">${q.options.map((o, i) => `<button class="option ${deferred ? (i === chosen ? "selected" : "") : answered || s.submitted ? (i === q.answer ? "correct" : i === chosen ? "incorrect" : "") : ""}" data-option="${i}" ${locked || s.submitted ? "disabled" : ""}><span class="letter">${q.kind === "mc" ? String.fromCharCode(65 + i) : i === 0 ? "T" : "F"}</span><span>${esc(o)}${reveal && (answered || s.submitted) && i === q.answer ? '<span class="choice-label">Correct answer' + (chosen === i ? " · Your choice" : "") + "</span>" : reveal && answered && i === chosen ? '<span class="choice-label">Your choice · Incorrect</span>' : ""}</span></button>`).join("")}</div>`}<div id="feedback" aria-live="polite" aria-atomic="true">${reveal && (answered || s.submitted) ? feedback(q, chosen) : ""}</div></section><div class="nav"><button class="btn secondary" id="prev" ${index === 0 ? "disabled" : ""}>Previous</button><button class="home" id="submit-exam">${deferred ? "Submit exam" : st.answered === st.total ? "View results" : "Progress & results"}</button><button class="btn" id="next">${index === st.total - 1 ? (deferred ? "Submit exam" : "View results") : "Next question"}</button></div><details><summary>Jump to a question</summary><p class="quiet">${deferred ? "Blue: answered · white: unanswered" : "Green: correct · peach: incorrect · white: unanswered"}</p><div class="jump">${s.ids.map((id, i) => `<button class="${i === index ? "current " : ""}${Number.isInteger(s.answers[id]) ? (deferred ? "selected" : s.answers[id] === lookup[id].answer ? "done" : "miss") : ""}" aria-label="Question ${i + 1}${Number.isInteger(s.answers[id]) ? (deferred ? ", answered" : s.answers[id] === lookup[id].answer ? ", correct" : ", incorrect") : ", unanswered"}" ${i === index ? 'aria-current="step"' : ""} data-jump="${i}">${i + 1}</button>`).join("")}</div></details><p class="save-note">${deferred ? "You can change answers until you submit the exam." : "Your first submitted answer is scored and locked. Use “Start a new attempt” in results to try again."}${storageOK ? "" : " Progress cannot be saved to this browser."}</p></div>`;
+  if (l.instructions) {
+    const guidance = document.createElement("p");
+    guidance.className = "intro";
+    guidance.textContent = l.instructions;
+    app.querySelector(".status").after(guidance);
+  }
   if (formatUpdated) {
     const note = document.createElement("p");
     note.className = "notice";
@@ -545,7 +567,7 @@ function results() {
   }<h2>${missed.length ? "Revisit these concepts" : "Review notes"}</h2><p class="quiet">${missed.length ? missed.length + " incorrect answers. Use the lesson references and source screenshots to revise." : complete ? (st.answered < st.total ? "Review your answers, including unanswered questions." : "You answered every question correctly. You can review your answers or begin a new attempt.") : "Your incorrect answers will appear here as you work."}</p>${missed
     .map((id) => {
       const q = lookup[id];
-      return `<div class="review-item"><h3>${esc(q.concept)}</h3><p>${esc(q.prompt)}</p><p class="quiet">Your answer: ${esc(q.kind === "identification" ? s.typedAnswers?.[id] || "No answer" : q.options[s.answers[id]])}</p>${feedback(q, s.answers[id])}</div>`;
+      return `<div class="review-item"><h3>${esc(q.concept)}</h3><p>${esc(q.prompt)}</p>${questionFigure(q.diagram)}<p class="quiet">Your answer: ${esc(q.kind === "identification" ? s.typedAnswers?.[id] || "No answer" : q.options[s.answers[id]])}</p>${feedback(q, s.answers[id])}</div>`;
     })
     .join("")}</div>`;
   if (!complete)

@@ -396,6 +396,57 @@ async function saved(page, id = "final") {
       ),
       3,
     );
+    // Focused graph tracks remain separate from the six-lesson final pool.
+    await page.goto(base + "index.html");
+    assert.equal(
+      await page.locator('a[href="quiz.html?lesson=dfa-nfa"]').count(),
+      1,
+    );
+    assert.equal(
+      await page.locator('a[href="quiz.html?lesson=minimization"]').count(),
+      1,
+    );
+    for (const track of ["dfa-nfa", "minimization"]) {
+      for (const width of [1440, 390, 320]) {
+        await page.setViewportSize({ width, height: 900 });
+        await page.goto(base + "quiz.html?lesson=" + track);
+        await fit(page);
+        assert.equal(await page.locator(".question").count(), 1);
+        assert.equal(await page.locator(".question figure img").count(), 1);
+        assert.equal(await page.locator(".option").count(), 2);
+        assert.equal(await page.locator("[data-jump]").count(), 15);
+        await page.locator(".question figure img").evaluate((i) => i.decode());
+        await page.screenshot({
+          path: path.join(captures, track + "-" + width + ".png"),
+        });
+      }
+      for (let i = 0; i < 15; i++) {
+        await page.evaluate((i) => {
+          index = i;
+          renderQuestion();
+        }, i);
+        const expected = await page.evaluate(
+          () => lookup[saved[active].ids[index]].answer,
+        );
+        const answer = i === 0 ? 1 - expected : expected;
+        await page.click(`[data-option="${answer}"]`);
+        assert.equal(await page.locator(".feedback").count(), 1);
+        assert(await page.locator(".option").first().isDisabled());
+      }
+      await page.click("#submit-exam");
+      assert.equal(
+        (await page.locator(".score").textContent()).trim(),
+        "14 / 15",
+      );
+      assert.equal(await page.locator(".review-item figure").count(), 1);
+      await page.reload();
+      assert.equal(
+        (await page.locator(".score").textContent()).trim(),
+        "14 / 15",
+      );
+    }
+    await page.goto(base + "quiz.html?lesson=final");
+    assert.equal(await page.locator("#final-count").getAttribute("max"), "90");
     await context.close();
     const blocked = await browser.newContext();
     await blocked.addInitScript(() => {

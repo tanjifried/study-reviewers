@@ -1,0 +1,42 @@
+{
+  "states": [
+    "s",
+    "a",
+    "found"
+  ],
+  "alphabet": [
+    "a",
+    "b"
+  ],
+  "start_state": "s",
+  "accept_states": [
+    "found"
+  ],
+  "transitions": {
+    "s": {
+      "a": [
+        "a"
+      ],
+      "b": [
+        "s"
+      ]
+    },
+    "a": {
+      "a": [
+        "a"
+      ],
+      "b": [
+        "found"
+      ]
+    },
+    "found": {
+      "a": [
+        "found"
+      ],
+      "b": [
+        "found"
+      ]
+    }
+  },
+  "name": "Graph M10"
+}

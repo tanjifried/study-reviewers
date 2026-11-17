@@ -1,0 +1,31 @@
+{
+  "states": [
+    "A",
+    "B"
+  ],
+  "alphabet": [
+    "a",
+    "b"
+  ],
+  "start_state": "A",
+  "accept_states": [],
+  "transitions": {
+    "A": {
+      "a": [
+        "B"
+      ],
+      "b": [
+        "A"
+      ]
+    },
+    "B": {
+      "a": [
+        "A"
+      ],
+      "b": [
+        "B"
+      ]
+    }
+  },
+  "name": "Graph C09"
+}

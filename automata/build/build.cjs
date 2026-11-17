@@ -11,6 +11,9 @@ async function build() {
       fs.readFileSync(path.join(__dirname, `lesson-${n}.json`), "utf8"),
     ),
   );
+  const drills = JSON.parse(
+    fs.readFileSync(path.join(__dirname, "drills.json"), "utf8"),
+  );
   const machines = {};
   for (const file of fs
     .readdirSync(__dirname)
@@ -99,7 +102,9 @@ async function build() {
   const bankOf = (value) => ({
     questions: value.lessons.map((l) => l.questions),
     tables: Object.fromEntries(
-      Object.entries(value.diagrams).map(([id, d]) => [id, d.table]),
+      Object.entries(value.diagrams)
+        .filter(([id]) => !id.startsWith("drill-"))
+        .map(([id, d]) => [id, d.table]),
     ),
   });
   const bank = bankOf({ lessons, diagrams });
@@ -121,7 +126,7 @@ async function build() {
         ...new Set([previous.version, ...(previous.compatibleVersions || [])]),
       ].filter((v) => v !== version);
   } catch {}
-  const data = { version, compatibleVersions, lessons, diagrams };
+  const data = { version, compatibleVersions, lessons, diagrams, drills };
   const ids = new Set();
   for (const l of lessons) {
     if (l.questions.length !== 15) throw Error(`${l.id}: expected15 questions`);
@@ -151,6 +156,23 @@ async function build() {
     for (const item of [...l.segments, ...l.questions])
       if (item.diagram && !diagrams[item.diagram])
         throw Error(`Missing figure ${item.diagram}`);
+  }
+  for (const drill of drills) {
+    if (drill.questions.length !== 15)
+      throw Error("Expected15 focused questions");
+    const source = lessons.find((l) => l.id === drill.sourceLessonId);
+    if (!source) throw Error("Missing drill source lesson");
+    for (const q of drill.questions) {
+      if (
+        ids.has(q.id) ||
+        !diagrams[q.diagram] ||
+        q.choices.length !== 2 ||
+        ![0, 1].includes(q.answer) ||
+        !source.segments.some((s) => s.id === q.segmentId)
+      )
+        throw Error("Invalid drill question " + q.id);
+      ids.add(q.id);
+    }
   }
   fs.writeFileSync(
     path.join(root, "content.js"),

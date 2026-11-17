@@ -4497,6 +4497,1674 @@ window.AUTOMATA_DATA = {
           }
         ]
       }
+    },
+    "drill-classify-1": {
+      "src": "diagrams/drill-classify-1.svg",
+      "title": "Graph C01",
+      "description": "Graph C01. Start: q0. Accepting: q0. See the adjacent transition table for every edge.",
+      "provenance": "Original graph for focused exam practice.",
+      "table": {
+        "states": [
+          "q0",
+          "q1"
+        ],
+        "alphabet": [
+          "0",
+          "1"
+        ],
+        "start": "q0",
+        "accept": [
+          "q0"
+        ],
+        "rows": [
+          {
+            "state": "→ * q0",
+            "targets": [
+              "q1",
+              "q0"
+            ]
+          },
+          {
+            "state": "q1",
+            "targets": [
+              "q0",
+              "q1"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-classify-2": {
+      "src": "diagrams/drill-classify-2.svg",
+      "title": "Graph C02",
+      "description": "Graph C02. Start: q0. Accepting: q1. See the adjacent transition table for every edge.",
+      "provenance": "Original graph for focused exam practice.",
+      "table": {
+        "states": [
+          "q0",
+          "q1"
+        ],
+        "alphabet": [
+          "0",
+          "1"
+        ],
+        "start": "q0",
+        "accept": [
+          "q1"
+        ],
+        "rows": [
+          {
+            "state": "→ q0",
+            "targets": [
+              "{q0, q1}",
+              "q0"
+            ]
+          },
+          {
+            "state": "* q1",
+            "targets": [
+              "q1",
+              "q1"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-classify-3": {
+      "src": "diagrams/drill-classify-3.svg",
+      "title": "Graph C03",
+      "description": "Graph C03. Start: A. Accepting: B, C. See the adjacent transition table for every edge.",
+      "provenance": "Original graph for focused exam practice.",
+      "table": {
+        "states": [
+          "A",
+          "B",
+          "C"
+        ],
+        "alphabet": [
+          "a",
+          "b"
+        ],
+        "start": "A",
+        "accept": [
+          "B",
+          "C"
+        ],
+        "rows": [
+          {
+            "state": "→ A",
+            "targets": [
+              "B",
+              "C"
+            ]
+          },
+          {
+            "state": "* B",
+            "targets": [
+              "A",
+              "B"
+            ]
+          },
+          {
+            "state": "* C",
+            "targets": [
+              "C",
+              "A"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-classify-4": {
+      "src": "diagrams/drill-classify-4.svg",
+      "title": "Graph C04",
+      "description": "Graph C04. Start: A. Accepting: B. See the adjacent transition table for every edge.",
+      "provenance": "Original graph for focused exam practice.",
+      "table": {
+        "states": [
+          "A",
+          "B"
+        ],
+        "alphabet": [
+          "0",
+          "1",
+          "ε"
+        ],
+        "start": "A",
+        "accept": [
+          "B"
+        ],
+        "rows": [
+          {
+            "state": "→ A",
+            "targets": [
+              "A",
+              "A",
+              "{B}"
+            ]
+          },
+          {
+            "state": "* B",
+            "targets": [
+              "B",
+              "B",
+              "∅"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-classify-5": {
+      "src": "diagrams/drill-classify-5.svg",
+      "title": "Graph C05",
+      "description": "Graph C05. Start: q0. Accepting: q0. See the adjacent transition table for every edge.",
+      "provenance": "Original graph for focused exam practice.",
+      "table": {
+        "states": [
+          "q0"
+        ],
+        "alphabet": [
+          "0",
+          "1"
+        ],
+        "start": "q0",
+        "accept": [
+          "q0"
+        ],
+        "rows": [
+          {
+            "state": "→ * q0",
+            "targets": [
+              "q0",
+              "q0"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-classify-6": {
+      "src": "diagrams/drill-classify-6.svg",
+      "title": "Graph C06",
+      "description": "Graph C06. Start: p. Accepting: f. See the adjacent transition table for every edge.",
+      "provenance": "Original graph for focused exam practice.",
+      "table": {
+        "states": [
+          "p",
+          "r",
+          "f"
+        ],
+        "alphabet": [
+          "a",
+          "b"
+        ],
+        "start": "p",
+        "accept": [
+          "f"
+        ],
+        "rows": [
+          {
+            "state": "→ p",
+            "targets": [
+              "r",
+              "p"
+            ]
+          },
+          {
+            "state": "r",
+            "targets": [
+              "{r, f}",
+              "p"
+            ]
+          },
+          {
+            "state": "* f",
+            "targets": [
+              "f",
+              "f"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-classify-7": {
+      "src": "diagrams/drill-classify-7.svg",
+      "title": "Graph C07",
+      "description": "Graph C07. Start: q0. Accepting: q1. See the adjacent transition table for every edge.",
+      "provenance": "Original graph for focused exam practice.",
+      "table": {
+        "states": [
+          "q0",
+          "q1",
+          "u"
+        ],
+        "alphabet": [
+          "0",
+          "1"
+        ],
+        "start": "q0",
+        "accept": [
+          "q1"
+        ],
+        "rows": [
+          {
+            "state": "→ q0",
+            "targets": [
+              "q0",
+              "q1"
+            ]
+          },
+          {
+            "state": "* q1",
+            "targets": [
+              "q0",
+              "q1"
+            ]
+          },
+          {
+            "state": "u",
+            "targets": [
+              "u",
+              "u"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-classify-8": {
+      "src": "diagrams/drill-classify-8.svg",
+      "title": "Graph C08",
+      "description": "Graph C08. Start: A. Accepting: C. See the adjacent transition table for every edge.",
+      "provenance": "Original graph for focused exam practice.",
+      "table": {
+        "states": [
+          "A",
+          "B",
+          "C"
+        ],
+        "alphabet": [
+          "0",
+          "1"
+        ],
+        "start": "A",
+        "accept": [
+          "C"
+        ],
+        "rows": [
+          {
+            "state": "→ A",
+            "targets": [
+              "A",
+              "{B, C}"
+            ]
+          },
+          {
+            "state": "B",
+            "targets": [
+              "A",
+              "C"
+            ]
+          },
+          {
+            "state": "* C",
+            "targets": [
+              "C",
+              "C"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-classify-9": {
+      "src": "diagrams/drill-classify-9.svg",
+      "title": "Graph C09",
+      "description": "Graph C09. Start: A. Accepting: none. See the adjacent transition table for every edge.",
+      "provenance": "Original graph for focused exam practice.",
+      "table": {
+        "states": [
+          "A",
+          "B"
+        ],
+        "alphabet": [
+          "a",
+          "b"
+        ],
+        "start": "A",
+        "accept": [],
+        "rows": [
+          {
+            "state": "→ A",
+            "targets": [
+              "B",
+              "A"
+            ]
+          },
+          {
+            "state": "B",
+            "targets": [
+              "A",
+              "B"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-classify-10": {
+      "src": "diagrams/drill-classify-10.svg",
+      "title": "Graph C10",
+      "description": "Graph C10. Start: q0. Accepting: q2. See the adjacent transition table for every edge.",
+      "provenance": "Original graph for focused exam practice.",
+      "table": {
+        "states": [
+          "q0",
+          "q1",
+          "q2"
+        ],
+        "alphabet": [
+          "a",
+          "ε"
+        ],
+        "start": "q0",
+        "accept": [
+          "q2"
+        ],
+        "rows": [
+          {
+            "state": "→ q0",
+            "targets": [
+              "q1",
+              "{q1}"
+            ]
+          },
+          {
+            "state": "q1",
+            "targets": [
+              "q2",
+              "{q0}"
+            ]
+          },
+          {
+            "state": "* q2",
+            "targets": [
+              "q2",
+              "∅"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-classify-11": {
+      "src": "diagrams/drill-classify-11.svg",
+      "title": "Graph C11",
+      "description": "Graph C11. Start: q0. Accepting: q0. See the adjacent transition table for every edge.",
+      "provenance": "Original graph for focused exam practice.",
+      "table": {
+        "states": [
+          "q0",
+          "q1",
+          "q2"
+        ],
+        "alphabet": [
+          "0",
+          "1"
+        ],
+        "start": "q0",
+        "accept": [
+          "q0"
+        ],
+        "rows": [
+          {
+            "state": "→ * q0",
+            "targets": [
+              "q1",
+              "q0"
+            ]
+          },
+          {
+            "state": "q1",
+            "targets": [
+              "q2",
+              "q1"
+            ]
+          },
+          {
+            "state": "q2",
+            "targets": [
+              "q0",
+              "q2"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-classify-12": {
+      "src": "diagrams/drill-classify-12.svg",
+      "title": "Graph C12",
+      "description": "Graph C12. Start: q0. Accepting: q2. See the adjacent transition table for every edge.",
+      "provenance": "Original graph for focused exam practice.",
+      "table": {
+        "states": [
+          "q0",
+          "q1",
+          "q2"
+        ],
+        "alphabet": [
+          "0",
+          "1"
+        ],
+        "start": "q0",
+        "accept": [
+          "q2"
+        ],
+        "rows": [
+          {
+            "state": "→ q0",
+            "targets": [
+              "q1",
+              "q0"
+            ]
+          },
+          {
+            "state": "q1",
+            "targets": [
+              "q1",
+              "{q0, q2}"
+            ]
+          },
+          {
+            "state": "* q2",
+            "targets": [
+              "q2",
+              "q2"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-classify-13": {
+      "src": "diagrams/drill-classify-13.svg",
+      "title": "Graph C13",
+      "description": "Graph C13. Start: A. Accepting: C. See the adjacent transition table for every edge.",
+      "provenance": "Original graph for focused exam practice.",
+      "table": {
+        "states": [
+          "A",
+          "B",
+          "C"
+        ],
+        "alphabet": [
+          "a",
+          "b"
+        ],
+        "start": "A",
+        "accept": [
+          "C"
+        ],
+        "rows": [
+          {
+            "state": "→ A",
+            "targets": [
+              "B",
+              "A"
+            ]
+          },
+          {
+            "state": "B",
+            "targets": [
+              "B",
+              "C"
+            ]
+          },
+          {
+            "state": "* C",
+            "targets": [
+              "C",
+              "C"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-classify-14": {
+      "src": "diagrams/drill-classify-14.svg",
+      "title": "Graph C14",
+      "description": "Graph C14. Start: p. Accepting: r. See the adjacent transition table for every edge.",
+      "provenance": "Original graph for focused exam practice.",
+      "table": {
+        "states": [
+          "p",
+          "q",
+          "r"
+        ],
+        "alphabet": [
+          "0",
+          "1",
+          "ε"
+        ],
+        "start": "p",
+        "accept": [
+          "r"
+        ],
+        "rows": [
+          {
+            "state": "→ p",
+            "targets": [
+              "p",
+              "q",
+              "∅"
+            ]
+          },
+          {
+            "state": "q",
+            "targets": [
+              "q",
+              "r",
+              "{r}"
+            ]
+          },
+          {
+            "state": "* r",
+            "targets": [
+              "r",
+              "r",
+              "∅"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-classify-15": {
+      "src": "diagrams/drill-classify-15.svg",
+      "title": "Graph C15",
+      "description": "Graph C15. Start: q0. Accepting: q1, q2. See the adjacent transition table for every edge.",
+      "provenance": "Original graph for focused exam practice.",
+      "table": {
+        "states": [
+          "q0",
+          "q1",
+          "q2"
+        ],
+        "alphabet": [
+          "a",
+          "b"
+        ],
+        "start": "q0",
+        "accept": [
+          "q1",
+          "q2"
+        ],
+        "rows": [
+          {
+            "state": "→ q0",
+            "targets": [
+              "{q0, q1}",
+              "q2"
+            ]
+          },
+          {
+            "state": "* q1",
+            "targets": [
+              "q1",
+              "q2"
+            ]
+          },
+          {
+            "state": "* q2",
+            "targets": [
+              "q2",
+              "q0"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-reduce-1": {
+      "src": "diagrams/drill-reduce-1.svg",
+      "title": "Graph M01",
+      "description": "Graph M01. Start: p. Accepting: f. See the adjacent transition table for every edge.",
+      "provenance": "Original complete DFA for focused exam practice.",
+      "table": {
+        "states": [
+          "p",
+          "r",
+          "f"
+        ],
+        "alphabet": [
+          "0",
+          "1"
+        ],
+        "start": "p",
+        "accept": [
+          "f"
+        ],
+        "rows": [
+          {
+            "state": "→ p",
+            "targets": [
+              "r",
+              "f"
+            ]
+          },
+          {
+            "state": "r",
+            "targets": [
+              "p",
+              "f"
+            ]
+          },
+          {
+            "state": "* f",
+            "targets": [
+              "f",
+              "f"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-reduce-2": {
+      "src": "diagrams/drill-reduce-2.svg",
+      "title": "Graph M02",
+      "description": "Graph M02. Start: e. Accepting: e. See the adjacent transition table for every edge.",
+      "provenance": "Original complete DFA for focused exam practice.",
+      "table": {
+        "states": [
+          "e",
+          "o"
+        ],
+        "alphabet": [
+          "0",
+          "1"
+        ],
+        "start": "e",
+        "accept": [
+          "e"
+        ],
+        "rows": [
+          {
+            "state": "→ * e",
+            "targets": [
+              "o",
+              "e"
+            ]
+          },
+          {
+            "state": "o",
+            "targets": [
+              "e",
+              "o"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-reduce-3": {
+      "src": "diagrams/drill-reduce-3.svg",
+      "title": "Graph M03",
+      "description": "Graph M03. Start: s. Accepting: f1, f2. See the adjacent transition table for every edge.",
+      "provenance": "Original complete DFA for focused exam practice.",
+      "table": {
+        "states": [
+          "s",
+          "f1",
+          "f2"
+        ],
+        "alphabet": [
+          "a",
+          "b"
+        ],
+        "start": "s",
+        "accept": [
+          "f1",
+          "f2"
+        ],
+        "rows": [
+          {
+            "state": "→ s",
+            "targets": [
+              "f1",
+              "f2"
+            ]
+          },
+          {
+            "state": "* f1",
+            "targets": [
+              "f1",
+              "f1"
+            ]
+          },
+          {
+            "state": "* f2",
+            "targets": [
+              "f2",
+              "f2"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-reduce-4": {
+      "src": "diagrams/drill-reduce-4.svg",
+      "title": "Graph M04",
+      "description": "Graph M04. Start: q0. Accepting: q0. See the adjacent transition table for every edge.",
+      "provenance": "Original complete DFA for focused exam practice.",
+      "table": {
+        "states": [
+          "q0"
+        ],
+        "alphabet": [
+          "0",
+          "1"
+        ],
+        "start": "q0",
+        "accept": [
+          "q0"
+        ],
+        "rows": [
+          {
+            "state": "→ * q0",
+            "targets": [
+              "q0",
+              "q0"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-reduce-5": {
+      "src": "diagrams/drill-reduce-5.svg",
+      "title": "Graph M05",
+      "description": "Graph M05. Start: q0. Accepting: q1. See the adjacent transition table for every edge.",
+      "provenance": "Original complete DFA for focused exam practice.",
+      "table": {
+        "states": [
+          "q0",
+          "q1",
+          "u"
+        ],
+        "alphabet": [
+          "0",
+          "1"
+        ],
+        "start": "q0",
+        "accept": [
+          "q1"
+        ],
+        "rows": [
+          {
+            "state": "→ q0",
+            "targets": [
+              "q0",
+              "q1"
+            ]
+          },
+          {
+            "state": "* q1",
+            "targets": [
+              "q0",
+              "q1"
+            ]
+          },
+          {
+            "state": "u",
+            "targets": [
+              "u",
+              "u"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-reduce-6": {
+      "src": "diagrams/drill-reduce-6.svg",
+      "title": "Graph M06",
+      "description": "Graph M06. Start: q0. Accepting: q1. See the adjacent transition table for every edge.",
+      "provenance": "Original complete DFA for focused exam practice.",
+      "table": {
+        "states": [
+          "q0",
+          "q1"
+        ],
+        "alphabet": [
+          "0",
+          "1"
+        ],
+        "start": "q0",
+        "accept": [
+          "q1"
+        ],
+        "rows": [
+          {
+            "state": "→ q0",
+            "targets": [
+              "q0",
+              "q1"
+            ]
+          },
+          {
+            "state": "* q1",
+            "targets": [
+              "q0",
+              "q1"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-reduce-7": {
+      "src": "diagrams/drill-reduce-7.svg",
+      "title": "Graph M07",
+      "description": "Graph M07. Start: A. Accepting: none. See the adjacent transition table for every edge.",
+      "provenance": "Original complete DFA for focused exam practice.",
+      "table": {
+        "states": [
+          "A",
+          "B",
+          "C"
+        ],
+        "alphabet": [
+          "0",
+          "1"
+        ],
+        "start": "A",
+        "accept": [],
+        "rows": [
+          {
+            "state": "→ A",
+            "targets": [
+              "B",
+              "A"
+            ]
+          },
+          {
+            "state": "B",
+            "targets": [
+              "C",
+              "B"
+            ]
+          },
+          {
+            "state": "C",
+            "targets": [
+              "A",
+              "C"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-reduce-8": {
+      "src": "diagrams/drill-reduce-8.svg",
+      "title": "Graph M08",
+      "description": "Graph M08. Start: q0. Accepting: q0. See the adjacent transition table for every edge.",
+      "provenance": "Original complete DFA for focused exam practice.",
+      "table": {
+        "states": [
+          "q0",
+          "q1",
+          "q2"
+        ],
+        "alphabet": [
+          "0",
+          "1"
+        ],
+        "start": "q0",
+        "accept": [
+          "q0"
+        ],
+        "rows": [
+          {
+            "state": "→ * q0",
+            "targets": [
+              "q1",
+              "q0"
+            ]
+          },
+          {
+            "state": "q1",
+            "targets": [
+              "q2",
+              "q1"
+            ]
+          },
+          {
+            "state": "q2",
+            "targets": [
+              "q0",
+              "q2"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-reduce-9": {
+      "src": "diagrams/drill-reduce-9.svg",
+      "title": "Graph M09",
+      "description": "Graph M09. Start: A. Accepting: A, B, C, D. See the adjacent transition table for every edge.",
+      "provenance": "Original complete DFA for focused exam practice.",
+      "table": {
+        "states": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "alphabet": [
+          "a"
+        ],
+        "start": "A",
+        "accept": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        "rows": [
+          {
+            "state": "→ * A",
+            "targets": [
+              "B"
+            ]
+          },
+          {
+            "state": "* B",
+            "targets": [
+              "C"
+            ]
+          },
+          {
+            "state": "* C",
+            "targets": [
+              "D"
+            ]
+          },
+          {
+            "state": "* D",
+            "targets": [
+              "A"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-reduce-10": {
+      "src": "diagrams/drill-reduce-10.svg",
+      "title": "Graph M10",
+      "description": "Graph M10. Start: s. Accepting: found. See the adjacent transition table for every edge.",
+      "provenance": "Original complete DFA for focused exam practice.",
+      "table": {
+        "states": [
+          "s",
+          "a",
+          "found"
+        ],
+        "alphabet": [
+          "a",
+          "b"
+        ],
+        "start": "s",
+        "accept": [
+          "found"
+        ],
+        "rows": [
+          {
+            "state": "→ s",
+            "targets": [
+              "a",
+              "s"
+            ]
+          },
+          {
+            "state": "a",
+            "targets": [
+              "a",
+              "found"
+            ]
+          },
+          {
+            "state": "* found",
+            "targets": [
+              "found",
+              "found"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-reduce-11": {
+      "src": "diagrams/drill-reduce-11.svg",
+      "title": "Graph M11",
+      "description": "Graph M11. Start: q0. Accepting: q3. See the adjacent transition table for every edge.",
+      "provenance": "Original complete DFA for focused exam practice.",
+      "table": {
+        "states": [
+          "q0",
+          "q1",
+          "q2",
+          "q3"
+        ],
+        "alphabet": [
+          "0",
+          "1"
+        ],
+        "start": "q0",
+        "accept": [
+          "q3"
+        ],
+        "rows": [
+          {
+            "state": "→ q0",
+            "targets": [
+              "q1",
+              "q2"
+            ]
+          },
+          {
+            "state": "q1",
+            "targets": [
+              "q1",
+              "q3"
+            ]
+          },
+          {
+            "state": "q2",
+            "targets": [
+              "q1",
+              "q3"
+            ]
+          },
+          {
+            "state": "* q3",
+            "targets": [
+              "q3",
+              "q3"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-reduce-12": {
+      "src": "diagrams/drill-reduce-12.svg",
+      "title": "Graph M12",
+      "description": "Graph M12. Start: q0. Accepting: q3. See the adjacent transition table for every edge.",
+      "provenance": "Original complete DFA for focused exam practice.",
+      "table": {
+        "states": [
+          "q0",
+          "q1",
+          "q2",
+          "q3"
+        ],
+        "alphabet": [
+          "a"
+        ],
+        "start": "q0",
+        "accept": [
+          "q3"
+        ],
+        "rows": [
+          {
+            "state": "→ q0",
+            "targets": [
+              "q1"
+            ]
+          },
+          {
+            "state": "q1",
+            "targets": [
+              "q2"
+            ]
+          },
+          {
+            "state": "q2",
+            "targets": [
+              "q3"
+            ]
+          },
+          {
+            "state": "* q3",
+            "targets": [
+              "q3"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-reduce-13": {
+      "src": "diagrams/drill-reduce-13.svg",
+      "title": "Graph M13",
+      "description": "Graph M13. Start: e0. Accepting: e0, e1. See the adjacent transition table for every edge.",
+      "provenance": "Original complete DFA for focused exam practice.",
+      "table": {
+        "states": [
+          "e0",
+          "o0",
+          "e1",
+          "o1"
+        ],
+        "alphabet": [
+          "0",
+          "1"
+        ],
+        "start": "e0",
+        "accept": [
+          "e0",
+          "e1"
+        ],
+        "rows": [
+          {
+            "state": "→ * e0",
+            "targets": [
+              "o0",
+              "e1"
+            ]
+          },
+          {
+            "state": "o0",
+            "targets": [
+              "e0",
+              "o1"
+            ]
+          },
+          {
+            "state": "* e1",
+            "targets": [
+              "o1",
+              "e0"
+            ]
+          },
+          {
+            "state": "o1",
+            "targets": [
+              "e1",
+              "o0"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-reduce-14": {
+      "src": "diagrams/drill-reduce-14.svg",
+      "title": "Graph M14",
+      "description": "Graph M14. Start: q0. Accepting: none. See the adjacent transition table for every edge.",
+      "provenance": "Original complete DFA for focused exam practice.",
+      "table": {
+        "states": [
+          "q0"
+        ],
+        "alphabet": [
+          "a",
+          "b"
+        ],
+        "start": "q0",
+        "accept": [],
+        "rows": [
+          {
+            "state": "→ q0",
+            "targets": [
+              "q0",
+              "q0"
+            ]
+          }
+        ]
+      }
+    },
+    "drill-reduce-15": {
+      "src": "diagrams/drill-reduce-15.svg",
+      "title": "Graph M15",
+      "description": "Graph M15. Start: s. Accepting: s. See the adjacent transition table for every edge.",
+      "provenance": "Original complete DFA for focused exam practice.",
+      "table": {
+        "states": [
+          "s",
+          "u"
+        ],
+        "alphabet": [
+          "a"
+        ],
+        "start": "s",
+        "accept": [
+          "s"
+        ],
+        "rows": [
+          {
+            "state": "→ * s",
+            "targets": [
+              "s"
+            ]
+          },
+          {
+            "state": "u",
+            "targets": [
+              "u"
+            ]
+          }
+        ]
+      }
     }
-  }
+  },
+  "drills": [
+    {
+      "id": "dfa-nfa",
+      "title": "DFA or NFA?",
+      "subtitle": "15 graph-classification questions",
+      "sourceLessonId": "lesson-2",
+      "instructions": "Use the complete-DFA convention: exactly one destination per state and input symbol, with no ε-transitions. Choose NFA for branching or ε-NFA graphs. A double circle marks an accepting state; it does not by itself imply nondeterminism.",
+      "questions": [
+        {
+          "id": "classify-v1-q1",
+          "kind": "mc",
+          "prompt": "Alphabet Σ={0, 1}. Is this graph a DFA or an NFA?",
+          "choices": [
+            "DFA",
+            "NFA (including ε-NFA)"
+          ],
+          "answer": 0,
+          "diagram": "drill-classify-1",
+          "explanation": "Every state has exactly one destination for each symbol in Σ={0, 1} and there are no ε-transitions. The number of accepting states and unreachable states does not change determinism.",
+          "segmentId": "dfa-and-nfa"
+        },
+        {
+          "id": "classify-v1-q2",
+          "kind": "mc",
+          "prompt": "Alphabet Σ={0, 1}. Is this graph a DFA or an NFA?",
+          "choices": [
+            "DFA",
+            "NFA (including ε-NFA)"
+          ],
+          "answer": 1,
+          "diagram": "drill-classify-2",
+          "explanation": "At q0, symbol 0 can reach {q0, q1}. That gives multiple destinations for the same state–symbol pair, so this is an NFA, not a DFA.",
+          "segmentId": "dfa-and-nfa"
+        },
+        {
+          "id": "classify-v1-q3",
+          "kind": "mc",
+          "prompt": "Alphabet Σ={a, b}. Is this graph a DFA or an NFA?",
+          "choices": [
+            "DFA",
+            "NFA (including ε-NFA)"
+          ],
+          "answer": 0,
+          "diagram": "drill-classify-3",
+          "explanation": "Every state has exactly one destination for each symbol in Σ={a, b} and there are no ε-transitions. The number of accepting states and unreachable states does not change determinism.",
+          "segmentId": "dfa-and-nfa"
+        },
+        {
+          "id": "classify-v1-q4",
+          "kind": "mc",
+          "prompt": "Alphabet Σ={0, 1}. Is this graph a DFA or an NFA?",
+          "choices": [
+            "DFA",
+            "NFA (including ε-NFA)"
+          ],
+          "answer": 1,
+          "diagram": "drill-classify-4",
+          "explanation": "The ε-transition from A consumes no input symbol. A DFA cannot contain ε-transitions, so this is an ε-NFA and belongs to the NFA choice.",
+          "segmentId": "dfa-and-nfa"
+        },
+        {
+          "id": "classify-v1-q5",
+          "kind": "mc",
+          "prompt": "Alphabet Σ={0, 1}. Is this graph a DFA or an NFA?",
+          "choices": [
+            "DFA",
+            "NFA (including ε-NFA)"
+          ],
+          "answer": 0,
+          "diagram": "drill-classify-5",
+          "explanation": "Every state has exactly one destination for each symbol in Σ={0, 1} and there are no ε-transitions. The number of accepting states and unreachable states does not change determinism.",
+          "segmentId": "dfa-and-nfa"
+        },
+        {
+          "id": "classify-v1-q6",
+          "kind": "mc",
+          "prompt": "Alphabet Σ={a, b}. Is this graph a DFA or an NFA?",
+          "choices": [
+            "DFA",
+            "NFA (including ε-NFA)"
+          ],
+          "answer": 1,
+          "diagram": "drill-classify-6",
+          "explanation": "At r, symbol a can reach {r, f}. That gives multiple destinations for the same state–symbol pair, so this is an NFA, not a DFA.",
+          "segmentId": "dfa-and-nfa"
+        },
+        {
+          "id": "classify-v1-q7",
+          "kind": "mc",
+          "prompt": "Alphabet Σ={0, 1}. Is this graph a DFA or an NFA?",
+          "choices": [
+            "DFA",
+            "NFA (including ε-NFA)"
+          ],
+          "answer": 0,
+          "diagram": "drill-classify-7",
+          "explanation": "Every state has exactly one destination for each symbol in Σ={0, 1} and there are no ε-transitions. The number of accepting states and unreachable states does not change determinism.",
+          "segmentId": "dfa-and-nfa"
+        },
+        {
+          "id": "classify-v1-q8",
+          "kind": "mc",
+          "prompt": "Alphabet Σ={0, 1}. Is this graph a DFA or an NFA?",
+          "choices": [
+            "DFA",
+            "NFA (including ε-NFA)"
+          ],
+          "answer": 1,
+          "diagram": "drill-classify-8",
+          "explanation": "At A, symbol 1 can reach {B, C}. That gives multiple destinations for the same state–symbol pair, so this is an NFA, not a DFA.",
+          "segmentId": "dfa-and-nfa"
+        },
+        {
+          "id": "classify-v1-q9",
+          "kind": "mc",
+          "prompt": "Alphabet Σ={a, b}. Is this graph a DFA or an NFA?",
+          "choices": [
+            "DFA",
+            "NFA (including ε-NFA)"
+          ],
+          "answer": 0,
+          "diagram": "drill-classify-9",
+          "explanation": "Every state has exactly one destination for each symbol in Σ={a, b} and there are no ε-transitions. The number of accepting states and unreachable states does not change determinism.",
+          "segmentId": "dfa-and-nfa"
+        },
+        {
+          "id": "classify-v1-q10",
+          "kind": "mc",
+          "prompt": "Alphabet Σ={a}. Is this graph a DFA or an NFA?",
+          "choices": [
+            "DFA",
+            "NFA (including ε-NFA)"
+          ],
+          "answer": 1,
+          "diagram": "drill-classify-10",
+          "explanation": "The ε-transition from q0 consumes no input symbol. A DFA cannot contain ε-transitions, so this is an ε-NFA and belongs to the NFA choice.",
+          "segmentId": "dfa-and-nfa"
+        },
+        {
+          "id": "classify-v1-q11",
+          "kind": "mc",
+          "prompt": "Alphabet Σ={0, 1}. Is this graph a DFA or an NFA?",
+          "choices": [
+            "DFA",
+            "NFA (including ε-NFA)"
+          ],
+          "answer": 0,
+          "diagram": "drill-classify-11",
+          "explanation": "Every state has exactly one destination for each symbol in Σ={0, 1} and there are no ε-transitions. The number of accepting states and unreachable states does not change determinism.",
+          "segmentId": "dfa-and-nfa"
+        },
+        {
+          "id": "classify-v1-q12",
+          "kind": "mc",
+          "prompt": "Alphabet Σ={0, 1}. Is this graph a DFA or an NFA?",
+          "choices": [
+            "DFA",
+            "NFA (including ε-NFA)"
+          ],
+          "answer": 1,
+          "diagram": "drill-classify-12",
+          "explanation": "At q1, symbol 1 can reach {q0, q2}. That gives multiple destinations for the same state–symbol pair, so this is an NFA, not a DFA.",
+          "segmentId": "dfa-and-nfa"
+        },
+        {
+          "id": "classify-v1-q13",
+          "kind": "mc",
+          "prompt": "Alphabet Σ={a, b}. Is this graph a DFA or an NFA?",
+          "choices": [
+            "DFA",
+            "NFA (including ε-NFA)"
+          ],
+          "answer": 0,
+          "diagram": "drill-classify-13",
+          "explanation": "Every state has exactly one destination for each symbol in Σ={a, b} and there are no ε-transitions. The number of accepting states and unreachable states does not change determinism.",
+          "segmentId": "dfa-and-nfa"
+        },
+        {
+          "id": "classify-v1-q14",
+          "kind": "mc",
+          "prompt": "Alphabet Σ={0, 1}. Is this graph a DFA or an NFA?",
+          "choices": [
+            "DFA",
+            "NFA (including ε-NFA)"
+          ],
+          "answer": 1,
+          "diagram": "drill-classify-14",
+          "explanation": "The ε-transition from q consumes no input symbol. A DFA cannot contain ε-transitions, so this is an ε-NFA and belongs to the NFA choice.",
+          "segmentId": "dfa-and-nfa"
+        },
+        {
+          "id": "classify-v1-q15",
+          "kind": "mc",
+          "prompt": "Alphabet Σ={a, b}. Is this graph a DFA or an NFA?",
+          "choices": [
+            "DFA",
+            "NFA (including ε-NFA)"
+          ],
+          "answer": 1,
+          "diagram": "drill-classify-15",
+          "explanation": "At q0, symbol a can reach {q0, q1}. That gives multiple destinations for the same state–symbol pair, so this is an NFA, not a DFA.",
+          "segmentId": "dfa-and-nfa"
+        }
+      ]
+    },
+    {
+      "id": "minimization",
+      "title": "Can this DFA be reduced?",
+      "subtitle": "15 graph-minimization questions",
+      "sourceLessonId": "lesson-6",
+      "instructions": "All figures in this quiz are complete DFAs. Answer Yes only if the equivalent DFA can have fewer states. Check both unreachable states and equivalent reachable states. Minimizing an already-minimal DFA does not reduce its state count.",
+      "questions": [
+        {
+          "id": "reduce-v1-q1",
+          "kind": "mc",
+          "prompt": "Can this DFA be reduced to fewer states without changing its accepted language?",
+          "choices": [
+            "Yes — it can be reduced further",
+            "No — it is already minimal"
+          ],
+          "answer": 0,
+          "diagram": "drill-reduce-1",
+          "explanation": "Yes. Merge equivalent states {p, r}: they have the same accept/reject behavior for every continuation. This reduces 3 states to 2.",
+          "minimumStates": 2,
+          "segmentId": "l6-s09"
+        },
+        {
+          "id": "reduce-v1-q2",
+          "kind": "mc",
+          "prompt": "Can this DFA be reduced to fewer states without changing its accepted language?",
+          "choices": [
+            "Yes — it can be reduced further",
+            "No — it is already minimal"
+          ],
+          "answer": 1,
+          "diagram": "drill-reduce-2",
+          "explanation": "No. All states are reachable, and the stable equivalence classes are {e} | {o}. Every pair is distinguishable, so no merge preserves the language. The minimum remains 2 states.",
+          "minimumStates": 2,
+          "segmentId": "l6-s09"
+        },
+        {
+          "id": "reduce-v1-q3",
+          "kind": "mc",
+          "prompt": "Can this DFA be reduced to fewer states without changing its accepted language?",
+          "choices": [
+            "Yes — it can be reduced further",
+            "No — it is already minimal"
+          ],
+          "answer": 0,
+          "diagram": "drill-reduce-3",
+          "explanation": "Yes. Merge equivalent states {f1, f2}: they have the same accept/reject behavior for every continuation. This reduces 3 states to 2.",
+          "minimumStates": 2,
+          "segmentId": "l6-s09"
+        },
+        {
+          "id": "reduce-v1-q4",
+          "kind": "mc",
+          "prompt": "Can this DFA be reduced to fewer states without changing its accepted language?",
+          "choices": [
+            "Yes — it can be reduced further",
+            "No — it is already minimal"
+          ],
+          "answer": 1,
+          "diagram": "drill-reduce-4",
+          "explanation": "No. One reachable state is already the smallest possible DFA. The minimum remains 1 states.",
+          "minimumStates": 1,
+          "segmentId": "l6-s09"
+        },
+        {
+          "id": "reduce-v1-q5",
+          "kind": "mc",
+          "prompt": "Can this DFA be reduced to fewer states without changing its accepted language?",
+          "choices": [
+            "Yes — it can be reduced further",
+            "No — it is already minimal"
+          ],
+          "answer": 0,
+          "diagram": "drill-reduce-5",
+          "explanation": "Yes. Remove unreachable {u}; removing unreachable states preserves the language. This reduces 3 states to 2.",
+          "minimumStates": 2,
+          "segmentId": "l6-s12"
+        },
+        {
+          "id": "reduce-v1-q6",
+          "kind": "mc",
+          "prompt": "Can this DFA be reduced to fewer states without changing its accepted language?",
+          "choices": [
+            "Yes — it can be reduced further",
+            "No — it is already minimal"
+          ],
+          "answer": 1,
+          "diagram": "drill-reduce-6",
+          "explanation": "No. All states are reachable, and the stable equivalence classes are {q1} | {q0}. Every pair is distinguishable, so no merge preserves the language. The minimum remains 2 states.",
+          "minimumStates": 2,
+          "segmentId": "l6-s09"
+        },
+        {
+          "id": "reduce-v1-q7",
+          "kind": "mc",
+          "prompt": "Can this DFA be reduced to fewer states without changing its accepted language?",
+          "choices": [
+            "Yes — it can be reduced further",
+            "No — it is already minimal"
+          ],
+          "answer": 0,
+          "diagram": "drill-reduce-7",
+          "explanation": "Yes. Merge equivalent states {A, B, C}: they have the same accept/reject behavior for every continuation. This reduces 3 states to 1.",
+          "minimumStates": 1,
+          "segmentId": "l6-s09"
+        },
+        {
+          "id": "reduce-v1-q8",
+          "kind": "mc",
+          "prompt": "Can this DFA be reduced to fewer states without changing its accepted language?",
+          "choices": [
+            "Yes — it can be reduced further",
+            "No — it is already minimal"
+          ],
+          "answer": 1,
+          "diagram": "drill-reduce-8",
+          "explanation": "No. All states are reachable, and the stable equivalence classes are {q0} | {q1} | {q2}. Every pair is distinguishable, so no merge preserves the language. The minimum remains 3 states.",
+          "minimumStates": 3,
+          "segmentId": "l6-s09"
+        },
+        {
+          "id": "reduce-v1-q9",
+          "kind": "mc",
+          "prompt": "Can this DFA be reduced to fewer states without changing its accepted language?",
+          "choices": [
+            "Yes — it can be reduced further",
+            "No — it is already minimal"
+          ],
+          "answer": 0,
+          "diagram": "drill-reduce-9",
+          "explanation": "Yes. Merge equivalent states {A, B, C, D}: they have the same accept/reject behavior for every continuation. This reduces 4 states to 1.",
+          "minimumStates": 1,
+          "segmentId": "l6-s09"
+        },
+        {
+          "id": "reduce-v1-q10",
+          "kind": "mc",
+          "prompt": "Can this DFA be reduced to fewer states without changing its accepted language?",
+          "choices": [
+            "Yes — it can be reduced further",
+            "No — it is already minimal"
+          ],
+          "answer": 1,
+          "diagram": "drill-reduce-10",
+          "explanation": "No. All states are reachable, and the stable equivalence classes are {found} | {a} | {s}. Every pair is distinguishable, so no merge preserves the language. The minimum remains 3 states.",
+          "minimumStates": 3,
+          "segmentId": "l6-s09"
+        },
+        {
+          "id": "reduce-v1-q11",
+          "kind": "mc",
+          "prompt": "Can this DFA be reduced to fewer states without changing its accepted language?",
+          "choices": [
+            "Yes — it can be reduced further",
+            "No — it is already minimal"
+          ],
+          "answer": 0,
+          "diagram": "drill-reduce-11",
+          "explanation": "Yes. Merge equivalent states {q1, q2}: they have the same accept/reject behavior for every continuation. This reduces 4 states to 3.",
+          "minimumStates": 3,
+          "segmentId": "l6-s09"
+        },
+        {
+          "id": "reduce-v1-q12",
+          "kind": "mc",
+          "prompt": "Can this DFA be reduced to fewer states without changing its accepted language?",
+          "choices": [
+            "Yes — it can be reduced further",
+            "No — it is already minimal"
+          ],
+          "answer": 1,
+          "diagram": "drill-reduce-12",
+          "explanation": "No. All states are reachable, and the stable equivalence classes are {q3} | {q0} | {q1} | {q2}. Every pair is distinguishable, so no merge preserves the language. The minimum remains 4 states.",
+          "minimumStates": 4,
+          "segmentId": "l6-s09"
+        },
+        {
+          "id": "reduce-v1-q13",
+          "kind": "mc",
+          "prompt": "Can this DFA be reduced to fewer states without changing its accepted language?",
+          "choices": [
+            "Yes — it can be reduced further",
+            "No — it is already minimal"
+          ],
+          "answer": 0,
+          "diagram": "drill-reduce-13",
+          "explanation": "Yes. Merge equivalent states {e0, e1}: they have the same accept/reject behavior for every continuation. Merge equivalent states {o0, o1}: they have the same accept/reject behavior for every continuation. This reduces 4 states to 2.",
+          "minimumStates": 2,
+          "segmentId": "l6-s09"
+        },
+        {
+          "id": "reduce-v1-q14",
+          "kind": "mc",
+          "prompt": "Can this DFA be reduced to fewer states without changing its accepted language?",
+          "choices": [
+            "Yes — it can be reduced further",
+            "No — it is already minimal"
+          ],
+          "answer": 1,
+          "diagram": "drill-reduce-14",
+          "explanation": "No. One reachable state is already the smallest possible DFA. The minimum remains 1 states.",
+          "minimumStates": 1,
+          "segmentId": "l6-s09"
+        },
+        {
+          "id": "reduce-v1-q15",
+          "kind": "mc",
+          "prompt": "Can this DFA be reduced to fewer states without changing its accepted language?",
+          "choices": [
+            "Yes — it can be reduced further",
+            "No — it is already minimal"
+          ],
+          "answer": 0,
+          "diagram": "drill-reduce-15",
+          "explanation": "Yes. Remove unreachable {u}; removing unreachable states preserves the language. This reduces 2 states to 1.",
+          "minimumStates": 1,
+          "segmentId": "l6-s12"
+        }
+      ]
+    }
+  ]
 };

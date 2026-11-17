@@ -214,3 +214,85 @@ assert.equal(accepts("l5-example-three-dfa", "bb"), false);
 console.log(
   `Validated6 lessons,90 questions,${Object.keys(raw).length} diagrams,${traces} NFA/conversion word comparisons and all minimization keys.`,
 );
+// Focused answer keys are cross-checked with direct transition counting and an
+// independent product-graph distinguishability search (not partition refinement).
+assert.equal(data.drills.length, 2);
+function independentMinimum(m) {
+  const final = new Set(m.accept_states),
+    next = (s, a) => {
+      const t = m.transitions[s]?.[a] || [];
+      assert.equal(t.length, 1);
+      return t[0];
+    };
+  const reachable = new Set([m.start_state]),
+    todo = [m.start_state];
+  while (todo.length) {
+    const s = todo.shift();
+    for (const a of m.alphabet) {
+      const t = next(s, a);
+      if (!reachable.has(t)) {
+        reachable.add(t);
+        todo.push(t);
+      }
+    }
+  }
+  function different(a, b) {
+    const queue = [[a, b]],
+      seen = new Set();
+    while (queue.length) {
+      const [x, y] = queue.shift(),
+        key = JSON.stringify([x, y]);
+      if (seen.has(key)) continue;
+      seen.add(key);
+      if (final.has(x) !== final.has(y)) return true;
+      for (const c of m.alphabet) queue.push([next(x, c), next(y, c)]);
+    }
+    return false;
+  }
+  const representatives = [];
+  for (const s of reachable)
+    if (!representatives.some((r) => !different(s, r))) representatives.push(s);
+  return representatives.length;
+}
+for (const d of data.drills) {
+  assert.equal(d.questions.length, 15);
+  const source = data.lessons.find((l) => l.id === d.sourceLessonId);
+  assert(source);
+  let yes = 0,
+    no = 0;
+  for (const q of d.questions) {
+    assert(!qids.has(q.id));
+    qids.add(q.id);
+    assert(source.segments.some((s) => s.id === q.segmentId));
+    assert.equal(q.choices.length, 2);
+    assert([0, 1].includes(q.answer));
+    const m = raw[q.diagram];
+    assert(m);
+    assert(
+      !/DFA|NFA|minimal|reducible|equivalent|unreachable/i.test(
+        data.diagrams[q.diagram].title,
+      ),
+      "Answer leaked in figure caption",
+    );
+    if (d.id === "dfa-nfa") {
+      const isDfa = m.states.every(
+        (s) =>
+          !m.transitions[s]?.["ε"]?.length &&
+          m.alphabet.every(
+            (a) => new Set(m.transitions[s]?.[a] || []).size === 1,
+          ),
+      );
+      assert.equal(q.answer, isDfa ? 0 : 1, q.id);
+    } else {
+      const minimum = independentMinimum(m);
+      assert.equal(q.minimumStates, minimum, q.id);
+      assert.equal(q.answer, minimum < m.states.length ? 0 : 1, q.id);
+    }
+    if (q.answer === 0) yes++;
+    else no++;
+  }
+  assert(yes >= 6 && no >= 6, "Unbalanced focused quiz");
+}
+console.log(
+  "Validated both focused graph quizzes:30 keys, including exact independent minimum-state checks.",
+);

@@ -1,0 +1,38 @@
+{
+  "states": [
+    "q0",
+    "q1",
+    "q2",
+    "q3"
+  ],
+  "alphabet": [
+    "a"
+  ],
+  "start_state": "q0",
+  "accept_states": [
+    "q3"
+  ],
+  "transitions": {
+    "q0": {
+      "a": [
+        "q1"
+      ]
+    },
+    "q1": {
+      "a": [
+        "q2"
+      ]
+    },
+    "q2": {
+      "a": [
+        "q3"
+      ]
+    },
+    "q3": {
+      "a": [
+        "q3"
+      ]
+    }
+  },
+  "name": "Graph M12"
+}

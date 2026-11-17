@@ -144,7 +144,20 @@
         `${lessons.filter((l) => state.completed[l.id]).length} of ${lessons.length} lessons marked complete.`,
       ),
     );
-    main.append(progress, el("h2", "Lessons"));
+    main.append(progress);
+    if (data.drills?.length) {
+      main.append(el("h2", "Focused graph quizzes"));
+      data.drills.forEach((d) => {
+        const a = link(
+          d.title,
+          `quiz.html?lesson=${encodeURIComponent(d.id)}`,
+          "card",
+        );
+        a.append(el("span", d.subtitle));
+        main.append(a);
+      });
+    }
+    main.append(el("h2", "Lessons"));
     lessons.forEach((l) => {
       const a = link(
         `Lesson ${l.number}: ${l.title}`,

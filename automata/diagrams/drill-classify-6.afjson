@@ -1,0 +1,43 @@
+{
+  "states": [
+    "p",
+    "r",
+    "f"
+  ],
+  "alphabet": [
+    "a",
+    "b"
+  ],
+  "start_state": "p",
+  "accept_states": [
+    "f"
+  ],
+  "transitions": {
+    "p": {
+      "a": [
+        "r"
+      ],
+      "b": [
+        "p"
+      ]
+    },
+    "r": {
+      "a": [
+        "r",
+        "f"
+      ],
+      "b": [
+        "p"
+      ]
+    },
+    "f": {
+      "a": [
+        "f"
+      ],
+      "b": [
+        "f"
+      ]
+    }
+  },
+  "name": "Graph C06"
+}

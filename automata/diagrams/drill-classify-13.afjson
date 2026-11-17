@@ -1,0 +1,42 @@
+{
+  "states": [
+    "A",
+    "B",
+    "C"
+  ],
+  "alphabet": [
+    "a",
+    "b"
+  ],
+  "start_state": "A",
+  "accept_states": [
+    "C"
+  ],
+  "transitions": {
+    "A": {
+      "a": [
+        "B"
+      ],
+      "b": [
+        "A"
+      ]
+    },
+    "B": {
+      "a": [
+        "B"
+      ],
+      "b": [
+        "C"
+      ]
+    },
+    "C": {
+      "a": [
+        "C"
+      ],
+      "b": [
+        "C"
+      ]
+    }
+  },
+  "name": "Graph C13"
+}

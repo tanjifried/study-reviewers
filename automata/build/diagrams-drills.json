@@ -1,0 +1,1186 @@
+{
+  "drill-classify-1": {
+    "states": [
+      "q0",
+      "q1"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "q0",
+    "accept_states": [
+      "q0"
+    ],
+    "transitions": {
+      "q0": {
+        "0": [
+          "q1"
+        ],
+        "1": [
+          "q0"
+        ]
+      },
+      "q1": {
+        "0": [
+          "q0"
+        ],
+        "1": [
+          "q1"
+        ]
+      }
+    },
+    "name": "Graph C01",
+    "provenance": "Original graph for focused exam practice."
+  },
+  "drill-classify-2": {
+    "states": [
+      "q0",
+      "q1"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "q0",
+    "accept_states": [
+      "q1"
+    ],
+    "transitions": {
+      "q0": {
+        "0": [
+          "q0",
+          "q1"
+        ],
+        "1": [
+          "q0"
+        ]
+      },
+      "q1": {
+        "0": [
+          "q1"
+        ],
+        "1": [
+          "q1"
+        ]
+      }
+    },
+    "name": "Graph C02",
+    "provenance": "Original graph for focused exam practice."
+  },
+  "drill-classify-3": {
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "alphabet": [
+      "a",
+      "b"
+    ],
+    "start_state": "A",
+    "accept_states": [
+      "B",
+      "C"
+    ],
+    "transitions": {
+      "A": {
+        "a": [
+          "B"
+        ],
+        "b": [
+          "C"
+        ]
+      },
+      "B": {
+        "a": [
+          "A"
+        ],
+        "b": [
+          "B"
+        ]
+      },
+      "C": {
+        "a": [
+          "C"
+        ],
+        "b": [
+          "A"
+        ]
+      }
+    },
+    "name": "Graph C03",
+    "provenance": "Original graph for focused exam practice."
+  },
+  "drill-classify-4": {
+    "states": [
+      "A",
+      "B"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "A",
+    "accept_states": [
+      "B"
+    ],
+    "transitions": {
+      "A": {
+        "0": [
+          "A"
+        ],
+        "1": [
+          "A"
+        ],
+        "ε": [
+          "B"
+        ]
+      },
+      "B": {
+        "0": [
+          "B"
+        ],
+        "1": [
+          "B"
+        ]
+      }
+    },
+    "name": "Graph C04",
+    "provenance": "Original graph for focused exam practice."
+  },
+  "drill-classify-5": {
+    "states": [
+      "q0"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "q0",
+    "accept_states": [
+      "q0"
+    ],
+    "transitions": {
+      "q0": {
+        "0": [
+          "q0"
+        ],
+        "1": [
+          "q0"
+        ]
+      }
+    },
+    "name": "Graph C05",
+    "provenance": "Original graph for focused exam practice."
+  },
+  "drill-classify-6": {
+    "states": [
+      "p",
+      "r",
+      "f"
+    ],
+    "alphabet": [
+      "a",
+      "b"
+    ],
+    "start_state": "p",
+    "accept_states": [
+      "f"
+    ],
+    "transitions": {
+      "p": {
+        "a": [
+          "r"
+        ],
+        "b": [
+          "p"
+        ]
+      },
+      "r": {
+        "a": [
+          "r",
+          "f"
+        ],
+        "b": [
+          "p"
+        ]
+      },
+      "f": {
+        "a": [
+          "f"
+        ],
+        "b": [
+          "f"
+        ]
+      }
+    },
+    "name": "Graph C06",
+    "provenance": "Original graph for focused exam practice."
+  },
+  "drill-classify-7": {
+    "states": [
+      "q0",
+      "q1",
+      "u"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "q0",
+    "accept_states": [
+      "q1"
+    ],
+    "transitions": {
+      "q0": {
+        "0": [
+          "q0"
+        ],
+        "1": [
+          "q1"
+        ]
+      },
+      "q1": {
+        "0": [
+          "q0"
+        ],
+        "1": [
+          "q1"
+        ]
+      },
+      "u": {
+        "0": [
+          "u"
+        ],
+        "1": [
+          "u"
+        ]
+      }
+    },
+    "name": "Graph C07",
+    "provenance": "Original graph for focused exam practice."
+  },
+  "drill-classify-8": {
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "A",
+    "accept_states": [
+      "C"
+    ],
+    "transitions": {
+      "A": {
+        "0": [
+          "A"
+        ],
+        "1": [
+          "B",
+          "C"
+        ]
+      },
+      "B": {
+        "0": [
+          "A"
+        ],
+        "1": [
+          "C"
+        ]
+      },
+      "C": {
+        "0": [
+          "C"
+        ],
+        "1": [
+          "C"
+        ]
+      }
+    },
+    "name": "Graph C08",
+    "provenance": "Original graph for focused exam practice."
+  },
+  "drill-classify-9": {
+    "states": [
+      "A",
+      "B"
+    ],
+    "alphabet": [
+      "a",
+      "b"
+    ],
+    "start_state": "A",
+    "accept_states": [],
+    "transitions": {
+      "A": {
+        "a": [
+          "B"
+        ],
+        "b": [
+          "A"
+        ]
+      },
+      "B": {
+        "a": [
+          "A"
+        ],
+        "b": [
+          "B"
+        ]
+      }
+    },
+    "name": "Graph C09",
+    "provenance": "Original graph for focused exam practice."
+  },
+  "drill-classify-10": {
+    "states": [
+      "q0",
+      "q1",
+      "q2"
+    ],
+    "alphabet": [
+      "a"
+    ],
+    "start_state": "q0",
+    "accept_states": [
+      "q2"
+    ],
+    "transitions": {
+      "q0": {
+        "a": [
+          "q1"
+        ],
+        "ε": [
+          "q1"
+        ]
+      },
+      "q1": {
+        "a": [
+          "q2"
+        ],
+        "ε": [
+          "q0"
+        ]
+      },
+      "q2": {
+        "a": [
+          "q2"
+        ]
+      }
+    },
+    "name": "Graph C10",
+    "provenance": "Original graph for focused exam practice."
+  },
+  "drill-classify-11": {
+    "states": [
+      "q0",
+      "q1",
+      "q2"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "q0",
+    "accept_states": [
+      "q0"
+    ],
+    "transitions": {
+      "q0": {
+        "0": [
+          "q1"
+        ],
+        "1": [
+          "q0"
+        ]
+      },
+      "q1": {
+        "0": [
+          "q2"
+        ],
+        "1": [
+          "q1"
+        ]
+      },
+      "q2": {
+        "0": [
+          "q0"
+        ],
+        "1": [
+          "q2"
+        ]
+      }
+    },
+    "name": "Graph C11",
+    "provenance": "Original graph for focused exam practice."
+  },
+  "drill-classify-12": {
+    "states": [
+      "q0",
+      "q1",
+      "q2"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "q0",
+    "accept_states": [
+      "q2"
+    ],
+    "transitions": {
+      "q0": {
+        "0": [
+          "q1"
+        ],
+        "1": [
+          "q0"
+        ]
+      },
+      "q1": {
+        "0": [
+          "q1"
+        ],
+        "1": [
+          "q0",
+          "q2"
+        ]
+      },
+      "q2": {
+        "0": [
+          "q2"
+        ],
+        "1": [
+          "q2"
+        ]
+      }
+    },
+    "name": "Graph C12",
+    "provenance": "Original graph for focused exam practice."
+  },
+  "drill-classify-13": {
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "alphabet": [
+      "a",
+      "b"
+    ],
+    "start_state": "A",
+    "accept_states": [
+      "C"
+    ],
+    "transitions": {
+      "A": {
+        "a": [
+          "B"
+        ],
+        "b": [
+          "A"
+        ]
+      },
+      "B": {
+        "a": [
+          "B"
+        ],
+        "b": [
+          "C"
+        ]
+      },
+      "C": {
+        "a": [
+          "C"
+        ],
+        "b": [
+          "C"
+        ]
+      }
+    },
+    "name": "Graph C13",
+    "provenance": "Original graph for focused exam practice."
+  },
+  "drill-classify-14": {
+    "states": [
+      "p",
+      "q",
+      "r"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "p",
+    "accept_states": [
+      "r"
+    ],
+    "transitions": {
+      "p": {
+        "0": [
+          "p"
+        ],
+        "1": [
+          "q"
+        ]
+      },
+      "q": {
+        "0": [
+          "q"
+        ],
+        "1": [
+          "r"
+        ],
+        "ε": [
+          "r"
+        ]
+      },
+      "r": {
+        "0": [
+          "r"
+        ],
+        "1": [
+          "r"
+        ]
+      }
+    },
+    "name": "Graph C14",
+    "provenance": "Original graph for focused exam practice."
+  },
+  "drill-classify-15": {
+    "states": [
+      "q0",
+      "q1",
+      "q2"
+    ],
+    "alphabet": [
+      "a",
+      "b"
+    ],
+    "start_state": "q0",
+    "accept_states": [
+      "q1",
+      "q2"
+    ],
+    "transitions": {
+      "q0": {
+        "a": [
+          "q0",
+          "q1"
+        ],
+        "b": [
+          "q2"
+        ]
+      },
+      "q1": {
+        "a": [
+          "q1"
+        ],
+        "b": [
+          "q2"
+        ]
+      },
+      "q2": {
+        "a": [
+          "q2"
+        ],
+        "b": [
+          "q0"
+        ]
+      }
+    },
+    "name": "Graph C15",
+    "provenance": "Original graph for focused exam practice."
+  },
+  "drill-reduce-1": {
+    "states": [
+      "p",
+      "r",
+      "f"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "p",
+    "accept_states": [
+      "f"
+    ],
+    "transitions": {
+      "p": {
+        "0": [
+          "r"
+        ],
+        "1": [
+          "f"
+        ]
+      },
+      "r": {
+        "0": [
+          "p"
+        ],
+        "1": [
+          "f"
+        ]
+      },
+      "f": {
+        "0": [
+          "f"
+        ],
+        "1": [
+          "f"
+        ]
+      }
+    },
+    "name": "Graph M01",
+    "provenance": "Original complete DFA for focused exam practice."
+  },
+  "drill-reduce-2": {
+    "states": [
+      "e",
+      "o"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "e",
+    "accept_states": [
+      "e"
+    ],
+    "transitions": {
+      "e": {
+        "0": [
+          "o"
+        ],
+        "1": [
+          "e"
+        ]
+      },
+      "o": {
+        "0": [
+          "e"
+        ],
+        "1": [
+          "o"
+        ]
+      }
+    },
+    "name": "Graph M02",
+    "provenance": "Original complete DFA for focused exam practice."
+  },
+  "drill-reduce-3": {
+    "states": [
+      "s",
+      "f1",
+      "f2"
+    ],
+    "alphabet": [
+      "a",
+      "b"
+    ],
+    "start_state": "s",
+    "accept_states": [
+      "f1",
+      "f2"
+    ],
+    "transitions": {
+      "s": {
+        "a": [
+          "f1"
+        ],
+        "b": [
+          "f2"
+        ]
+      },
+      "f1": {
+        "a": [
+          "f1"
+        ],
+        "b": [
+          "f1"
+        ]
+      },
+      "f2": {
+        "a": [
+          "f2"
+        ],
+        "b": [
+          "f2"
+        ]
+      }
+    },
+    "name": "Graph M03",
+    "provenance": "Original complete DFA for focused exam practice."
+  },
+  "drill-reduce-4": {
+    "states": [
+      "q0"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "q0",
+    "accept_states": [
+      "q0"
+    ],
+    "transitions": {
+      "q0": {
+        "0": [
+          "q0"
+        ],
+        "1": [
+          "q0"
+        ]
+      }
+    },
+    "name": "Graph M04",
+    "provenance": "Original complete DFA for focused exam practice."
+  },
+  "drill-reduce-5": {
+    "states": [
+      "q0",
+      "q1",
+      "u"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "q0",
+    "accept_states": [
+      "q1"
+    ],
+    "transitions": {
+      "q0": {
+        "0": [
+          "q0"
+        ],
+        "1": [
+          "q1"
+        ]
+      },
+      "q1": {
+        "0": [
+          "q0"
+        ],
+        "1": [
+          "q1"
+        ]
+      },
+      "u": {
+        "0": [
+          "u"
+        ],
+        "1": [
+          "u"
+        ]
+      }
+    },
+    "name": "Graph M05",
+    "provenance": "Original complete DFA for focused exam practice."
+  },
+  "drill-reduce-6": {
+    "states": [
+      "q0",
+      "q1"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "q0",
+    "accept_states": [
+      "q1"
+    ],
+    "transitions": {
+      "q0": {
+        "0": [
+          "q0"
+        ],
+        "1": [
+          "q1"
+        ]
+      },
+      "q1": {
+        "0": [
+          "q0"
+        ],
+        "1": [
+          "q1"
+        ]
+      }
+    },
+    "name": "Graph M06",
+    "provenance": "Original complete DFA for focused exam practice."
+  },
+  "drill-reduce-7": {
+    "states": [
+      "A",
+      "B",
+      "C"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "A",
+    "accept_states": [],
+    "transitions": {
+      "A": {
+        "0": [
+          "B"
+        ],
+        "1": [
+          "A"
+        ]
+      },
+      "B": {
+        "0": [
+          "C"
+        ],
+        "1": [
+          "B"
+        ]
+      },
+      "C": {
+        "0": [
+          "A"
+        ],
+        "1": [
+          "C"
+        ]
+      }
+    },
+    "name": "Graph M07",
+    "provenance": "Original complete DFA for focused exam practice."
+  },
+  "drill-reduce-8": {
+    "states": [
+      "q0",
+      "q1",
+      "q2"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "q0",
+    "accept_states": [
+      "q0"
+    ],
+    "transitions": {
+      "q0": {
+        "0": [
+          "q1"
+        ],
+        "1": [
+          "q0"
+        ]
+      },
+      "q1": {
+        "0": [
+          "q2"
+        ],
+        "1": [
+          "q1"
+        ]
+      },
+      "q2": {
+        "0": [
+          "q0"
+        ],
+        "1": [
+          "q2"
+        ]
+      }
+    },
+    "name": "Graph M08",
+    "provenance": "Original complete DFA for focused exam practice."
+  },
+  "drill-reduce-9": {
+    "states": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "alphabet": [
+      "a"
+    ],
+    "start_state": "A",
+    "accept_states": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "transitions": {
+      "A": {
+        "a": [
+          "B"
+        ]
+      },
+      "B": {
+        "a": [
+          "C"
+        ]
+      },
+      "C": {
+        "a": [
+          "D"
+        ]
+      },
+      "D": {
+        "a": [
+          "A"
+        ]
+      }
+    },
+    "name": "Graph M09",
+    "provenance": "Original complete DFA for focused exam practice."
+  },
+  "drill-reduce-10": {
+    "states": [
+      "s",
+      "a",
+      "found"
+    ],
+    "alphabet": [
+      "a",
+      "b"
+    ],
+    "start_state": "s",
+    "accept_states": [
+      "found"
+    ],
+    "transitions": {
+      "s": {
+        "a": [
+          "a"
+        ],
+        "b": [
+          "s"
+        ]
+      },
+      "a": {
+        "a": [
+          "a"
+        ],
+        "b": [
+          "found"
+        ]
+      },
+      "found": {
+        "a": [
+          "found"
+        ],
+        "b": [
+          "found"
+        ]
+      }
+    },
+    "name": "Graph M10",
+    "provenance": "Original complete DFA for focused exam practice."
+  },
+  "drill-reduce-11": {
+    "states": [
+      "q0",
+      "q1",
+      "q2",
+      "q3"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "q0",
+    "accept_states": [
+      "q3"
+    ],
+    "transitions": {
+      "q0": {
+        "0": [
+          "q1"
+        ],
+        "1": [
+          "q2"
+        ]
+      },
+      "q1": {
+        "0": [
+          "q1"
+        ],
+        "1": [
+          "q3"
+        ]
+      },
+      "q2": {
+        "0": [
+          "q1"
+        ],
+        "1": [
+          "q3"
+        ]
+      },
+      "q3": {
+        "0": [
+          "q3"
+        ],
+        "1": [
+          "q3"
+        ]
+      }
+    },
+    "name": "Graph M11",
+    "provenance": "Original complete DFA for focused exam practice."
+  },
+  "drill-reduce-12": {
+    "states": [
+      "q0",
+      "q1",
+      "q2",
+      "q3"
+    ],
+    "alphabet": [
+      "a"
+    ],
+    "start_state": "q0",
+    "accept_states": [
+      "q3"
+    ],
+    "transitions": {
+      "q0": {
+        "a": [
+          "q1"
+        ]
+      },
+      "q1": {
+        "a": [
+          "q2"
+        ]
+      },
+      "q2": {
+        "a": [
+          "q3"
+        ]
+      },
+      "q3": {
+        "a": [
+          "q3"
+        ]
+      }
+    },
+    "name": "Graph M12",
+    "provenance": "Original complete DFA for focused exam practice."
+  },
+  "drill-reduce-13": {
+    "states": [
+      "e0",
+      "o0",
+      "e1",
+      "o1"
+    ],
+    "alphabet": [
+      "0",
+      "1"
+    ],
+    "start_state": "e0",
+    "accept_states": [
+      "e0",
+      "e1"
+    ],
+    "transitions": {
+      "e0": {
+        "0": [
+          "o0"
+        ],
+        "1": [
+          "e1"
+        ]
+      },
+      "o0": {
+        "0": [
+          "e0"
+        ],
+        "1": [
+          "o1"
+        ]
+      },
+      "e1": {
+        "0": [
+          "o1"
+        ],
+        "1": [
+          "e0"
+        ]
+      },
+      "o1": {
+        "0": [
+          "e1"
+        ],
+        "1": [
+          "o0"
+        ]
+      }
+    },
+    "name": "Graph M13",
+    "provenance": "Original complete DFA for focused exam practice."
+  },
+  "drill-reduce-14": {
+    "states": [
+      "q0"
+    ],
+    "alphabet": [
+      "a",
+      "b"
+    ],
+    "start_state": "q0",
+    "accept_states": [],
+    "transitions": {
+      "q0": {
+        "a": [
+          "q0"
+        ],
+        "b": [
+          "q0"
+        ]
+      }
+    },
+    "name": "Graph M14",
+    "provenance": "Original complete DFA for focused exam practice."
+  },
+  "drill-reduce-15": {
+    "states": [
+      "s",
+      "u"
+    ],
+    "alphabet": [
+      "a"
+    ],
+    "start_state": "s",
+    "accept_states": [
+      "s"
+    ],
+    "transitions": {
+      "s": {
+        "a": [
+          "s"
+        ]
+      },
+      "u": {
+        "a": [
+          "u"
+        ]
+      }
+    },
+    "name": "Graph M15",
+    "provenance": "Original complete DFA for focused exam practice."
+  }
+}
