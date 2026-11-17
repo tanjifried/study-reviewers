@@ -43,3 +43,5 @@ PLAYWRIGHT_MODULE=/path/to/playwright node tests/automata-browser.cjs
 Omit `PLAYWRIGHT_MODULE` when `playwright` resolves normally. The generator and browser suite default to `/usr/bin/google-chrome`; set `CHROME_BIN` if your executable is elsewhere. The Python preparation script requires only the standard library and excludes authoring/build files from `_site`.
 
 The data suite checks all 90 questions, 20 machines and their tables, 1,275 bounded-word conversion comparisons, and minimization results. These checks support the encoded examples; bounded comparisons alone are not general proofs of equivalence. Browser checks cover all lessons and quizzes at desktop and phone widths, source navigation, note search, exam feedback/settings, editing, resume, scoring, focus, and unavailable storage. They verify directly displayed source frames, all 18 identification items, deferred typed-answer editing, saved-progress migration, and recovery after invalid punctuation-only input.
+
+Lesson 1 prioritizes core terms and concepts. Everyday-device examples remain optional source context and are excluded from its quiz. Key terms appear before the source walkthrough.

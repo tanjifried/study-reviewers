@@ -60,6 +60,15 @@ for (const l of data.lessons) {
   }
 }
 assert.equal(qids.size, 90);
+const intro = data.lessons[0];
+assert(intro.keyTermsFirst);
+for (const q of intro.questions)
+  assert(
+    !/thermostat|elevator|banking|floor 5|deposit|withdraw/i.test(
+      [q.prompt, q.explanation, ...(q.choices || [])].join(" "),
+    ),
+    "Incidental example in core introduction quiz",
+  );
 assert.equal(
   data.lessons
     .flatMap((l) => l.questions)

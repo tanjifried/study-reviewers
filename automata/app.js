@@ -217,6 +217,13 @@
       el("h1", `Lesson ${lesson.number}: ${lesson.title}`),
       el("p", lesson.overview),
     );
+    const showTerms = () => {
+      main.append(el("h2", "Key terms"));
+      (lesson.keyTerms || []).forEach((t) =>
+        main.append(el("p", `${t.term}: ${t.definition}`)),
+      );
+    };
+    if (lesson.keyTermsFirst) showTerms();
     main.append(el("h2", "Learning objectives"));
     const ul = el("ul");
     (lesson.objectives || []).forEach((x) => ul.append(el("li", x)));
@@ -230,7 +237,12 @@
     );
     const nav = el("nav", null, { "aria-label": "Lesson sections" });
     (lesson.segments || []).forEach((s) =>
-      nav.append(link(s.title, `#${encodeURIComponent(s.id)}`)),
+      nav.append(
+        link(
+          s.optional ? "Optional source example" : s.title,
+          `#${encodeURIComponent(s.id)}`,
+        ),
+      ),
     );
     nav.append(link("Speaker notes", "#speaker-notes"));
     main.append(nav);
@@ -274,12 +286,16 @@
         section.append(list);
       }
       if (s.caution) section.append(el("p", s.caution, { class: "notice" }));
-      main.append(section);
+      if (s.optional) {
+        const extra = el("details", null, { class: "optional-source" });
+        extra.append(
+          el("summary", "Optional source context: " + s.title),
+          section,
+        );
+        main.append(extra);
+      } else main.append(section);
     });
-    main.append(el("h2", "Key terms"));
-    (lesson.keyTerms || []).forEach((t) =>
-      main.append(el("p", `${t.term}: ${t.definition}`)),
-    );
+    if (!lesson.keyTermsFirst) showTerms();
     for (const [heading, items] of [
       ["Recap", lesson.recap],
       ["Common mistakes", lesson.commonMistakes],

@@ -4,13 +4,12 @@
   "title": "Introduction to Automata Theory",
   "videoId": "yPaUNLEyFxo",
   "duration": 609.8,
-  "overview": "An introductory tour of automata theory: why abstract machine models are useful, how everyday devices illustrate stateful behavior, and how inputs, outputs, states, and broad machine families fit into the subject.",
+  "overview": "Study the core vocabulary: automaton and automata, automata theory, abstract machines, states, inputs, outputs, and the four major machine families.",
   "objectives": [
-    "Explain why computer scientists study abstract machine models.",
-    "Use a thermostat and familiar devices to illustrate automatic behavior and states.",
-    "Distinguish automaton (singular) from automata (plural).",
-    "Describe automata theory as the study and analysis of abstract computational models.",
-    "Identify input, output, and state as machine characteristics and name the four families introduced."
+    "Define automaton, automata theory, and abstract machine.",
+    "Distinguish input, output, and state.",
+    "Use automaton and automata correctly as singular and plural.",
+    "Name the four major families and identify the simplest and most general models introduced."
   ],
   "keyTerms": [
     {
@@ -44,6 +43,14 @@
     {
       "term": "Turing machine",
       "definition": "A highly general formal model of computation, introduced in this lesson as one of four machine families."
+    },
+    {
+      "term": "Virtual machine",
+      "definition": "The term used in the source for a machine model implemented in software."
+    },
+    {
+      "term": "Four major families",
+      "definition": "Finite-state machine, pushdown automata, linear-bounded automata, and Turing machine."
     }
   ],
   "segments": [
@@ -99,7 +106,8 @@
           "caption": "2:50 · A thermostat as a small state-based example",
           "alt": "Source video frame at 2:50: A thermostat as a small state-based example"
         }
-      ]
+      ],
+      "optional": true
     },
     {
       "id": "automaton-elevator",
@@ -139,7 +147,8 @@
           "caption": "4:40 · Automaton, automata, and automatic devices",
           "alt": "Source video frame at 4:40: Automaton, automata, and automatic devices"
         }
-      ]
+      ],
+      "optional": true
     },
     {
       "id": "theory-and-models",
@@ -272,11 +281,11 @@
     }
   ],
   "recap": [
-    "Automata theory uses abstract models to reason about computational behavior.",
-    "A thermostat offers an intuitive two-state example; familiar devices also illustrate inputs followed by actions.",
     "Automaton is singular; automata is plural.",
-    "Inputs, outputs (when applicable), and states help describe machine models.",
-    "The introduction names four families: finite-state, pushdown, linear-bounded, and Turing machines."
+    "Automata theory studies abstract machine models and their behavior.",
+    "Inputs, outputs (where defined), and states describe machine behavior.",
+    "The four families are finite-state machines, pushdown automata, linear-bounded automata, and Turing machines.",
+    "The introductory ordering starts with finite-state machines and ends with Turing machines."
   ],
   "commonMistakes": [
     "Treating the physical device as identical to its abstract model.",
@@ -286,43 +295,43 @@
   ],
   "questions": [
     {
-      "id": "l1-q01",
-      "prompt": "What is the main reason the lesson gives for studying automata?",
+      "id": "l1-q01-core",
+      "prompt": "Which term names one abstract machine, rather than a collection of machines?",
       "choices": [
-        "To design hardware without using mathematics",
-        "To reason systematically about machine behavior without needing its physical hardware details",
-        "To replace all physical machines with software",
-        "To memorize the names of computer components"
-      ],
-      "answer": 1,
-      "explanation": "The opening motivation is to analyze what a machine does at an abstract level, without depending on access to its hardware.",
-      "segmentId": "why-study"
-    },
-    {
-      "id": "l1-q02",
-      "prompt": "In the thermostat example, which two states does the lesson focus on?",
-      "choices": [
-        "Heating and cooling",
-        "High and low temperature",
-        "On and off",
-        "Open and closed"
+        "Alphabet",
+        "Output",
+        "Automaton",
+        "Automata"
       ],
       "answer": 2,
-      "explanation": "The example deliberately reduces the thermostat to two relevant states: on and off.",
-      "segmentId": "thermostat"
+      "explanation": "Automaton is singular; automata is its plural.",
+      "segmentId": "theory-and-models"
     },
     {
-      "id": "l1-q03",
-      "prompt": "A user selects floor 5 in the elevator example. What role does that selection play in the illustration?",
+      "id": "l1-q02-core",
+      "prompt": "Which key term means the current condition or configuration of a machine?",
       "choices": [
-        "It is an input that prompts the elevator system to respond",
-        "It is the elevator’s output alphabet",
-        "It is a proof that elevators have only five states",
-        "It is an implementation of a Turing machine"
+        "Input",
+        "Output",
+        "Alphabet",
+        "State"
+      ],
+      "answer": 3,
+      "explanation": "A state summarizes the information relevant to the machine’s current behavior.",
+      "segmentId": "machine-characteristics"
+    },
+    {
+      "id": "l1-q03-core",
+      "prompt": "Which term refers to a symbol or sequence of symbols supplied to a machine?",
+      "choices": [
+        "Input",
+        "Output",
+        "State",
+        "Transition diagram"
       ],
       "answer": 0,
-      "explanation": "The selected floor is the input; the elevator’s resulting action illustrates input-driven behavior.",
-      "segmentId": "automaton-elevator"
+      "explanation": "Input is supplied to the machine; output is produced by it.",
+      "segmentId": "machine-characteristics"
     },
     {
       "id": "l1-q04-id",
@@ -355,108 +364,108 @@
       "sourceSeconds": 405
     },
     {
-      "id": "l1-q06",
-      "prompt": "Which set of banking operations is used to illustrate a modeled system?",
+      "id": "l1-q06-core",
+      "prompt": "Which term refers to what a machine produces, when its model defines such behavior?",
       "choices": [
-        "Deposit, withdraw, and transfer",
-        "Print, scan, and copy",
-        "Search, sort, and compile",
-        "Lock, unlock, and restart"
-      ],
-      "answer": 0,
-      "explanation": "The speaker uses a banking-system model with deposit, withdrawal, and transfer as example operations.",
-      "segmentId": "theory-and-models"
-    },
-    {
-      "id": "l1-q07",
-      "prompt": "Which description best matches the lesson’s stated objective for automata theory?",
-      "choices": [
-        "To build every machine from the same parts",
-        "To make all signals continuous",
-        "To classify devices by their physical size",
-        "To develop methods to describe and analyze dynamic behavior of discrete systems"
+        "Input",
+        "State",
+        "Automata theory",
+        "Output"
       ],
       "answer": 3,
-      "explanation": "The objective slide emphasizes describing and analyzing the dynamic behavior of discrete systems.",
+      "explanation": "Output is a result produced by a machine model, rather than the symbols provided as input.",
+      "segmentId": "machine-characteristics"
+    },
+    {
+      "id": "l1-q07-core",
+      "prompt": "What is the main objective of automata theory described in this lesson?",
+      "choices": [
+        "Describe and analyze the dynamic behavior of discrete systems",
+        "Specify the physical dimensions of computer hardware",
+        "Replace mathematical models with device specifications",
+        "Classify computers only by processor speed"
+      ],
+      "answer": 0,
+      "explanation": "The objective concerns describing and analyzing computational behavior through formal models.",
       "segmentId": "objective-discrete"
     },
     {
-      "id": "l1-q08",
-      "prompt": "According to the lesson, what is true of input sequences?",
+      "id": "l1-q08-core",
+      "prompt": "In the machine characteristics introduced, input sequences are selected from what?",
       "choices": [
-        "They must contain words from natural language",
-        "They are always a single number",
-        "They are sequences chosen from a finite set of input symbols",
-        "They are states emitted after processing"
+        "An unrestricted collection of output devices",
+        "A finite set of input symbols",
+        "The machine’s set of physical components",
+        "Only its accepting states"
+      ],
+      "answer": 1,
+      "explanation": "The source describes input as a sequence of symbols chosen from a finite set of input signals.",
+      "segmentId": "machine-characteristics"
+    },
+    {
+      "id": "l1-q09-core",
+      "prompt": "What does an abstract machine model let us analyze without requiring every implementation detail?",
+      "choices": [
+        "Only hardware weight",
+        "Only display dimensions",
+        "Computational behavior",
+        "The manufacturer’s product catalogue"
       ],
       "answer": 2,
-      "explanation": "The characteristics slide defines inputs as symbol sequences selected from a finite input set.",
-      "segmentId": "machine-characteristics"
+      "explanation": "An abstract model captures the relevant behavior without including every physical implementation detail.",
+      "segmentId": "theory-and-models"
     },
     {
-      "id": "l1-q09",
-      "prompt": "Why should the output block in the lesson’s machine diagram be treated as model-dependent?",
+      "id": "l1-q10-core",
+      "prompt": "Which three machine characteristics are listed in the lesson?",
       "choices": [
-        "Outputs are only possible in physical machines",
-        "Some automata models recognize or reject strings instead of emitting an output sequence",
-        "An output is the same thing as a state",
-        "The diagram proves every model uses the same output alphabet"
-      ],
-      "answer": 1,
-      "explanation": "The diagram is a broad illustration; standard finite automata often accept or reject strings rather than emit general output sequences.",
-      "segmentId": "machine-characteristics"
-    },
-    {
-      "id": "l1-q10",
-      "prompt": "Which item is not one of the three machine characteristics listed in the lesson?",
-      "choices": [
-        "Input",
-        "Output",
-        "State",
-        "Clock speed"
+        "Processor speed, storage size, and screen size",
+        "Variables, comments, and indentation",
+        "Files, folders, and applications",
+        "Inputs, outputs, and states"
       ],
       "answer": 3,
-      "explanation": "The lesson lists input, output, and state. Clock speed is not one of those conceptual characteristics.",
+      "explanation": "These are the three characteristics named in the introductory machine model.",
       "segmentId": "machine-characteristics"
     },
     {
-      "id": "l1-q11",
-      "prompt": "Which list matches the four families named near the end of the video?",
+      "id": "l1-q11-core",
+      "prompt": "Which list contains the four major families introduced?",
       "choices": [
-        "Finite-state, pushdown, linear-bounded, Turing",
-        "Thermostat, elevator, ATM, telephone",
-        "DFA, NFA, regular, context-free",
-        "Input, output, process, operation"
+        "Finite-state machine, pushdown automata, linear-bounded automata, Turing machine",
+        "DFA, transition table, input tape, output tape",
+        "Input, output, state, alphabet",
+        "Compiler, interpreter, assembler, editor"
       ],
       "answer": 0,
-      "explanation": "The slide names finite-state machines, pushdown automata, linear-bounded automata, and Turing machines.",
+      "explanation": "These four model families are the source’s introductory classification.",
       "segmentId": "four-families"
     },
     {
-      "id": "l1-q12",
-      "prompt": "What does the lesson’s simplest-to-most-complex ordering of the families chiefly provide?",
+      "id": "l1-q12-core",
+      "prompt": "Which family is introduced as the simplest of the four?",
       "choices": [
-        "A complete proof of how each machine works",
-        "A first-pass orientation that later study must formalize",
-        "A ranking of physical device prices",
-        "A statement that each family has identical memory"
+        "Pushdown automata",
+        "Finite-state machine",
+        "Turing machine",
+        "Linear-bounded automata"
       ],
       "answer": 1,
-      "explanation": "The hierarchy is presented as an introductory orientation. Formal comparisons require definitions and computational-resource analysis.",
+      "explanation": "The lesson begins its simplest-to-most-general ordering with the finite-state machine.",
       "segmentId": "four-families"
     },
     {
-      "id": "l1-q13",
-      "prompt": "A student says, “An automaton is the elevator itself.” Which correction best reflects the lesson?",
+      "id": "l1-q13-core",
+      "prompt": "Which family is introduced as the most general and powerful of the four?",
       "choices": [
-        "An automaton is only the elevator’s control panel",
-        "An automaton is always a human operator",
-        "An automaton means the elevator’s destination floor",
-        "An automaton is a model that can describe relevant elevator behavior; the physical elevator is the system being modeled"
+        "Pushdown automata",
+        "Linear-bounded automata",
+        "Turing machine",
+        "Finite-state machine"
       ],
-      "answer": 3,
-      "explanation": "The examples motivate modeling, but the formal automaton is the abstract model rather than the physical device itself.",
-      "segmentId": "automaton-elevator"
+      "answer": 2,
+      "explanation": "The source places the Turing machine at the most general end of its introductory ordering.",
+      "segmentId": "four-families"
     },
     {
       "id": "l1-q14-id",
@@ -474,18 +483,19 @@
       "sourceSeconds": 475
     },
     {
-      "id": "l1-q15",
-      "prompt": "Which statement about the thermostat example is the most careful interpretation?",
+      "id": "l1-q15-core",
+      "prompt": "What does a finite set of states mean?",
       "choices": [
-        "Every real thermostat has exactly two possible internal configurations",
-        "The lesson uses on/off as a simplified model of relevant thermostat states",
-        "The example proves thermostats recognize strings",
-        "A thermostat cannot react to a temperature condition"
+        "There is a fixed finite collection of possible states",
+        "A new state must be created for every input symbol read",
+        "The machine cannot read an input string longer than its number of states",
+        "Every state must produce a different output symbol"
       ],
-      "answer": 1,
-      "explanation": "The two-state presentation is pedagogical. Real thermostats may contain more modes and control details than the simplified example shows.",
-      "segmentId": "thermostat"
+      "answer": 0,
+      "explanation": "The state set is finite; a run can revisit states while processing input. This does not require one new state per symbol.",
+      "segmentId": "machine-characteristics"
     }
   ],
-  "provenance": "Based on TeacherCat 4U’s Introduction video, reviewed with full-video samples and automatic transcription. English explanations, questions and Taglish speaker notes are newly written. Speaker notes are paraphrases, and timestamps locate topics approximately."
+  "provenance": "Based on TeacherCat 4U’s Introduction video, reviewed with full-video samples and automatic transcription. English explanations, questions and Taglish speaker notes are newly written. Speaker notes are paraphrases, and timestamps locate topics approximately.",
+  "keyTermsFirst": true
 }
