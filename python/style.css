@@ -21,3 +21,36 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{ou
  .exam-tools,.exam-controls{gap:8px}.exam-controls{align-self:stretch;justify-content:flex-end}.exam-text{padding:6px 4px}.exam-button{padding:8px 14px}
  .exam-summary{padding:20px 16px}.summary-row{min-height:54px}
 }
+/* exam-style question kinds */
+.small{font-size:.85rem}.letter{font-weight:600;margin-right:4px}
+.tf-grid{border-collapse:collapse;max-width:900px;width:100%}.tf-grid th{font-weight:700;padding:8px 18px;text-align:center}.tf-grid td{padding:12px 10px;border-bottom:1px solid #e1e5e6;vertical-align:middle}.tf-grid td:not(:first-child){text-align:center;width:80px}.tf-grid input{width:18px;height:18px;accent-color:#267da6}
+.exam-input{display:block;font-weight:400;max-width:520px}.exam-input input{display:block;margin-top:8px;font:inherit;padding:8px 10px;border:1px solid #84939a;border-radius:2px;width:180px}
+.drag-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:28px;max-width:1000px}.drag-bank{border-right:1px solid #c9cdce;padding-right:24px}.drag-bank h3{margin:0 0 12px;font-size:1.05rem}.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{background:#fff;color:#15191c;border:1px solid #3c7f9c;border-radius:2px;padding:8px 14px;font:15px ui-monospace,monospace;font-weight:400;cursor:grab;text-align:left}.chip.picked{background:#e2f1f8;outline:2px solid #267da6}.chip.dragging{opacity:.45}.chip code{background:none;padding:0}
+.drag-targets{display:flex;flex-direction:column;gap:12px}.drag-row{display:grid;grid-template-columns:minmax(120px,auto) minmax(150px,1fr);gap:14px;align-items:center}.drag-label{font:15px ui-monospace,monospace}.drag-label code{background:none}
+.slot{background:#fafbfb;color:#15191c;border:1.5px dashed #84939a;border-radius:2px;min-height:40px;padding:7px 12px;text-align:left;font:15px ui-monospace,monospace;font-weight:400}.slot.filled{border-style:solid;border-color:#3c7f9c;background:#fff}.slot.over{background:#e2f1f8;border-color:#267da6}
+.exam-content pre.code-fill{white-space:pre;line-height:2.1;font-size:15px}.inline-select{font:14px ui-monospace,monospace;padding:3px 6px;border:1px solid #3c7f9c;border-radius:2px;background:#f5f9fb;min-width:120px;max-width:none}
+.answer-list{margin:6px 0 12px;padding-left:20px}.answer-list li{margin:4px 0}.answer-list li.bad b{color:#8a4a00}
+/* slides */
+.slide-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.slide{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:28px;margin:22px 0;align-items:start}
+.slide-photos{position:sticky;top:16px;display:flex;flex-direction:column;gap:12px}.slide-photos img{width:100%;border-radius:12px;border:1px solid var(--line);display:block}
+.slide-body{background:#fff;border:1px solid var(--line);border-radius:15px;padding:24px;min-width:0}.slide-title{font-size:2rem;margin:6px 0 12px}.slide-prompt{color:#34474e}.slide-body pre{overflow-x:auto;white-space:pre}.slide-why h4{margin:22px 0 6px}
+.solved mark{background:#ffe08a;color:#15191c;border-radius:3px;padding:0 3px}.solved-table{border-collapse:collapse;width:100%;margin:8px 0 16px}.solved-table td{border-bottom:1px solid var(--line);padding:8px 6px;vertical-align:top}.solved-table td:last-child{white-space:nowrap}
+.option-review{list-style:none;padding:0}.option-review li{padding:8px 10px;border-radius:8px;margin:4px 0}.option-review li.ok{background:#e4f4ea}.pill{background:var(--teal);color:#fff;border-radius:20px;padding:1px 9px;font-size:.75rem;font-weight:700;margin-left:6px}.answer-pill{font-size:1.2rem}
+.slide-nav{display:flex;justify-content:space-between;gap:10px;margin:10px 0 30px}
+.thumb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px;margin-top:24px}.thumb{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;text-decoration:none;color:inherit}.thumb img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}.thumb span{display:block;padding:8px 10px;font-size:.88rem}.thumb:hover{border-color:var(--teal)}
+/* cheat sheet */
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 20px}.toc a{background:#fff;border:1px solid var(--line);border-radius:20px;padding:4px 12px;font-size:.85rem;text-decoration:none}
+.cheat table{border-collapse:collapse;width:100%;font-size:.93rem;display:block;overflow-x:auto}.cheat th,.cheat td{border:1px solid var(--line);padding:6px 9px;text-align:left;vertical-align:top}.cheat th{background:#eef4f0}.cheat pre{white-space:pre;overflow-x:auto}.cheat.mistakes{border-left:5px solid #d49542}
+@media(max-width:800px){.slide{grid-template-columns:1fr}.slide-photos{position:static}.drag-wrap{grid-template-columns:1fr}.drag-bank{border-right:0;border-bottom:1px solid #c9cdce;padding:0 0 18px}.drag-row{grid-template-columns:1fr}}
+@media print{header,footer,.no-print{display:none!important}body{background:#fff}main{padding:0;max-width:none}.lesson-section{break-inside:avoid;border:0;padding:8px 0}pre{background:#f3f3f3!important;color:#000!important}}
+.inline-input{font:14px ui-monospace,monospace;width:70px;padding:3px 6px;border:1.5px dashed #3c7f9c;border-radius:2px;background:#f5f9fb}.set-pick{border:0;padding:0;margin:14px 0}.set-pick legend{font-weight:700}.set-pick label{display:inline-flex;gap:6px;margin:6px 18px 0 0;font-weight:500}
+pre.opt-code{display:inline-block;vertical-align:top;margin:0;padding:8px 12px;background:#f3f6f7!important;color:#15191c!important;border:1px solid #d5dcdf;border-radius:3px;white-space:pre;font-size:14px;line-height:1.45}.exam-option span{display:inline-flex;gap:6px;align-items:flex-start}.option-review pre.opt-code{display:block;margin-top:4px}
+
+/* Mock exam: keep wide code and tables inside the viewport on phones. */
+.solved-table{table-layout:fixed}.solved-table td{overflow-wrap:anywhere}.solved-table td:last-child{white-space:normal;width:40%}
+.tf-grid{table-layout:fixed}.tf-grid td:first-child{overflow-wrap:anywhere}.tf-grid th:not(:first-child),.tf-grid td:not(:first-child){width:72px}
+.exam-option span{min-width:0;max-width:100%}pre.opt-code{max-width:100%;overflow-x:auto;min-width:0}
+@media(max-width:600px){.tf-grid th:not(:first-child),.tf-grid td:not(:first-child){width:54px;padding-left:4px;padding-right:4px}.tf-grid th{padding:8px 4px}}
+.exam-option span{display:flex;flex:1;min-width:0}.exam-option span pre.opt-code{flex:0 1 auto;min-width:0}
+fieldset.exam-options{min-width:0;max-width:100%}

@@ -2,7 +2,7 @@
 
 Four study packs in one mobile-friendly static website:
 
-- Python: 13 lessons, 302 original practice questions, randomized quizzes, and a configurable final (40 questions by default).
+- Python: 13 lessons, 302 exam-style practice questions (drag-and-drop, True/False grids, drop-down code completion, choose-two, typed answers), randomized quizzes, a configurable final (40 questions by default), and a 54-question mock exam recreated from photos of two Pearson-style practice exams, with a slide-by-slide answer lesson and a printable cheat sheet.
 - Software Engineering: 10 lessons with slides, explanations, cheat sheets, quizzes, and a final.
 - Information Assurance and Security: Authentication and Avalanche Effect only.
 - Automata Theory: six topic-ordered lessons, 90 original practice questions, 20 AutomataStudio-rendered diagrams, and a configurable final.

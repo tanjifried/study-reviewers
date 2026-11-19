@@ -103,8 +103,8 @@ async function pythonFinal(page, base) {
   await page.goto(base + 'python/index.html#home'); await page.goto(url);
   await page.fill('#final-count', '3'); await page.check('#instant'); await page.locator('#start').click();
   const q = await page.evaluate(() => run.questions[0]);
-  if (q.parts.length === 1) await page.locator(`input[value="${q.parts[0].answer}"]`).check();
-  else for (let i = 0; i < q.parts.length; i++) await page.selectOption('#p' + i, String(q.parts[i].answer));
+  // Questions now use several exam layouts (drag, grid, drop-down, typed); fill the live response directly.
+  await page.evaluate(() => { const q = run.questions[0], r = run.responses[q.id]; q.parts.forEach((p, i) => { r[i] = p.input ? [].concat(p.answer)[0] : p.answer; }); });
   await page.locator('#check').click(); assert(await page.locator('.feedback').count());
   await page.locator('#summary').click(); page.once('dialog', d => d.accept()); await page.locator('#submit').click();
   await page.locator('#again').click();
